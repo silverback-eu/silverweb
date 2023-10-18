@@ -1,8 +1,5 @@
 import React from "react";
 import { Cards } from "./comp";
-import { DataTable } from "@/components/silverweb/app/Table";
-import { data } from "@/stories/SilverWeb/App/Table/table.stories";
-import { columnsTable, priorities, statuses } from "@/stories/SilverWeb/App/Table/columnsTable";
 
 export default function Partnerships() {
   return (
@@ -37,35 +34,6 @@ export default function Partnerships() {
         <div className="font-bold text-5xl tracking-tighter w-full text-center">
           Projects with partners
         </div>
-        <DataTable
-          data={data}
-          columns={columnsTable}
-          {...{
-            pagination: true,
-            toolbar: {
-              columnFilter: true,
-              resetFilter: true,
-              search: {
-                label: "Search title",
-                name: "title",
-              },
-              filter: [
-                {
-                  label: "Status",
-                  name: "status",
-                  options: statuses,
-                  searchPlaceholder: "Search status",
-                },
-                {
-                  label: "Priority",
-                  name: "priority",
-                  options: priorities,
-                  searchPlaceholder: "Search priority",
-                },
-              ],
-            },
-          }}
-        />
       </div>
     </div>
   );
