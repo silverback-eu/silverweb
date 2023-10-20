@@ -14,7 +14,7 @@ import {
   getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import { ComponentType, Fragment, ReactNode, useState } from "react";
+import { ComponentType, Fragment, ReactElement, ReactNode, useState } from "react";
 import Toolbar from "./Toolbar";
 import Pagination from "./Pagination";
 import { LucideIcon } from "lucide-react";
@@ -30,7 +30,7 @@ interface CustomTableProps<TData, TValue> {
       options: {
         label: string;
         value: string;
-        icon?: LucideIcon;
+        icon?: LucideIcon | string;
       }[];
     }[];
     resetFilter?: boolean;
@@ -41,12 +41,12 @@ interface CustomTableProps<TData, TValue> {
     };
   };
   pagination?: boolean;
-  TableContainer: ComponentType<{ children?: ReactNode[] | ReactNode }>;
-  TableHeader?: ComponentType<{ children?: ReactNode[] | ReactNode }>;
-  TableHeaderItem?: ComponentType<{ children?: ReactNode[] | ReactNode }>;
-  TableBody: ComponentType<{ children?: ReactNode[] | ReactNode }>;
-  TableItem: ComponentType<{ children?: ReactNode[] | ReactNode }>;
-  TableNoResult: ComponentType<{ children?: ReactNode[] | ReactNode }>;
+  TableContainer: ReactElement;
+  TableHeader?: ReactElement;
+  TableHeaderItem?: ReactElement;
+  TableBody: ReactElement;
+  TableItem: ReactElement;
+  TableNoResult: ReactElement;
 }
 
 export default function CustomTable<TData, TValue>({
@@ -91,38 +91,39 @@ export default function CustomTable<TData, TValue>({
   return (
     <div className="space-y-4">
       {toolbar && <Toolbar table={table} {...toolbar} />}
-      <div className="rounded-md border">
-        <TableContainer>
+      <div className="">
+        <TableContainer.type {...TableContainer.props}>
           {TableHeader && (
-            <TableHeader>
+            <TableHeader.type {...TableHeader.props}>
               {table.getHeaderGroups().map((headerGroup) => (
                 <Fragment key={headerGroup.id}>
                   {headerGroup.headers.map((header) => {
                     return (
-                      <Fragment>
+                      <Fragment key={header.id}>
                         {TableHeaderItem && (
-                          <TableHeaderItem key={header.id}>
+                          <TableHeaderItem.type {...TableHeaderItem.props}>
                             {header.isPlaceholder
                               ? null
                               : flexRender(
                                   header.column.columnDef.header,
                                   header.getContext()
                                 )}
-                          </TableHeaderItem>
+                          </TableHeaderItem.type>
                         )}
                       </Fragment>
                     );
                   })}
                 </Fragment>
               ))}
-            </TableHeader>
+            </TableHeader.type>
           )}
-          <TableBody>
+          <TableBody.type {...TableBody.props}>
             {table.getRowModel().rows?.length ? (
               table.getRowModel().rows.map((row) => (
-                <TableItem
+                <TableItem.type
                   key={row.id}
                   data-state={row.getIsSelected() && "selected"}
+                  {...TableItem.props}
                 >
                   {row.getVisibleCells().map((cell) => (
                     <Fragment key={cell.id}>
@@ -132,13 +133,13 @@ export default function CustomTable<TData, TValue>({
                       )}
                     </Fragment>
                   ))}
-                </TableItem>
+                </TableItem.type>
               ))
             ) : (
-                <TableNoResult/>
+                <TableNoResult.type {...TableNoResult.props}/>
             )}
-          </TableBody>
-        </TableContainer>
+          </TableBody.type>
+        </TableContainer.type>
       </div>
       {pagination && <Pagination table={table} />}
     </div>

@@ -184,7 +184,7 @@ export const columnsTable: ColumnDef<Task>[] = [
   },
 ];
 
-export const data = [
+export const dataTable = [
   {
     id: "TASK-8782",
     title:

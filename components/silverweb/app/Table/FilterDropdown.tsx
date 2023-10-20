@@ -26,7 +26,7 @@ interface FilterDropdownProps<TData, TValue> {
   options: {
     label: string;
     value: string;
-    icon?: LucideIcon;
+    icon?: LucideIcon | string;
   }[];
 }
 
@@ -115,9 +115,11 @@ export default function FilterDropdown<TData, TValue>({
                     >
                       <Check className={cn("h-4 w-4")} />
                     </div>
-                    {option.icon && (
+                    {option.icon && (typeof option.icon === "string" ? (
+                      option.icon + "  "
+                    ) : (
                       <option.icon className="mr-2 h-4 w-4 text-muted-foreground" />
-                    )}
+                    ))}
                     <span>{option.label}</span>
                     {facets?.get(option.value) && (
                       <span className="ml-auto flex h-4 w-4 items-center justify-center font-mono text-xs">

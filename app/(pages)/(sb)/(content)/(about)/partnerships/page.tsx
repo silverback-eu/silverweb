@@ -1,5 +1,14 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { Cards } from "./comp";
+import { Metadata } from "next";
+import { Card, CardContent } from "@/components/ui/card";
+import { CustomTable } from "@/components/silverweb/app/Table";
+import { categories, columnsProject, countries, dataProject } from "./projecttable";
+
+export const metadata: Metadata = {
+  title: 'Partnerships - Who are our supporter...',
+}
+
 
 export default function Partnerships() {
   return (
@@ -35,6 +44,48 @@ export default function Partnerships() {
           Projects with partners
         </div>
       </div>
+      <CustomTable {...{
+            data: dataProject,
+            columns: columnsProject,
+            TableContainer: <TableContainer />,
+            toolbar: {
+              columnFilter: true,
+              resetFilter: true,
+              filter: [
+                {
+                  label: "Category",
+                  name: "category",
+                  options: categories,
+                  searchPlaceholder: "Search category",
+                },
+                {
+                  label: "Country",
+                  name: "location",
+                  options: countries,
+                  searchPlaceholder: "Search country",
+                },
+              ],
+            },
+            TableBody: <TableBody />,
+            TableItem: <TableItem />,
+            TableNoResult: <div>Nothing found</div>,
+      }}/>
     </div>
+  );
+}
+
+function TableContainer({ children }: { children?: ReactNode | ReactNode[] }) {
+  return <div className="">{children}</div>;
+}
+
+function TableBody({ children }: { children?: ReactNode | ReactNode[] }) {
+  return <div className="flex flex-wrap gap-6 justify-around">{children}</div>;
+}
+
+function TableItem({ children }: { children?: ReactNode | ReactNode[] }) {
+  return (
+    <Card className="w-[300px]">
+      <CardContent className="p-4">{children}</CardContent>
+    </Card>
   );
 }

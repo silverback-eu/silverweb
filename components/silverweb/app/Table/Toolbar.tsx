@@ -16,7 +16,7 @@ interface ToolbarProps<TData> {
     options: {
       label: string;
       value: string;
-      icon?: LucideIcon;
+      icon?: LucideIcon | string;
     }[];
   }[];
   resetFilter?: boolean;
