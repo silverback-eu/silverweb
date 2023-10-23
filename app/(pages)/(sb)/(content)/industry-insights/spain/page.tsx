@@ -25,8 +25,8 @@ export default function SpainTakesTheLead() {
         Spain Takes The Lead On Cleantech
       </h1>
       <div className="text-lg text-muted-foreground">
-        Spain's cleantech leadership and the opportunity of tapping into Latin
-        America's skilled workforce.
+        Spain`s cleantech leadership and the opportunity of tapping into Latin
+        America`s skilled workforce.
       </div>
       <div className="aspect-[1.91/1] bg-slate-400 rounded-lg" />
       <div className="h-5" />
