@@ -8,6 +8,7 @@ export type DisplayNodeProps = {
   Icon: LucideIcon;
   label: string;
   description: string;
+  direction?: "vertical" | "horizontal";
   className?: string;
 };
 
@@ -41,7 +42,7 @@ function DisplayNodeWO({
 export const DisplayNodeWithout = memo(DisplayNodeWO);
 
 function DisplayNodeDf({
-  data: { Icon, label, description, className },
+  data: { Icon, label, description, className, direction },
   dragging,
   isConnectable,
 }: NodeProps<DisplayNodeProps>) {
@@ -66,15 +67,15 @@ function DisplayNodeDf({
       </CardContent>
       <Handle
         type="target"
-        position={Position.Top}
+        position={direction === "horizontal" ? Position.Left : Position.Top}
         isConnectable={isConnectable}
-        className="!w-8 !min-h-0 !h-0.5 !mt-0.5 !bg-muted !border-border !rounded-t-sm !rounded-b-none"
+        className={cn(direction === "horizontal" ? "!h-8 !min-w-0 !w-0.5 !transform translate-x-0.5 -translate-y-1/2 !bg-muted !border-border !rounded-l-sm !rounded-r-none" : "!w-8 !min-h-0 !h-0.5 !mt-0.5 !bg-muted !border-border !rounded-t-sm !rounded-b-none")}
       />
       <Handle
         type="source"
-        position={Position.Bottom}
+        position={direction === "horizontal" ?  Position.Right : Position.Bottom}
         isConnectable={isConnectable}
-        className="!w-8 !min-h-0 !h-0.5 !transform -translate-x-1/2 -translate-y-0.5  !bg-muted !border-border !rounded-b-sm !rounded-t-none"
+        className={cn(direction === "horizontal" ? "!h-8 !min-w-0 !w-0.5 !transform -translate-x-0.5 -translate-y-1/2  !bg-muted !border-border !rounded-r-sm !rounded-l-none" : "!w-8 !min-h-0 !h-0.5 !transform -translate-x-1/2 -translate-y-0.5  !bg-muted !border-border !rounded-b-sm !rounded-t-none")}
       />
     </Card>
   );
@@ -83,7 +84,7 @@ function DisplayNodeDf({
 export const DisplayNodeDefault = memo(DisplayNodeDf);
 
 function DisplayNodeIn({
-  data: { Icon, label, description, className },
+  data: { Icon, label, description, className, direction },
   dragging,
   isConnectable,
 }: NodeProps<DisplayNodeProps>) {
@@ -108,9 +109,9 @@ function DisplayNodeIn({
       </CardContent>
       <Handle
         type="target"
-        position={Position.Top}
+        position={direction === "horizontal" ? Position.Left : Position.Top}
         isConnectable={isConnectable}
-        className="!w-8 !min-h-0 !h-0.5 !mt-0.5 !bg-muted !border-border !rounded-t-sm !rounded-b-none"
+        className={cn(direction === "horizontal" ? "!h-8 !min-w-0 !w-0.5 !transform translate-x-0.5 -translate-y-1/2 !bg-muted !border-border !rounded-l-sm !rounded-r-none" : "!w-8 !min-h-0 !h-0.5 !mt-0.5 !bg-muted !border-border !rounded-t-sm !rounded-b-none")}
       />
     </Card>
   );
@@ -119,7 +120,7 @@ function DisplayNodeIn({
 export const DisplayNodeInput = memo(DisplayNodeIn);
 
 function DisplayNodeOut({
-  data: { Icon, label, description, className },
+  data: { Icon, label, description, className, direction },
   dragging,
   isConnectable,
 }: NodeProps<DisplayNodeProps>) {
@@ -144,9 +145,9 @@ function DisplayNodeOut({
       </CardContent>
       <Handle
         type="source"
-        position={Position.Bottom}
+        position={direction === "horizontal" ?  Position.Right : Position.Bottom}
         isConnectable={isConnectable}
-        className="!w-8 !min-h-0 !h-0.5 !transform -translate-x-1/2 -translate-y-0.5  !bg-muted !border-border !rounded-b-sm !rounded-t-none"
+        className={cn(direction === "horizontal" ? "!h-8 !min-w-0 !w-0.5 !transform -translate-x-0.5 -translate-y-1/2  !bg-muted !border-border !rounded-r-sm !rounded-l-none" : "!w-8 !min-h-0 !h-0.5 !transform -translate-x-1/2 -translate-y-0.5  !bg-muted !border-border !rounded-b-sm !rounded-t-none")}
       />
     </Card>
   );

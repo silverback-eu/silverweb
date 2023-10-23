@@ -1,3 +1,5 @@
+'use client'
+
 import { Column } from "@tanstack/react-table";
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
@@ -18,11 +20,13 @@ import {
 } from "@/components/ui/popover";
 import { Separator } from "@/components/ui/separator";
 import { Check, LucideIcon, PlusCircle } from "lucide-react";
+import { Fragment } from "react";
 
 interface FilterDropdownProps<TData, TValue> {
   column?: Column<TData, TValue>;
   title?: string;
   searchPlaceholder?: string;
+  fullSearchParam?: string;
   options: {
     label: string;
     value: string;
@@ -34,11 +38,24 @@ export default function FilterDropdown<TData, TValue>({
   column,
   title,
   searchPlaceholder,
+  fullSearchParam,
   options,
 }: FilterDropdownProps<TData, TValue>) {
   const facets = column?.getFacetedUniqueValues();
   const selectedValues = new Set(column?.getFilterValue() as string[]);
 
+  const nestedCounts: Record<string, number> = {};
+
+  if((fullSearchParam?.split(".").length ?? 0) > 1 && fullSearchParam) {
+    facets?.forEach((count, valueObj) => {
+      const value: string = valueObj[fullSearchParam.split(".")[1]];
+      if (nestedCounts[value]) {
+        nestedCounts[value] += count;
+      } else {
+        nestedCounts[value] = count;
+      }
+    });
+  }
   return (
     <Popover>
       <PopoverTrigger asChild>
@@ -121,9 +138,13 @@ export default function FilterDropdown<TData, TValue>({
                       <option.icon className="mr-2 h-4 w-4 text-muted-foreground" />
                     ))}
                     <span>{option.label}</span>
-                    {facets?.get(option.value) && (
-                      <span className="ml-auto flex h-4 w-4 items-center justify-center font-mono text-xs">
-                        {facets.get(option.value)}
+                    {facets?.get(option.label) ? (
+                      <span className="ml-auto flex h-4 w-4 items-center justify-center font-bold text-xs">
+                        {facets.get(option.label)}
+                      </span>
+                    ) : Object.entries(nestedCounts).length > 0 && nestedCounts[option.label] && (
+                      <span className="ml-auto flex h-4 w-4 items-center justify-center font-bold text-xs">
+                        {nestedCounts[option.label]}
                       </span>
                     )}
                   </CommandItem>
@@ -131,7 +152,7 @@ export default function FilterDropdown<TData, TValue>({
               })}
             </CommandGroup>
             {selectedValues.size > 0 && (
-              <>
+              <Fragment>
                 <CommandSeparator />
                 <CommandGroup>
                   <CommandItem
@@ -141,7 +162,7 @@ export default function FilterDropdown<TData, TValue>({
                     Clear filters
                   </CommandItem>
                 </CommandGroup>
-              </>
+              </Fragment>
             )}
           </CommandList>
         </Command>

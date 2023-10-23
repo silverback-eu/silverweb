@@ -8,9 +8,13 @@ import Image from "next/image";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import {
   AirVent,
+  BarChart3,
+  Bed,
   BookCopy,
   Boxes,
   Building,
+  CheckSquare,
+  ClipboardCheck,
   ClipboardList,
   Cog,
   Container,
@@ -22,6 +26,7 @@ import {
   Footprints,
   Forklift,
   GalleryHorizontalEnd,
+  GanttChartSquare,
   Globe2,
   GraduationCap,
   Hammer,
@@ -44,6 +49,7 @@ import {
   ToyBrick,
   TrainTrack,
   Unplug,
+
   UtilityPole,
   Wind,
   Workflow,
@@ -168,6 +174,7 @@ export default function HomePage() {
             fill
           />
         </ParallaxLayer>
+
         <ParallaxLayer offset={0.6} speed={0.2}>
           <svg
             width="100%"
@@ -825,120 +832,125 @@ export default function HomePage() {
           <div className="max-w-[620px] mx-auto">
             <div className="absolute w-full bottom-0 -z-20 hidden sm:block">
               <div className="w-[1000px] h-[1000px] relative flex justify-center items-center ml-[250px]">
-              <div
-                style={{
-                  width: 1000,
-                  height: 1000,
-                  aspectRatio: 1,
-                  margin: "auto",
-                  position: "relative",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
-                <Image alt="Cobe" src={"/Cobe.png"} width={828} height={808} />
-              </div>
-              <svg
-                width="8"
-                height="8"
-                viewBox="0 0 8 8"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="absolute bottom-[66%] right-[62%] animate-ping"
-              >
-                <circle cx="4" cy="4" r="4" fill="#aba6a2" />
-              </svg>
-              <svg
-                width="8"
-                height="8"
-                viewBox="0 0 8 8"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="absolute bottom-[66%] right-[62%]"
-              >
-                <circle cx="4" cy="4" r="4" fill="#aba6a2" />
-              </svg>
-              <svg
-                width="8"
-                height="8"
-                viewBox="0 0 8 8"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="absolute bottom-[65%] right-[60.5%] animate-ping"
-              >
-                <circle cx="4" cy="4" r="4" fill="#aba6a2" />
-              </svg>
-              <svg
-                width="8"
-                height="8"
-                viewBox="0 0 8 8"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="absolute bottom-[65%] right-[60.5%]"
-              >
-                <circle cx="4" cy="4" r="4" fill="#aba6a2" />
-              </svg>
-              <svg
-                width="8"
-                height="8"
-                viewBox="0 0 8 8"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="absolute bottom-[66%] right-[54%] animate-ping"
-              >
-                <circle cx="4" cy="4" r="4" fill="#aba6a2" />
-              </svg>
-              <svg
-                width="8"
-                height="8"
-                viewBox="0 0 8 8"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="absolute bottom-[66%] right-[54%]"
-              >
-                <circle cx="4" cy="4" r="4" fill="#aba6a2" />
-              </svg>
-              <svg
-                width="8"
-                height="8"
-                viewBox="0 0 8 8"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="absolute bottom-[62.5%] right-[50%] animate-ping"
-              >
-                <circle cx="4" cy="4" r="4" fill="#aba6a2" />
-              </svg>
-              <svg
-                width="8"
-                height="8"
-                viewBox="0 0 8 8"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="absolute bottom-[62.5%] right-[50%]"
-              >
-                <circle cx="4" cy="4" r="4" fill="#aba6a2" />
-              </svg>
-              <svg
-                width="8"
-                height="8"
-                viewBox="0 0 8 8"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="absolute bottom-[58%] right-[49%] animate-ping"
-              >
-                <circle cx="4" cy="4" r="4" fill="#aba6a2" />
-              </svg>
-              <svg
-                width="8"
-                height="8"
-                viewBox="0 0 8 8"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="absolute bottom-[58%] right-[49%]"
-              >
-                <circle cx="4" cy="4" r="4" fill="#aba6a2" />
-              </svg>
+                <div
+                  style={{
+                    width: 1000,
+                    height: 1000,
+                    aspectRatio: 1,
+                    margin: "auto",
+                    position: "relative",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <Image
+                    alt="Cobe"
+                    src={"/Cobe.png"}
+                    width={828}
+                    height={808}
+                  />
+                </div>
+                <svg
+                  width="8"
+                  height="8"
+                  viewBox="0 0 8 8"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="absolute bottom-[66%] right-[62%] animate-ping"
+                >
+                  <circle cx="4" cy="4" r="4" fill="#aba6a2" />
+                </svg>
+                <svg
+                  width="8"
+                  height="8"
+                  viewBox="0 0 8 8"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="absolute bottom-[66%] right-[62%]"
+                >
+                  <circle cx="4" cy="4" r="4" fill="#aba6a2" />
+                </svg>
+                <svg
+                  width="8"
+                  height="8"
+                  viewBox="0 0 8 8"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="absolute bottom-[65%] right-[60.5%] animate-ping"
+                >
+                  <circle cx="4" cy="4" r="4" fill="#aba6a2" />
+                </svg>
+                <svg
+                  width="8"
+                  height="8"
+                  viewBox="0 0 8 8"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="absolute bottom-[65%] right-[60.5%]"
+                >
+                  <circle cx="4" cy="4" r="4" fill="#aba6a2" />
+                </svg>
+                <svg
+                  width="8"
+                  height="8"
+                  viewBox="0 0 8 8"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="absolute bottom-[66%] right-[54%] animate-ping"
+                >
+                  <circle cx="4" cy="4" r="4" fill="#aba6a2" />
+                </svg>
+                <svg
+                  width="8"
+                  height="8"
+                  viewBox="0 0 8 8"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="absolute bottom-[66%] right-[54%]"
+                >
+                  <circle cx="4" cy="4" r="4" fill="#aba6a2" />
+                </svg>
+                <svg
+                  width="8"
+                  height="8"
+                  viewBox="0 0 8 8"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="absolute bottom-[62.5%] right-[50%] animate-ping"
+                >
+                  <circle cx="4" cy="4" r="4" fill="#aba6a2" />
+                </svg>
+                <svg
+                  width="8"
+                  height="8"
+                  viewBox="0 0 8 8"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="absolute bottom-[62.5%] right-[50%]"
+                >
+                  <circle cx="4" cy="4" r="4" fill="#aba6a2" />
+                </svg>
+                <svg
+                  width="8"
+                  height="8"
+                  viewBox="0 0 8 8"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="absolute bottom-[58%] right-[49%] animate-ping"
+                >
+                  <circle cx="4" cy="4" r="4" fill="#aba6a2" />
+                </svg>
+                <svg
+                  width="8"
+                  height="8"
+                  viewBox="0 0 8 8"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="absolute bottom-[58%] right-[49%]"
+                >
+                  <circle cx="4" cy="4" r="4" fill="#aba6a2" />
+                </svg>
               </div>
             </div>
           </div>

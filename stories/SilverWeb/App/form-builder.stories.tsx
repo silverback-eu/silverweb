@@ -29,9 +29,9 @@ type Story = StoryObj<FormProps>;
 export const Normal: Story = {
     args: {
         fields,
-        onSubmit: ( values ) => {
-            console.log(values);
-        }
+onSubmit: (values) => {
+    console.log(values);
+}
     }
 };
 

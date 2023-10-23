@@ -1,3 +1,5 @@
+"use client";
+
 import { Input } from "@/components/ui/input";
 import { phonePrefix } from "@/lib/phone-prefix.json";
 import { Button } from "@/components/ui/button";
@@ -42,7 +44,7 @@ const PhoneInput = forwardRef<HTMLInputElement, PhoneInputProps>(
       popoverClassName,
       ...rest
     } = props;
-    const suggestions = ["ie", "de", "sw", "dk", "fi", "no"];
+    const suggestions = ["se", "ie", "de", "dk", "no", "ro", "pl"];
     const [inputValue, setInputValue] = useState("");
     const ContainerRef = useRef<HTMLDivElement>(null);
     const [open, setOpen] = React.useState(false);

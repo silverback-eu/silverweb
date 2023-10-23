@@ -4,6 +4,7 @@ import {
   ColumnDef,
   ColumnFiltersState,
   SortingState,
+  Updater,
   VisibilityState,
   flexRender,
   getCoreRowModel,
@@ -14,7 +15,7 @@ import {
   getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import { ComponentType, Fragment, ReactElement, ReactNode, useState } from "react";
+import { Fragment, ReactElement, useEffect, useMemo, useState } from "react";
 import Toolbar from "./Toolbar";
 import Pagination from "./Pagination";
 import { LucideIcon } from "lucide-react";
@@ -41,6 +42,7 @@ interface CustomTableProps<TData, TValue> {
     };
   };
   pagination?: boolean;
+  initFilters?: ColumnFiltersState;
   TableContainer: ReactElement;
   TableHeader?: ReactElement;
   TableHeaderItem?: ReactElement;
@@ -59,12 +61,20 @@ export default function CustomTable<TData, TValue>({
   TableHeaderItem,
   TableBody,
   TableItem,
-  TableNoResult
+  TableNoResult,
+  initFilters,
 }: CustomTableProps<TData, TValue>) {
   const [rowSelection, setRowSelection] = useState({});
   const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({});
-  const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
+  const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>(initFilters || []);
   const [sorting, setSorting] = useState<SortingState>([]);
+
+  useEffect(() => {
+    setColumnFilters(initFilters || []);
+  }, [initFilters]);
+
+
+
 
   const table = useReactTable({
     data,
@@ -82,11 +92,16 @@ export default function CustomTable<TData, TValue>({
     onColumnVisibilityChange: setColumnVisibility,
     getCoreRowModel: getCoreRowModel(),
     getFilteredRowModel: getFilteredRowModel(),
-    getPaginationRowModel: getPaginationRowModel(),
+
     getSortedRowModel: getSortedRowModel(),
     getFacetedRowModel: getFacetedRowModel(),
     getFacetedUniqueValues: getFacetedUniqueValues(),
+    ...pagination && {
+      getPaginationRowModel: getPaginationRowModel(),
+    }
   });
+
+
 
   return (
     <div className="space-y-4">

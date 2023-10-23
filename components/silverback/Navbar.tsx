@@ -102,7 +102,7 @@ export default function Navbar({
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem className={cn("grid gap-1 grid-flow-col")}>
-                <Link href={"/"} className="grid gap-1 grid-flow-col">
+                <Link href={"/"} className="mx-3 grid gap-1 grid-flow-col">
                 <div className="hidden sm:flex content-center flex-wrap translate-y-[0.5px] select-none">
                   <Logo wh={22} />
                 </div>

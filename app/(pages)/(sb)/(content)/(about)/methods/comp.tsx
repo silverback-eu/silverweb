@@ -61,14 +61,6 @@ export function FlowAndNav() {
           <Flow
             initialNodes={[
               {
-                id: "legend",
-                type: "cardNodeWithout",
-                data: {
-                  content: <div />,
-                },
-                position: { x: 650, y: 90 },
-              },
-              {
                 id: "1",
                 type: "displayNodeOutput",
                 data: {

@@ -1,25 +1,48 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
-export default function ProjectCard() {
+export default function ProjectCard({
+  img,
+  title,
+  category,
+  location,
+  description,
+} : {
+  img: StaticImageData;
+  title: string;
+  category: string;
+  location: {
+    city: string;
+    country: string;
+  };
+  description: string;
+}) {
+
   return (
     <div>
-      <Card className="w-[300px]">
+      <Card className="w-[300px] text-left">
         <CardContent className="p-4">
-          <div className="bg-gray-500 w-[268px] h-[268px] rounded-lg overflow-hidden" >
-            <Image className="duration-500 object-cover transition-all hover:scale-105" src="https://ui.shadcn.com/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1468817814611-b7edf94b5d60%3Fw%3D300%26dpr%3D2%26q%3D80&w=384&q=75" width={268} height={268} alt="Mall of Scandinavia" />
+          <div className="relative bg-gray-500 w-[268px] h-[268px] rounded-lg overflow-hidden">
+            <Image
+              className="duration-500 object-cover transition-all hover:scale-105 z-10"
+              src={img}
+              fill
+              sizes="100%"
+              alt="Mall of Scandinavia"
+            />
           </div>
-          <div className="text-lg font-bold mt-3 line-clamp-1">Mall of Scandinavia</div>
+          <div className="text-lg font-bold mt-3 line-clamp-1">
+            {title}
+          </div>
           <Button variant={"link"} className="p-0 h-auto text-ellipsis">
-            Commercial
+            {category}
           </Button>
           <div className="text-sm font-bold opacity-70 line-clamp-1">
-            Stockholm, Sweden
+            {location.city}, {location.country}
           </div>
           <div className="text-sm text-muted-foreground line-clamp-3">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            {description}
           </div>
         </CardContent>
       </Card>

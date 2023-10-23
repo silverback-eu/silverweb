@@ -55,10 +55,11 @@ export default function Toolbar<TData>({
           <Fragment>
             {filter.map((filter) => (
               <Fragment key={filter.name}>
-                {table.getColumn(filter.name) && (
+                {table.getColumn(filter.name.split(".")[0]) && (
                   <FilterDropdown
-                    column={table.getColumn(filter.name)}
+                    column={table.getColumn(filter.name.split(".")[0])}
                     title={filter.label}
+                    fullSearchParam={filter.name}
                     options={filter.options}
                     searchPlaceholder={filter.searchPlaceholder}
                   />
