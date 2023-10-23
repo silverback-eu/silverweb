@@ -1,52 +1,12 @@
 "use client";
 
 import { CustomTable } from "@/components/silverweb/app/Table";
-import { Card, CardContent } from "@/components/ui/card";
-import { cn } from "@/lib/utils";
-import Image, { StaticImageData } from "next/image";
-import Link from "next/link";
-import { useInView } from "react-intersection-observer";
+import { Card } from "@/components/ui/card";
 import { categories, columnsProject, countries, dataProject } from "./projecttable";
 import { ReactNode } from "react";
 import { useSearchParams } from 'next/navigation'
 
-export function Cards({ img, href }: { img: StaticImageData; href: string }) {
-  const [CardRef, CardIsVisible] = useInView({
-    threshold: 0.5,
-    trackVisibility: true,
-    delay: 100,
-    initialInView: true,
-  });
-  return (
-    <Link
-      href={href + " "}
-      target="_blank"
-      draggable={false}
-      ref={CardRef}
-      className={cn(
-        "transition-all duration-500",
-        CardIsVisible ? "opacity-100" : "opacity-0"
-      )}
-    >
-      <Card
-        className={
-          "opacity-50 hover:opacity-100 transition-all duration-500 select-none"
-        }
-      >
-        <CardContent className="p-5">
-          <Image
-            draggable={false}
-            src={img}
-            className="w-[200px] h-auto"
-            alt={img.src}
-            width={200}
-            height={67.19}
-          />
-        </CardContent>
-      </Card>
-    </Link>
-  );
-}
+
 
 export function ProjectTable(){
   const searchParams = useSearchParams()

@@ -1,6 +1,7 @@
 "use client";
 
 import Flow from "@/components/silverweb/app/Flow";
+import { Card, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import {
   ClipboardList,
@@ -9,6 +10,7 @@ import {
   Eye,
   Globe2,
   HardHat,
+  LucideIcon,
   Monitor,
   PencilRuler,
   Search,
@@ -16,7 +18,7 @@ import {
   User2,
   Users,
 } from "lucide-react";
-import { ReactElement } from "react";
+import { Fragment, ReactElement, useLayoutEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import TypewriterComponent from "typewriter-effect";
 
@@ -41,7 +43,6 @@ export function Typewriter() {
   );
 }
 
-
 export function HeroCards({
   title,
   content,
@@ -53,19 +54,21 @@ export function HeroCards({
   Icon: ReactElement;
   fallBack: string;
 }) {
-    const [heroCards, heroCardsAreVisible] = useInView({
-        threshold: 0.3,
-        trackVisibility: true,
-        delay: 100,
-      });
+  const [heroCards, heroCardsAreVisible] = useInView({
+    threshold: 0.3,
+    trackVisibility: true,
+    delay: 100,
+  });
   return (
     <div ref={heroCards} className="p-3 lg:p-7 items-center">
-      <div className={cn(
-        "space-y-2 h-full transition-all duration-1000",
-        heroCardsAreVisible
-          ? "opacity-100 translate-x-0"
-          : "opacity-0 translate-x-60"
-      )}>
+      <div
+        className={cn(
+          "space-y-2 h-full transition-all duration-1000",
+          heroCardsAreVisible
+            ? "opacity-100 translate-x-0"
+            : "opacity-0 translate-x-60"
+        )}
+      >
         <div className="bg-muted h-10 w-10 rounded-lg flex justify-center items-center">
           <Icon.type {...Icon.props} className="w-6 h-6" />
         </div>
@@ -208,55 +211,54 @@ export function FlowBackground() {
           id: "placeholder",
           type: "cardNodeWithout",
           position: { x: 1400, y: 1000 },
+          data: {},
+        },
+        {
+          id: "flow3-1",
+          type: "displayNodeOutput",
+          position: { x: 500, y: 500 },
           data: {
+            label: "Goals",
+            description: "Define your goals.",
+            Icon: ClipboardList,
+            className: "text-orange-500",
           },
         },
         {
-            id: "flow3-1",
-            type: "displayNodeOutput",
-            position: { x: 500, y: 500 },
-            data: {
-              label: "Goals",
-              description: "Define your goals.",
-              Icon: ClipboardList,
-              className: "text-orange-500",
-            }
+          id: "flow3-2",
+          type: "displayNode",
+          position: { x: 650, y: 600 },
+          data: {
+            direction: "horizontal",
+            label: "Resources",
+            className: "text-blue-500",
+            description: "Identify your resources.",
+            Icon: Search,
+          },
         },
         {
-            id: "flow3-2",
-            type: "displayNode",
-            position: { x: 650, y: 600 },
-            data: {
-                direction: "horizontal",
-              label: "Resources",
-              className: "text-blue-500",
-              description: "Identify your resources.",
-              Icon: Search,
-            }
+          id: "flow3-3",
+          type: "displayNode",
+          position: { x: 950, y: 600 },
+          data: {
+            label: "Plan",
+            direction: "horizontal",
+            className: "text-yellow-500",
+            description: "Create a action plan.",
+            Icon: ClipboardSignature,
+          },
         },
         {
-            id: "flow3-3",
-            type: "displayNode",
-            position: { x: 950, y: 600 },
-            data: {
-              label: "Plan",
-              direction: "horizontal",
-              className: "text-yellow-500",
-              description: "Create a action plan.",
-              Icon: ClipboardSignature,
-            }
+          id: "flow3-4",
+          type: "displayNodeInput",
+          position: { x: 950, y: 700 },
+          data: {
+            label: "Monitor",
+            className: "text-green-500",
+            description: "Monitor your progress.",
+            Icon: Monitor,
+          },
         },
-        {
-            id: "flow3-4",
-            type: "displayNodeInput",
-            position: { x: 950, y: 700 },
-            data: {
-              label: "Monitor",
-              className: "text-green-500",
-              description: "Monitor your progress.",
-              Icon: Monitor,
-            }
-        }
       ]}
       defaultViewport={{
         zoom: 2,
@@ -342,8 +344,99 @@ export function FlowBackground() {
           id: "flow3-3-4",
           source: "flow3-3",
           target: "flow3-4",
-        }
+        },
       ]}
     />
   );
 }
+
+export function InfoFeature({
+  number,
+  metric,
+  Icon,
+  subheading,
+  content,
+}: {
+  number: number;
+  metric: string;
+  Icon: ReactElement;
+  subheading: string;
+  content: string;
+}) {
+  const [infoFeatures, infoFeaturesAreVisible] = useInView({
+    threshold: 0.4,
+  });
+  function AnimatedCounter({
+    value,
+    duration = 1000,
+    start,
+  }: {
+    duration?: number;
+    value: number;
+    start?: boolean;
+  }) {
+    const [count, setCount] = useState(0);
+
+    useLayoutEffect(() => {
+      let interval: NodeJS.Timeout;
+
+      if (start) {
+        interval = setInterval(() => {
+          setCount((prevCount) => Math.min(prevCount + 1, value));
+          if (count === value) clearInterval(interval);
+        }, duration / value);
+      }
+
+      return () => clearInterval(interval);
+    }, [start, count, duration, value]);
+
+    return <Fragment>{count}</Fragment>;
+  }
+
+  return (
+    <div ref={infoFeatures}>
+      <div className="grid justify-center">
+        <div className="flex justify-center mb-4">
+          <div className="rounded-xl bg-muted p-3 opacity-50">
+            <Icon.type {...Icon.props} className="h-7 w-7" />
+          </div>
+        </div>
+        <p className="text-4xl font-bold text-center">
+          <AnimatedCounter start={infoFeaturesAreVisible} value={number} />+  
+          {metric}
+        </p>
+        <p className="font-bold text-2xl text-center">{subheading}</p>
+        <p className="text-base opacity-50 text-center mt-4 max-w-md">
+          {content}
+        </p>
+      </div>
+    </div>
+  );
+}
+
+
+export function FeaturesCard({
+    Icon,
+    heading,
+    content,
+  }: {
+    Icon: ReactElement;
+    heading: string;
+    content: string;
+  }) {
+    return (
+      <div className="inline-block px-3">
+        <Card>
+          <CardContent className="p-1 flex items-center">
+            <div className="p-2 bg-muted rounded-lg m-2">
+              <Icon.type {...Icon.props} className="w-6 h-6" />
+            </div>
+            <div className="text-left pr-4">
+              <div className="font-bold text-base ">{heading}</div>
+              <div className="text-xs font-normal opacity-50">{content}</div>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    );
+  }

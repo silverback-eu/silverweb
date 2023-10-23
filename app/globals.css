@@ -165,3 +165,17 @@
       transform: translateY(0)
   }
 }
+
+@keyframes glowUp {
+  0% {
+    opacity: 50%;
+  }
+
+  7.5% {
+    opacity: 100%;
+  }
+
+  15% {
+    opacity: 50%;
+  }
+}
