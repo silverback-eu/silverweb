@@ -11,13 +11,13 @@ export default function About() {
       <br />
       SilverBack
       <br />)<br />(<br />
-      'we', 'us', or 'our'
+      &apos;we&apos;, &apos;us&apos;, or &apos;our&apos;
       <br />
       ), describes how and why we might collect, store, use, and/or share (
       <br />
-      'process'
+      &apos;process&apos;
       <br />) your information when you use our services (<br />
-      'Services'
+      &apos;Services&apos;
       <br />
       ), such as when you:
       <br />
@@ -206,7 +206,7 @@ export default function About() {
       <br />
       <br />
       <br />
-      To save or protect an individual's vital interest. We may process your
+      To save or protect an individual&apos;s vital interest. We may process your
       information when necessary to save or protect an individual’s vital
       interest, such as to prevent harm.
       <br />
@@ -255,23 +255,23 @@ export default function About() {
       <br />
       In legal terms, we are generally the
       <br />
-      'data controller'
+      &apos;data controller&apos;
       <br />
       under European data protection laws of the personal information described
       in this privacy notice, since we determine the means and/or purposes of
       the data processing we perform. This privacy notice does not apply to the
       personal information we process as a<br />
-      'data processor'
+      &apos;data processor&apos;
       <br />
       on behalf of our customers. In those situations, the customer that we
       provide services to and with whom we have entered into a data processing
       agreement is the
       <br />
-      'data controller'
+      &apos;data controller&apos;
       <br />
       responsible for your personal information, and we merely process your
       information on their behalf in accordance with your instructions. If you
-      want to know more about our customers' privacy practices, you should read
+      want to know more about our customers&apos; privacy practices, you should read
       their privacy policies and direct any questions you have to them.
       <br />
       <br />
@@ -412,9 +412,9 @@ export default function About() {
       object to the processing of your personal information. You can make such a
       request by contacting us by using the contact details provided in the
       section
-      <br />'<br />
+      <br />&apos;<br />
       HOW CAN YOU CONTACT US ABOUT THIS NOTICE?
-      <br />'<br />
+      <br />&apos;<br />
       below.
       <br />
       <br />
@@ -437,9 +437,9 @@ export default function About() {
       you have the right to withdraw your consent at any time. You can withdraw
       your consent at any time by contacting us by using the contact details
       provided in the section
-      <br />'<br />
+      <br />&apos;<br />
       HOW CAN YOU CONTACT US ABOUT THIS NOTICE?
-      <br />'<br />
+      <br />&apos;<br />
       below
       <br />.<br />
       <br />
@@ -461,7 +461,7 @@ export default function About() {
       <br />
       Most web browsers and some mobile operating systems and mobile
       applications include a Do-Not-Track (<br />
-      'DNT'
+      &apos;DNT&apos;
       <br />) feature or setting you can activate to signal your privacy
       preference not to have data about your online browsing activities
       monitored and collected. At this stage no uniform technology standard for
@@ -488,7 +488,7 @@ export default function About() {
       We may update this privacy notice from time to time. The updated version
       will be indicated by an updated
       <br />
-      'Revised'
+      &apos;Revised&apos;
       <br />
       date and the updated version will be effective as soon as it is
       accessible. If we make material changes to this privacy notice, we may
@@ -528,7 +528,7 @@ export default function About() {
       or Switzerland
       <br />, we are the
       <br />
-      'data controller'
+      &apos;data controller&apos;
       <br />
       of your personal information. We have appointed
       <br />
@@ -569,7 +569,7 @@ export default function About() {
       <br />
       If you are a resident in the United Kingdom, we are the
       <br />
-      'data controller'
+      &apos;data controller&apos;
       <br />
       of your personal information. We have appointed
       <br />

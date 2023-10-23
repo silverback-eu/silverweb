@@ -22,7 +22,7 @@ export default function OurStory() {
         <p>
           We focus on mission-critical projects across Europe, supported by
           expert teams in electrical, mechanical, and construction work. Over
-          the years, we've expanded our reach across Northern and Central Europe
+          the years, we&apos;ve expanded our reach across Northern and Central Europe
           and established subsidiaries in the UK, Poland, Denmark, and Romania.
         </p>
 
@@ -43,7 +43,7 @@ export default function OurStory() {
         </p>
 
         <p className="text-right">
-          As a growing enterprise, we're well-equipped to meet the rising demand
+          As a growing enterprise, we&apos;re well-equipped to meet the rising demand
           for sustainable construction services, while our unwavering commitment
           to quality underscores our mission to have a positive global impact.
         </p>
