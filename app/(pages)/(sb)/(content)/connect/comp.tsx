@@ -1,7 +1,10 @@
 "use client";
 
 import Flow from "@/components/silverweb/app/Flow";
+import RadioInput from "@/components/silverweb/inputs/RadioInput";
+import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { RadioGroup } from "@/components/ui/radio-group";
 import { cn } from "@/lib/utils";
 import {
   ClipboardList,
@@ -10,7 +13,8 @@ import {
   Eye,
   Globe2,
   HardHat,
-  LucideIcon,
+  Lightbulb,
+  Link,
   Monitor,
   PencilRuler,
   Search,
@@ -414,29 +418,124 @@ export function InfoFeature({
   );
 }
 
-
 export function FeaturesCard({
-    Icon,
-    heading,
-    content,
-  }: {
-    Icon: ReactElement;
-    heading: string;
-    content: string;
-  }) {
-    return (
-      <div className="inline-block px-3">
-        <Card>
-          <CardContent className="p-1 flex items-center">
-            <div className="p-2 bg-muted rounded-lg m-2">
-              <Icon.type {...Icon.props} className="w-6 h-6" />
-            </div>
-            <div className="text-left pr-4">
-              <div className="font-bold text-base ">{heading}</div>
-              <div className="text-xs font-normal opacity-50">{content}</div>
-            </div>
-          </CardContent>
-        </Card>
+  Icon,
+  heading,
+  content,
+}: {
+  Icon: ReactElement;
+  heading: string;
+  content: string;
+}) {
+  return (
+    <div className="inline-block px-3">
+      <Card>
+        <CardContent className="p-1 flex items-center">
+          <div className="p-2 bg-muted rounded-lg m-2">
+            <Icon.type {...Icon.props} className="w-6 h-6" />
+          </div>
+          <div className="text-left pr-4">
+            <div className="font-bold text-base ">{heading}</div>
+            <div className="text-xs font-normal opacity-50">{content}</div>
+          </div>
+        </CardContent>
+      </Card>
+    </div>
+  );
+}
+
+export function ContactForm() {
+  return (
+    <div className=" md:mx-16 lg:mx-40 xl:mx-16 text-left">
+      <p className="font-bold text-3xl md:text-5xl drop-shadow-lg">
+        Embrace Success
+        <br /> with SilverBack:
+      </p>
+      <p className="font-bold text-base md:text-xl drop-shadow-lg">
+        Shaping Futures Together! Get in touch
+      </p>
+      <div className="flex gap-1 text-xs md:text-base ">
+        <p>
+          Fill out the form or contact us directly via{" "}
+          <span
+            onClick={() =>
+              window.open(
+                "mailto:work@silverback.ie?subject=Request%20via%20Website%20&body=Hey%20Team%20SilverBack%2C%0A%0AI%2FWe%20want%20to%20work%20with%20you.%0A%0AWe're%2FI'm...%0A%0ARegards%2C"
+              )
+            }
+            className="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 text-primary underline-offset-4 hover:underline p-0 text-xs h-4 md:h-6 md:text-base"
+          >
+            work@silverback.ie
+          </span>
+        </p>
       </div>
-    );
-  }
+      <div className="px-2 md:px-20 mt-20">
+        <RadioGroup className="grid gap-5">
+          <RadioInput
+            variant="big"
+            cardLabel="I have a project"
+            cardDescription="Work with us and be a partner"
+            icon={<Lightbulb size={24} />}
+            value="partner"
+            id="partner"
+          />
+          <RadioInput
+            variant="big"
+            cardLabel="I want to support"
+            cardDescription="Work for us and join the team"
+            icon={<Link size={24} />}
+            value="team"
+            id="team"
+          />
+        </RadioGroup>
+      </div>
+      <div className="w-28 items-center justify-center mx-auto flex gap-2 mt-8">
+        <div className="h-[18px] w-[18px] bg-muted rounded-full" />
+        <div className="h-4 w-4 bg-muted opacity-70 rounded-full" />
+        <div className="h-4 w-4 bg-muted opacity-70  rounded-full" />
+      </div>
+      <div className="mt-8 flex justify-end px-2 md:px-20">
+        <Button onClick={() => {}}>Let&apos;s Work Together</Button>
+      </div>
+    </div>
+  );
+}
+
+export function WorkFlowCard({
+  Icon,
+  heading,
+  content,
+  leftRight,
+}: {
+  Icon: ReactElement;
+  heading: string;
+  content: string;
+  leftRight?: "left" | "right";
+}) {
+  const [workFlowCard, workFlowCardAreVisible] = useInView({
+    threshold: 0.4,
+  });
+
+  return (
+    <div
+      ref={workFlowCard}
+      className={cn("flex items-center", leftRight === "left" && "justify-end")}
+    >
+      <Card className={cn("w-max h-max transition-all duration-500", workFlowCardAreVisible ? "opacity-100 translate-x-0" : leftRight === "left" ? "-translate-x-20 opacity-0" : "translate-x-20 opacity-0")}>
+        <CardContent className="p-2 flex gap-2">
+          <div className="flex justify-center items-center bg-muted rounded-xl h-10 w-10">
+            <Icon.type {...Icon.props} size={24} />
+          </div>
+          <div className="grid content-center w-[calc(100%-40px)]">
+            <p className="text-sm font-semibold text-start truncate">
+              {heading}
+            </p>
+            <p className="text-xs opacity-50 text-start truncate pr-2">
+              {content}
+            </p>
+          </div>
+        </CardContent>
+      </Card>
+    </div>
+  );
+}

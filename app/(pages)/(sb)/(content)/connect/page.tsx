@@ -3,18 +3,22 @@ import PhoneInput from "@/components/silverweb/inputs/PhoneInput";
 import { Button } from "@/components/ui/button";
 import React from "react";
 import {
+  ContactForm,
   FeaturesCard,
   FlowBackground,
   HeroCards,
   InfoFeature,
   Typewriter,
+  WorkFlowCard,
 } from "./comp";
 import {
   AirVent,
   BookCopy,
   Boxes,
   Building,
+  Clipboard,
   ClipboardList,
+  ClipboardSignature,
   Cog,
   Container,
   Cpu,
@@ -33,10 +37,12 @@ import {
   Joystick,
   KeySquare,
   Lightbulb,
+  Link,
   MessagesSquare,
   PencilRuler,
   Printer,
   Puzzle,
+  Search,
   Server,
   ShoppingBag,
   Shovel,
@@ -45,7 +51,9 @@ import {
   ToyBrick,
   TrainTrack,
   Unplug,
+  User2,
   UtilityPole,
+  Waypoints,
   Wind,
   Workflow,
   Wrench,
@@ -61,6 +69,9 @@ import northvolt from "public/brands/Northvolt.png";
 import joneseng from "public/brands/Jones Eng.png";
 import avtel from "public/brands/AVTEL.png";
 import hmv from "public/brands/H&MV.png";
+import { RadioGroup } from "@/components/ui/radio-group";
+import RadioInput from "@/components/silverweb/inputs/RadioInput";
+import { Card, CardContent } from "@/components/ui/card";
 
 export default function About() {
   return (
@@ -467,9 +478,7 @@ export default function About() {
               </div>
             </div>
             <div className="text-3xl md:text-4xl text-left tracking-tight font-bold min-[1400px]:max-w-[1400px] w-[calc(100vw-24px)] mt-20">
-              <div>
-              Specified on your career
-              </div>
+              <div>Specified on your career</div>
               <div className="w-full mt-7 ">
                 <div className="h-24 flex items-center m-auto overflow-hidden relative w-full before:bg-gradient-to-r before:from-background before:to-[rgba(255,255,255,0)] before:to-50% before:content-[''] before:h-24 before:absolute before:w-64 before:z-10 before:top-0 before:left-0 after:bg-gradient-to-r after:from-background after:to-[rgba(255,255,255,0)] after:to-50% after:content-[''] after:h-24 after:absolute after:w-64 after:z-10 after:top-0 after:right-0 after:rotate-180">
                   <div className="inline-block animate-[moveLeft_60s_linear_infinite] whitespace-nowrap">
@@ -672,6 +681,43 @@ export default function About() {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+        <section aria-description="Contact">
+          <div className="mt-64">
+            <div className="mx-4 sm:mx-12 md:mx-24 grid xl:grid-cols-[1fr_640px]  gap-12">
+              <div className="hidden sm:grid grid-cols-[1fr_30px_1fr] w-full gap-[1.5px] text-left">
+                <WorkFlowCard heading="Meeting" content="Have a meeting. Discuss your needs." Icon={<MessagesSquare />} leftRight="left" />
+                <div className="block relative h-full">
+                  <div className="absolute left-1/2 -translate-x-1/2 border border-border border-dashed h-[calc(50%-8px)] w-0 before:absolute before:-top-1 before:left-1/2 before:-translate-x-1/2 before:w-2 before:h-10 before:bg-gradient-to-b before:from-background before:to-transparent" />
+                  <div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 rounded-full h-2 w-2 outline outline-border" />
+                  <div className="absolute bottom-0 left-1/2 -translate-x-1/2 border border-border border-dashed h-[calc(50%-8px)] w-0" />
+                </div>
+                <div />
+                <div />
+                <div className="block relative h-full">
+                  <div className="absolute left-1/2 -translate-x-1/2 border border-border border-dashed h-[calc(50%-8px)] w-0" />
+                  <div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 rounded-full h-2 w-2 outline outline-border" />
+                  <div className="absolute bottom-0 left-1/2 -translate-x-1/2 border border-border border-dashed h-[calc(50%-8px)] w-0" />
+                </div>
+                <WorkFlowCard heading="Plan" content="Set up a Plan. Make decisions." Icon={<ClipboardSignature />} />
+                <WorkFlowCard heading="Action" content="Follow the plan. Monitor process." Icon={<MessagesSquare />} leftRight="left" />
+                <div className="block relative h-full">
+                  <div className="absolute left-1/2 -translate-x-1/2 border border-border border-dashed h-[calc(50%-8px)] w-0" />
+                  <div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 rounded-full h-2 w-2 outline outline-border" />
+                  <div className="absolute bottom-0 left-1/2 -translate-x-1/2 border border-border border-dashed h-[calc(50%-8px)] w-0" />
+                </div>
+                <div />
+                <div />
+                <div className="block relative h-full">
+                  <div className="absolute left-1/2 -translate-x-1/2 border border-border border-dashed h-[calc(50%-8px)] w-0" />
+                  <div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 rounded-full h-2 w-2 outline outline-border" />
+                  <div className="absolute bottom-0 left-1/2 -translate-x-1/2 border border-border border-dashed h-[calc(50%-8px)] w-0 before:absolute before:-bottom-1 before:left-1/2 before:-translate-x-1/2 before:w-2 before:h-10 before:bg-gradient-to-t before:from-background before:to-transparent" />
+                </div>
+                <WorkFlowCard heading="Review" content="Give feedback. Improve." Icon={<Search />} />
+              </div>
+              <ContactForm />
             </div>
           </div>
         </section>

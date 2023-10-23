@@ -1,11 +1,12 @@
 import React from "react";
 import Logo from "./Logo";
 import Link from "next/link";
+import { Separator } from "@/components/ui/separator";
 
 export default function Footer() {
   return (
-    <footer className="overflow-visible max-w-[1400px] mx-auto">
-      <div className="w-screen overflow-hidden absolute right-0 h-[700px] sm:h-[700px] z-[-100]">
+    <footer className="overflow-visible mx-auto mt-[300px]">
+      {/* <div className="w-screen overflow-hidden absolute right-0 h-[700px] sm:h-[700px] z-[-100]">
         <svg
           width="200%"
           id="svg"
@@ -58,8 +59,10 @@ export default function Footer() {
             className="translate-y-[240%] min-[380px]:translate-y-[200%] sm:translate-y-[85%] lg:hidden"
           />
         </svg>
-      </div>
-      <div className="w-full mx-auto max-w-[1400px] p-4 invert relative h-[700px]">
+      </div> */}
+      <Separator/>
+      <div className="bg-zinc-700 bg-opacity-10">
+      <div className="w-full mx-auto max-w-[1400px] p-4 relative h-[500px] sm:h-[600px] lg:h-[350px]">
         <div className="bottom-16 absolute grid lg:grid-cols-2 w-[calc(100%-32px)]">
           <div>
             <div className="hidden sm:block">
@@ -130,7 +133,7 @@ export default function Footer() {
               <div className="flex">
                 <Logo wh={40} />
                 <p className="text-3xl tracking-[-0.05em] font-bold content-center select-none">
-                  SilverBack <b className="opacity-60">group</b>
+                  SilverBack <b className="opacity-70">group</b>
                 </p>
               </div>
             </div>
@@ -271,6 +274,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </footer>
   );
