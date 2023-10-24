@@ -1,22 +1,22 @@
 import * as CheckboxPrimitive from "@radix-ui/react-checkbox";
 import { ListTodo } from "lucide-react";
-import React, { RefObject, forwardRef, useRef } from "react";
+import { ComponentPropsWithoutRef, ElementRef, RefObject, forwardRef, useRef } from "react";
 
 import { Card, CardContent } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
 import { cn } from "@/lib/utils";
 
 export interface CheckboxInputProps
-  extends React.ComponentPropsWithoutRef<typeof CheckboxPrimitive.Root> {
+  extends ComponentPropsWithoutRef<typeof CheckboxPrimitive.Root> {
   readOnly?: boolean;
   variant?: "default" | "big";
   cardLabel?: string;
   cardDescription?: string;
-  icon?: React.JSX.Element;
+  icon?: JSX.Element;
 }
 
 const CheckboxInput = forwardRef<
-React.ElementRef<typeof CheckboxPrimitive.Root>,
+ElementRef<typeof CheckboxPrimitive.Root>,
 CheckboxInputProps
 >((props, ref) => {
   const {

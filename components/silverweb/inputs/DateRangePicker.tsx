@@ -1,6 +1,8 @@
 import { format } from "date-fns";
 import { Calendar as CalendarIcon } from "lucide-react";
-import React, {
+import {
+  ButtonHTMLAttributes,
+ Fragment,
  forwardRef, useEffect, useState,
 } from "react";
 import { DateRange } from "react-day-picker";
@@ -15,7 +17,7 @@ import {
 import { cn } from "@/lib/utils";
 
 export interface DateRangePickerProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  extends ButtonHTMLAttributes<HTMLButtonElement> {
   status?: "success" | "error" | "default";
   valueCalendar?: DateRange;
   readOnly?: boolean;
@@ -63,25 +65,25 @@ const DateRangePicker = forwardRef<HTMLButtonElement, DateRangePickerProps>(
               <CalendarIcon className={cn("mr-2 h-4 w-4", status === "error" && "text-red-500 opacity-80", status === "success" && "text-lime-600 opacity-80")} />
               {valueCalendar?.from ? (
                 valueCalendar.to ? (
-                  <React.Fragment>
+                  <Fragment>
                     {format(valueCalendar.from, "LLL dd, y")}
                     {" "}
                     -
                     {" "}
                     {format(valueCalendar.to, "LLL dd, y")}
-                  </React.Fragment>
+                  </Fragment>
                 ) : (
                   format(valueCalendar.from, "LLL dd, y")
                 )
               ) : dateDefault?.from ? (
                 dateDefault.to ? (
-                  <React.Fragment>
+                  <Fragment>
                     {format(dateDefault.from, "LLL dd, y")}
                     {" "}
                     -
                     {" "}
                     {format(dateDefault.to, "LLL dd, y")}
-                  </React.Fragment>
+                  </Fragment>
                 ) : (
                   format(dateDefault.from, "LLL dd, y")
                 )

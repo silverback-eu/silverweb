@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import React from "react";
+import { ReactNode } from "react";
 
 import FlowProvider from "@/components/provider/FlowProvider";
 
@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "About",
 };
 
-export default function Template({ children }: { children: React.ReactNode }) {
+export default function Template({ children }: { children: ReactNode }) {
   return (
     <FlowProvider>
       {children}

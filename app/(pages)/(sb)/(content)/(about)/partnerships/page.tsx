@@ -14,7 +14,6 @@ import joneseng from "public/brands/Jones Eng.png";
 import northvolt from "public/brands/Northvolt.png";
 import sisk from "public/brands/SISK.png";
 import suir from "public/brands/SUIR.png";
-import React from "react";
 
 import { ProjectTable } from "./comp";
 

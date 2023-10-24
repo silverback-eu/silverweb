@@ -10,7 +10,14 @@ import {
   RotateCw,
   X,
 } from "lucide-react";
-import React, { ChangeEvent, DragEvent, forwardRef, useEffect } from "react";
+import {
+  ChangeEvent,
+  DragEvent,
+  InputHTMLAttributes,
+  forwardRef,
+  useEffect,
+  useState,
+} from "react";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -148,7 +155,7 @@ export function DisplayedFile({
   );
 }
 
-export interface FileUploaderProps extends React.InputHTMLAttributes<HTMLInputElement> {
+export interface FileUploaderProps extends InputHTMLAttributes<HTMLInputElement> {
   status?: "success" | "error" | "default";
   defaultItems?: Array<FileIconProps>;
   onUploadChanged?: (items: Array<FileIconProps>) => void;
@@ -167,7 +174,7 @@ const FileUploader = forwardRef<HTMLInputElement, FileUploaderProps>((props, ref
     ...rest
   } = props;
 
-  const [items, setItems] = React.useState<
+  const [items, setItems] = useState<
     Array<
       FileIconProps & {
         status:

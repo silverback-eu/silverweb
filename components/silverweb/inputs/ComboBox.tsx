@@ -1,5 +1,5 @@
 import { CaretSortIcon, CheckIcon } from "@radix-ui/react-icons";
-import React, { forwardRef } from "react";
+import { ButtonHTMLAttributes, Fragment, forwardRef, useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -13,7 +13,7 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { cn } from "@/lib/utils";
 
 export type ComboBoxProps =
-  | (React.ButtonHTMLAttributes<HTMLButtonElement> & {
+  | (ButtonHTMLAttributes<HTMLButtonElement> & {
       status?: "success" | "error" | "default";
       items: { label: string; value: string }[];
       readOnly?: boolean;
@@ -23,7 +23,7 @@ export type ComboBoxProps =
       placeholder?: string;
       popoverClassName?: string;
     })
-  | (React.ButtonHTMLAttributes<HTMLButtonElement> & {
+  | (ButtonHTMLAttributes<HTMLButtonElement> & {
       status?: "success" | "error" | "default";
       grouped: true;
       readOnly?: boolean;
@@ -47,8 +47,8 @@ const ComboBox = forwardRef<HTMLButtonElement, ComboBoxProps>((props, ref) => {
     popoverClassName,
     ...rest
   } = props;
-  const [open, setOpen] = React.useState(false);
-  const [value, setValue] = React.useState(selected);
+  const [open, setOpen] = useState(false);
+  const [value, setValue] = useState(selected);
 
   return (
     <Popover open={readOnly ? false : open} onOpenChange={setOpen}>
@@ -107,7 +107,7 @@ const ComboBox = forwardRef<HTMLButtonElement, ComboBoxProps>((props, ref) => {
           <CommandInput placeholder={placeholder} className="h-9" />
           <CommandEmpty>No framework found.</CommandEmpty>
           {grouped === true ? (
-            <React.Fragment>
+            <Fragment>
               {Object.entries(items).map(([key, OptionListGrouped]) => (
                 <CommandGroup heading={key} key={key}>
                   {OptionListGrouped.map((item) => (
@@ -131,7 +131,7 @@ const ComboBox = forwardRef<HTMLButtonElement, ComboBoxProps>((props, ref) => {
                   ))}
                 </CommandGroup>
               ))}
-            </React.Fragment>
+            </Fragment>
           ) : (
             <CommandGroup>
               {items.map((item) => (

@@ -1,4 +1,4 @@
-import React from "react";
+
 
 /**
  * Render the SilverBack Logo SVG component with customizable width and height.

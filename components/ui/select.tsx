@@ -2,7 +2,7 @@
 
 import { CaretSortIcon, CheckIcon } from "@radix-ui/react-icons";
 import * as SelectPrimitive from "@radix-ui/react-select";
-import * as React from "react";
+import { ComponentPropsWithoutRef, ElementRef, forwardRef } from "react";
 
 import { cn } from "@/lib/utils";
 
@@ -14,10 +14,10 @@ const SelectValue = SelectPrimitive.Value;
 
 type SelectTriggerProps = {
   className?: string;
-} & React.ComponentPropsWithoutRef<typeof SelectPrimitive.Trigger>;
+} & ComponentPropsWithoutRef<typeof SelectPrimitive.Trigger>;
 
-const SelectTrigger = React.forwardRef<
-React.ElementRef<typeof SelectPrimitive.Trigger>,
+const SelectTrigger = forwardRef<
+ElementRef<typeof SelectPrimitive.Trigger>,
 SelectTriggerProps
 >(({ className, children, ...props }, ref) => (
   <SelectPrimitive.Trigger
@@ -39,10 +39,10 @@ SelectTrigger.displayName = SelectPrimitive.Trigger.displayName;
 type SelectContentProps = {
   className?: string;
   position?: "item-aligned" | "popper"
-} & React.ComponentPropsWithoutRef<typeof SelectPrimitive.Content>;
+} & ComponentPropsWithoutRef<typeof SelectPrimitive.Content>;
 
-const SelectContent = React.forwardRef<
-React.ElementRef<typeof SelectPrimitive.Content>,
+const SelectContent = forwardRef<
+ElementRef<typeof SelectPrimitive.Content>,
 SelectContentProps
 >(({
   className, children, position = "popper", ...props
@@ -75,10 +75,10 @@ SelectContent.displayName = SelectPrimitive.Content.displayName;
 
 type SelectLabelProps = {
   className?: string;
-} & React.ComponentPropsWithoutRef<typeof SelectPrimitive.Label>;
+} & ComponentPropsWithoutRef<typeof SelectPrimitive.Label>;
 
-const SelectLabel = React.forwardRef<
-React.ElementRef<typeof SelectPrimitive.Label>,
+const SelectLabel = forwardRef<
+ElementRef<typeof SelectPrimitive.Label>,
 SelectLabelProps
 >(({ className, ...props }, ref) => (
   <SelectPrimitive.Label
@@ -91,10 +91,10 @@ SelectLabel.displayName = SelectPrimitive.Label.displayName;
 
 type SelectItemProps = {
   className?: string;
-} & React.ComponentPropsWithoutRef<typeof SelectPrimitive.Item>;
+} & ComponentPropsWithoutRef<typeof SelectPrimitive.Item>;
 
-const SelectItem = React.forwardRef<
-React.ElementRef<typeof SelectPrimitive.Item>,
+const SelectItem = forwardRef<
+ElementRef<typeof SelectPrimitive.Item>,
 SelectItemProps
 >(({ className, children, ...props }, ref) => (
   <SelectPrimitive.Item
@@ -117,10 +117,10 @@ SelectItem.displayName = SelectPrimitive.Item.displayName;
 
 type SelectSeparatorProps = {
   className?: string;
-} & React.ComponentPropsWithoutRef<typeof SelectPrimitive.Separator>;
+} & ComponentPropsWithoutRef<typeof SelectPrimitive.Separator>;
 
-const SelectSeparator = React.forwardRef<
-React.ElementRef<typeof SelectPrimitive.Separator>,
+const SelectSeparator = forwardRef<
+ElementRef<typeof SelectPrimitive.Separator>,
 SelectSeparatorProps
 >(({ className, ...props }, ref) => (
   <SelectPrimitive.Separator

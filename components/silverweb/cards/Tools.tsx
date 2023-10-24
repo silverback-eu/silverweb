@@ -6,7 +6,7 @@ export function CardPopoverItem({
   label,
   name,
 }: {
-  icon: React.JSX.Element;
+  icon: JSX.Element;
   label: string;
   name: string;
 }) {

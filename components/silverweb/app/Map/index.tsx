@@ -1,7 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import React, { useMemo } from "react";
+import { useMemo } from "react";
 
 import { MakerProps } from "@/components/silverweb/app/Map/RawMap";
 import { Card } from "@/components/ui/card";

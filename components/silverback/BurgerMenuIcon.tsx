@@ -1,4 +1,4 @@
-import React, { LegacyRef, forwardRef } from "react";
+import { LegacyRef, forwardRef } from "react";
 
 /**
  * Renders a BurgerMenuIcon component.

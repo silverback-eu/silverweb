@@ -2,7 +2,7 @@
 
 import { Column } from "@tanstack/react-table";
 import { Check, LucideIcon, PlusCircle } from "lucide-react";
-import React from "react";
+import { Fragment } from "react";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -65,7 +65,7 @@ export default function FilterDropdown<TData, TValue>({
           <PlusCircle className="mr-2 h-4 w-4" />
           {title}
           {selectedValues?.size > 0 && (
-          <React.Fragment>
+          <Fragment>
             <Separator orientation="vertical" className="mx-2 h-4" />
             <Badge
               variant="secondary"
@@ -97,7 +97,7 @@ export default function FilterDropdown<TData, TValue>({
                   ))
               )}
             </div>
-          </React.Fragment>
+          </Fragment>
           )}
         </Button>
       </PopoverTrigger>
@@ -157,7 +157,7 @@ export default function FilterDropdown<TData, TValue>({
               })}
             </CommandGroup>
             {selectedValues.size > 0 && (
-            <React.Fragment>
+            <Fragment>
               <CommandSeparator />
               <CommandGroup>
                 <CommandItem
@@ -167,7 +167,7 @@ export default function FilterDropdown<TData, TValue>({
                   Clear filters
                 </CommandItem>
               </CommandGroup>
-            </React.Fragment>
+            </Fragment>
             )}
           </CommandList>
         </Command>

@@ -1,9 +1,9 @@
-import React from "react";
+import { ReactNode } from "react";
 
 import Footer from "@/components/silverback/Footer";
 import Navbar from "@/components/silverback/Navbar";
 
-export default function Template({ children }: { children: React.ReactNode }) {
+export default function Template({ children }: { children: ReactNode }) {
   return (
     <div className="min-h-screen w-full overflow-x-clip">
       <Navbar />

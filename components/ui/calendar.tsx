@@ -1,7 +1,7 @@
 "use client";
 
 import { ChevronLeftIcon, ChevronRightIcon } from "@radix-ui/react-icons";
-import * as React from "react";
+import { CSSProperties, ComponentProps } from "react";
 import { DayPicker } from "react-day-picker";
 
 import { buttonVariants } from "@/components/ui/button";
@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 
 type IconProps = {
   className?: string | undefined;
-  style?: React.CSSProperties | undefined;
+  style?: CSSProperties | undefined;
 };
 function IconLeft(props: IconProps) {
   return (
@@ -28,7 +28,7 @@ export type CalendarProps = {
   classNames?: Record<string, string>;
   showOutsideDays?: boolean;
   mode?: "default" | "single" | "multiple" | "range";
-} & React.ComponentProps<typeof DayPicker>;
+} & ComponentProps<typeof DayPicker>;
 
 function Calendar({
   className,

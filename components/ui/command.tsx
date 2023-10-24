@@ -3,17 +3,17 @@
 import { DialogProps } from "@radix-ui/react-dialog";
 import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
 import { Command as CommandPrimitive } from "cmdk";
-import * as React from "react";
+import { ComponentPropsWithoutRef, ElementRef, HTMLAttributes, forwardRef } from "react";
 
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";
 
 type CommandProps = {
   className?: string;
-} & React.ComponentPropsWithoutRef<typeof CommandPrimitive>;
+} & ComponentPropsWithoutRef<typeof CommandPrimitive>;
 
-const Command = React.forwardRef<
-React.ElementRef<typeof CommandPrimitive>,
+const Command = forwardRef<
+ElementRef<typeof CommandPrimitive>,
 CommandProps
 >(({ className, ...props }, ref) => (
   <CommandPrimitive
@@ -43,10 +43,10 @@ function CommandDialog({ children, ...props }: CommandDialogProps) {
 
 type CommandInputProps = {
   className?: string;
-} & React.ComponentPropsWithoutRef<typeof CommandPrimitive.Input>;
+} & ComponentPropsWithoutRef<typeof CommandPrimitive.Input>;
 
-const CommandInput = React.forwardRef<
-React.ElementRef<typeof CommandPrimitive.Input>,
+const CommandInput = forwardRef<
+ElementRef<typeof CommandPrimitive.Input>,
 CommandInputProps
 >(({ className, ...props }, ref) => (
   // eslint-disable-next-line react/no-unknown-property
@@ -67,10 +67,10 @@ CommandInput.displayName = CommandPrimitive.Input.displayName;
 
 type CommandListProps = {
   className?: string;
-} & React.ComponentPropsWithoutRef<typeof CommandPrimitive.List>;
+} & ComponentPropsWithoutRef<typeof CommandPrimitive.List>;
 
-const CommandList = React.forwardRef<
-React.ElementRef<typeof CommandPrimitive.List>,
+const CommandList = forwardRef<
+ElementRef<typeof CommandPrimitive.List>,
 CommandListProps
 >(({ className, ...props }, ref) => (
   <CommandPrimitive.List
@@ -82,9 +82,9 @@ CommandListProps
 
 CommandList.displayName = CommandPrimitive.List.displayName;
 
-const CommandEmpty = React.forwardRef<
-React.ElementRef<typeof CommandPrimitive.Empty>,
-React.ComponentPropsWithoutRef<typeof CommandPrimitive.Empty>
+const CommandEmpty = forwardRef<
+ElementRef<typeof CommandPrimitive.Empty>,
+ComponentPropsWithoutRef<typeof CommandPrimitive.Empty>
 >((props, ref) => (
   <CommandPrimitive.Empty
     ref={ref}
@@ -97,10 +97,10 @@ CommandEmpty.displayName = CommandPrimitive.Empty.displayName;
 
 type CommandGroupProps = {
   className?: string;
-} & React.ComponentPropsWithoutRef<typeof CommandPrimitive.Group>;
+} & ComponentPropsWithoutRef<typeof CommandPrimitive.Group>;
 
-const CommandGroup = React.forwardRef<
-React.ElementRef<typeof CommandPrimitive.Group>,
+const CommandGroup = forwardRef<
+ElementRef<typeof CommandPrimitive.Group>,
 CommandGroupProps
 >(({ className, ...props }, ref) => (
   <CommandPrimitive.Group
@@ -117,10 +117,10 @@ CommandGroup.displayName = CommandPrimitive.Group.displayName;
 
 type CommandSeparatorProps = {
   className?: string;
-} & React.ComponentPropsWithoutRef<typeof CommandPrimitive.Separator>;
+} & ComponentPropsWithoutRef<typeof CommandPrimitive.Separator>;
 
-const CommandSeparator = React.forwardRef<
-React.ElementRef<typeof CommandPrimitive.Separator>,
+const CommandSeparator = forwardRef<
+ElementRef<typeof CommandPrimitive.Separator>,
 CommandSeparatorProps
 >(({ className, ...props }, ref) => (
   <CommandPrimitive.Separator
@@ -133,10 +133,10 @@ CommandSeparator.displayName = CommandPrimitive.Separator.displayName;
 
 type CommandItemProps = {
   className?: string;
-} & React.ComponentPropsWithoutRef<typeof CommandPrimitive.Item>;
+} & ComponentPropsWithoutRef<typeof CommandPrimitive.Item>;
 
-const CommandItem = React.forwardRef<
-React.ElementRef<typeof CommandPrimitive.Item>,
+const CommandItem = forwardRef<
+ElementRef<typeof CommandPrimitive.Item>,
 CommandItemProps
 >(({ className, ...props }, ref) => (
   <CommandPrimitive.Item
@@ -153,7 +153,7 @@ CommandItem.displayName = CommandPrimitive.Item.displayName;
 
 type CommandShortcutProps = {
   className?: string;
-} & React.HTMLAttributes<HTMLSpanElement>;
+} & HTMLAttributes<HTMLSpanElement>;
 
 function CommandShortcut({
   className,

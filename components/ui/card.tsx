@@ -1,12 +1,12 @@
-import * as React from "react";
+import { HTMLAttributes, forwardRef } from "react";
 
 import { cn } from "@/lib/utils";
 
 type CardProps = {
   className?: string;
-} & React.HTMLAttributes<HTMLDivElement>;
+} & HTMLAttributes<HTMLDivElement>;
 
-const Card = React.forwardRef<
+const Card = forwardRef<
 HTMLDivElement,
 CardProps
 >(({ className, ...props }, ref) => (
@@ -23,9 +23,9 @@ Card.displayName = "Card";
 
 type CardHeaderProps = {
   className?: string;
-} & React.HTMLAttributes<HTMLDivElement>;
+} & HTMLAttributes<HTMLDivElement>;
 
-const CardHeader = React.forwardRef<
+const CardHeader = forwardRef<
 HTMLDivElement,
 CardHeaderProps
 >(({ className, ...props }, ref) => (
@@ -39,9 +39,9 @@ CardHeader.displayName = "CardHeader";
 
 type CardTitleProps = {
   className?: string;
-} & React.HTMLAttributes<HTMLHeadingElement>;
+} & HTMLAttributes<HTMLHeadingElement>;
 
-const CardTitle = React.forwardRef<
+const CardTitle = forwardRef<
 HTMLParagraphElement,
 CardTitleProps
 >(({ className, children, ...props }, ref) => (
@@ -57,9 +57,9 @@ CardTitle.displayName = "CardTitle";
 
 type CardDescriptionProps = {
   className?: string;
-} & React.HTMLAttributes<HTMLParagraphElement>;
+} & HTMLAttributes<HTMLParagraphElement>;
 
-const CardDescription = React.forwardRef<
+const CardDescription = forwardRef<
 HTMLParagraphElement,
 CardDescriptionProps
 >(({ className, ...props }, ref) => (
@@ -73,9 +73,9 @@ CardDescription.displayName = "CardDescription";
 
 type CardContentProps = {
   className?: string;
-} & React.HTMLAttributes<HTMLDivElement>;
+} & HTMLAttributes<HTMLDivElement>;
 
-const CardContent = React.forwardRef<
+const CardContent = forwardRef<
 HTMLDivElement,
 CardContentProps
 >(({ className, ...props }, ref) => (
@@ -85,9 +85,9 @@ CardContent.displayName = "CardContent";
 
 type CardFooterProps = {
   className?: string;
-} & React.HTMLAttributes<HTMLDivElement>;
+} & HTMLAttributes<HTMLDivElement>;
 
-const CardFooter = React.forwardRef<
+const CardFooter = forwardRef<
 HTMLDivElement,
 CardFooterProps
 >(({ className, ...props }, ref) => (

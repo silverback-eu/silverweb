@@ -48,7 +48,6 @@ import shooping_centre_1_min from "public/projects/shooping-centre-1-min.jpg";
 import trondheim_1_min from "public/projects/trondheim-1-min.jpg";
 import uppsala_1_min from "public/projects/uppsala-1-min.jpg";
 import via_campus_c_min from "public/projects/via-campus-c-min.jpg";
-import React from "react";
 
 import { Button } from "@/components/ui/button";
 

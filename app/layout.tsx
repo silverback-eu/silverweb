@@ -1,10 +1,12 @@
 import "./globals.css";
 import { Metadata } from "next";
+import { ReactNode } from "react";
 
 import { fontGraphik } from "@/config/fonts";
 import { metadataConfig } from "@/config/site";
 import Provider from "@/lib/Provider";
 import { cn } from "@/lib/utils";
+
 import "reactflow/dist/style.css";
 
 export const metadata: Metadata = metadataConfig;
@@ -12,7 +14,7 @@ export const metadata: Metadata = metadataConfig;
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   return (
     <html lang="en" suppressHydrationWarning>

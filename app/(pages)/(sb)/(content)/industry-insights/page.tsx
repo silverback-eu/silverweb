@@ -3,7 +3,6 @@
 import { format } from "date-fns";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import React from "react";
 
 import {
   NavigationMenu,

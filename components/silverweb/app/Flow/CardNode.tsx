@@ -1,11 +1,11 @@
-import React, { memo } from "react";
+import { ReactNode, memo } from "react";
 import { Handle, NodeProps, Position } from "reactflow";
 
 import { Card } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 
 export type CardNodeProps = {
-  content?: React.ReactNode;
+  content?: ReactNode;
   className?: string;
 };
 

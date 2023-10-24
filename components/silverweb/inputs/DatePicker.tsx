@@ -1,6 +1,6 @@
 import { format } from "date-fns";
 import { Calendar as CalendarIcon } from "lucide-react";
-import React, { forwardRef, useEffect, useState } from "react";
+import { ButtonHTMLAttributes, forwardRef, useEffect, useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
@@ -12,7 +12,7 @@ import {
 import { cn } from "@/lib/utils";
 
 export interface DatePickerProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  extends ButtonHTMLAttributes<HTMLButtonElement> {
   status?: "success" | "error" | "default";
   readOnly? : boolean
   valueCalendar?: Date;

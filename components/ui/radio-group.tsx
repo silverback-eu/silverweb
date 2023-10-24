@@ -2,16 +2,16 @@
 
 import * as RadioGroupPrimitive from "@radix-ui/react-radio-group";
 import { CircleDot } from "lucide-react";
-import * as React from "react";
+import { ComponentPropsWithoutRef, ElementRef, forwardRef } from "react";
 
 import { cn } from "@/lib/utils";
 
 type RadioGroupProps = {
   className?: string;
-} & React.ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Root>;
+} & ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Root>;
 
-const RadioGroup = React.forwardRef<
-React.ElementRef<typeof RadioGroupPrimitive.Root>,
+const RadioGroup = forwardRef<
+ElementRef<typeof RadioGroupPrimitive.Root>,
 RadioGroupProps
 >(({ className, ...props }, ref) => (
   <RadioGroupPrimitive.Root
@@ -24,10 +24,10 @@ RadioGroup.displayName = RadioGroupPrimitive.Root.displayName;
 
 type RadioGroupItemProps = {
   className?: string;
-} & React.ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Item>;
+} & ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Item>;
 
-const RadioGroupItem = React.forwardRef<
-React.ElementRef<typeof RadioGroupPrimitive.Item>,
+const RadioGroupItem = forwardRef<
+ElementRef<typeof RadioGroupPrimitive.Item>,
 RadioGroupItemProps
 >(({ className, children, ...props }, ref) => (
   <RadioGroupPrimitive.Item

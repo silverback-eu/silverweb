@@ -1,23 +1,23 @@
 import * as RadioGroupPrimitive from "@radix-ui/react-radio-group";
 import { ListTodo } from "lucide-react";
-import React, { RefObject, forwardRef, useRef } from "react";
+import { ComponentPropsWithoutRef, ElementRef, RefObject, forwardRef, useRef } from "react";
 
 import { Card, CardContent } from "@/components/ui/card";
 import { RadioGroupItem } from "@/components/ui/radio-group";
 import { cn } from "@/lib/utils";
 
 export interface RadioInputProps
-  extends React.ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Item> {
+  extends ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Item> {
   value: string;
   readOnly?: boolean;
   variant?: "default" | "big";
   cardLabel?: string;
   cardDescription?: string;
-  icon?: React.JSX.Element;
+  icon?: JSX.Element;
 }
 
 const RadioInput = forwardRef<
-React.ElementRef<typeof RadioGroupPrimitive.Item>,
+ElementRef<typeof RadioGroupPrimitive.Item>,
 RadioInputProps
 >((props, ref) => {
   const {

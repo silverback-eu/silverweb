@@ -1,5 +1,5 @@
 import { LucideIcon } from "lucide-react";
-import React, { memo } from "react";
+import { memo } from "react";
 import { Handle, NodeProps, Position } from "reactflow";
 
 import { Card, CardContent } from "@/components/ui/card";

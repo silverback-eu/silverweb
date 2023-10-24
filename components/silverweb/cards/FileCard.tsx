@@ -11,7 +11,6 @@ import {
   FileVideo,
   Ruler,
 } from "lucide-react";
-import React from "react";
 
 import { CardPopoverItem } from "./Tools";
 

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React, { useState } from "react";
+import { useState } from "react";
 
 import BurgerMenuIcon from "./BurgerMenuIcon";
 import Logo from "./Logo";
@@ -212,10 +212,10 @@ const jobs: { title: string; href: string; description: string }[] = [
 type ListItemProps = {
   className?: string,
   title?: string
-} & React.ComponentPropsWithoutRef<"a">;
+} & ComponentPropsWithoutRef<"a">;
 
-const ListItem = React.forwardRef<
-React.ElementRef<"a">,
+const ListItem = forwardRef<
+ElementRef<"a">,
 ListItemProps
 >(({
   className, title, children, ...props

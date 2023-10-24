@@ -2,7 +2,6 @@
 
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
-import React from "react";
 import { useInView } from "react-intersection-observer";
 
 import { Card, CardContent } from "@/components/ui/card";

@@ -16,7 +16,7 @@ import {
   User2,
   Users,
 } from "lucide-react";
-import React, { ReactElement, useLayoutEffect, useState } from "react";
+import { ReactElement, useLayoutEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import TypewriterComponent from "typewriter-effect";
 

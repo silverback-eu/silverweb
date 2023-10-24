@@ -16,7 +16,7 @@ import {
   Users2,
 } from "lucide-react";
 import Link from "next/link";
-import React, { Fragment, useEffect, useRef, useState } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 
 import AppIcon from "@/components/silverback/AppIcon";
 import Logo from "@/components/silverback/Logo";
@@ -32,7 +32,7 @@ function NavAppIcon(props: {
   disabled?: boolean;
   open?: boolean;
   className?: string;
-  content: React.ReactNode;
+  content: ReactNode;
 }) {
   const { name, link, disabled, open, className, content, ...rest } = props;
 
@@ -132,7 +132,7 @@ function HomeInsidesCards({
 }: {
   link: string;
   name: string;
-  icon: React.JSX.Element;
+  icon: JSX.Element;
   number: number;
 }) {
   return (
@@ -155,7 +155,7 @@ export default function Navbar({
   quickApps,
 }: {
   openApp: number;
-  quickApps: { icon: React.JSX.Element; gradient: string; link: string }[];
+  quickApps: { icon: JSX.Element; gradient: string; link: string }[];
 }) {
   const CardRef = useRef<HTMLDivElement>(null);
   const [RestNumberForAppsInCard, setRestNumberForAppsInCard] = useState<number>(0);

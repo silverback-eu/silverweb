@@ -2,7 +2,7 @@
 
 import L, { LatLngTuple } from "leaflet";
 import { useTheme } from "next-themes";
-import React, { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import ReactDomServer from "react-dom/server";
 
 import "leaflet/dist/leaflet.css";
@@ -18,7 +18,7 @@ export type MakerProps = {
   lat: number;
   lng: number;
   iconUrl?: string;
-  content: React.JSX.Element;
+  content: JSX.Element;
 };
 
 /**
@@ -86,7 +86,7 @@ export default function Map({
   });
 
   return (
-    <React.Fragment>
+    <Fragment>
       <style jsx global>
         {`
           .leaflet-c-popover {
@@ -132,6 +132,6 @@ export default function Map({
         `}
       </style>
       <div id={`map-${id}`} style={{ height: "100%", width: "100%" }} />
-    </React.Fragment>
+    </Fragment>
   );
 }

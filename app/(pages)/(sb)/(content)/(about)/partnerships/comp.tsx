@@ -1,7 +1,7 @@
 "use client";
 
 import { useSearchParams } from "next/navigation";
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
 
 import {
   categories, columnsProject, countries, dataProject,

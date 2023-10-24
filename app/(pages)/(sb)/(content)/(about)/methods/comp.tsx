@@ -13,7 +13,7 @@ import {
   Search,
   Users2,
 } from "lucide-react";
-import React, { Fragment, ReactNode } from "react";
+import { Fragment, ReactNode } from "react";
 import { useInView } from "react-intersection-observer";
 import { useReactFlow } from "reactflow";
 

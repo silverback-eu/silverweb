@@ -1,7 +1,6 @@
 import {
   Building, Building2, Mails, TabletSmartphone,
 } from "lucide-react";
-import React from "react";
 
 import { CompanyCardCommentSection, CardPopoverItem } from "./Tools";
 

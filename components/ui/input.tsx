@@ -1,15 +1,14 @@
-import * as React from "react";
-import { useRef } from "react";
+import { forwardRef, useRef, InputHTMLAttributes, Fragment } from "react";
 
 import { cn } from "@/lib/utils";
 
 export interface InputProps
-  extends React.InputHTMLAttributes<HTMLInputElement> {
+  extends InputHTMLAttributes<HTMLInputElement> {
   prefix?: string;
   noPrefixAnimation?: boolean;
 }
 
-const Input = React.forwardRef<HTMLInputElement, InputProps>(
+const Input = forwardRef<HTMLInputElement, InputProps>(
   (
     {
       className,
@@ -29,7 +28,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
 
     return (
       // eslint-disable-next-line react/jsx-no-useless-fragment
-      <React.Fragment>
+      <Fragment>
         {prefix ? (
           <div className="relative w-full">
             <span
@@ -115,7 +114,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
             }}
           />
         )}
-      </React.Fragment>
+      </Fragment>
     );
   },
 );
