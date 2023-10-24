@@ -1,22 +1,8 @@
-import ProjectCard from "@/components/silverweb/cards/ProjectCard";
-import PhoneInput from "@/components/silverweb/inputs/PhoneInput";
-import { Button } from "@/components/ui/button";
-import React from "react";
-import {
-  ContactForm,
-  FeaturesCard,
-  FlowBackground,
-  HeroCards,
-  InfoFeature,
-  Typewriter,
-  WorkFlowCard,
-} from "./comp";
 import {
   AirVent,
   BookCopy,
   Boxes,
   Building,
-  Clipboard,
   ClipboardList,
   ClipboardSignature,
   Cog,
@@ -37,7 +23,6 @@ import {
   Joystick,
   KeySquare,
   Lightbulb,
-  Link,
   MessagesSquare,
   PencilRuler,
   Printer,
@@ -51,41 +36,49 @@ import {
   ToyBrick,
   TrainTrack,
   Unplug,
-  User2,
   UtilityPole,
-  Waypoints,
   Wind,
   Workflow,
   Wrench,
 } from "lucide-react";
+import assemblin from "public/brands/ASSEMBLIN.png";
+import avtel from "public/brands/AVTEL.png";
+import bravida from "public/brands/Bravida.png";
+import hmv from "public/brands/H&MV.png";
+import joneseng from "public/brands/Jones Eng.png";
+import northvolt from "public/brands/Northvolt.png";
+import suir from "public/brands/SUIR.png";
+import datacentre_1 from "public/projects/datacentre-1.jpg";
 import lillestrom_1_min from "public/projects/lillestrom-1-min.jpg";
 import northvolt_ett_1 from "public/projects/northvolt-ett-1.jpg";
-import datacentre_1 from "public/projects/datacentre-1.jpg";
+import React from "react";
+
+import {
+  ContactForm,
+  FeaturesCard,
+  FlowBackground,
+  HeroCards,
+  InfoFeature,
+  Typewriter,
+  WorkFlowCard,
+} from "./comp";
+
 import PartnerCard from "@/components/silverweb/cards/PartnerCard";
-import suir from "public/brands/SUIR.png";
-import assemblin from "public/brands/ASSEMBLIN.png";
-import bravida from "public/brands/Bravida.png";
-import northvolt from "public/brands/Northvolt.png";
-import joneseng from "public/brands/Jones Eng.png";
-import avtel from "public/brands/AVTEL.png";
-import hmv from "public/brands/H&MV.png";
-import { RadioGroup } from "@/components/ui/radio-group";
-import RadioInput from "@/components/silverweb/inputs/RadioInput";
-import { Card, CardContent } from "@/components/ui/card";
+import ProjectCard from "@/components/silverweb/cards/ProjectCard";
+import PhoneInput from "@/components/silverweb/inputs/PhoneInput";
+import { Button } from "@/components/ui/button";
 
 export default function About() {
   return (
     <div className="relative">
       <div className="text-center">
-        <section aria-description="Top">
+        <section aria-label="Top">
           <div className="-z-10 absolute left-1/2 -translate-x-1/2  w-full h-[800px] before:bg-gradient-to-r before:from-background before:to-transparent before:content-[''] before:h-full before:absolute before:w-12 md:before:w-24 before:z-10 before:top-0 before:left-0 after:bg-gradient-to-r after:to-background after:from-transparent after:content-[''] after:h-full after:absolute after:w-12 md:after:w-24 after:z-10 after:top-0 after:right-0">
             <FlowBackground />
             <div className="w-full h-12 absolute bottom-0 bg-gradient-to-t from-background to-transparent" />
           </div>
           <Button
-            className={
-              "h-8 rounded-md px-3 text-xs sm:h-9 sm:px-4 sm:py-2 sm:text-base mt-16 sm:mt-24"
-            }
+            className="h-8 rounded-md px-3 text-xs sm:h-9 sm:px-4 sm:py-2 sm:text-base mt-16 sm:mt-24"
             variant="outline"
           >
             Newest Industry insights post...
@@ -111,9 +104,9 @@ export default function About() {
             </Button>
           </div>
         </section>
-        <section aria-description="Show Projects">
+        <section aria-label="Show Projects">
           <div className="max-w-5xl mx-auto flex justify-center mt-60">
-            <Button variant={"link"}>See all Projects and Partners</Button>
+            <Button variant="link">See all Projects and Partners</Button>
           </div>
           <div className="flex justify-center sm:justify-between max-w-5xl mx-auto h-full mt-2 px-10 md:px-20 lg:px-4">
             <div className="mt-5 sm:mt-0 animate-[levitate_17s_ease_infinite_1s]">
@@ -154,7 +147,7 @@ export default function About() {
             </div>
           </div>
         </section>
-        <section aria-description="Hero">
+        <section aria-label="Hero">
           <div className="text-left relative  text-primary z-20 mt-32">
             <div className="grid lg:grid-cols-[0.4fr_1fr] gap-7 sm:gap-14 mt-[130px] min-[380px]:mt-[90px]  sm:mt-[230px] mx-5 sm:mx-14 items-center">
               <div className="text-center lg:text-left">
@@ -173,7 +166,7 @@ export default function About() {
                 </div>
                 <div className="hidden sm:block tracking-tight text-muted-foreground text-sm mt-1">
                   <p>
-                    Making the future easy, green and productive. 
+                    Making the future easy, green and productive.
                     <span className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 underline-offset-4 hover:underline text-muted-foreground p-0 h-auto">
                       Connect
                     </span>
@@ -236,7 +229,7 @@ export default function About() {
                 </div>
                 <div className="tracking-tight text-muted-foreground text-xs sm:text-sm mt-1">
                   <p>
-                    Making the future easy, green and productive. 
+                    Making the future easy, green and productive.
                     <span className="inline-flex items-center justify-center rounded-md text-xs sm:text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 underline-offset-4 hover:underline text-muted-foreground p-0 h-auto">
                       Connect
                     </span>
@@ -246,7 +239,7 @@ export default function About() {
             </div>
           </div>
         </section>
-        <section aria-description="Show Partner">
+        <section aria-label="Show Partner">
           <div className="mt-64">
             <div className="font-bold text-5xl tracking-tighter">
               Trusted by our partners
@@ -295,7 +288,7 @@ export default function About() {
             </Button>
           </div>
         </section>
-        <section aria-description="Stats">
+        <section aria-label="Stats">
           <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-20 lg:gap-8 px-5 mt-72">
             <InfoFeature
               Icon={<GraduationCap />}
@@ -320,7 +313,7 @@ export default function About() {
             />
           </div>
         </section>
-        <section aria-description="Features">
+        <section aria-label="Features">
           <div className="text-primary grid max-w-[1400px] mx-auto px-3 mt-72">
             <div className="text-right text-3xl md:text-4xl tracking-tight font-bold min-[1400px]:max-w-[1400px] w-[calc(100vw-24px)]">
               Specified on your ideas and plans
@@ -684,11 +677,16 @@ export default function About() {
             </div>
           </div>
         </section>
-        <section aria-description="Contact">
+        <section aria-label="Contact">
           <div className="mt-64">
             <div className="mx-4 sm:mx-12 md:mx-24 grid xl:grid-cols-[1fr_640px]  gap-12">
               <div className="hidden sm:grid grid-cols-[1fr_30px_1fr] w-full gap-[1.5px] text-left">
-                <WorkFlowCard heading="Meeting" content="Have a meeting. Discuss your needs." Icon={<MessagesSquare />} leftRight="left" />
+                <WorkFlowCard
+                  heading="Meeting"
+                  content="Have a meeting. Discuss your needs."
+                  Icon={<MessagesSquare />}
+                  leftRight="left"
+                />
                 <div className="block relative h-full">
                   <div className="absolute left-1/2 -translate-x-1/2 border border-border border-dashed h-[calc(50%-8px)] w-0 before:absolute before:-top-1 before:left-1/2 before:-translate-x-1/2 before:w-2 before:h-10 before:bg-gradient-to-b before:from-background before:to-transparent" />
                   <div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 rounded-full h-2 w-2 outline outline-border" />
@@ -701,8 +699,17 @@ export default function About() {
                   <div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 rounded-full h-2 w-2 outline outline-border" />
                   <div className="absolute bottom-0 left-1/2 -translate-x-1/2 border border-border border-dashed h-[calc(50%-8px)] w-0" />
                 </div>
-                <WorkFlowCard heading="Plan" content="Set up a Plan. Make decisions." Icon={<ClipboardSignature />} />
-                <WorkFlowCard heading="Action" content="Follow the plan. Monitor process." Icon={<MessagesSquare />} leftRight="left" />
+                <WorkFlowCard
+                  heading="Plan"
+                  content="Set up a Plan. Make decisions."
+                  Icon={<ClipboardSignature />}
+                />
+                <WorkFlowCard
+                  heading="Action"
+                  content="Follow the plan. Monitor process."
+                  Icon={<MessagesSquare />}
+                  leftRight="left"
+                />
                 <div className="block relative h-full">
                   <div className="absolute left-1/2 -translate-x-1/2 border border-border border-dashed h-[calc(50%-8px)] w-0" />
                   <div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 rounded-full h-2 w-2 outline outline-border" />
@@ -715,7 +722,11 @@ export default function About() {
                   <div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 rounded-full h-2 w-2 outline outline-border" />
                   <div className="absolute bottom-0 left-1/2 -translate-x-1/2 border border-border border-dashed h-[calc(50%-8px)] w-0 before:absolute before:-bottom-1 before:left-1/2 before:-translate-x-1/2 before:w-2 before:h-10 before:bg-gradient-to-t before:from-background before:to-transparent" />
                 </div>
-                <WorkFlowCard heading="Review" content="Give feedback. Improve." Icon={<Search />} />
+                <WorkFlowCard
+                  heading="Review"
+                  content="Give feedback. Improve."
+                  Icon={<Search />}
+                />
               </div>
               <ContactForm />
             </div>

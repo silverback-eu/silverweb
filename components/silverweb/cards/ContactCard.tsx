@@ -1,3 +1,10 @@
+import {
+  Building, Mails, TabletSmartphone, User2,
+} from "lucide-react";
+import React from "react";
+
+import { CardPopoverItem, ContactCardCommentSection } from "./Tools";
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -6,15 +13,12 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { Separator } from "@/components/ui/separator";
-import { Building, Mails, TabletSmartphone, User2 } from "lucide-react";
-import React from "react";
-import { CardPopoverItem, ContactCardCommentSection } from "./Tools";
 
 export default function ContactCard({
   info,
   comments,
 }: {
-  info: { name: string; job: string; company: string; email: string; phone: string};
+  info: { name: string; job: string; company: string; email: string; phone: string };
   comments: { author: string; text: string; createdAt: string }[];
 }) {
   return (
@@ -42,7 +46,7 @@ export default function ContactCard({
             </p>
             <p className="text-xs opacity-50 text-start truncate">{info.job}</p>
           </div>
-          <Button variant={"secondary"} size={"sm"}>
+          <Button variant="secondary" size="sm">
             Edit
           </Button>
         </div>

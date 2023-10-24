@@ -1,8 +1,9 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { cn } from "@/lib/utils";
 import { LucideIcon } from "lucide-react";
 import React, { memo } from "react";
 import { Handle, NodeProps, Position } from "reactflow";
+
+import { Card, CardContent } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
 
 export type DisplayNodeProps = {
   Icon: LucideIcon;
@@ -13,7 +14,9 @@ export type DisplayNodeProps = {
 };
 
 function DisplayNodeWO({
-  data: { Icon, label, description, className },
+  data: {
+    Icon, label, description, className,
+  },
   dragging,
 }: NodeProps<DisplayNodeProps>) {
   return (
@@ -42,7 +45,9 @@ function DisplayNodeWO({
 export const DisplayNodeWithout = memo(DisplayNodeWO);
 
 function DisplayNodeDf({
-  data: { Icon, label, description, className, direction },
+  data: {
+    Icon, label, description, className, direction,
+  },
   dragging,
   isConnectable,
 }: NodeProps<DisplayNodeProps>) {
@@ -73,7 +78,7 @@ function DisplayNodeDf({
       />
       <Handle
         type="source"
-        position={direction === "horizontal" ?  Position.Right : Position.Bottom}
+        position={direction === "horizontal" ? Position.Right : Position.Bottom}
         isConnectable={isConnectable}
         className={cn(direction === "horizontal" ? "!h-8 !min-w-0 !w-0.5 !transform -translate-x-0.5 -translate-y-1/2  !bg-muted !border-border !rounded-r-sm !rounded-l-none" : "!w-8 !min-h-0 !h-0.5 !transform -translate-x-1/2 -translate-y-0.5  !bg-muted !border-border !rounded-b-sm !rounded-t-none")}
       />
@@ -84,7 +89,9 @@ function DisplayNodeDf({
 export const DisplayNodeDefault = memo(DisplayNodeDf);
 
 function DisplayNodeIn({
-  data: { Icon, label, description, className, direction },
+  data: {
+    Icon, label, description, className, direction,
+  },
   dragging,
   isConnectable,
 }: NodeProps<DisplayNodeProps>) {
@@ -120,7 +127,9 @@ function DisplayNodeIn({
 export const DisplayNodeInput = memo(DisplayNodeIn);
 
 function DisplayNodeOut({
-  data: { Icon, label, description, className, direction },
+  data: {
+    Icon, label, description, className, direction,
+  },
   dragging,
   isConnectable,
 }: NodeProps<DisplayNodeProps>) {
@@ -145,7 +154,7 @@ function DisplayNodeOut({
       </CardContent>
       <Handle
         type="source"
-        position={direction === "horizontal" ?  Position.Right : Position.Bottom}
+        position={direction === "horizontal" ? Position.Right : Position.Bottom}
         isConnectable={isConnectable}
         className={cn(direction === "horizontal" ? "!h-8 !min-w-0 !w-0.5 !transform -translate-x-0.5 -translate-y-1/2  !bg-muted !border-border !rounded-r-sm !rounded-l-none" : "!w-8 !min-h-0 !h-0.5 !transform -translate-x-1/2 -translate-y-0.5  !bg-muted !border-border !rounded-b-sm !rounded-t-none")}
       />

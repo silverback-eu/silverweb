@@ -1,7 +1,9 @@
-"use client"
+"use client";
 
-import { Table } from "@tanstack/react-table"
-import { Button } from "@/components/ui/button"
+import { Table } from "@tanstack/react-table";
+import { SlidersHorizontal } from "lucide-react";
+
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuTrigger,
@@ -9,8 +11,7 @@ import {
   DropdownMenuContent,
   DropdownMenuLabel,
   DropdownMenuSeparator,
-} from "@/components/ui/dropdown-menu"
-import { SlidersHorizontal } from "lucide-react"
+} from "@/components/ui/dropdown-menu";
 
 interface ColumnFilterProps<TData> {
   table: Table<TData>
@@ -37,22 +38,19 @@ export default function ColumnFilter<TData>({
         {table
           .getAllColumns()
           .filter(
-            (column) =>
-              typeof column.accessorFn !== "undefined" && column.getCanHide()
+            (column) => typeof column.accessorFn !== "undefined" && column.getCanHide(),
           )
-          .map((column) => {
-            return (
-              <DropdownMenuCheckboxItem
-                key={column.id}
-                className="capitalize"
-                checked={column.getIsVisible()}
-                onCheckedChange={(value) => column.toggleVisibility(!!value)}
-              >
-                {column.id}
-              </DropdownMenuCheckboxItem>
-            )
-          })}
+          .map((column) => (
+            <DropdownMenuCheckboxItem
+              key={column.id}
+              className="capitalize"
+              checked={column.getIsVisible()}
+              onCheckedChange={(value) => column.toggleVisibility(!!value)}
+            >
+              {column.id}
+            </DropdownMenuCheckboxItem>
+          ))}
       </DropdownMenuContent>
     </DropdownMenu>
-  )
+  );
 }

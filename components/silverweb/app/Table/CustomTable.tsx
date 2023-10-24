@@ -15,10 +15,13 @@ import {
   getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import { Fragment, ReactElement, useEffect, useMemo, useState } from "react";
-import Toolbar from "./Toolbar";
-import Pagination from "./Pagination";
 import { LucideIcon } from "lucide-react";
+import {
+  Fragment, ReactElement, useEffect, useMemo, useState,
+} from "react";
+
+import Pagination from "./Pagination";
+import Toolbar from "./Toolbar";
 
 interface CustomTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -73,9 +76,6 @@ export default function CustomTable<TData, TValue>({
     setColumnFilters(initFilters || []);
   }, [initFilters]);
 
-
-
-
   const table = useReactTable({
     data,
     columns,
@@ -98,10 +98,8 @@ export default function CustomTable<TData, TValue>({
     getFacetedUniqueValues: getFacetedUniqueValues(),
     ...pagination && {
       getPaginationRowModel: getPaginationRowModel(),
-    }
+    },
   });
-
-
 
   return (
     <div className="space-y-4">
@@ -112,22 +110,20 @@ export default function CustomTable<TData, TValue>({
             <TableHeader.type {...TableHeader.props}>
               {table.getHeaderGroups().map((headerGroup) => (
                 <Fragment key={headerGroup.id}>
-                  {headerGroup.headers.map((header) => {
-                    return (
-                      <Fragment key={header.id}>
-                        {TableHeaderItem && (
-                          <TableHeaderItem.type {...TableHeaderItem.props}>
-                            {header.isPlaceholder
-                              ? null
-                              : flexRender(
-                                  header.column.columnDef.header,
-                                  header.getContext()
-                                )}
-                          </TableHeaderItem.type>
-                        )}
-                      </Fragment>
-                    );
-                  })}
+                  {headerGroup.headers.map((header) => (
+                    <Fragment key={header.id}>
+                      {TableHeaderItem && (
+                      <TableHeaderItem.type {...TableHeaderItem.props}>
+                        {header.isPlaceholder
+                          ? null
+                          : flexRender(
+                            header.column.columnDef.header,
+                            header.getContext(),
+                          )}
+                      </TableHeaderItem.type>
+                      )}
+                    </Fragment>
+                  ))}
                 </Fragment>
               ))}
             </TableHeader.type>
@@ -144,14 +140,14 @@ export default function CustomTable<TData, TValue>({
                     <Fragment key={cell.id}>
                       {flexRender(
                         cell.column.columnDef.cell,
-                        cell.getContext()
+                        cell.getContext(),
                       )}
                     </Fragment>
                   ))}
                 </TableItem.type>
               ))
             ) : (
-                <TableNoResult.type {...TableNoResult.props}/>
+              <TableNoResult.type {...TableNoResult.props} />
             )}
           </TableBody.type>
         </TableContainer.type>

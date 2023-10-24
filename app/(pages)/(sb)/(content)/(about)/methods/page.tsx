@@ -1,11 +1,13 @@
-import { Separator } from "@/components/ui/separator";
-import React from "react";
-import { FlowAndNav, InfoCards } from "./comp";
 import { Metadata } from "next";
+import React from "react";
+
+import { FlowAndNav, InfoCards } from "./comp";
+
+import { Separator } from "@/components/ui/separator";
 
 export const metadata: Metadata = {
-  title: 'Methods - A plan is what makes the difference...',
-}
+  title: "Methods - A plan is what makes the difference...",
+};
 
 export default function Methods() {
   return (

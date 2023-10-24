@@ -1,6 +1,8 @@
+import Image, { StaticImageData } from "next/image";
+import React from "react";
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import Image, { StaticImageData } from "next/image";
 
 export default function ProjectCard({
   img,
@@ -18,7 +20,6 @@ export default function ProjectCard({
   };
   description: string;
 }) {
-
   return (
     <div>
       <Card className="w-[300px] text-left">
@@ -35,11 +36,13 @@ export default function ProjectCard({
           <div className="text-lg font-bold mt-3 line-clamp-1">
             {title}
           </div>
-          <Button variant={"link"} className="p-0 h-auto text-ellipsis">
+          <Button variant="link" className="p-0 h-auto text-ellipsis">
             {category}
           </Button>
           <div className="text-sm font-bold opacity-70 line-clamp-1">
-            {location.city}, {location.country}
+            {location.city}
+            ,
+            {location.country}
           </div>
           <div className="text-sm text-muted-foreground line-clamp-3">
             {description}

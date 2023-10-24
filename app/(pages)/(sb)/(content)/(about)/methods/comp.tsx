@@ -1,12 +1,5 @@
 "use client";
 
-import Flow from "@/components/silverweb/app/Flow";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { cn } from "@/lib/utils";
-import { Fragment, ReactNode } from "react";
-import { useInView } from "react-intersection-observer";
-import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
 import {
   Bed,
   ClipboardCheck,
@@ -20,28 +13,29 @@ import {
   Search,
   Users2,
 } from "lucide-react";
+import React, { Fragment, ReactNode } from "react";
+import { useInView } from "react-intersection-observer";
 import { useReactFlow } from "reactflow";
 
-export function InfoCards({
-  heading,
-  content,
-}: {
-  heading: string;
-  content: string | ReactNode;
-}) {
+import Flow from "@/components/silverweb/app/Flow";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
+import { cn } from "@/lib/utils";
+
+export function InfoCards({ heading, content }: { heading: string; content: string | ReactNode }) {
   const [infoCards, infoCardsAreVisible] = useInView({
     threshold: 0.1,
     trackVisibility: true,
     delay: 100,
   });
+
   return (
     <Card
       ref={infoCards}
       className={cn(
         "transition-all duration-1000",
-        infoCardsAreVisible
-          ? "opacity-100 translate-x-0"
-          : "opacity-0 -translate-x-60"
+        infoCardsAreVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-60",
       )}
     >
       <CardHeader className="p-3 pb-1 space-y-0">
@@ -54,6 +48,7 @@ export function InfoCards({
 
 export function FlowAndNav() {
   const { fitBounds, fitView } = useReactFlow();
+
   return (
     <Fragment>
       <div>
@@ -269,11 +264,16 @@ export function FlowAndNav() {
                     left: 0,
                   });
                   fitBounds(
-                    { x: 100, y: 400, height: 112, width: 300 },
-                    { duration: 800, padding: 0.8 }
+                    {
+                      x: 100,
+                      y: 400,
+                      height: 112,
+                      width: 300,
+                    },
+                    { duration: 800, padding: 0.8 },
                   );
                 }}
-                variant={"link"}
+                variant="link"
                 className="p-0 min-h-6 flex justify-start text-left"
               >
                 1. Team stays in touch with your project.
@@ -288,11 +288,16 @@ export function FlowAndNav() {
                     left: 0,
                   });
                   fitBounds(
-                    { x: 500, y: 550, height: 112, width: 300 },
-                    { duration: 800, padding: 0.8 }
+                    {
+                      x: 500,
+                      y: 550,
+                      height: 112,
+                      width: 300,
+                    },
+                    { duration: 800, padding: 0.8 },
                   );
                 }}
-                variant={"link"}
+                variant="link"
                 className="p-0 min-h-6 flex justify-start text-left"
               >
                 2. Request the team on site.
@@ -307,11 +312,16 @@ export function FlowAndNav() {
                     left: 0,
                   });
                   fitBounds(
-                    { x: 300, y: 700, height: 112, width: 300 },
-                    { duration: 800, padding: 0.8 }
+                    {
+                      x: 300,
+                      y: 700,
+                      height: 112,
+                      width: 300,
+                    },
+                    { duration: 800, padding: 0.8 },
                   );
                 }}
-                variant={"link"}
+                variant="link"
                 className="p-0 min-h-6 flex justify-start text-left"
               >
                 3. Agree the terms. (LSA)
@@ -326,11 +336,16 @@ export function FlowAndNav() {
                     left: 0,
                   });
                   fitBounds(
-                    { x: 100, y: 850, height: 112, width: 300 },
-                    { duration: 800, padding: 0.8 }
+                    {
+                      x: 100,
+                      y: 850,
+                      height: 112,
+                      width: 300,
+                    },
+                    { duration: 800, padding: 0.8 },
                   );
                 }}
-                variant={"link"}
+                variant="link"
                 className="p-0 min-h-6 flex justify-start text-left"
               >
                 4. Selecting suitable team.
@@ -345,11 +360,16 @@ export function FlowAndNav() {
                     left: 0,
                   });
                   fitBounds(
-                    { x: 100, y: 950, height: 112, width: 300 },
-                    { duration: 800, padding: 0.8 }
+                    {
+                      x: 100,
+                      y: 950,
+                      height: 112,
+                      width: 300,
+                    },
+                    { duration: 800, padding: 0.8 },
                   );
                 }}
-                variant={"link"}
+                variant="link"
                 className="p-0 min-h-6 flex justify-start text-left"
               >
                 5. Organize the logistics.
@@ -364,11 +384,16 @@ export function FlowAndNav() {
                     left: 0,
                   });
                   fitBounds(
-                    { x: 100, y: 1050, height: 112, width: 300 },
-                    { duration: 800, padding: 0.8 }
+                    {
+                      x: 100,
+                      y: 1050,
+                      height: 112,
+                      width: 300,
+                    },
+                    { duration: 800, padding: 0.8 },
                   );
                 }}
-                variant={"link"}
+                variant="link"
                 className="p-0 min-h-6 flex justify-start text-left"
               >
                 6. Managing Housing for the team.
@@ -383,11 +408,16 @@ export function FlowAndNav() {
                     left: 0,
                   });
                   fitBounds(
-                    { x: 300, y: 1200, height: 112, width: 300 },
-                    { duration: 800, padding: 0.8 }
+                    {
+                      x: 300,
+                      y: 1200,
+                      height: 112,
+                      width: 300,
+                    },
+                    { duration: 800, padding: 0.8 },
                   );
                 }}
-                variant={"link"}
+                variant="link"
                 className="p-0 min-h-6 flex justify-start text-left"
               >
                 7. Team integration.
@@ -402,11 +432,16 @@ export function FlowAndNav() {
                     left: 0,
                   });
                   fitBounds(
-                    { x: 500, y: 1350, height: 112, width: 300 },
-                    { duration: 800, padding: 0.8 }
+                    {
+                      x: 500,
+                      y: 1350,
+                      height: 112,
+                      width: 300,
+                    },
+                    { duration: 800, padding: 0.8 },
                   );
                 }}
-                variant={"link"}
+                variant="link"
                 className="p-0 min-h-6 flex justify-start text-left"
               >
                 8. Supervision of the team.
@@ -421,11 +456,16 @@ export function FlowAndNav() {
                     left: 0,
                   });
                   fitBounds(
-                    { x: 500, y: 1450, height: 112, width: 300 },
-                    { duration: 800, padding: 0.8 }
+                    {
+                      x: 500,
+                      y: 1450,
+                      height: 112,
+                      width: 300,
+                    },
+                    { duration: 800, padding: 0.8 },
                   );
                 }}
-                variant={"link"}
+                variant="link"
                 className="p-0 min-h-6 flex justify-start text-left"
               >
                 9. Quality control.
@@ -440,11 +480,16 @@ export function FlowAndNav() {
                     left: 0,
                   });
                   fitBounds(
-                    { x: 100, y: 1600, height: 112, width: 300 },
-                    { duration: 800, padding: 0.8 }
+                    {
+                      x: 100,
+                      y: 1600,
+                      height: 112,
+                      width: 300,
+                    },
+                    { duration: 800, padding: 0.8 },
                   );
                 }}
-                variant={"link"}
+                variant="link"
                 className="p-0 min-h-6 flex justify-start text-left"
               >
                 10. Employee management.
@@ -459,11 +504,16 @@ export function FlowAndNav() {
                     left: 0,
                   });
                   fitBounds(
-                    { x: 100, y: 1700, height: 112, width: 300 },
-                    { duration: 800, padding: 0.8 }
+                    {
+                      x: 100,
+                      y: 1700,
+                      height: 112,
+                      width: 300,
+                    },
+                    { duration: 800, padding: 0.8 },
                   );
                 }}
-                variant={"link"}
+                variant="link"
                 className="p-0 min-h-6 flex justify-start text-left"
               >
                 11. Employee payroll.
@@ -478,11 +528,16 @@ export function FlowAndNav() {
                     left: 0,
                   });
                   fitBounds(
-                    { x: 500, y: 1850, height: 112, width: 300 },
-                    { duration: 800, padding: 0.8 }
+                    {
+                      x: 500,
+                      y: 1850,
+                      height: 112,
+                      width: 300,
+                    },
+                    { duration: 800, padding: 0.8 },
                   );
                 }}
-                variant={"link"}
+                variant="link"
                 className="p-0 min-h-6 flex justify-start text-left"
               >
                 12. Report us your feedback.
@@ -501,7 +556,7 @@ export function FlowAndNav() {
                     padding: 0.2,
                   });
                 }}
-                variant={"link"}
+                variant="link"
                 className="p-0 min-h-6 flex justify-start text-left"
               >
                 0. See all steps.

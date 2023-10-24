@@ -10,8 +10,8 @@ import React from "react";
 export default function Logo({ wh }: { wh?: number }) {
   return (
     <svg
-      width={wh ? wh : 52}
-      height={wh ? wh : 52}
+      width={wh || 52}
+      height={wh || 52}
       viewBox="0 0 52 52"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

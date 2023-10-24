@@ -1,4 +1,5 @@
 import React from "react";
+
 export default function About() {
   return (
     <div>
@@ -10,13 +11,19 @@ export default function About() {
       (doing business as
       <br />
       SilverBack
-      <br />)<br />(<br />
+      <br />
+      )
+      <br />
+      (
+      <br />
       &apos;we&apos;, &apos;us&apos;, or &apos;our&apos;
       <br />
       ), describes how and why we might collect, store, use, and/or share (
       <br />
       &apos;process&apos;
-      <br />) your information when you use our services (<br />
+      <br />
+      ) your information when you use our services (
+      <br />
       &apos;Services&apos;
       <br />
       ), such as when you:
@@ -26,7 +33,8 @@ export default function About() {
       at
       <br />
       https://silverback-group.eu
-      <br />, or any website of ours that links to this privacy notice
+      <br />
+      , or any website of ours that links to this privacy notice
       <br />
       Engage with us in other related ways, including any sales, marketing, or
       events
@@ -37,7 +45,9 @@ export default function About() {
       any questions or concerns, please contact us at
       <br />
       work@silverback.ie
-      <br />.<br />
+      <br />
+      .
+      <br />
       <br />
       <br />
       SUMMARY OF KEY POINTS
@@ -110,7 +120,8 @@ export default function About() {
       visiting
       <br />
       https://silverback-group.eu
-      <br />, or by contacting us. We will consider and act upon any request in
+      <br />
+      , or by contacting us. We will consider and act upon any request in
       accordance with applicable data protection laws.
       <br />
       <br />
@@ -260,7 +271,8 @@ export default function About() {
       under European data protection laws of the personal information described
       in this privacy notice, since we determine the means and/or purposes of
       the data processing we perform. This privacy notice does not apply to the
-      personal information we process as a<br />
+      personal information we process as a
+      <br />
       &apos;data processor&apos;
       <br />
       on behalf of our customers. In those situations, the customer that we
@@ -281,7 +293,9 @@ export default function About() {
       In Short: We may share information in specific situations described in
       this section and/or with the following
       <br />
-      third parties. <br />
+      third parties.
+      {" "}
+      <br />
       <br />
       We
       <br />
@@ -325,7 +339,9 @@ export default function About() {
       information for longer than
       <br />
       90 days
-      <br />.<br />
+      <br />
+      .
+      <br />
       <br />
       When we have no ongoing legitimate business need to process your personal
       information, we will either delete or
@@ -373,7 +389,9 @@ export default function About() {
       In Short: We do not knowingly collect data from or market to
       <br />
       children under 18 years of age
-      <br />.<br />
+      <br />
+      .
+      <br />
       <br />
       We do not knowingly solicit data from or market to children under 18 years
       of age. By using the Services, you represent that you are at least 18 or
@@ -385,18 +403,25 @@ export default function About() {
       have collected from children under age 18, please contact us at
       <br />
       work@silverback.ie
-      <br />.<br />
+      <br />
+      .
+      <br />
       <br />
       8. WHAT ARE YOUR PRIVACY RIGHTS?
       <br />
       <br />
-      In Short: <br />
+      In Short:
+      {" "}
+      <br />
       In some regions, such as
       <br />
       the European Economic Area (EEA), United Kingdom (UK), and Switzerland
-      <br />, you have rights that allow you greater access to and control over
+      <br />
+      , you have rights that allow you greater access to and control over
       your personal information.
-      <br /> You may review, change, or terminate your account at any time.
+      <br />
+      {" "}
+      You may review, change, or terminate your account at any time.
       <br />
       <br />
       In some regions (like
@@ -412,15 +437,21 @@ export default function About() {
       object to the processing of your personal information. You can make such a
       request by contacting us by using the contact details provided in the
       section
-      <br />&apos;<br />
+      <br />
+      &apos;
+      <br />
       HOW CAN YOU CONTACT US ABOUT THIS NOTICE?
-      <br />&apos;<br />
+      <br />
+      &apos;
+      <br />
       below.
       <br />
       <br />
       We will consider and act upon any request in accordance with applicable
       data protection laws.
-      <br /> <br />
+      <br />
+      {" "}
+      <br />
       If you are located in the EEA or UK and you believe we are unlawfully
       processing your personal information, you also have the right to complain
       to your Member State data protection authority or UK data protection
@@ -437,32 +468,44 @@ export default function About() {
       you have the right to withdraw your consent at any time. You can withdraw
       your consent at any time by contacting us by using the contact details
       provided in the section
-      <br />&apos;<br />
+      <br />
+      &apos;
+      <br />
       HOW CAN YOU CONTACT US ABOUT THIS NOTICE?
-      <br />&apos;<br />
+      <br />
+      &apos;
+      <br />
       below
-      <br />.<br />
+      <br />
+      .
+      <br />
       <br />
       However, please note that this will not affect the lawfulness of the
       processing before its withdrawal nor,
       <br />
       will it affect the processing of your personal information conducted in
       reliance on lawful processing grounds other than consent.
-      <br /> <br />
+      <br />
+      {" "}
+      <br />
       <br />
       If you have questions or comments about your privacy rights, you may email
       us at
       <br />
       work@silverback.ie
-      <br />.<br />
+      <br />
+      .
+      <br />
       <br />
       9. CONTROLS FOR DO-NOT-TRACK FEATURES
       <br />
       <br />
       Most web browsers and some mobile operating systems and mobile
-      applications include a Do-Not-Track (<br />
+      applications include a Do-Not-Track (
+      <br />
       &apos;DNT&apos;
-      <br />) feature or setting you can activate to signal your privacy
+      <br />
+      ) feature or setting you can activate to signal your privacy
       preference not to have data about your online browsing activities
       monitored and collected. At this stage no uniform technology standard for
       <br />
@@ -471,7 +514,8 @@ export default function About() {
       and implementing DNT signals has been
       <br />
       finalised
-      <br />. As such, we do not currently respond to DNT browser signals or any
+      <br />
+      . As such, we do not currently respond to DNT browser signals or any
       other mechanism that automatically communicates your choice not to be
       tracked online. If a standard for online tracking is adopted that we must
       follow in the future, we will inform you about that practice in a revised
@@ -506,7 +550,9 @@ export default function About() {
       email us at
       <br />
       work@silverback.ie
-      <br /> or contact us by post at:
+      <br />
+      {" "}
+      or contact us by post at:
       <br />
       <br />
       SilverBack Staffing Ltd
@@ -515,7 +561,10 @@ export default function About() {
       <br />
       Lindsay Grove
       <br />
-      Dublin 9<br />,<br />
+      Dublin 9
+      <br />
+      ,
+      <br />
       Dublin
       <br />
       D09CC92
@@ -526,7 +575,8 @@ export default function About() {
       If you are a resident in the European Economic Area
       <br />
       or Switzerland
-      <br />, we are the
+      <br />
+      , we are the
       <br />
       &apos;data controller&apos;
       <br />
@@ -537,21 +587,28 @@ export default function About() {
       to be our representative in the EEA
       <br />
       and Switzerland
-      <br />. You can contact them directly regarding our processing of your
+      <br />
+      . You can contact them directly regarding our processing of your
       information,
       <br />
       by email at
       <br />
       work@silverback.ie
-      <br />,<br />
+      <br />
+      ,
+      <br />
       by visiting
       <br />
       https://silverback-group.ie
-      <br />,<br />
+      <br />
+      ,
+      <br />
       by phone at
       <br />
       +353 1 441 0102
-      <br />,<br />
+      <br />
+      ,
+      <br />
       or by post to:
       <br />
       <br />
@@ -559,9 +616,15 @@ export default function About() {
       <br />
       Lindsay Grove
       <br />
-      Dublin 9<br />, <br />
+      Dublin 9
+      <br />
+      ,
+      {" "}
+      <br />
       Dublin
-      <br /> <br />
+      <br />
+      {" "}
+      <br />
       D09CC92
       <br />
       Ireland
@@ -581,15 +644,21 @@ export default function About() {
       by email at
       <br />
       work@silverback.ie
-      <br />,<br />
+      <br />
+      ,
+      <br />
       by visiting
       <br />
       https://silverback-group.ie
-      <br />,<br />
+      <br />
+      ,
+      <br />
       by phone at
       <br />
       +353 1 441 0102
-      <br />,<br />
+      <br />
+      ,
+      <br />
       or by post to:
       <br />
       <br />
@@ -598,9 +667,13 @@ export default function About() {
       Duffield
       <br />
       Belper
-      <br />, <br />
+      <br />
+      ,
+      <br />
       England
-      <br /> <br />
+      <br />
+      {" "}
+      <br />
       DE56 4EG
       <br />
       England
@@ -618,7 +691,10 @@ export default function About() {
       visit:
       <br />
       https://silverback-group.eu
-      <br />.<br />{" "}
+      <br />
+      .
+      <br />
+      {" "}
     </div>
   );
 }

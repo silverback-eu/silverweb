@@ -1,3 +1,10 @@
+import { format } from "date-fns";
+import { Calendar as CalendarIcon } from "lucide-react";
+import React, {
+  Fragment, forwardRef, useEffect, useState,
+} from "react";
+import { DateRange } from "react-day-picker";
+
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
 import {
@@ -6,10 +13,6 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { cn } from "@/lib/utils";
-import { format } from "date-fns";
-import { Calendar as CalendarIcon } from "lucide-react";
-import React, { Fragment, forwardRef, useEffect, useState } from "react";
-import { DateRange } from "react-day-picker";
 
 export interface DateRangePickerProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -43,14 +46,14 @@ const DateRangePicker = forwardRef<HTMLButtonElement, DateRangePickerProps>(
           <PopoverTrigger asChild>
             <Button
               id="date"
-              variant={"outline"}
+              variant="outline"
               className={cn(
                 "w-full justify-start text-left font-normal",
                 (readOnly || disabled) && "hover:bg-transparent",
-                status == "success" &&
-                  "text-lime-600 placeholder:opacity-80 placeholder:text-lime-600 hover:ring-1 hover:ring-lime-600 focus-visible:ring-1 focus-visible:ring-lime-500",
-                status == "error" &&
-                  "text-red-500 placeholder:opacity-80 placeholder:text-red-500 hover:ring-1 hover:ring-red-600 focus-visible:ring-1 focus-visible:ring-red-500",
+                status == "success"
+                  && "text-lime-600 placeholder:opacity-80 placeholder:text-lime-600 hover:ring-1 hover:ring-lime-600 focus-visible:ring-1 focus-visible:ring-lime-500",
+                status == "error"
+                  && "text-red-500 placeholder:opacity-80 placeholder:text-red-500 hover:ring-1 hover:ring-red-600 focus-visible:ring-1 focus-visible:ring-red-500",
                 !valueCalendar && !dateDefault && "text-muted-foreground",
                 disabled && "cursor-not-allowed text-muted-foreground hover:text-muted-foreground",
               )}
@@ -60,19 +63,25 @@ const DateRangePicker = forwardRef<HTMLButtonElement, DateRangePickerProps>(
               <CalendarIcon className={cn("mr-2 h-4 w-4", status == "error" && "text-red-500 opacity-80", status == "success" && "text-lime-600 opacity-80")} />
               {valueCalendar?.from ? (
                 valueCalendar.to ? (
-                  <Fragment>
-                    {format(valueCalendar.from, "LLL dd, y")} -{" "}
+                  <React.Fragment>
+                    {format(valueCalendar.from, "LLL dd, y")}
+                    {" "}
+                    -
+                    {" "}
                     {format(valueCalendar.to, "LLL dd, y")}
-                  </Fragment>
+                  </React.Fragment>
                 ) : (
                   format(valueCalendar.from, "LLL dd, y")
                 )
               ) : dateDefault?.from ? (
                 dateDefault.to ? (
-                  <Fragment>
-                    {format(dateDefault.from, "LLL dd, y")} -{" "}
+                  <React.Fragment>
+                    {format(dateDefault.from, "LLL dd, y")}
+                    {" "}
+                    -
+                    {" "}
                     {format(dateDefault.to, "LLL dd, y")}
-                  </Fragment>
+                  </React.Fragment>
                 ) : (
                   format(dateDefault.from, "LLL dd, y")
                 )
@@ -90,7 +99,7 @@ const DateRangePicker = forwardRef<HTMLButtonElement, DateRangePickerProps>(
                   ? new Date(valueCalendar.from)
                   : dateDefault?.from
               }
-              selected={valueCalendar ? valueCalendar : dateDefault}
+              selected={valueCalendar || dateDefault}
               onSelect={(range) => {
                 setDateDefault(range);
                 onChangeCalendar && onChangeCalendar(range);
@@ -101,7 +110,7 @@ const DateRangePicker = forwardRef<HTMLButtonElement, DateRangePickerProps>(
         </Popover>
       </div>
     );
-  }
+  },
 );
 
 DateRangePicker.displayName = "DateRangePicker";

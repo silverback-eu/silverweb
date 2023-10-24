@@ -1,8 +1,3 @@
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { cn } from "@/lib/utils";
 import {
   File,
   FileArchive,
@@ -15,7 +10,15 @@ import {
   RotateCw,
   X,
 } from "lucide-react";
-import React, { ChangeEvent, DragEvent, forwardRef, useEffect } from "react";
+import React, {
+  ChangeEvent, DragEvent, forwardRef, useEffect,
+} from "react";
+
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { cn } from "@/lib/utils";
 
 export type FileIconProps = {
   name: string;
@@ -50,21 +53,21 @@ const FileUploader = forwardRef<HTMLInputElement, FileUploaderProps>(
       if (file) {
         if (file.size > 1024 * 1024 * 5) {
         }
-        const fileString =
-          file.size < 1024 * 1024 * 5
-            ? await new Promise((resolve, reject) => {
-                const reader = new FileReader();
-                reader.readAsDataURL(file);
-                reader.onload = () => resolve(reader.result as string);
-                reader.onerror = reject;
-              })
-            : "zugross";
+        const fileString = file.size < 1024 * 1024 * 5
+          ? await new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = () => resolve(reader.result as string);
+            reader.onerror = reject;
+          })
+          : "zugross";
+
         return {
           name: file.name,
           uri: fileString,
           lastModified: file.lastModified,
           type: file.type,
-          size: Math.round((file.size / 1024) * 100) / 100 + " KB",
+          size: `${Math.round((file.size / 1024) * 100) / 100} KB`,
         };
       }
     }
@@ -79,43 +82,43 @@ const FileUploader = forwardRef<HTMLInputElement, FileUploaderProps>(
               {
                 name: file.name,
                 type: file.type,
-                size: Math.round((file.size / 1024) * 100) / 100 + " KB",
+                size: `${Math.round((file.size / 1024) * 100) / 100} KB`,
                 uri: "",
                 lastModified: file.lastModified,
                 status: { loading: true as true },
               },
             ]);
+
             return handleFileConvert(file);
-          })
+          }),
         );
         setItems((prev) => [
           ...prev.filter(
-            (item) =>
-              !convertedFiles
-                .map((file) => file?.lastModified)
-                .includes(item.lastModified)
+            (item) => !convertedFiles
+              .map((file) => file?.lastModified)
+              .includes(item.lastModified),
           ),
           ...convertedFiles.map((file) => {
             if (file) {
               return {
                 ...file,
                 lastModified: file.lastModified,
-                uri: file.uri + "",
+                uri: `${file.uri}`,
                 status:
                   file.uri === "zugross"
                     ? { error: true as true }
                     : { default: true as true },
               };
-            } else {
-              return {
-                name: "",
-                type: "",
-                size: "",
-                uri: "",
-                lastModified: 0,
-                status: { loading: true as true },
-              };
             }
+
+            return {
+              name: "",
+              type: "",
+              size: "",
+              uri: "",
+              lastModified: 0,
+              status: { loading: true as true },
+            };
           }),
         ]);
       }
@@ -131,72 +134,72 @@ const FileUploader = forwardRef<HTMLInputElement, FileUploaderProps>(
               {
                 name: file.name,
                 type: file.type,
-                size: Math.round((file.size / 1024) * 100) / 100 + " KB",
+                size: `${Math.round((file.size / 1024) * 100) / 100} KB`,
                 uri: "",
                 lastModified: file.lastModified,
                 status: { loading: true as true },
               },
             ]);
+
             return handleFileConvert(file);
-          })
+          }),
         );
         setItems((prev) => [
           ...prev.filter(
-            (item) =>
-              !convertedFiles
-                .map((file) => file?.lastModified)
-                .includes(item.lastModified)
+            (item) => !convertedFiles
+              .map((file) => file?.lastModified)
+              .includes(item.lastModified),
           ),
           ...convertedFiles.map((file) => {
             if (file) {
               return {
                 ...file,
                 lastModified: file.lastModified,
-                uri: file.uri + "",
+                uri: `${file.uri}`,
                 status:
                   file.uri === "zugross"
                     ? { error: true as true }
                     : { default: true as true },
               };
-            } else {
-              return {
-                name: "",
-                type: "",
-                size: "",
-                uri: "",
-                lastModified: 0,
-                status: { loading: true as true },
-              };
             }
+
+            return {
+              name: "",
+              type: "",
+              size: "",
+              uri: "",
+              lastModified: 0,
+              status: { loading: true as true },
+            };
           }),
         ]);
       }
     }
 
     const [items, setItems] = React.useState<
-      Array<
-        FileIconProps & {
-          status:
-            | {
-                loading: true;
-                error?: false;
-                default?: false;
-              }
-            | {
-                loading?: false;
-                error: true;
-                default?: false;
-              }
-            | {
-                loading?: false;
-                error?: false;
-                default: true;
-              };
-        }
-      >
+    Array<
+    FileIconProps & {
+      status:
+      | {
+        loading: true;
+        error?: false;
+        default?: false;
+      }
+      | {
+        loading?: false;
+        error: true;
+        default?: false;
+      }
+      | {
+        loading?: false;
+        error?: false;
+        default: true;
+      };
+    }
+    >
     >(
-      defaultItems?.map((item) => ({ ...item, status: { default: true } })) ||
-        []
+      defaultItems?.map((item) => ({ ...item, status: { default: true } }))
+        || [],
     );
 
     useEffect(() => {
@@ -217,42 +220,37 @@ const FileUploader = forwardRef<HTMLInputElement, FileUploaderProps>(
           <Card
             className={cn(
               "w-full flex items-center justify-center py-28 hover:bg-accent/10 transition-all cursor-pointer",
-              status == "success" &&
-                "border-lime-600 text-lime-600 hover:text-lime-600",
-              status == "error" &&
-                "border-red-500 text-red-500 hover:text-red-500",
+              status == "success"
+                && "border-lime-600 text-lime-600 hover:text-lime-600",
+              status == "error"
+                && "border-red-500 text-red-500 hover:text-red-500",
               disabled && "cursor-not-allowed hover:bg-inherit",
               readOnly && "cursor-auto hover:bg-inherit",
-              className
+              className,
             )}
           >
             Drop or click
           </Card>
         </Label>
         <div className="grid gap-2 my-2">
-          {items.map((item) => {
-            return (
-              <DisplayedFile
-                key={item.name}
-                name={item.name}
-                type={item.type}
-                size={item.size}
-                uri={""}
-                lastModified={item.lastModified}
-                status={item.status}
-                onDelete={() => {
-                  !readOnly &&
-                    !disabled &&
-                    setItems((prev) =>
-                      prev.filter(
-                        (prevItem) =>
-                          prevItem.lastModified !== item.lastModified
-                      )
-                    );
-                }}
-              />
-            );
-          })}
+          {items.map((item) => (
+            <DisplayedFile
+              key={item.name}
+              name={item.name}
+              type={item.type}
+              size={item.size}
+              uri=""
+              lastModified={item.lastModified}
+              status={item.status}
+              onDelete={() => {
+                !readOnly
+                    && !disabled
+                    && setItems((prev) => prev.filter(
+                      (prevItem) => prevItem.lastModified !== item.lastModified,
+                    ));
+              }}
+            />
+          ))}
         </div>
         <Input
           id={id || "file-uploader-input"}
@@ -269,7 +267,7 @@ const FileUploader = forwardRef<HTMLInputElement, FileUploaderProps>(
         />
       </div>
     );
-  }
+  },
 );
 
 FileUploader.displayName = "FileUploader";
@@ -285,21 +283,21 @@ export function DisplayedFile({
 }: FileIconProps & {
   onDelete?: () => void;
   status:
-    | {
-        loading: true;
-        error?: false;
-        default?: false;
-      }
-    | {
-        loading?: false;
-        error: true;
-        default?: false;
-      }
-    | {
-        loading?: false;
-        error?: false;
-        default: true;
-      };
+  | {
+    loading: true;
+    error?: false;
+    default?: false;
+  }
+  | {
+    loading?: false;
+    error: true;
+    default?: false;
+  }
+  | {
+    loading?: false;
+    error?: false;
+    default: true;
+  };
 }) {
   let FileIcon = <FileText size={16} />;
 
@@ -353,7 +351,7 @@ export function DisplayedFile({
       <CardContent
         className={cn(
           "p-2 flex justify-between items-center",
-          status.loading && "animate-pulse"
+          status.loading && "animate-pulse",
         )}
       >
         <div className="flex gap-2 w-[calc(100%-36px)] items-center">
@@ -376,19 +374,21 @@ export function DisplayedFile({
             <p
               className={cn(
                 "text-sm font-semibold text-start truncate",
-                status.error && "text-red-500"
+                status.error && "text-red-500",
               )}
             >
               {name}
             </p>
             <p className="text-xs opacity-50 text-start truncate">
-              {type}    {size}
+              {type}
+              {" "}
+              {size}
             </p>
           </div>
         </div>
         <Button
-          variant={"link"}
-          size={"icon"}
+          variant="link"
+          size="icon"
           className={cn(status.loading && "cursor-wait")}
           disabled={status.loading}
           onClick={() => {

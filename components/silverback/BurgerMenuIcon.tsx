@@ -13,11 +13,12 @@ const BurgerMenuIcon = forwardRef(
       open,
       onOpenChange,
     }: { open?: boolean; onOpenChange?: (open: boolean) => void },
-    ref
+    ref,
   ) => (
     <div>
       <div>
-        <style jsx>{`
+        <style jsx>
+          {`
           label {
             display: flex;
             flex-direction: column;
@@ -64,7 +65,8 @@ const BurgerMenuIcon = forwardRef(
             width: 50%;
             transform: translate(30px, -11px) rotatez(45deg);
           }
-        `}</style>
+        `}
+        </style>
         <div className="overflow-hidden w-8 h-8 relative">
           <div className="scale-[0.25] absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
             <label htmlFor="check">
@@ -73,22 +75,20 @@ const BurgerMenuIcon = forwardRef(
                 type="checkbox"
                 id="check"
                 {...(open !== undefined && { checked: open })}
-                onChange={(e) =>
-                  e.target.checked
-                    ? onOpenChange?.(true)
-                    : onOpenChange?.(false)
-                }
+                onChange={(e) => (e.target.checked
+                  ? onOpenChange?.(true)
+                  : onOpenChange?.(false))}
                 aria-label={open ? "Close menu" : "Open menu"}
               />
-              <span className="select-none"></span>
-              <span className="select-none"></span>
-              <span className="select-none"></span>
+              <span className="select-none" />
+              <span className="select-none" />
+              <span className="select-none" />
             </label>
           </div>
         </div>
       </div>
     </div>
-  )
+  ),
 );
 
 BurgerMenuIcon.displayName = "BurderMenuIcon";

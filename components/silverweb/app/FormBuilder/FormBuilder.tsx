@@ -1,12 +1,16 @@
 import React from "react";
-import { FormProps } from ".";
 import { FormProvider, useForm } from "react-hook-form";
-import { Button } from "@/components/ui/button";
+
 import { Field } from "./types";
+
+import { FormProps } from ".";
+
+import { Button } from "@/components/ui/button";
 
 export function FormBuilder({ fields, onSubmit }: FormProps) {
   const formContext = useForm();
   const { handleSubmit } = formContext;
+
   return (
     <FormProvider {...formContext}>
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -18,5 +22,10 @@ export function FormBuilder({ fields, onSubmit }: FormProps) {
 }
 
 function renderFields([name, fieldProps]: [string, Field]) {
-  return <div>Unknown type of {fieldProps.type}</div>;
+  return (
+    <div>
+      Unknown type of
+      {fieldProps.type}
+    </div>
+  );
 }

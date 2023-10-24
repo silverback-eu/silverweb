@@ -1,7 +1,8 @@
-import { Card } from "@/components/ui/card";
-import { cn } from "@/lib/utils";
 import React, { memo } from "react";
 import { Handle, NodeProps, Position } from "reactflow";
+
+import { Card } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
 
 export type CardNodeProps = {
   content?: React.ReactNode;
@@ -9,16 +10,16 @@ export type CardNodeProps = {
 };
 
 function CardNodeWO({
-    data: { content, className },
-    dragging,
-    isConnectable,
-  }: NodeProps<CardNodeProps>) {
-    return (
-      <Card className={cn("", dragging && "cursor-grabbing", className)}>
-        {content}
-      </Card>
-    );
-  }
+  data: { content, className },
+  dragging,
+  isConnectable,
+}: NodeProps<CardNodeProps>) {
+  return (
+    <Card className={cn("", dragging && "cursor-grabbing", className)}>
+      {content}
+    </Card>
+  );
+}
 
 export const CardNodeWithout = memo(CardNodeWO);
 

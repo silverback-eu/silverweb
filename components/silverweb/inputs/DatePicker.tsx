@@ -1,3 +1,7 @@
+import { format } from "date-fns";
+import { Calendar as CalendarIcon } from "lucide-react";
+import React, { forwardRef, useEffect, useState } from "react";
+
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
 import {
@@ -6,9 +10,6 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { cn } from "@/lib/utils";
-import { format } from "date-fns";
-import { Calendar as CalendarIcon } from "lucide-react";
-import React, { forwardRef, useEffect, useState } from "react";
 
 export interface DatePickerProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -20,29 +21,31 @@ export interface DatePickerProps
 
 const DatePicker = forwardRef<HTMLButtonElement, DatePickerProps>(
   (props, ref) => {
-    const { className, status, readOnly, disabled, valueCalendar, onChangeCalendar, ...rest } =
-      props;
+    const {
+      className, status, readOnly, disabled, valueCalendar, onChangeCalendar, ...rest
+    } = props;
     const [dateDefault, setDateDefault] = useState<Date>();
     useEffect(() => {
-        setDateDefault(valueCalendar);
-    },[valueCalendar])
+      setDateDefault(valueCalendar);
+    }, [valueCalendar]);
+
     return (
       <Popover open={(readOnly || disabled) && false}>
         <PopoverTrigger asChild>
           <Button
-            variant={"outline"}
+            variant="outline"
             className={cn(
               "w-full justify-start text-left font-normal",
-              status == "success" &&
-                "text-lime-600 placeholder:opacity-80 placeholder:text-lime-600 hover:ring-1 hover:ring-lime-600 focus-visible:ring-1 focus-visible:ring-lime-500",
-              status == "error" &&
-                "text-red-500 placeholder:opacity-80 placeholder:text-red-500 hover:ring-1 hover:ring-red-600 focus-visible:ring-1 focus-visible:ring-red-500",
-              !valueCalendar && !dateDefault && "text-muted-foreground"
+              status == "success"
+                && "text-lime-600 placeholder:opacity-80 placeholder:text-lime-600 hover:ring-1 hover:ring-lime-600 focus-visible:ring-1 focus-visible:ring-lime-500",
+              status == "error"
+                && "text-red-500 placeholder:opacity-80 placeholder:text-red-500 hover:ring-1 hover:ring-red-600 focus-visible:ring-1 focus-visible:ring-red-500",
+              !valueCalendar && !dateDefault && "text-muted-foreground",
             )}
             ref={ref}
             {...rest}
           >
-            <CalendarIcon className={cn("mr-2 h-4 w-4", status == "error" && "text-red-500 opacity-80", status == "success" && "text-lime-600 opacity-80")}/>
+            <CalendarIcon className={cn("mr-2 h-4 w-4", status == "error" && "text-red-500 opacity-80", status == "success" && "text-lime-600 opacity-80")} />
             {valueCalendar ? (
               format(valueCalendar, "PPP")
             ) : dateDefault ? (
@@ -65,7 +68,7 @@ const DatePicker = forwardRef<HTMLButtonElement, DatePickerProps>(
         </PopoverContent>
       </Popover>
     );
-  }
+  },
 );
 
 DatePicker.displayName = "DatePicker";

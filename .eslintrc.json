@@ -2,6 +2,41 @@
   "extends": [
     "next/core-web-vitals",
     "plugin:storybook/recommended",
-    "plugin:storybook/recommended"
-  ]
+    "plugin:import/recommended",
+    "airbnb",
+    "airbnb-typescript"
+  ],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "rules": {
+    "quotes": ["error", "double"],
+    "@typescript-eslint/quotes": ["error", "double"],
+    "newline-before-return": "error",
+    "import/order": [
+      "error",
+      {"newlines-between": "always",
+      "alphabetize": {"order": "asc", "caseInsensitive": true}}
+    ],
+    "no-console": ["warn", { "allow" : ["warn", "error"]}],
+    "react/jsx-one-expression-per-line": "off",
+    "react/jsx-props-no-spreading": "off",
+    "max-len": "off",
+    "operator-linebreak": "off",
+    "react/no-unknown-property": ["error", {
+      "ignore": [
+        "jsx",
+        "global"
+      ]
+    }],
+    "react/require-default-props": "off",
+    "no-irregular-whitespace": "warn",
+    "react/jsx-fragments": ["error", "element"],
+    "object-curly-newline": "off",
+    "no-nested-ternary":"off",
+    "implicit-arrow-linebreak": "off",
+    "react/jsx-pascal-case": ["error", { "allowNamespace": true}],
+    "react/react-in-jsx-scope": "off",
+    "no-param-reassign": "off"
+  }
 }

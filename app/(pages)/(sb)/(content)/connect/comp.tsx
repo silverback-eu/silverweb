@@ -1,11 +1,5 @@
 "use client";
 
-import Flow from "@/components/silverweb/app/Flow";
-import RadioInput from "@/components/silverweb/inputs/RadioInput";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { RadioGroup } from "@/components/ui/radio-group";
-import { cn } from "@/lib/utils";
 import {
   ClipboardList,
   ClipboardSignature,
@@ -22,9 +16,16 @@ import {
   User2,
   Users,
 } from "lucide-react";
-import { Fragment, ReactElement, useLayoutEffect, useState } from "react";
+import React, { ReactElement, useLayoutEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import TypewriterComponent from "typewriter-effect";
+
+import Flow from "@/components/silverweb/app/Flow";
+import RadioInput from "@/components/silverweb/inputs/RadioInput";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { RadioGroup } from "@/components/ui/radio-group";
+import { cn } from "@/lib/utils";
 
 export function Typewriter() {
   return (
@@ -63,14 +64,13 @@ export function HeroCards({
     trackVisibility: true,
     delay: 100,
   });
+
   return (
     <div ref={heroCards} className="p-3 lg:p-7 items-center">
       <div
         className={cn(
           "space-y-2 h-full transition-all duration-1000",
-          heroCardsAreVisible
-            ? "opacity-100 translate-x-0"
-            : "opacity-0 translate-x-60"
+          heroCardsAreVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-60",
         )}
       >
         <div className="bg-muted h-10 w-10 rounded-lg flex justify-center items-center">
@@ -78,9 +78,7 @@ export function HeroCards({
         </div>
         <div className="font-bold text-xl">{title}</div>
         <div className="hidden xl:block text-muted-foreground">{content}</div>
-        <div className="xl:hidden text-muted-foreground text-sm line-clamp-3">
-          {fallBack}
-        </div>
+        <div className="xl:hidden text-muted-foreground text-sm line-clamp-3">{fallBack}</div>
       </div>
     </div>
   );
@@ -354,6 +352,33 @@ export function FlowBackground() {
   );
 }
 
+function AnimatedCounter({
+  value,
+  duration = 1000,
+  start,
+}: {
+  duration?: number;
+  value: number;
+  start?: boolean;
+}) {
+  const [count, setCount] = useState(0);
+
+  useLayoutEffect(() => {
+    let interval: NodeJS.Timeout;
+
+    if (start) {
+      interval = setInterval(() => {
+        setCount((prevCount) => Math.min(prevCount + 1, value));
+        if (count === value) clearInterval(interval);
+      }, duration / value);
+    }
+
+    return () => clearInterval(interval);
+  }, [start, count, duration, value]);
+
+  return count;
+}
+
 export function InfoFeature({
   number,
   metric,
@@ -370,32 +395,6 @@ export function InfoFeature({
   const [infoFeatures, infoFeaturesAreVisible] = useInView({
     threshold: 0.4,
   });
-  function AnimatedCounter({
-    value,
-    duration = 1000,
-    start,
-  }: {
-    duration?: number;
-    value: number;
-    start?: boolean;
-  }) {
-    const [count, setCount] = useState(0);
-
-    useLayoutEffect(() => {
-      let interval: NodeJS.Timeout;
-
-      if (start) {
-        interval = setInterval(() => {
-          setCount((prevCount) => Math.min(prevCount + 1, value));
-          if (count === value) clearInterval(interval);
-        }, duration / value);
-      }
-
-      return () => clearInterval(interval);
-    }, [start, count, duration, value]);
-
-    return <Fragment>{count}</Fragment>;
-  }
 
   return (
     <div ref={infoFeatures}>
@@ -406,13 +405,10 @@ export function InfoFeature({
           </div>
         </div>
         <p className="text-4xl font-bold text-center">
-          <AnimatedCounter start={infoFeaturesAreVisible} value={number} />+  
-          {metric}
+          <AnimatedCounter start={infoFeaturesAreVisible} value={number} />+{metric}
         </p>
         <p className="font-bold text-2xl text-center">{subheading}</p>
-        <p className="text-base opacity-50 text-center mt-4 max-w-md">
-          {content}
-        </p>
+        <p className="text-base opacity-50 text-center mt-4 max-w-md">{content}</p>
       </div>
     </div>
   );
@@ -458,11 +454,15 @@ export function ContactForm() {
         <p>
           Fill out the form or contact us directly via{" "}
           <span
+            role="button"
+            tabIndex={0}
+            onKeyDown={() =>
+              window.open("mailto:work@silverback.ie?subject=Request%20via%20Website%20&body=Hey%20Team%20SilverBack%2C%0A%0AI%2FWe%20want%20to%20work%20with%20you.%0A%0AWe're%2FI'm...%0A%0ARegards%2C")}
+            aria-roledescription="mail"
             onClick={() =>
               window.open(
-                "mailto:work@silverback.ie?subject=Request%20via%20Website%20&body=Hey%20Team%20SilverBack%2C%0A%0AI%2FWe%20want%20to%20work%20with%20you.%0A%0AWe're%2FI'm...%0A%0ARegards%2C"
-              )
-            }
+                "mailto:work@silverback.ie?subject=Request%20via%20Website%20&body=Hey%20Team%20SilverBack%2C%0A%0AI%2FWe%20want%20to%20work%20with%20you.%0A%0AWe're%2FI'm...%0A%0ARegards%2C",
+              )}
             className="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 text-primary underline-offset-4 hover:underline p-0 text-xs h-4 md:h-6 md:text-base"
           >
             work@silverback.ie
@@ -483,6 +483,7 @@ export function ContactForm() {
             variant="big"
             cardLabel="I want to support"
             cardDescription="Work for us and join the team"
+            // eslint-disable-next-line jsx-a11y/anchor-is-valid
             icon={<Link size={24} />}
             value="team"
             id="team"
@@ -521,18 +522,23 @@ export function WorkFlowCard({
       ref={workFlowCard}
       className={cn("flex items-center", leftRight === "left" && "justify-end")}
     >
-      <Card className={cn("w-max h-max transition-all duration-500", workFlowCardAreVisible ? "opacity-100 translate-x-0" : leftRight === "left" ? "-translate-x-20 opacity-0" : "translate-x-20 opacity-0")}>
+      <Card
+        className={cn(
+          "w-max h-max transition-all duration-500",
+          workFlowCardAreVisible
+            ? "opacity-100 translate-x-0"
+            : leftRight === "left"
+              ? "-translate-x-20 opacity-0"
+              : "translate-x-20 opacity-0",
+        )}
+      >
         <CardContent className="p-2 flex gap-2">
           <div className="flex justify-center items-center bg-muted rounded-xl h-10 w-10">
             <Icon.type {...Icon.props} size={24} />
           </div>
           <div className="grid content-center w-[calc(100%-40px)]">
-            <p className="text-sm font-semibold text-start truncate">
-              {heading}
-            </p>
-            <p className="text-xs opacity-50 text-start truncate pr-2">
-              {content}
-            </p>
+            <p className="text-sm font-semibold text-start truncate">{heading}</p>
+            <p className="text-xs opacity-50 text-start truncate pr-2">{content}</p>
           </div>
         </CardContent>
       </Card>

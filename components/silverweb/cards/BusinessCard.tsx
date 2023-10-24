@@ -1,3 +1,10 @@
+import {
+  Building, Building2, Mails, TabletSmartphone,
+} from "lucide-react";
+import React from "react";
+
+import { CompanyCardCommentSection, CardPopoverItem } from "./Tools";
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -6,15 +13,12 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { Separator } from "@/components/ui/separator";
-import { Building, Building2, Mails, TabletSmartphone } from "lucide-react";
-import React from "react";
-import { CompanyCardCommentSection, CardPopoverItem } from "./Tools";
 
 export default function BusinessCard({
   info,
   comments,
 }: {
-  info: { name: string; workingField: string; group: string; email: string; phone: string, address: { street: string, city: string, country: string} };
+  info: { name: string; workingField: string; group: string; email: string; phone: string, address: { street: string, city: string, country: string } };
   comments: { author: string; text: string; createdAt: string }[];
 }) {
   return (
@@ -42,7 +46,7 @@ export default function BusinessCard({
             </p>
             <p className="text-xs opacity-50 text-start truncate">{info.workingField}</p>
           </div>
-          <Button variant={"secondary"} size={"sm"}>
+          <Button variant="secondary" size="sm">
             Edit
           </Button>
         </div>

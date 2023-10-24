@@ -1,11 +1,4 @@
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
-import { Separator } from "@/components/ui/separator";
+import { format } from "date-fns";
 import {
   Building,
   Calendar,
@@ -21,8 +14,17 @@ import {
   User2,
 } from "lucide-react";
 import React from "react";
+
 import { CardPopoverItem } from "./Tools";
-import { format } from "date-fns";
+
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import { Separator } from "@/components/ui/separator";
 
 export default function FileCard({
   info,
@@ -35,53 +37,53 @@ export default function FileCard({
     uri: string;
   };
 }) {
+  let FileIcon = <FileText size={24} />;
 
-    let FileIcon = <FileText size={24} />;
+  switch (info.type) {
+    case "text/plain":
+      FileIcon = <FileType size={24} />;
+      break;
+    case "application/pdf":
+      FileIcon = <FileText size={24} />;
+      break;
+    case "image/png":
+      FileIcon = <FileImage size={24} />;
+      break;
+    case "image/jpeg":
+      FileIcon = <FileImage size={24} />;
+      break;
+    case "application/msword":
+      FileIcon = <FileText size={24} />;
+      break;
+    case "application/vnd.openxmlformats-officedocument.wordprocessingml.document":
+      FileIcon = <FileText size={24} />;
+      break;
+    case "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet":
+      FileIcon = <FileSpreadsheet size={24} />;
+      break;
+    case "application/vnd.openxmlformats-officedocument.presentationml.presentation":
+      FileIcon = <FilePieChart size={24} />;
+      break;
+    case "text/csv":
+      FileIcon = <FileSpreadsheet size={24} />;
+      break;
+    case "image/svg+xml":
+      FileIcon = <FileImage size={24} />;
+      break;
+    case "application/zip":
+      FileIcon = <FileArchive size={24} />;
+      break;
+    case "video/mp4":
+      FileIcon = <FileVideo size={24} />;
+      break;
+    case "video/mpeg":
+      FileIcon = <FileVideo size={24} />;
+      break;
+    default:
+      FileIcon = <File size={24} />;
+      break;
+  }
 
-    switch (info.type) {
-      case "text/plain":
-        FileIcon = <FileType size={24} />;
-        break;
-      case "application/pdf":
-        FileIcon = <FileText size={24} />;
-        break;
-      case "image/png":
-        FileIcon = <FileImage size={24} />;
-        break;
-      case "image/jpeg":
-        FileIcon = <FileImage size={24} />;
-        break;
-      case "application/msword":
-        FileIcon = <FileText size={24} />;
-        break;
-      case "application/vnd.openxmlformats-officedocument.wordprocessingml.document":
-        FileIcon = <FileText size={24} />;
-        break;
-      case "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet":
-        FileIcon = <FileSpreadsheet size={24} />;
-        break;
-      case "application/vnd.openxmlformats-officedocument.presentationml.presentation":
-        FileIcon = <FilePieChart size={24} />;
-        break;
-      case "text/csv":
-        FileIcon = <FileSpreadsheet size={24} />;
-        break;
-      case "image/svg+xml":
-        FileIcon = <FileImage size={24} />;
-        break;
-      case "application/zip":
-        FileIcon = <FileArchive size={24} />;
-        break;
-      case "video/mp4":
-        FileIcon = <FileVideo size={24} />;
-        break;
-      case "video/mpeg":
-        FileIcon = <FileVideo size={24} />;
-        break;
-      default:
-        FileIcon = <File size={24} />;
-        break;
-    }
   return (
     <Popover>
       <PopoverTrigger className="w-full">
@@ -112,8 +114,8 @@ export default function FileCard({
             </p>
           </div>
           <Button
-            variant={"secondary"}
-            size={"sm"}
+            variant="secondary"
+            size="sm"
             onClick={() => {
               const link = document.createElement("a");
               link.setAttribute("href", info.uri);
@@ -138,7 +140,7 @@ export default function FileCard({
           label="Date"
           name={format(
             new Date(info.lastModified || Date.now()),
-            "MMM dd, yyyy"
+            "MMM dd, yyyy",
           )}
         />
       </PopoverContent>

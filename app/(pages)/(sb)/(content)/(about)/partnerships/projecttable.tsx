@@ -1,38 +1,17 @@
 "use client";
 
 import { ColumnDef } from "@tanstack/react-table";
-import {
-  PlugZap,
-  ServerCog,
-  ShoppingBasket,
-  Sofa,
-  TrainTrack,
-} from "lucide-react";
+import { PlugZap, ServerCog, ShoppingBasket, Sofa, TrainTrack } from "lucide-react";
 import Image, { StaticImageData } from "next/image";
-import { Button } from "@/components/ui/button";
-import { useRouter, useSearchParams } from "next/navigation";
-
-import gothenburg_1_min from "public/projects/gothenburg-1-min.jpg";
-import national_museum_1_min from "public/projects/national-museum-1-min.jpg";
-import kalix_1_min from "public/projects/kalix-1-min.jpg";
-import eurospar_1_min from "public/projects/eurospar-1-min.jpg";
-import oslo_2_min from "public/projects/oslo-2-min.jpg";
-import uppsala_1_min from "public/projects/uppsala-1-min.jpg";
-import pool_indoor_1_min from "public/projects/pool-indoor-1-min.jpg";
+import { useRouter } from "next/navigation";
 import copenhagen_1_min from "public/projects/copenhagen-1-min.jpg";
-import trondheim_1_min from "public/projects/trondheim-1-min.jpg";
-import lidl_1_min from "public/projects/lidl-1-min.jpg";
-import royal_arena_1_min from "public/projects/royal-arena-1-min.jpg";
-import shooping_centre_1_min from "public/projects/shooping-centre-1-min.jpg";
-import pharmacy_1_min from "public/projects/pharmacy-1-min.jpg";
-import royal_college_of_music_1_min from "public/projects/royal-college-of-music-1-min.jpg";
-import mall_of_scandinavia_1_min from "public/projects/mall-of-scandinavia-1-min.jpg";
 import copenhagen_2_min from "public/projects/copenhagen-2-min.jpg";
-import via_campus_c_min from "public/projects/via-campus-c-min.jpg";
-import lyngby_1_min from "public/projects/lyngby-1-min.jpg";
-import lillestrom_1_min from "public/projects/lillestrom-1-min.jpg";
-import ikea_1_min from "public/projects/ikea-1-min.jpg";
 import datacentre_1 from "public/projects/datacentre-1.jpg";
+import datacentre_10 from "public/projects/datacentre-10.jpg";
+import datacentre_11 from "public/projects/datacentre-11.jpg";
+import datacentre_12 from "public/projects/datacentre-12.jpg";
+import datacentre_13 from "public/projects/datacentre-13.jpg";
+import datacentre_14 from "public/projects/datacentre-14.jpg";
 import datacentre_2 from "public/projects/datacentre-2.jpg";
 import datacentre_3 from "public/projects/datacentre-3.jpg";
 import datacentre_4 from "public/projects/datacentre-4.jpg";
@@ -41,12 +20,11 @@ import datacentre_6 from "public/projects/datacentre-6.jpg";
 import datacentre_7 from "public/projects/datacentre-7.jpg";
 import datacentre_8 from "public/projects/datacentre-8.jpg";
 import datacentre_9 from "public/projects/datacentre-9.jpg";
-import datacentre_10 from "public/projects/datacentre-10.jpg";
-import datacentre_11 from "public/projects/datacentre-11.jpg";
-import datacentre_12 from "public/projects/datacentre-12.jpg";
-import datacentre_13 from "public/projects/datacentre-13.jpg";
-import datacentre_14 from "public/projects/datacentre-14.jpg";
 import e10_1 from "public/projects/e10-1.jpg";
+import energie_1 from "public/projects/energie-1.jpg";
+import eurospar_1_min from "public/projects/eurospar-1-min.jpg";
+import gothenburg_1_min from "public/projects/gothenburg-1-min.jpg";
+import ikea_1_min from "public/projects/ikea-1-min.jpg";
 import infrastructure_1 from "public/projects/infrastructure-1.jpg";
 import infrastructure_2 from "public/projects/infrastructure-2.jpg";
 import infrastructure_3 from "public/projects/infrastructure-3.jpg";
@@ -55,7 +33,24 @@ import infrastructure_5 from "public/projects/infrastructure-5.jpg";
 import infrastructure_6 from "public/projects/infrastructure-6.jpg";
 import infrastructure_7 from "public/projects/infrastructure-7.jpg";
 import infrastructure_8 from "public/projects/infrastructure-8.jpg";
-import energie_1 from "public/projects/energie-1.jpg";
+import kalix_1_min from "public/projects/kalix-1-min.jpg";
+import lidl_1_min from "public/projects/lidl-1-min.jpg";
+import lillestrom_1_min from "public/projects/lillestrom-1-min.jpg";
+import lyngby_1_min from "public/projects/lyngby-1-min.jpg";
+import mall_of_scandinavia_1_min from "public/projects/mall-of-scandinavia-1-min.jpg";
+import national_museum_1_min from "public/projects/national-museum-1-min.jpg";
+import oslo_2_min from "public/projects/oslo-2-min.jpg";
+import pharmacy_1_min from "public/projects/pharmacy-1-min.jpg";
+import pool_indoor_1_min from "public/projects/pool-indoor-1-min.jpg";
+import royal_arena_1_min from "public/projects/royal-arena-1-min.jpg";
+import royal_college_of_music_1_min from "public/projects/royal-college-of-music-1-min.jpg";
+import shooping_centre_1_min from "public/projects/shooping-centre-1-min.jpg";
+import trondheim_1_min from "public/projects/trondheim-1-min.jpg";
+import uppsala_1_min from "public/projects/uppsala-1-min.jpg";
+import via_campus_c_min from "public/projects/via-campus-c-min.jpg";
+import React from "react";
+
+import { Button } from "@/components/ui/button";
 
 export type Project = {
   id: string;
@@ -123,101 +118,17 @@ export const countries = [
   },
 ];
 
-export const columnsProject: ColumnDef<Project>[] = [
-  {
-    accessorKey: "cover",
-    cell: ({ row }) => {
-      return (
-        <div className="relative w-[278px] h-[268px] rounded-lg overflow-hidden">
-          <Image
-            aria-details="All Photos are from unsplash https://unsplash.com"
-            resource="unsplash"
-            className="duration-500 object-cover transition-all hover:scale-105 z-10"
-            src={
-              (row.getValue("cover") as { url: StaticImageData; alt: string })
-                .url
-            }
-            fill
-            sizes="100%"
-            alt={
-              (row.getValue("cover") as { url: StaticImageData; alt: string })
-                .alt
-            }
-          />
-          <div className="animate-pulse absolute top-0 right-0 bottom-0 left-0 bg-primary/10" />
-        </div>
-      );
-    },
-  },
-  {
-    accessorKey: "name",
-    cell: ({ row }) => {
-      return (
-        <div className="text-lg font-bold mt-3 line-clamp-1">
-          {row.getValue("name")}
-        </div>
-      );
-    },
-  },
-  {
-    accessorKey: "category",
-    cell: ({ row }) => {
-      return (
-        <div>
-          <CategoryButton category={row.getValue("category")} />
-        </div>
-      );
-    },
-    filterFn: (row, id, value) => {
-      return value.includes((row.getValue(id) as string).toLowerCase());
-    },
-  },
-
-  {
-    accessorKey: "location",
-    cell: ({ row }) => {
-      return (
-        <div className="text-sm font-bold opacity-70 line-clamp-1">
-          {(row.getValue("location") as { city: string; country: string }).city}
-          ,{" "}
-          {
-            (row.getValue("location") as { city: string; country: string })
-              .country
-          }
-        </div>
-      );
-    },
-    filterFn: (row, id, value) => {
-      return value.includes(
-        (
-          row.getValue(id) as { city: string; country: string }
-        ).country.toLowerCase()
-      );
-    },
-  },
-  {
-    accessorKey: "description",
-    cell: ({ row }) => {
-      return (
-        <div className="text-sm text-muted-foreground line-clamp-3">
-          {row.getValue("description")}
-        </div>
-      );
-    },
-  },
-];
-
 function CategoryButton({ category }: { category: string }) {
   const router = useRouter();
-  const {} = useSearchParams();
+
   return (
     <Button
       onClick={() => {
-        router.push("/partnerships?category=" + category.toLowerCase(), {
+        router.push(`/partnerships?category=${category.toLowerCase()}`, {
           scroll: false,
         });
       }}
-      variant={"link"}
+      variant="link"
       className="p-0 h-auto text-ellipsis"
     >
       {category}
@@ -225,12 +136,66 @@ function CategoryButton({ category }: { category: string }) {
   );
 }
 
+export const columnsProject: ColumnDef<Project>[] = [
+  {
+    accessorKey: "cover",
+    cell: ({ row }) => (
+      <div className="relative w-[278px] h-[268px] rounded-lg overflow-hidden">
+        <Image
+          aria-details="All Photos are from unsplash https://unsplash.com"
+          resource="unsplash"
+          className="duration-500 object-cover transition-all hover:scale-105 z-10"
+          src={(row.getValue("cover") as { url: StaticImageData; alt: string }).url}
+          fill
+          sizes="100%"
+          alt={(row.getValue("cover") as { url: StaticImageData; alt: string }).alt}
+        />
+        <div className="animate-pulse absolute top-0 right-0 bottom-0 left-0 bg-primary/10" />
+      </div>
+    ),
+  },
+  {
+    accessorKey: "name",
+    cell: ({ row }) => (
+      <div className="text-lg font-bold mt-3 line-clamp-1">{row.getValue("name")}</div>
+    ),
+  },
+  {
+    accessorKey: "category",
+    cell: ({ row }) => (
+      <div>
+        <CategoryButton category={row.getValue("category")} />
+      </div>
+    ),
+    filterFn: (row, id, value) => value.includes((row.getValue(id) as string).toLowerCase()),
+  },
+
+  {
+    accessorKey: "location",
+    cell: ({ row }) => (
+      <div className="text-sm font-bold opacity-70 line-clamp-1">
+        {(row.getValue("location") as { city: string; country: string }).city},{" "}
+        {(row.getValue("location") as { city: string; country: string }).country}
+      </div>
+    ),
+    filterFn: (row, id, value) =>
+      value.includes((row.getValue(id) as { city: string; country: string }).country.toLowerCase()),
+  },
+  {
+    accessorKey: "description",
+    cell: ({ row }) => (
+      <div className="text-sm text-muted-foreground line-clamp-3">
+        {row.getValue("description")}
+      </div>
+    ),
+  },
+];
+
 export const dataProject: Project[] = [
   {
     id: "1",
     name: "Chalmers University Gothenburg",
-    description:
-      "SilverBack provided a team of electricians for work on a university project.",
+    description: "SilverBack provided a team of electricians for work on a university project.",
     category: "Commercial",
     cover: {
       alt: "Chalmers University Gothenburg",
@@ -274,8 +239,7 @@ export const dataProject: Project[] = [
   {
     id: "4",
     name: "Ny Eurosparbutikk",
-    description:
-      "SilverBack provided a team of concrete workers for a new-build shop unit.",
+    description: "SilverBack provided a team of concrete workers for a new-build shop unit.",
     category: "Commercial",
     cover: {
       alt: "Ny Eurosparbutikk",
@@ -363,8 +327,7 @@ export const dataProject: Project[] = [
   {
     id: "10",
     name: "Lidl",
-    description:
-      "Provided team of electricians for installation on new retail development.",
+    description: "Provided team of electricians for installation on new retail development.",
     category: "Commercial",
     cover: {
       alt: "Lidl",
@@ -453,8 +416,7 @@ export const dataProject: Project[] = [
   {
     id: "16",
     name: "KUA 3",
-    description:
-      "Supplied team of electricians for installation on new university building.",
+    description: "Supplied team of electricians for installation on new university building.",
     category: "Commercial",
     cover: {
       alt: "KUA 3",
@@ -498,8 +460,7 @@ export const dataProject: Project[] = [
   {
     id: "19",
     name: "Felleskjøpet Hovedkontor",
-    description:
-      "Our team of plumbers installed sprinkler system for corporate HQ.",
+    description: "Our team of plumbers installed sprinkler system for corporate HQ.",
     category: "Commercial",
     cover: {
       alt: "Felleskjøpet Hovedkontor",
@@ -573,8 +534,7 @@ export const dataProject: Project[] = [
   {
     id: "24",
     name: "Digital Realty datacentre",
-    description:
-      "Provided logistics and construction work on new data centre construction.",
+    description: "Provided logistics and construction work on new data centre construction.",
     category: "Data Centres",
     cover: {
       alt: "Digital Realty datacentre",
@@ -588,8 +548,7 @@ export const dataProject: Project[] = [
   {
     id: "25",
     name: "ICT Ericsson",
-    description:
-      "Provided teams of electricians for new data centre construction.",
+    description: "Provided teams of electricians for new data centre construction.",
     category: "Data Centres",
     cover: {
       alt: "ICT Ericsson",
@@ -738,8 +697,7 @@ export const dataProject: Project[] = [
   {
     id: "29",
     name: "E10 Ravinbroar",
-    description:
-      "SilverBack provided a team of concrete workers for new bridge construction.",
+    description: "SilverBack provided a team of concrete workers for new bridge construction.",
     category: "Infrastructure",
     cover: {
       alt: "E10 Ravinbroar",
@@ -753,8 +711,7 @@ export const dataProject: Project[] = [
   {
     id: "30",
     name: "Lillepite",
-    description:
-      "SilverBack provided a team of concrete workers for new bridge construction.",
+    description: "SilverBack provided a team of concrete workers for new bridge construction.",
     category: "Infrastructure",
     cover: {
       alt: "Lillepite",
@@ -826,8 +783,7 @@ export const dataProject: Project[] = [
   {
     id: "35",
     name: "E6 Alta Vest",
-    description:
-      "Supplied small team for tunnel portal construction on E6 motorway.",
+    description: "Supplied small team for tunnel portal construction on E6 motorway.",
     category: "Infrastructure",
     cover: {
       alt: "E6 Alta Vest",
@@ -856,8 +812,7 @@ export const dataProject: Project[] = [
   {
     id: "37",
     name: "E18 Nye Holmene Tassebekk",
-    description:
-      "Laying of EPS substructure for new motorway construction in Vestfold, Norway.",
+    description: "Laying of EPS substructure for new motorway construction in Vestfold, Norway.",
     category: "Infrastructure",
     cover: {
       alt: "E18 Nye Holmene Tassebekk",

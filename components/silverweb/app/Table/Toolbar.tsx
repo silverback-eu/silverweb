@@ -1,11 +1,14 @@
 "use client";
+
 import { Table } from "@tanstack/react-table";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import ColumnFilter from "./ColumnFilter";
-import FilterDropdown from "./FilterDropdown";
 import { LucideIcon, X } from "lucide-react";
 import { Fragment } from "react";
+
+import ColumnFilter from "./ColumnFilter";
+import FilterDropdown from "./FilterDropdown";
+
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 
 interface ToolbarProps<TData> {
   table: Table<TData>;
@@ -45,14 +48,12 @@ export default function Toolbar<TData>({
             value={
               (table.getColumn(search.name)?.getFilterValue() as string) ?? ""
             }
-            onChange={(event) =>
-              table.getColumn(search.name)?.setFilterValue(event.target.value)
-            }
+            onChange={(event) => table.getColumn(search.name)?.setFilterValue(event.target.value)}
             className="h-8 w-[150px] lg:w-[250px]"
           />
         )}
         {filter && (
-          <Fragment>
+          <React.Fragment>
             {filter.map((filter) => (
               <Fragment key={filter.name}>
                 {table.getColumn(filter.name.split(".")[0]) && (
@@ -66,7 +67,7 @@ export default function Toolbar<TData>({
                 )}
               </Fragment>
             ))}
-          </Fragment>
+          </React.Fragment>
         )}
         {resetFilter && isFiltered && (
           <Button

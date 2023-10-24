@@ -1,5 +1,8 @@
 import { Column } from "@tanstack/react-table";
-import { cn } from "@/lib/utils";
+import {
+  ChevronDown, ChevronUp, ChevronsUpDown, EyeOff,
+} from "lucide-react";
+
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -8,7 +11,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { ChevronDown, ChevronUp, ChevronsUpDown, EyeOff } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 interface TableHeaderProps<TData, TValue>
   extends React.HTMLAttributes<HTMLDivElement> {

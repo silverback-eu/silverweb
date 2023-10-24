@@ -1,9 +1,13 @@
 "use client";
-import React, { useState } from "react";
+
 import Link from "next/link";
-import { cn } from "@/lib/utils";
-import { Separator } from "@/components/ui/separator";
 import { usePathname } from "next/navigation";
+import React, { useState } from "react";
+
+import BurgerMenuIcon from "./BurgerMenuIcon";
+import Logo from "./Logo";
+import User from "./User";
+
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -13,12 +17,10 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import BurgerMenuIcon from "./BurgerMenuIcon";
-import Logo from "./Logo";
-import User from "./User";
-
+import { Separator } from "@/components/ui/separator";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { cn } from "@/lib/utils";
 
 export default function Navbar({
   loginUser,
@@ -32,11 +34,12 @@ export default function Navbar({
 }) {
   const [openSideMenu, setOpenSideMenu] = useState(false);
   const pathname = usePathname();
+
   return (
     <header className={cn("h-[53px] z-50 relative")}>
       <div
         className={cn(
-          "w-screen right-0 fixed backdrop-blur-[5px] backdrop-saturate-150 bg-black bg-opacity-80 from-background via-background to-[rgba(0,0,0,0.6)]"
+          "w-screen right-0 fixed backdrop-blur-[5px] backdrop-saturate-150 bg-black bg-opacity-80 from-background via-background to-[rgba(0,0,0,0.6)]",
         )}
       >
         <div className="max-w-[1400px] px-3 mx-auto flex py-2 content-center justify-between">
@@ -87,7 +90,7 @@ export default function Navbar({
                             </Link>
                           )}
                           {pages[idx + 1] && pages[idx + 1].heading && (
-                            <Separator className="my-2" />
+                          <Separator className="my-2" />
                           )}
                         </div>
                       ))}
@@ -102,32 +105,32 @@ export default function Navbar({
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem className={cn("grid gap-1 grid-flow-col")}>
-                <Link href={"/"} className="mx-3 grid gap-1 grid-flow-col">
-                <div className="hidden sm:flex content-center flex-wrap translate-y-[0.5px] select-none">
-                  <Logo wh={22} />
-                </div>
-                <div className="flex translate-x-5 sm:translate-x-0">
-                  <div className="text-lg tracking-[-0.03em] font-bold content-center grid select-none">
-                    SilverBack
+                <Link href="/" className="mx-3 grid gap-1 grid-flow-col">
+                  <div className="hidden sm:flex content-center flex-wrap translate-y-[0.5px] select-none">
+                    <Logo wh={22} />
                   </div>
-                  <div className="text-[1.1em] tracking-[-0.08em] font-medium opacity-70 translate-y-[0px] content-center hidden sm:grid select-none">
+                  <div className="flex translate-x-5 sm:translate-x-0">
+                    <div className="text-lg tracking-[-0.03em] font-bold content-center grid select-none">
+                      SilverBack
+                    </div>
+                    <div className="text-[1.1em] tracking-[-0.08em] font-medium opacity-70 translate-y-[0px] content-center hidden sm:grid select-none">
                      group
+                    </div>
                   </div>
-                </div>
                 </Link>
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
           <NavigationMenu>
             <NavigationMenuList>
-              <NavigationMenuItem className={"hidden md:block"}>
+              <NavigationMenuItem className="hidden md:block">
                 <Link href="/" legacyBehavior passHref>
                   <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                     <div
                       className={cn(
                         "",
-                        pathname == "/" &&
-                          "font-bold drop-shadow-[0_1px_4px_rgba(255,255,255,0.4)]"
+                        pathname == "/"
+                          && "font-bold drop-shadow-[0_1px_4px_rgba(255,255,255,0.4)]",
                       )}
                     >
                       Home
@@ -140,10 +143,10 @@ export default function Navbar({
                   <div
                     className={cn(
                       "",
-                      (pathname == "/our-story" ||
-                        pathname == "/methods" ||
-                        pathname == "/partnerships") &&
-                        "font-bold drop-shadow-[0_1px_4px_rgba(255,255,255,0.4)]"
+                      (pathname == "/our-story"
+                        || pathname == "/methods"
+                        || pathname == "/partnerships")
+                        && "font-bold drop-shadow-[0_1px_4px_rgba(255,255,255,0.4)]",
                     )}
                   >
                     About
@@ -171,7 +174,11 @@ export default function Navbar({
                       </NavigationMenuLink>
                     </li>
                     <ListItem href="/our-story" title="Our story">
-                      How did it start, {new Date().getFullYear() - 2012} years ago that we became the Partner
+                      How did it start,
+                      {" "}
+                      {new Date().getFullYear() - 2012}
+                      {" "}
+                      years ago that we became the Partner
                       from Dublin to Bucharest and Beyond...
                     </ListItem>
                     <ListItem href="/methods" title="Methods">
@@ -190,8 +197,8 @@ export default function Navbar({
                   <div
                     className={cn(
                       "",
-                      pathname == "/jobboard" &&
-                        "font-bold drop-shadow-[0_1px_4px_rgba(255,255,255,0.4)]"
+                      pathname == "/jobboard"
+                        && "font-bold drop-shadow-[0_1px_4px_rgba(255,255,255,0.4)]",
                     )}
                   >
                     Job board
@@ -214,30 +221,30 @@ export default function Navbar({
               <NavigationMenuItem className="hidden md:block">
                 <Link href="/connect" legacyBehavior passHref>
                   <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                  <div
-                    className={cn(
-                      "",
-                      pathname == "/connect" &&
-                        "font-bold drop-shadow-[0_1px_4px_rgba(255,255,255,0.4)]"
-                    )}
-                  >
-                    Connect
-                  </div>
+                    <div
+                      className={cn(
+                        "",
+                        pathname == "/connect"
+                        && "font-bold drop-shadow-[0_1px_4px_rgba(255,255,255,0.4)]",
+                      )}
+                    >
+                      Connect
+                    </div>
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem className="hidden md:block">
                 <Link href="/industry-insights" legacyBehavior passHref>
                   <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                  <div
-                    className={cn(
-                      "",
-                      pathname == "/industry-insights" &&
-                        "font-bold drop-shadow-[0_1px_4px_rgba(255,255,255,0.4)]"
-                    )}
-                  >
-                    Industry insights
-                  </div>
+                    <div
+                      className={cn(
+                        "",
+                        pathname == "/industry-insights"
+                        && "font-bold drop-shadow-[0_1px_4px_rgba(255,255,255,0.4)]",
+                      )}
+                    >
+                      Industry insights
+                    </div>
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
@@ -269,8 +276,8 @@ export default function Navbar({
 }
 
 const pages: Array<
-  | { title: string; href: string; heading?: undefined }
-  | { title: string; heading: boolean; href?: string }
+| { title: string; href: string; heading?: undefined }
+| { title: string; heading: boolean; href?: string }
 > = [
   {
     title: "About",
@@ -414,7 +421,7 @@ const pages: Array<
   {
     title: "Around industry",
     href: "/industry-insights/?category=around-industry",
-  }
+  },
 ];
 
 const jobs: { title: string; href: string; description: string }[] = [
@@ -456,27 +463,27 @@ const jobs: { title: string; href: string; description: string }[] = [
 ];
 
 const ListItem = React.forwardRef<
-  React.ElementRef<"a">,
-  React.ComponentPropsWithoutRef<"a">
->(({ className, title, children, ...props }, ref) => {
-  return (
-    <li>
-      <NavigationMenuLink asChild>
-        <a
-          ref={ref}
-          className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-            className
-          )}
-          {...props}
-        >
-          <div className="text-sm font-medium leading-none">{title}</div>
-          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-            {children}
-          </p>
-        </a>
-      </NavigationMenuLink>
-    </li>
-  );
-});
+React.ElementRef<"a">,
+React.ComponentPropsWithoutRef<"a">
+>(({
+  className, title, children, ...props
+}, ref) => (
+  <li>
+    <NavigationMenuLink asChild>
+      <a
+        ref={ref}
+        className={cn(
+          "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+          className,
+        )}
+        {...props}
+      >
+        <div className="text-sm font-medium leading-none">{title}</div>
+        <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+          {children}
+        </p>
+      </a>
+    </NavigationMenuLink>
+  </li>
+));
 ListItem.displayName = "ListItem";

@@ -12,6 +12,9 @@ import {
   Tags,
   User2,
 } from "lucide-react";
+import Link from "next/link";
+import { Fragment } from "react";
+
 import {
   Avatar as AvatarPrimitive,
   AvatarFallback,
@@ -26,10 +29,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-
 import { cn } from "@/lib/utils";
-import { Fragment } from "react";
-import Link from "next/link";
 
 /**
  * Renders an avatar component.
@@ -52,12 +52,12 @@ export default function User({
   alt: string;
   type: "Employee" | "Client" | "Admin";
 }) {
-  const DropDownList =
-    type == "Employee"
-      ? EmployeeDropdownMenuItemList
-      : type == "Client"
+  const DropDownList = type == "Employee"
+    ? EmployeeDropdownMenuItemList
+    : type == "Client"
       ? ClientDropdownMenuItemList
       : AdminDropdownMenuItemList;
+
   return (
     <div
       className={cn(
@@ -65,8 +65,8 @@ export default function User({
         type == "Employee"
           ? "bg-red-500"
           : type == "Client"
-          ? "bg-green-600"
-          : "bg-purple-900"
+            ? "bg-green-600"
+            : "bg-purple-900",
       )}
     >
       <DropdownMenu>
@@ -92,7 +92,7 @@ export default function User({
                 ))}
               </DropdownMenuGroup>
               {index !== AdminDropdownMenuItemList.length - 1 && (
-                <DropdownMenuSeparator />
+              <DropdownMenuSeparator />
               )}
             </Fragment>
           ))}
@@ -103,7 +103,7 @@ export default function User({
 }
 
 const AdminDropdownMenuItemList: Array<
-  { label: string; icon: any; href: string }[]
+{ label: string; icon: any; href: string }[]
 > = [
   [
     {
@@ -154,7 +154,7 @@ const AdminDropdownMenuItemList: Array<
 ];
 
 const EmployeeDropdownMenuItemList: Array<
-  { label: string; icon: any; href: string }[]
+{ label: string; icon: any; href: string }[]
 > = [
   [
     {
@@ -200,7 +200,7 @@ const EmployeeDropdownMenuItemList: Array<
 ];
 
 const ClientDropdownMenuItemList: Array<
-  { label: string; icon: any; href: string }[]
+{ label: string; icon: any; href: string }[]
 > = [
   [
     {

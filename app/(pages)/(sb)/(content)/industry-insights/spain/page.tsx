@@ -1,8 +1,9 @@
 "use client";
 
+import React from "react";
+
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import React from "react";
 
 export default function SpainTakesTheLead() {
   return (
@@ -40,7 +41,9 @@ export default function SpainTakesTheLead() {
           and confirming a new phase of the global climate emergency. However,
           as outside observers watched and worried about Mediterranean waters
           bubbling to a record-shattering 28C, Spain was leading Europe in a
-          much more encouraging way. Action. <br />
+          much more encouraging way. Action.
+          {" "}
+          <br />
           <br />
           The big cleantech investment headlines have tended to focus on
           northern Europe and a cluster of monster battery gigafactory projects.

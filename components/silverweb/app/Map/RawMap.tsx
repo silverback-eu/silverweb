@@ -1,4 +1,5 @@
 "use client";
+
 import React, { Fragment, useEffect, useState } from "react";
 import "leaflet/dist/leaflet.css";
 import L, { LatLngTuple } from "leaflet";
@@ -28,20 +29,19 @@ export default function Map({
   const { theme } = useTheme();
   const [id, _] = useState(new Date().getMilliseconds() * Math.random());
   useEffect(() => {
-    var container = L.DomUtil.get("map-" + id) as
+    const container = L.DomUtil.get(`map-${id}`) as
       | (HTMLElement & { _leaflet_id: string | null })
       | null;
 
     if (container != null) {
       container._leaflet_id = null;
     }
-    const center: LatLngTuple =
-      centerMarker && marker
-        ? Array.isArray(marker)
-          ? [marker[0].lat, marker[0].lng]
-          : [marker.lat, marker.lng]
-        : [53.36512, 10.27083];
-    var map = L.map("map-" + id).setView([...center], 4);
+    const center: LatLngTuple = centerMarker && marker
+      ? Array.isArray(marker)
+        ? [marker[0].lat, marker[0].lng]
+        : [marker.lat, marker.lng]
+      : [53.36512, 10.27083];
+    const map = L.map(`map-${id}`).setView([...center], 4);
     L.tileLayer(
       theme === "dark" || document.getElementsByClassName("dark").length
         ? "https://tile.jawg.io/jawg-dark/{z}/{x}/{y}{r}.png?access-token=eEwhCbisjZC7pRJyDOWwji88YgxrQHeVPlTCOUGRPxRCKF8GYTBhN2Lv5HZ3sd1g"
@@ -50,41 +50,39 @@ export default function Map({
         minZoom: 0,
         maxZoom: 20,
         attribution:
-          '&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-      }
+          "&copy; <a href=\"https://www.stadiamaps.com/\" target=\"_blank\">Stadia Maps</a> &copy; <a href=\"https://openmaptiles.org/\" target=\"_blank\">OpenMapTiles</a> &copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors",
+      },
     ).addTo(map);
 
     if (marker) {
       if (Array.isArray(marker)) {
         marker.map((marker, idx) => {
-          let MARKER = L.marker([marker.lat, marker.lng], {
+          const MARKER = L.marker([marker.lat, marker.lng], {
             icon: getIcon(marker.iconUrl || "/svg/fallback_icon.svg"),
           }).addTo(map);
           MARKER.bindPopup(
             ReactDomServer.renderToString(
-              <Fragment>
-                <div className="">{marker.content}</div>
-              </Fragment>
-            )
+              <div className="">{marker.content}</div>,
+            ),
           );
         });
       } else {
-        let MARKER = L.marker([marker.lat, marker.lng], {
+        const MARKER = L.marker([marker.lat, marker.lng], {
           icon: getIcon(marker.iconUrl || "/svg/fallback_icon.svg"),
         }).addTo(map);
         MARKER.bindPopup(
           ReactDomServer.renderToString(
-            <Fragment>
-              <div className="">{marker.content}</div>
-            </Fragment>
-          )
+            <div className="">{marker.content}</div>,
+          ),
         );
       }
     }
   });
+
   return (
-    <Fragment>
-      <style jsx global>{`
+    <React.Fragment>
+      <style jsx global>
+        {`
         .leaflet-c-popover {
           border-radius: 14px;
         }
@@ -125,9 +123,10 @@ export default function Map({
         .leaflet-popup-content {
           background: transparent;
         }
-      `}</style>
-      <div id={"map-" + id} style={{ height: "100%", width: "100%" }}></div>
-    </Fragment>
+      `}
+      </style>
+      <div id={`map-${id}`} style={{ height: "100%", width: "100%" }} />
+    </React.Fragment>
   );
 }
 

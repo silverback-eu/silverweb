@@ -1,3 +1,4 @@
+import { CSSProperties, ComponentType } from "react";
 import {
   CoordinateExtent,
   NodeHandleBounds,
@@ -6,9 +7,9 @@ import {
   XYPosition,
   internalsSymbol,
 } from "reactflow";
-import { DisplayNodeProps } from "./DisplayNode";
-import { CSSProperties, ComponentType } from "react";
+
 import { CardNodeProps } from "./CardNode";
+import { DisplayNodeProps } from "./DisplayNode";
 
 export type Node = {
   id: string;
@@ -43,33 +44,33 @@ export type Node = {
   };
 } & (
   | {
-      type: "displayNode";
-      data: DisplayNodeProps;
-    }
+    type: "displayNode";
+    data: DisplayNodeProps;
+  }
   | {
-      type: "displayNodeInput";
-      data: DisplayNodeProps;
-    }
+    type: "displayNodeInput";
+    data: DisplayNodeProps;
+  }
   | {
-      type: "displayNodeOutput";
-      data: DisplayNodeProps;
-    }
+    type: "displayNodeOutput";
+    data: DisplayNodeProps;
+  }
   | {
-      type: "displayNodeWithout";
-      data: DisplayNodeProps;
-    }
+    type: "displayNodeWithout";
+    data: DisplayNodeProps;
+  }
   | {
-      type: "cardNode";
-      data: CardNodeProps;
-    }
+    type: "cardNode";
+    data: CardNodeProps;
+  }
   | {
-      type: "cardNodeInput";
-      data: CardNodeProps;
-    }
+    type: "cardNodeInput";
+    data: CardNodeProps;
+  }
   | {
-      type: "cardNodeOutput";
-      data: CardNodeProps;
-    }
+    type: "cardNodeOutput";
+    data: CardNodeProps;
+  }
   | {
     type: "cardNodeWithout";
     data: CardNodeProps;

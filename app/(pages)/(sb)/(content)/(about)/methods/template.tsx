@@ -1,17 +1,16 @@
-import FlowProvider from '@/components/provider/FlowProvider'
-import { Metadata } from 'next'
-import React, { Fragment } from 'react'
+import { Metadata } from "next";
+import React, { Fragment } from "react";
+
+import FlowProvider from "@/components/provider/FlowProvider";
 
 export const metadata: Metadata = {
-  title: 'About',
-}
+  title: "About",
+};
 
 export default function Template({ children }: { children: React.ReactNode }) {
   return (
-    <Fragment>
-        <FlowProvider>
-        {children}
-        </FlowProvider>
-    </Fragment>
-  )
+    <FlowProvider>
+      {children}
+    </FlowProvider>
+  );
 }

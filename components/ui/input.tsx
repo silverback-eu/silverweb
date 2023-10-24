@@ -1,7 +1,7 @@
 import * as React from "react";
+import { useRef } from "react";
 
 import { cn } from "@/lib/utils";
-import { useRef } from "react";
 
 export interface InputProps
   extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -23,9 +23,10 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
       style,
       ...props
     },
-    ref
+    ref,
   ) => {
     const PrefixRef = useRef<HTMLSpanElement>(null);
+
     return (
       <React.Fragment>
         {prefix ? (
@@ -40,10 +41,10 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
               type={type}
               onFocus={(ev) => {
                 if (
-                  PrefixRef.current &&
-                  !readOnly &&
-                  !disabled &&
-                  !noPrefixAnimation
+                  PrefixRef.current
+                  && !readOnly
+                  && !disabled
+                  && !noPrefixAnimation
                 ) {
                   PrefixRef.current.style.transform = "translateY(-1px)";
                 }
@@ -51,10 +52,10 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
               }}
               onBlur={(ev) => {
                 if (
-                  PrefixRef.current &&
-                  !readOnly &&
-                  !disabled &&
-                  !noPrefixAnimation
+                  PrefixRef.current
+                  && !readOnly
+                  && !disabled
+                  && !noPrefixAnimation
                 ) {
                   PrefixRef.current.style.transform = "translateY(0)";
                 }
@@ -62,7 +63,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
               }}
               className={cn(
                 "flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50",
-                className
+                className,
               )}
               ref={ref}
               readOnly={readOnly}
@@ -79,10 +80,10 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
             type={type}
             onFocus={(ev) => {
               if (
-                PrefixRef.current &&
-                !readOnly &&
-                !disabled &&
-                !noPrefixAnimation
+                PrefixRef.current
+                && !readOnly
+                && !disabled
+                && !noPrefixAnimation
               ) {
                 PrefixRef.current.style.transform = "translateY(-1px)";
               }
@@ -90,10 +91,10 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
             }}
             onBlur={(ev) => {
               if (
-                PrefixRef.current &&
-                !readOnly &&
-                !disabled &&
-                !noPrefixAnimation
+                PrefixRef.current
+                && !readOnly
+                && !disabled
+                && !noPrefixAnimation
               ) {
                 PrefixRef.current.style.transform = "translateY(0)";
               }
@@ -101,7 +102,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
             }}
             className={cn(
               "flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50",
-              className
+              className,
             )}
             ref={ref}
             readOnly={readOnly}
@@ -115,7 +116,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
         )}
       </React.Fragment>
     );
-  }
+  },
 );
 Input.displayName = "Input";
 

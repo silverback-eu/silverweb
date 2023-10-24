@@ -1,10 +1,11 @@
-import { Checkbox } from "@/components/ui/checkbox";
-import * as RadioGroupPrimitive from "@radix-ui/react-radio-group"
-import { cn } from "@/lib/utils";
-import React, { RefObject, forwardRef, useRef } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import * as RadioGroupPrimitive from "@radix-ui/react-radio-group";
 import { ListTodo } from "lucide-react";
+import React, { RefObject, forwardRef, useRef } from "react";
+
+import { Card, CardContent } from "@/components/ui/card";
+import { Checkbox } from "@/components/ui/checkbox";
 import { RadioGroupItem } from "@/components/ui/radio-group";
+import { cn } from "@/lib/utils";
 
 export interface RadioInputProps
   extends React.ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Item> {
@@ -17,8 +18,8 @@ export interface RadioInputProps
 }
 
 const RadioInput = forwardRef<
-  React.ElementRef<typeof RadioGroupPrimitive.Item>,
-  RadioInputProps
+React.ElementRef<typeof RadioGroupPrimitive.Item>,
+RadioInputProps
 >((props, ref) => {
   const {
     className,
@@ -42,7 +43,7 @@ const RadioInput = forwardRef<
           !readOnly && !disabled
             ? " cursor-pointer"
             : "cursor-not-allowed opacity-50",
-          className
+          className,
         )}
         onClick={() => {
           if (ref) {
@@ -90,6 +91,7 @@ const RadioInput = forwardRef<
       </Card>
     );
   }
+
   return (
     <RadioGroupItem
       value={value}

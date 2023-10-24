@@ -1,3 +1,6 @@
+import { CaretSortIcon, CheckIcon } from "@radix-ui/react-icons";
+import React, { Fragment, forwardRef } from "react";
+
 import { Button } from "@/components/ui/button";
 import {
   Command,
@@ -12,30 +15,28 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { cn } from "@/lib/utils";
-import { CaretSortIcon, CheckIcon } from "@radix-ui/react-icons";
-import React, { Fragment, forwardRef } from "react";
 
 export type ComboBoxProps =
   | (React.ButtonHTMLAttributes<HTMLButtonElement> & {
-      status?: "success" | "error" | "default";
-      items: { label: string; value: string }[];
-      readOnly?: boolean;
-      grouped?: false;
-      selected?: string;
-      onChange?: (value: string) => void;
-      placeholder?: string;
-      popoverClassName? : string;
-    })
+    status?: "success" | "error" | "default";
+    items: { label: string; value: string }[];
+    readOnly?: boolean;
+    grouped?: false;
+    selected?: string;
+    onChange?: (value: string) => void;
+    placeholder?: string;
+    popoverClassName? : string;
+  })
   | (React.ButtonHTMLAttributes<HTMLButtonElement> & {
-      status?: "success" | "error" | "default";
-      grouped: true;
-      readOnly?: boolean;
-      items: Record<string, { label: string; value: string }[]>;
-      selected?: string;
-      onChange?: (value: string) => void;
-      placeholder?: string;
-      popoverClassName? : string;
-    });
+    status?: "success" | "error" | "default";
+    grouped: true;
+    readOnly?: boolean;
+    items: Record<string, { label: string; value: string }[]>;
+    selected?: string;
+    onChange?: (value: string) => void;
+    placeholder?: string;
+    popoverClassName? : string;
+  });
 
 const ComboBox = forwardRef<HTMLButtonElement, ComboBoxProps>((props, ref) => {
   const {
@@ -52,6 +53,7 @@ const ComboBox = forwardRef<HTMLButtonElement, ComboBoxProps>((props, ref) => {
   } = props;
   const [open, setOpen] = React.useState(false);
   const [value, setValue] = React.useState(selected);
+
   return (
     <Popover open={readOnly ? false : open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
@@ -60,10 +62,8 @@ const ComboBox = forwardRef<HTMLButtonElement, ComboBoxProps>((props, ref) => {
             {value
               ? grouped === true
                 ? Object.entries(items)
-                    .find(([key, items]) =>
-                      items.find((item) => item.value === value)
-                    )?.[1]
-                    .find((item) => item.value === value)?.label
+                  .find(([key, items]) => items.find((item) => item.value === value))?.[1]
+                  .find((item) => item.value === value)?.label
                 : items.find((item) => item.value === value)?.label
               : <span className="opacity-50">{placeholder}</span>}
             <CaretSortIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
@@ -80,10 +80,8 @@ const ComboBox = forwardRef<HTMLButtonElement, ComboBoxProps>((props, ref) => {
             {value
               ? grouped === true
                 ? Object.entries(items)
-                    .find(([key, items]) =>
-                      items.find((item) => item.value === value)
-                    )?.[1]
-                    .find((item) => item.value === value)?.label
+                  .find(([key, items]) => items.find((item) => item.value === value))?.[1]
+                  .find((item) => item.value === value)?.label
                 : items.find((item) => item.value === value)?.label
               : <span className="opacity-50">{placeholder}</span>}
             <CaretSortIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
@@ -95,7 +93,7 @@ const ComboBox = forwardRef<HTMLButtonElement, ComboBoxProps>((props, ref) => {
           <CommandInput placeholder={placeholder} className="h-9" />
           <CommandEmpty>No framework found.</CommandEmpty>
           {grouped === true ? (
-            <Fragment>
+            <React.Fragment>
               {Object.entries(items).map(([key, items]) => (
                 <CommandGroup heading={key} key={key}>
                   {items.map((item) => (
@@ -104,8 +102,8 @@ const ComboBox = forwardRef<HTMLButtonElement, ComboBoxProps>((props, ref) => {
                       value={item.value}
                       onSelect={(currentValue) => {
                         setValue(currentValue === value ? "" : currentValue);
-                        onChange &&
-                          onChange(currentValue === value ? "" : currentValue);
+                        onChange
+                          && onChange(currentValue === value ? "" : currentValue);
                         setOpen(false);
                       }}
                     >
@@ -113,39 +111,37 @@ const ComboBox = forwardRef<HTMLButtonElement, ComboBoxProps>((props, ref) => {
                       <CheckIcon
                         className={cn(
                           "ml-auto h-4 w-4",
-                          value === item.value ? "opacity-100" : "opacity-0"
+                          value === item.value ? "opacity-100" : "opacity-0",
                         )}
                       />
                     </CommandItem>
                   ))}
                 </CommandGroup>
               ))}
-            </Fragment>
+            </React.Fragment>
           ) : (
-            <Fragment>
-              <CommandGroup>
-                {items.map((item) => (
-                  <CommandItem
-                    key={item.value}
-                    value={item.value}
-                    onSelect={(currentValue) => {
-                      setValue(currentValue === value ? "" : currentValue);
-                      onChange &&
-                        onChange(currentValue === value ? "" : currentValue);
-                      setOpen(false);
-                    }}
-                  >
-                    {item.label}
-                    <CheckIcon
-                      className={cn(
-                        "ml-auto h-4 w-4",
-                        value === item.value ? "opacity-100" : "opacity-0"
-                      )}
-                    />
-                  </CommandItem>
-                ))}
-              </CommandGroup>
-            </Fragment>
+            <CommandGroup>
+              {items.map((item) => (
+                <CommandItem
+                  key={item.value}
+                  value={item.value}
+                  onSelect={(currentValue) => {
+                    setValue(currentValue === value ? "" : currentValue);
+                    onChange
+                        && onChange(currentValue === value ? "" : currentValue);
+                    setOpen(false);
+                  }}
+                >
+                  {item.label}
+                  <CheckIcon
+                    className={cn(
+                      "ml-auto h-4 w-4",
+                      value === item.value ? "opacity-100" : "opacity-0",
+                    )}
+                  />
+                </CommandItem>
+              ))}
+            </CommandGroup>
           )}
         </Command>
       </PopoverContent>

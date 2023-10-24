@@ -1,15 +1,18 @@
-import Image from "next/image";
 import React from "react";
 
 export default function OurStory() {
   return (
     <div>
       <div className="pt-24 text-xl max-w-[700px] mx-auto gap-16 space-y-4 mb-12">
-            <p className="font-bold tracking-tighter text-5xl">Our Story</p>
-            <p className="tracking-tighter text-xl mt-3 ml-8">
-              How did it start, {new Date().getFullYear() - 2012} years ago that
-              we became the Partner from Dublin to Bucharest and Beyond...
-            </p>
+        <p className="font-bold tracking-tighter text-5xl">Our Story</p>
+        <p className="tracking-tighter text-xl mt-3 ml-8">
+          How did it start,
+          {" "}
+          {new Date().getFullYear() - 2012}
+          {" "}
+          years ago that
+          we became the Partner from Dublin to Bucharest and Beyond...
+        </p>
       </div>
       <div className="max-w-[900px] mx-auto text-primary text-xl grid grid-cols-2 gap-16 space-y-4">
         <p className="mt-4 text-right">
