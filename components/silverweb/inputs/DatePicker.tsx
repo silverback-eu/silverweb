@@ -36,22 +36,22 @@ const DatePicker = forwardRef<HTMLButtonElement, DatePickerProps>(
             variant="outline"
             className={cn(
               "w-full justify-start text-left font-normal",
-              status == "success"
+              status === "success"
                 && "text-lime-600 placeholder:opacity-80 placeholder:text-lime-600 hover:ring-1 hover:ring-lime-600 focus-visible:ring-1 focus-visible:ring-lime-500",
-              status == "error"
+              status === "error"
                 && "text-red-500 placeholder:opacity-80 placeholder:text-red-500 hover:ring-1 hover:ring-red-600 focus-visible:ring-1 focus-visible:ring-red-500",
               !valueCalendar && !dateDefault && "text-muted-foreground",
             )}
             ref={ref}
             {...rest}
           >
-            <CalendarIcon className={cn("mr-2 h-4 w-4", status == "error" && "text-red-500 opacity-80", status == "success" && "text-lime-600 opacity-80")} />
+            <CalendarIcon className={cn("mr-2 h-4 w-4", status === "error" && "text-red-500 opacity-80", status === "success" && "text-lime-600 opacity-80")} />
             {valueCalendar ? (
               format(valueCalendar, "PPP")
             ) : dateDefault ? (
               format(dateDefault, "PPP")
             ) : (
-              <span className={cn("", status == "error" && "text-red-500 opacity-80", status == "success" && "text-lime-600 opacity-80")}>Pick a date</span>
+              <span className={cn("", status === "error" && "text-red-500 opacity-80", status === "success" && "text-lime-600 opacity-80")}>Pick a date</span>
             )}
           </Button>
         </PopoverTrigger>
@@ -61,7 +61,7 @@ const DatePicker = forwardRef<HTMLButtonElement, DatePickerProps>(
             selected={valueCalendar ? new Date(valueCalendar) : dateDefault}
             onSelect={(date) => {
               setDateDefault(date);
-              onChangeCalendar && onChangeCalendar(date);
+              if (onChangeCalendar) onChangeCalendar(date);
             }}
             initialFocus
           />

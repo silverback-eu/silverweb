@@ -20,9 +20,13 @@ function SheetPortal({
 }
 SheetPortal.displayName = SheetPrimitive.Portal.displayName;
 
+type SheetOverlayProps = {
+  className?: string;
+} & React.ComponentPropsWithoutRef<typeof SheetPrimitive.Overlay>;
+
 const SheetOverlay = React.forwardRef<
 React.ElementRef<typeof SheetPrimitive.Overlay>,
-React.ComponentPropsWithoutRef<typeof SheetPrimitive.Overlay>
+SheetOverlayProps
 >(({ className, ...props }, ref) => (
   <SheetPrimitive.Overlay
     className={cn(
@@ -81,10 +85,14 @@ SheetContentProps
 ));
 SheetContent.displayName = SheetPrimitive.Content.displayName;
 
+type SheetHeaderProps = {
+  className?: string;
+} & React.HTMLAttributes<HTMLDivElement>;
+
 function SheetHeader({
   className,
   ...props
-}: React.HTMLAttributes<HTMLDivElement>) {
+}: SheetHeaderProps) {
   return (
     <div
       className={cn(
@@ -97,10 +105,14 @@ function SheetHeader({
 }
 SheetHeader.displayName = "SheetHeader";
 
+type SheetFooterProps = {
+  className?: string;
+} & React.HTMLAttributes<HTMLDivElement>;
+
 function SheetFooter({
   className,
   ...props
-}: React.HTMLAttributes<HTMLDivElement>) {
+}: SheetFooterProps) {
   return (
     <div
       className={cn(
@@ -113,9 +125,13 @@ function SheetFooter({
 }
 SheetFooter.displayName = "SheetFooter";
 
+type SheetTitleProps = {
+  className?: string;
+} & React.ComponentPropsWithoutRef<typeof SheetPrimitive.Title>;
+
 const SheetTitle = React.forwardRef<
 React.ElementRef<typeof SheetPrimitive.Title>,
-React.ComponentPropsWithoutRef<typeof SheetPrimitive.Title>
+SheetTitleProps
 >(({ className, ...props }, ref) => (
   <SheetPrimitive.Title
     ref={ref}
@@ -125,9 +141,13 @@ React.ComponentPropsWithoutRef<typeof SheetPrimitive.Title>
 ));
 SheetTitle.displayName = SheetPrimitive.Title.displayName;
 
+type SheetDescriptionProps = {
+  className?: string;
+} & React.ComponentPropsWithoutRef<typeof SheetPrimitive.Description>;
+
 const SheetDescription = React.forwardRef<
 React.ElementRef<typeof SheetPrimitive.Description>,
-React.ComponentPropsWithoutRef<typeof SheetPrimitive.Description>
+SheetDescriptionProps
 >(({ className, ...props }, ref) => (
   <SheetPrimitive.Description
     ref={ref}

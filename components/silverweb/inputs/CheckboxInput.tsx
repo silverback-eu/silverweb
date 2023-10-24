@@ -60,7 +60,7 @@ CheckboxInputProps
               } else {
                 console.error("CheckboxRef not found");
               }
-              onClick && onClick(ev);
+              if (onClick) onClick(ev);
             }}
             disabled={readOnly || disabled}
             ref={ref || CheckboxRef}

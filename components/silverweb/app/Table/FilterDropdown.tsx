@@ -138,7 +138,7 @@ export default function FilterDropdown<TData, TValue>({
                       <Check className={cn("h-4 w-4")} />
                     </div>
                     {option.icon && (typeof option.icon === "string" ? (
-                      `${option.icon}  `
+                      <div className="pr-0.5">{option.icon}</div>
                     ) : (
                       <option.icon className="mr-2 h-4 w-4 text-muted-foreground" />
                     ))}

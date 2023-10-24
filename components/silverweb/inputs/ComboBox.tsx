@@ -1,5 +1,5 @@
 import { CaretSortIcon, CheckIcon } from "@radix-ui/react-icons";
-import React, { Fragment, forwardRef } from "react";
+import React, { forwardRef } from "react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -9,34 +9,30 @@ import {
   CommandInput,
   CommandItem,
 } from "@/components/ui/command";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { cn } from "@/lib/utils";
 
 export type ComboBoxProps =
   | (React.ButtonHTMLAttributes<HTMLButtonElement> & {
-    status?: "success" | "error" | "default";
-    items: { label: string; value: string }[];
-    readOnly?: boolean;
-    grouped?: false;
-    selected?: string;
-    onChange?: (value: string) => void;
-    placeholder?: string;
-    popoverClassName? : string;
-  })
+      status?: "success" | "error" | "default";
+      items: { label: string; value: string }[];
+      readOnly?: boolean;
+      grouped?: false;
+      selected?: string;
+      onChange?: (value: string) => void;
+      placeholder?: string;
+      popoverClassName?: string;
+    })
   | (React.ButtonHTMLAttributes<HTMLButtonElement> & {
-    status?: "success" | "error" | "default";
-    grouped: true;
-    readOnly?: boolean;
-    items: Record<string, { label: string; value: string }[]>;
-    selected?: string;
-    onChange?: (value: string) => void;
-    placeholder?: string;
-    popoverClassName? : string;
-  });
+      status?: "success" | "error" | "default";
+      grouped: true;
+      readOnly?: boolean;
+      items: Record<string, { label: string; value: string }[]>;
+      selected?: string;
+      onChange?: (value: string) => void;
+      placeholder?: string;
+      popoverClassName?: string;
+    });
 
 const ComboBox = forwardRef<HTMLButtonElement, ComboBoxProps>((props, ref) => {
   const {
@@ -58,14 +54,23 @@ const ComboBox = forwardRef<HTMLButtonElement, ComboBoxProps>((props, ref) => {
     <Popover open={readOnly ? false : open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
         {readOnly ? (
-          <div className={cn("inline-flex items-center rounded-md text-sm font-medium transition-colors border border-input bg-transparent shadow-sm h-9 px-4 py-2 w-full justify-between", className)}>
-            {value
-              ? grouped === true
-                ? Object.entries(items)
-                  .find(([key, items]) => items.find((item) => item.value === value))?.[1]
+          <div
+            className={cn(
+              "inline-flex items-center rounded-md text-sm font-medium transition-colors border border-input bg-transparent shadow-sm h-9 px-4 py-2 w-full justify-between",
+              className,
+            )}
+          >
+            {value ? (
+              grouped === true ? (
+                Object.entries(items)
+                  .find(([, OptionList]) => OptionList.find((item) => item.value === value))?.[1]
                   .find((item) => item.value === value)?.label
-                : items.find((item) => item.value === value)?.label
-              : <span className="opacity-50">{placeholder}</span>}
+              ) : (
+                items.find((item) => item.value === value)?.label
+              )
+            ) : (
+              <span className="opacity-50">{placeholder}</span>
+            )}
             <CaretSortIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
           </div>
         ) : (
@@ -74,16 +79,25 @@ const ComboBox = forwardRef<HTMLButtonElement, ComboBoxProps>((props, ref) => {
             variant="outline"
             role="combobox"
             aria-expanded={open}
-            className={cn("w-full justify-between", status == "success" && "border-lime-600 text-lime-600 hover:text-lime-600", status == "error" && "border-red-500 text-red-500 hover:text-red-500", className)}
+            className={cn(
+              "w-full justify-between",
+              status === "success" && "border-lime-600 text-lime-600 hover:text-lime-600",
+              status === "error" && "border-red-500 text-red-500 hover:text-red-500",
+              className,
+            )}
             {...rest}
           >
-            {value
-              ? grouped === true
-                ? Object.entries(items)
-                  .find(([key, items]) => items.find((item) => item.value === value))?.[1]
+            {value ? (
+              grouped === true ? (
+                Object.entries(items)
+                  .find(([, OptionList]) => OptionList.find((item) => item.value === value))?.[1]
                   .find((item) => item.value === value)?.label
-                : items.find((item) => item.value === value)?.label
-              : <span className="opacity-50">{placeholder}</span>}
+              ) : (
+                items.find((item) => item.value === value)?.label
+              )
+            ) : (
+              <span className="opacity-50">{placeholder}</span>
+            )}
             <CaretSortIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
           </Button>
         )}
@@ -94,16 +108,15 @@ const ComboBox = forwardRef<HTMLButtonElement, ComboBoxProps>((props, ref) => {
           <CommandEmpty>No framework found.</CommandEmpty>
           {grouped === true ? (
             <React.Fragment>
-              {Object.entries(items).map(([key, items]) => (
+              {Object.entries(items).map(([key, OptionListGrouped]) => (
                 <CommandGroup heading={key} key={key}>
-                  {items.map((item) => (
+                  {OptionListGrouped.map((item) => (
                     <CommandItem
                       key={item.value}
                       value={item.value}
                       onSelect={(currentValue) => {
                         setValue(currentValue === value ? "" : currentValue);
-                        onChange
-                          && onChange(currentValue === value ? "" : currentValue);
+                        if (onChange) onChange(currentValue === value ? "" : currentValue);
                         setOpen(false);
                       }}
                     >
@@ -127,8 +140,7 @@ const ComboBox = forwardRef<HTMLButtonElement, ComboBoxProps>((props, ref) => {
                   value={item.value}
                   onSelect={(currentValue) => {
                     setValue(currentValue === value ? "" : currentValue);
-                    onChange
-                        && onChange(currentValue === value ? "" : currentValue);
+                    if (onChange) onChange(currentValue === value ? "" : currentValue);
                     setOpen(false);
                   }}
                 >

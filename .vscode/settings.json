@@ -2,8 +2,6 @@
     "cSpell.words": [
         "notifs"
     ],
-    "notebook.codeActionsOnSave": {
-        "source.fixAll": true
-    },
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true
 }

@@ -37,6 +37,11 @@
     "implicit-arrow-linebreak": "off",
     "react/jsx-pascal-case": ["error", { "allowNamespace": true}],
     "react/react-in-jsx-scope": "off",
-    "no-param-reassign": "off"
+    "no-param-reassign": "off",
+    "import/prefer-default-export": "off",
+    "no-confusing-arrow": "off",
+    "indent": "off",
+    "@typescript-eslint/indent": "off",
+    "function-paren-newline": "off"
   }
 }

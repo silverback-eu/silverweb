@@ -1,2 +1,7 @@
-export { FormBuilder } from "./FormBuilder";
-export type { FormProps } from "./types";
+import { FormBuilder } from "./FormBuilder";
+import type { FormProps } from "./types";
+
+export {
+    type FormProps,
+    FormBuilder,
+};

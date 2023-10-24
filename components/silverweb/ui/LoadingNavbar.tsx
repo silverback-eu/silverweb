@@ -1,10 +1,6 @@
 "use client";
 
-import {
-  HoverCard,
-  HoverCardContent,
-  HoverCardTrigger,
-} from "@radix-ui/react-hover-card";
+import { HoverCard, HoverCardContent, HoverCardTrigger } from "@radix-ui/react-hover-card";
 import {
   BellRing,
   BringToFront,
@@ -17,38 +13,148 @@ import {
   Server,
   Settings,
   Tags,
-  Users2,
 } from "lucide-react";
 import Link from "next/link";
-import React, {
-  ForwardedRef,
-  Fragment,
-  RefObject,
-  forwardRef,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import React, { Fragment, useEffect, useRef, useState } from "react";
 
 import AppIcon from "@/components/silverback/AppIcon";
 import Logo from "@/components/silverback/Logo";
-import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Skeleton } from "@/components/ui/skeleton";
 import { cn } from "@/lib/utils";
 
+function NavAppIcon(props: {
+  name: string;
+  icon: LucideIcon;
+  link: string;
+  disabled?: boolean;
+  open?: boolean;
+  className?: string;
+  content: React.ReactNode;
+}) {
+  const { name, link, disabled, open, className, content, ...rest } = props;
+
+  return (
+    <div
+      aria-label={name}
+      className={cn(
+        "flex items-center justify-center",
+        disabled && "opacity-30 cursor-not-allowed",
+        disabled && className,
+      )}
+    >
+      <HoverCard>
+        <HoverCardTrigger asChild>
+          <Link
+            aria-disabled={disabled}
+            passHref={disabled}
+            legacyBehavior={disabled}
+            href={link}
+            className={cn("flex items-center justify-center", className)}
+          >
+            <div className="relative">
+              <div
+                className={
+                  open
+                    ? "absolute bg-white w-1 h-10 top-1/2 -translate-y-1/2 left-[-20px] rounded-r-sm opacity-70 "
+                    : ""
+                }
+              />
+              <rest.icon
+                size={23}
+                strokeWidth={1.5}
+                className={cn(
+                  "",
+                  !disabled &&
+                    "opacity-70 transition-all hover:opacity-100 hover:drop-shadow-[0px_0px_3px_rgba(255,255,255,.4)]",
+                )}
+              />
+            </div>
+          </Link>
+        </HoverCardTrigger>
+        <HoverCardContent
+          side="right"
+          sideOffset={10}
+          className="min-w-48 h-[calc(100vh-48px)] m-6"
+        >
+          <Card className="w-full h-full">
+            <CardContent className="p-6">{content}</CardContent>
+          </Card>
+        </HoverCardContent>
+      </HoverCard>
+    </div>
+  );
+}
+
+function NavControlIcon(props: {
+  icon: LucideIcon;
+  name: string;
+  fuc: () => void;
+  disabled?: boolean;
+  open?: boolean;
+  className?: string;
+}) {
+  const { name, fuc, disabled, open, className, ...rest } = props;
+
+  return (
+    <div
+      aria-disabled={disabled}
+      role="button"
+      tabIndex={0}
+      onKeyDown={fuc}
+      onClick={fuc}
+      className={cn(
+        "cursor-pointer flex items-center justify-center",
+        disabled && "opacity-30 cursor-not-allowed",
+        className,
+      )}
+    >
+      <rest.icon
+        size={23}
+        strokeWidth={1.5}
+        className={cn(
+          "",
+          !disabled &&
+            "opacity-70 transition-all hover:opacity-100 hover:drop-shadow-[0px_0px_3px_rgba(255,255,255,.4)]",
+        )}
+      />
+    </div>
+  );
+}
+
+function HomeInsidesCards({
+  link,
+  name,
+  icon,
+}: {
+  link: string;
+  name: string;
+  icon: React.JSX.Element;
+}) {
+  return (
+    <Link href={link}>
+      <Card className="hover:brightness-150 cursor-pointer transition-all">
+        <CardContent className="py-2 px-3 flex justify-between gap-2">
+          <div className="flex items-center gap-2">
+            <div className="flex items-center">{icon}</div>
+            <p className="text-sm font-bold">{name}</p>
+          </div>
+          <Skeleton className="h-[22px] w-8" />
+        </CardContent>
+      </Card>
+    </Link>
+  );
+}
+
 export default function LoadingNavbar({ openApp }: { openApp: number }) {
   const CardRef = useRef<HTMLDivElement>(null);
   const [RestNumberForAppsInCard, setRestNumberForAppsInCard] = useState<number>(0);
   useEffect(() => {
-    if (CardRef.current)
-    // 40 for 20px padding, 51 for Bottom apps in Card and 381.55 for Upper apps + add App
-    // Divided by 43 to get the number of possible apps in Card (43.55px per App )
-    {
-      setRestNumberForAppsInCard(
-        ((CardRef.current.clientHeight || 0) - 40 - 151 - 381.55) / 43,
-      );
+    if (CardRef.current) {
+      // 40 for 20px padding, 51 for Bottom apps in Card and 381.55 for Upper apps + add App
+      // Divided by 43 to get the number of possible apps in Card (43.55px per App )
+      setRestNumberForAppsInCard(((CardRef.current.clientHeight || 0) - 40 - 151 - 381.55) / 43);
     }
   }, [CardRef.current?.clientHeight]);
 
@@ -68,7 +174,7 @@ export default function LoadingNavbar({ openApp }: { openApp: number }) {
               name="Hub"
               link="/sw"
               className="mt-9"
-              open={openApp == 1}
+              open={openApp === 1}
               content={(
                 <div className="grid gap-5">
                   <div className="text-lg font-bold text-center">Hub</div>
@@ -118,38 +224,35 @@ export default function LoadingNavbar({ openApp }: { openApp: number }) {
                       </div>
                     </CardContent>
                   </Card>
-                  {Array.from("BigAssLongStringForArray").map(
-                    (app, index) => {
-                      if (typeof window !== "undefined") {
-                        return (
-                          <Fragment key={index}>
-                            {index + 1
-                                < (window.innerHeight - 48 - 40 - 446) / 50 && (
-                                <Card>
-                                  <CardContent className="py-2 px-3 flex justify-between gap-2">
-                                    <div className="flex items-center gap-2">
-                                      <div className="flex items-center">
-                                        <Skeleton className="rounded-full w-[20px] h-[20px]" />
-                                      </div>
-                                      <Skeleton className="h-4 w-24" />
-                                    </div>
-                                    <Skeleton className="h-[22px] w-8" />
-                                  </CardContent>
-                                </Card>
-                            )}
-                          </Fragment>
-                        );
-                      }
-                    },
-                  )}
+                  {Array.from("BigAssLongStringForArray").map((app, index) => {
+                    if (typeof window === "undefined") return null;
+
+                      return (
+                        <Fragment key={app + Math.random()}>
+                          {index + 1 < (window.innerHeight - 48 - 40 - 446) / 50 && (
+                            <Card>
+                              <CardContent className="py-2 px-3 flex justify-between gap-2">
+                                <div className="flex items-center gap-2">
+                                  <div className="flex items-center">
+                                    <Skeleton className="rounded-full w-[20px] h-[20px]" />
+                                  </div>
+                                  <Skeleton className="h-4 w-24" />
+                                </div>
+                                <Skeleton className="h-[22px] w-8" />
+                              </CardContent>
+                            </Card>
+                          )}
+                        </Fragment>
+                      );
+                  })}
                 </div>
-                )}
+              )}
             />
             <NavAppIcon
               icon={LayoutGrid}
               name="Apps"
               link="/sw/apps"
-              open={openApp == 2}
+              open={openApp === 2}
               content={(
                 <div className="grid gap-5">
                   <div className="text-lg font-bold text-center">Apps</div>
@@ -172,14 +275,14 @@ export default function LoadingNavbar({ openApp }: { openApp: number }) {
                     </div>
                   </div>
                 </div>
-                )}
+              )}
             />
             <NavAppIcon
               disabled
               icon={Server}
               name="SilverBase"
               link="/sb"
-              open={openApp == 3}
+              open={openApp === 3}
               content={<div />}
             />
             <NavAppIcon
@@ -187,7 +290,7 @@ export default function LoadingNavbar({ openApp }: { openApp: number }) {
               icon={MessagesSquare}
               name="SilverChat"
               link="#"
-              open={openApp == 4}
+              open={openApp === 4}
               content={<div />}
             />
             <Separator />
@@ -196,7 +299,7 @@ export default function LoadingNavbar({ openApp }: { openApp: number }) {
                 <PackagePlus size={20} />
               </div>
               {Array.from("BigAssLongStringForArray").map((app, index) => (
-                <Fragment key={index}>
+                <Fragment key={app + Math.random()}>
                   {index + 1 < RestNumberForAppsInCard && (
                     <Skeleton className="rounded-md h-[31px] w-[31px]" />
                   )}
@@ -206,144 +309,11 @@ export default function LoadingNavbar({ openApp }: { openApp: number }) {
           </div>
           <div className="grid gap-8 justify-center mt-8">
             <Separator />
-            <NavControlIcon
-              disabled
-              icon={BellRing}
-              name="Notifications"
-              fuc={() => undefined}
-            />
-            <NavControlIcon
-              icon={DoorOpen}
-              name="Logout"
-              fuc={() => undefined}
-              className="mb-2"
-            />
+            <NavControlIcon disabled icon={BellRing} name="Notifications" fuc={() => undefined} />
+            <NavControlIcon icon={DoorOpen} name="Logout" fuc={() => undefined} className="mb-2" />
           </div>
         </CardContent>
       </Card>
     </div>
-  );
-}
-
-function NavAppIcon(props: {
-  icon: LucideIcon;
-  name: string;
-  link: string;
-  disabled?: boolean;
-  open?: boolean;
-  className?: string;
-  content: React.ReactNode;
-}) {
-  const {
-    link, disabled, open, className, content,
-  } = props;
-
-  return (
-    <div
-      className={cn(
-        "flex items-center justify-center",
-        disabled && "opacity-30 cursor-not-allowed",
-        disabled && className,
-      )}
-    >
-      <HoverCard>
-        <HoverCardTrigger asChild>
-          <Link
-            aria-disabled={disabled}
-            passHref={disabled}
-            legacyBehavior={disabled}
-            href={link}
-            className={cn("flex items-center justify-center", className)}
-          >
-            <div className="relative">
-              <div
-                className={
-                    open
-                      ? "absolute bg-white w-1 h-10 top-1/2 -translate-y-1/2 left-[-20px] rounded-r-sm opacity-70 "
-                      : ""
-                  }
-              />
-              <props.icon
-                size={23}
-                strokeWidth={1.5}
-                className={cn(
-                  "",
-                  !disabled
-                      && "opacity-70 transition-all hover:opacity-100 hover:drop-shadow-[0px_0px_3px_rgba(255,255,255,.4)]",
-                )}
-              />
-            </div>
-          </Link>
-        </HoverCardTrigger>
-        <HoverCardContent
-          side="right"
-          sideOffset={10}
-          className="min-w-48 h-[calc(100vh-48px)] m-6"
-        >
-          <Card className="w-full h-full">
-            <CardContent className="p-6">{content}</CardContent>
-          </Card>
-        </HoverCardContent>
-      </HoverCard>
-    </div>
-  );
-}
-
-function NavControlIcon(props: {
-  icon: LucideIcon;
-  name: string;
-  fuc: () => void;
-  disabled?: boolean;
-  open?: boolean;
-  className?: string;
-}) {
-  const {
-    name, fuc, disabled, open, className,
-  } = props;
-
-  return (
-    <div
-      aria-disabled={disabled}
-      onClick={fuc}
-      className={cn(
-        "cursor-pointer flex items-center justify-center",
-        disabled && "opacity-30 cursor-not-allowed",
-        className,
-      )}
-    >
-      <props.icon
-        size={23}
-        strokeWidth={1.5}
-        className={cn(
-          "",
-          !disabled
-              && "opacity-70 transition-all hover:opacity-100 hover:drop-shadow-[0px_0px_3px_rgba(255,255,255,.4)]",
-        )}
-      />
-    </div>
-  );
-}
-
-function HomeInsidesCards({
-  link,
-  name,
-  icon,
-}: {
-  link: string;
-  name: string;
-  icon: React.JSX.Element;
-}) {
-  return (
-    <Link href={link}>
-      <Card className="hover:brightness-150 cursor-pointer transition-all">
-        <CardContent className="py-2 px-3 flex justify-between gap-2">
-          <div className="flex items-center gap-2">
-            <div className="flex items-center">{icon}</div>
-            <p className="text-sm font-bold">{name}</p>
-          </div>
-          <Skeleton className="h-[22px] w-8" />
-        </CardContent>
-      </Card>
-    </Link>
   );
 }

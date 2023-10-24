@@ -5,9 +5,15 @@ import * as React from "react";
 
 import { cn } from "@/lib/utils";
 
+type SeparatorProps = {
+  className?: string;
+  orientation?: "horizontal" | "vertical";
+  decorative?: boolean;
+} & React.ComponentPropsWithoutRef<typeof SeparatorPrimitive.Root>;
+
 const Separator = React.forwardRef<
 React.ElementRef<typeof SeparatorPrimitive.Root>,
-React.ComponentPropsWithoutRef<typeof SeparatorPrimitive.Root>
+SeparatorProps
 >(
   (
     {

@@ -6,9 +6,13 @@ import * as React from "react";
 
 import { cn } from "@/lib/utils";
 
+type RadioGroupProps = {
+  className?: string;
+} & React.ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Root>;
+
 const RadioGroup = React.forwardRef<
 React.ElementRef<typeof RadioGroupPrimitive.Root>,
-React.ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Root>
+RadioGroupProps
 >(({ className, ...props }, ref) => (
   <RadioGroupPrimitive.Root
     className={cn("grid gap-2", className)}
@@ -18,9 +22,13 @@ React.ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Root>
 ));
 RadioGroup.displayName = RadioGroupPrimitive.Root.displayName;
 
+type RadioGroupItemProps = {
+  className?: string;
+} & React.ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Item>;
+
 const RadioGroupItem = React.forwardRef<
 React.ElementRef<typeof RadioGroupPrimitive.Item>,
-React.ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Item>
+RadioGroupItemProps
 >(({ className, children, ...props }, ref) => (
   <RadioGroupPrimitive.Item
     ref={ref}

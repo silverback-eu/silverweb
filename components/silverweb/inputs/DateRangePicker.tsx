@@ -1,7 +1,7 @@
 import { format } from "date-fns";
 import { Calendar as CalendarIcon } from "lucide-react";
 import React, {
-  Fragment, forwardRef, useEffect, useState,
+ forwardRef, useEffect, useState,
 } from "react";
 import { DateRange } from "react-day-picker";
 
@@ -50,9 +50,9 @@ const DateRangePicker = forwardRef<HTMLButtonElement, DateRangePickerProps>(
               className={cn(
                 "w-full justify-start text-left font-normal",
                 (readOnly || disabled) && "hover:bg-transparent",
-                status == "success"
+                status === "success"
                   && "text-lime-600 placeholder:opacity-80 placeholder:text-lime-600 hover:ring-1 hover:ring-lime-600 focus-visible:ring-1 focus-visible:ring-lime-500",
-                status == "error"
+                status === "error"
                   && "text-red-500 placeholder:opacity-80 placeholder:text-red-500 hover:ring-1 hover:ring-red-600 focus-visible:ring-1 focus-visible:ring-red-500",
                 !valueCalendar && !dateDefault && "text-muted-foreground",
                 disabled && "cursor-not-allowed text-muted-foreground hover:text-muted-foreground",
@@ -60,7 +60,7 @@ const DateRangePicker = forwardRef<HTMLButtonElement, DateRangePickerProps>(
               ref={ref}
               {...rest}
             >
-              <CalendarIcon className={cn("mr-2 h-4 w-4", status == "error" && "text-red-500 opacity-80", status == "success" && "text-lime-600 opacity-80")} />
+              <CalendarIcon className={cn("mr-2 h-4 w-4", status === "error" && "text-red-500 opacity-80", status === "success" && "text-lime-600 opacity-80")} />
               {valueCalendar?.from ? (
                 valueCalendar.to ? (
                   <React.Fragment>
@@ -86,7 +86,7 @@ const DateRangePicker = forwardRef<HTMLButtonElement, DateRangePickerProps>(
                   format(dateDefault.from, "LLL dd, y")
                 )
               ) : (
-                <span className={cn("", status == "error" && "text-red-500 opacity-80", status == "success" && "text-lime-600 opacity-80")}>Pick a date</span>
+                <span className={cn("", status === "error" && "text-red-500 opacity-80", status === "success" && "text-lime-600 opacity-80")}>Pick a date</span>
               )}
             </Button>
           </PopoverTrigger>
@@ -102,7 +102,7 @@ const DateRangePicker = forwardRef<HTMLButtonElement, DateRangePickerProps>(
               selected={valueCalendar || dateDefault}
               onSelect={(range) => {
                 setDateDefault(range);
-                onChangeCalendar && onChangeCalendar(range);
+                if (onChangeCalendar) onChangeCalendar(range);
               }}
               numberOfMonths={2}
             />

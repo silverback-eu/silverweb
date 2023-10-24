@@ -5,49 +5,21 @@ import { Skeleton } from "@/components/ui/skeleton";
 
 export type LoadingInputProps = {
   variant:
-  | "combo"
-  | "date"
-  | "date"
-  | "range"
-  | "email"
-  | "file"
-  | "number"
-  | "password"
-  | "phone"
-  | "text"
-  | "textarea"
-  | "checkbox"
-  | "radio";
+    | "combo"
+    | "date"
+    | "date"
+    | "range"
+    | "email"
+    | "file"
+    | "number"
+    | "password"
+    | "phone"
+    | "text"
+    | "textarea"
+    | "checkbox"
+    | "radio";
   checkboxRadioBig?: boolean;
 };
-export default function LoadingInput({ variant, ...rest }: LoadingInputProps) {
-  if (
-    variant === "combo"
-    || variant === "date"
-    || variant === "email"
-    || variant === "password"
-    || variant === "phone"
-    || variant === "text"
-    || variant === "range"
-    || variant === "number"
-  ) {
-    return <LoadingTextInput />;
-  }
-  if (variant === "textarea") {
-    return <LoadingTextAreaInput />;
-  }
-  if (variant === "file") {
-    return <LoadingFileInput />;
-  }
-  if (variant === "radio") {
-    return <LoadingRadioInput big={rest.checkboxRadioBig} />;
-  }
-  if (variant === "checkbox") {
-    return <LoadingCheckboxInput big={rest.checkboxRadioBig} />;
-  }
-
-  return <div>Loading</div>;
-}
 
 function LoadingTextInput() {
   return <Skeleton className="h-9 w-full rounded-md" />;
@@ -69,9 +41,7 @@ function LoadingFileInput() {
               <div className="grid content-center gap-[7px]">
                 <Skeleton className="h-4 w-28" />
                 <div className="flex gap-2">
-                  <Skeleton className="h-3 w-20" />
-                  {" "}
-                  <Skeleton className="h-3 w-12" />
+                  <Skeleton className="h-3 w-20" /> <Skeleton className="h-3 w-12" />
                 </div>
               </div>
             </div>
@@ -85,9 +55,7 @@ function LoadingFileInput() {
               <div className="grid content-center gap-[7px]">
                 <Skeleton className="h-4 w-28" />
                 <div className="flex gap-2">
-                  <Skeleton className="h-3 w-20" />
-                  {" "}
-                  <Skeleton className="h-3 w-12" />
+                  <Skeleton className="h-3 w-20" /> <Skeleton className="h-3 w-12" />
                 </div>
               </div>
             </div>
@@ -101,9 +69,7 @@ function LoadingFileInput() {
               <div className="grid content-center gap-[7px]">
                 <Skeleton className="h-4 w-28" />
                 <div className="flex gap-2">
-                  <Skeleton className="h-3 w-20" />
-                  {" "}
-                  <Skeleton className="h-3 w-12" />
+                  <Skeleton className="h-3 w-20" /> <Skeleton className="h-3 w-12" />
                 </div>
               </div>
             </div>
@@ -155,4 +121,33 @@ function LoadingRadioInput({ big }: { big?: boolean }) {
   }
 
   return <Skeleton className="h-4 w-4 rounded-full" />;
+}
+
+export default function LoadingInput({ variant, ...rest }: LoadingInputProps) {
+  if (
+    variant === "combo" ||
+    variant === "date" ||
+    variant === "email" ||
+    variant === "password" ||
+    variant === "phone" ||
+    variant === "text" ||
+    variant === "range" ||
+    variant === "number"
+  ) {
+    return <LoadingTextInput />;
+  }
+  if (variant === "textarea") {
+    return <LoadingTextAreaInput />;
+  }
+  if (variant === "file") {
+    return <LoadingFileInput />;
+  }
+  if (variant === "radio") {
+    return <LoadingRadioInput big={rest.checkboxRadioBig} />;
+  }
+  if (variant === "checkbox") {
+    return <LoadingCheckboxInput big={rest.checkboxRadioBig} />;
+  }
+
+  return <div>Loading</div>;
 }

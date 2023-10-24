@@ -3,7 +3,6 @@ import { ListTodo } from "lucide-react";
 import React, { RefObject, forwardRef, useRef } from "react";
 
 import { Card, CardContent } from "@/components/ui/card";
-import { Checkbox } from "@/components/ui/checkbox";
 import { RadioGroupItem } from "@/components/ui/radio-group";
 import { cn } from "@/lib/utils";
 
@@ -81,7 +80,7 @@ RadioInputProps
               } else {
                 console.error("CheckboxRef not found");
               }
-              onClick && onClick(ev);
+              if (onClick) onClick(ev);
             }}
             disabled={readOnly || disabled}
             ref={ref || CheckboxRef}

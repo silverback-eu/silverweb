@@ -1,6 +1,5 @@
 import { format } from "date-fns";
 import {
-  Building,
   Calendar,
   File,
   FileArchive,
@@ -11,7 +10,6 @@ import {
   FileType,
   FileVideo,
   Ruler,
-  User2,
 } from "lucide-react";
 import React from "react";
 

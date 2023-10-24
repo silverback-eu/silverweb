@@ -26,18 +26,18 @@ const NumberInput = forwardRef<HTMLInputElement, NumberInputProps>(
             if (ButtonContainerRef.current && !readOnly && !disabled) {
               Object.assign(ButtonContainerRef.current.style, {
                 transform: "translateY(-1px)",
-                borderColor: status == "success" ? "rgba(101, 163, 13, 1)" : status == "error" ? "rgba(220, 38, 38, 1)" : "rgba(255, 255, 255, 0.8)",
+                borderColor: status === "success" ? "rgba(101, 163, 13, 1)" : status === "error" ? "rgba(220, 38, 38, 1)" : "rgba(255, 255, 255, 0.8)",
               });
             }
-            onFocus && onFocus(ev);
+            if (onFocus) onFocus(ev);
           }}
           onMouseEnter={(ev) => {
             if (ButtonContainerRef.current && !readOnly && !disabled) {
               Object.assign(ButtonContainerRef.current.style, {
-                borderColor: status == "success" ? "rgba(101, 163, 13, 1)" : status == "error" ? "rgba(220, 38, 38, 1)" : "",
+                borderColor: status === "success" ? "rgba(101, 163, 13, 1)" : status === "error" ? "rgba(220, 38, 38, 1)" : "",
               });
             }
-            onMouseEnter && onMouseEnter(ev);
+            if (onMouseEnter) onMouseEnter(ev);
           }}
           onMouseLeave={(ev) => {
             if (ButtonContainerRef.current && !readOnly && !disabled) {
@@ -45,7 +45,7 @@ const NumberInput = forwardRef<HTMLInputElement, NumberInputProps>(
                 borderColor: "inherit",
               });
             }
-            onMouseLeave && onMouseLeave(ev);
+            if (onMouseLeave) onMouseLeave(ev);
           }}
           onBlur={(ev) => {
             if (ButtonContainerRef.current && !readOnly && !disabled) {
@@ -54,7 +54,7 @@ const NumberInput = forwardRef<HTMLInputElement, NumberInputProps>(
                 borderColor: "inherit",
               });
             }
-            onBlur && onBlur(ev);
+            if (onBlur) onBlur(ev);
           }}
           inputMode="numeric"
           className={cn(
@@ -62,15 +62,15 @@ const NumberInput = forwardRef<HTMLInputElement, NumberInputProps>(
             readOnly
               ? "focus-visible:ring-1 focus-visible:ring-accent"
               : "hover:ring-1 hover:ring-secondary transition-all focus:-translate-y-[1px]",
-            status == "success"
+            status === "success"
               && "text-lime-600 placeholder:opacity-80 placeholder:text-lime-600 hover:ring-1 hover:ring-lime-600 focus-visible:ring-1 focus-visible:ring-lime-500",
-            status == "error"
+            status === "error"
               && "text-red-500 placeholder:opacity-80 placeholder:text-red-500 hover:ring-1 hover:ring-red-600 focus-visible:ring-1 focus-visible:ring-red-500",
             className,
           )}
           onChange={(ev) => {
             ev.target.value = ev.target.value.replace(/[^0-9]/g, "");
-            onChange && onChange(ev);
+            if (onChange) onChange(ev);
           }}
           ref={ref || InputRef}
           {...rest}

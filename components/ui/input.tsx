@@ -28,6 +28,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
     const PrefixRef = useRef<HTMLSpanElement>(null);
 
     return (
+      // eslint-disable-next-line react/jsx-no-useless-fragment
       <React.Fragment>
         {prefix ? (
           <div className="relative w-full">
@@ -48,7 +49,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
                 ) {
                   PrefixRef.current.style.transform = "translateY(-1px)";
                 }
-                onFocus && onFocus(ev);
+                if (onFocus) onFocus(ev);
               }}
               onBlur={(ev) => {
                 if (
@@ -59,7 +60,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
                 ) {
                   PrefixRef.current.style.transform = "translateY(0)";
                 }
-                onBlur && onBlur(ev);
+                if (onBlur) onBlur(ev);
               }}
               className={cn(
                 "flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50",
@@ -87,7 +88,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
               ) {
                 PrefixRef.current.style.transform = "translateY(-1px)";
               }
-              onFocus && onFocus(ev);
+              if (onFocus) onFocus(ev);
             }}
             onBlur={(ev) => {
               if (
@@ -98,7 +99,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
               ) {
                 PrefixRef.current.style.transform = "translateY(0)";
               }
-              onBlur && onBlur(ev);
+              if (onBlur)onBlur(ev);
             }}
             className={cn(
               "flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50",

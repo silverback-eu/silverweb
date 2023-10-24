@@ -9,9 +9,15 @@ const HoverCard = HoverCardPrimitive.Root;
 
 const HoverCardTrigger = HoverCardPrimitive.Trigger;
 
+type HoverCardTriggerProps = {
+  className?: string;
+  align?: "center" | "start" | "end",
+  sideOffset?: number,
+} & React.ComponentPropsWithoutRef<typeof HoverCardPrimitive.Content>;
+
 const HoverCardContent = React.forwardRef<
 React.ElementRef<typeof HoverCardPrimitive.Content>,
-React.ComponentPropsWithoutRef<typeof HoverCardPrimitive.Content>
+HoverCardTriggerProps
 >(({
   className, align = "center", sideOffset = 4, ...props
 }, ref) => (

@@ -8,9 +8,13 @@ import * as React from "react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";
 
+type CommandProps = {
+  className?: string;
+} & React.ComponentPropsWithoutRef<typeof CommandPrimitive>;
+
 const Command = React.forwardRef<
 React.ElementRef<typeof CommandPrimitive>,
-React.ComponentPropsWithoutRef<typeof CommandPrimitive>
+CommandProps
 >(({ className, ...props }, ref) => (
   <CommandPrimitive
     ref={ref}
@@ -37,10 +41,15 @@ function CommandDialog({ children, ...props }: CommandDialogProps) {
   );
 }
 
+type CommandInputProps = {
+  className?: string;
+} & React.ComponentPropsWithoutRef<typeof CommandPrimitive.Input>;
+
 const CommandInput = React.forwardRef<
 React.ElementRef<typeof CommandPrimitive.Input>,
-React.ComponentPropsWithoutRef<typeof CommandPrimitive.Input>
+CommandInputProps
 >(({ className, ...props }, ref) => (
+  // eslint-disable-next-line react/no-unknown-property
   <div className="flex items-center border-b px-3" cmdk-input-wrapper="">
     <MagnifyingGlassIcon className="mr-2 h-4 w-4 shrink-0 opacity-50" />
     <CommandPrimitive.Input
@@ -56,9 +65,13 @@ React.ComponentPropsWithoutRef<typeof CommandPrimitive.Input>
 
 CommandInput.displayName = CommandPrimitive.Input.displayName;
 
+type CommandListProps = {
+  className?: string;
+} & React.ComponentPropsWithoutRef<typeof CommandPrimitive.List>;
+
 const CommandList = React.forwardRef<
 React.ElementRef<typeof CommandPrimitive.List>,
-React.ComponentPropsWithoutRef<typeof CommandPrimitive.List>
+CommandListProps
 >(({ className, ...props }, ref) => (
   <CommandPrimitive.List
     ref={ref}
@@ -82,9 +95,13 @@ React.ComponentPropsWithoutRef<typeof CommandPrimitive.Empty>
 
 CommandEmpty.displayName = CommandPrimitive.Empty.displayName;
 
+type CommandGroupProps = {
+  className?: string;
+} & React.ComponentPropsWithoutRef<typeof CommandPrimitive.Group>;
+
 const CommandGroup = React.forwardRef<
 React.ElementRef<typeof CommandPrimitive.Group>,
-React.ComponentPropsWithoutRef<typeof CommandPrimitive.Group>
+CommandGroupProps
 >(({ className, ...props }, ref) => (
   <CommandPrimitive.Group
     ref={ref}
@@ -98,9 +115,13 @@ React.ComponentPropsWithoutRef<typeof CommandPrimitive.Group>
 
 CommandGroup.displayName = CommandPrimitive.Group.displayName;
 
+type CommandSeparatorProps = {
+  className?: string;
+} & React.ComponentPropsWithoutRef<typeof CommandPrimitive.Separator>;
+
 const CommandSeparator = React.forwardRef<
 React.ElementRef<typeof CommandPrimitive.Separator>,
-React.ComponentPropsWithoutRef<typeof CommandPrimitive.Separator>
+CommandSeparatorProps
 >(({ className, ...props }, ref) => (
   <CommandPrimitive.Separator
     ref={ref}
@@ -110,9 +131,13 @@ React.ComponentPropsWithoutRef<typeof CommandPrimitive.Separator>
 ));
 CommandSeparator.displayName = CommandPrimitive.Separator.displayName;
 
+type CommandItemProps = {
+  className?: string;
+} & React.ComponentPropsWithoutRef<typeof CommandPrimitive.Item>;
+
 const CommandItem = React.forwardRef<
 React.ElementRef<typeof CommandPrimitive.Item>,
-React.ComponentPropsWithoutRef<typeof CommandPrimitive.Item>
+CommandItemProps
 >(({ className, ...props }, ref) => (
   <CommandPrimitive.Item
     ref={ref}
@@ -126,10 +151,14 @@ React.ComponentPropsWithoutRef<typeof CommandPrimitive.Item>
 
 CommandItem.displayName = CommandPrimitive.Item.displayName;
 
+type CommandShortcutProps = {
+  className?: string;
+} & React.HTMLAttributes<HTMLSpanElement>;
+
 function CommandShortcut({
   className,
   ...props
-}: React.HTMLAttributes<HTMLSpanElement>) {
+}: CommandShortcutProps) {
   return (
     <span
       className={cn(

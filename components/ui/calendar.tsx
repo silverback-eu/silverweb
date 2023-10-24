@@ -7,11 +7,33 @@ import { DayPicker } from "react-day-picker";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-export type CalendarProps = React.ComponentProps<typeof DayPicker>;
+type IconProps = {
+  className?: string | undefined;
+  style?: React.CSSProperties | undefined;
+};
+function IconLeft(props: IconProps) {
+  return (
+    <ChevronLeftIcon {...props} className="h-4 w-4" />
+  );
+}
+
+function IconRight(props: IconProps) {
+  return (
+    <ChevronRightIcon {...props} className="h-4 w-4" />
+  );
+}
+
+export type CalendarProps = {
+  className?: string;
+  classNames?: Record<string, string>;
+  showOutsideDays?: boolean;
+  mode?: "default" | "single" | "multiple" | "range";
+} & React.ComponentProps<typeof DayPicker>;
 
 function Calendar({
   className,
   classNames,
+  mode,
   showOutsideDays = true,
   ...props
 }: CalendarProps) {
@@ -38,7 +60,7 @@ function Calendar({
         row: "flex w-full mt-2",
         cell: cn(
           "relative p-0 text-center text-sm focus-within:relative focus-within:z-20 [&:has([aria-selected])]:bg-accent",
-          props.mode === "range"
+          mode === "range"
             ? "[&:has(>.day-range-end)]:rounded-r-md [&:has(>.day-range-start)]:rounded-l-md first:[&:has([aria-selected])]:rounded-l-md last:[&:has([aria-selected])]:rounded-r-md"
             : "[&:has([aria-selected])]:rounded-md",
         ),
@@ -59,8 +81,8 @@ function Calendar({
         ...classNames,
       }}
       components={{
-        IconLeft: ({ ...props }) => <ChevronLeftIcon className="h-4 w-4" />,
-        IconRight: ({ ...props }) => <ChevronRightIcon className="h-4 w-4" />,
+        IconLeft,
+        IconRight,
       }}
       {...props}
     />

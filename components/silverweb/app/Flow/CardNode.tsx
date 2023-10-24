@@ -12,7 +12,6 @@ export type CardNodeProps = {
 function CardNodeWO({
   data: { content, className },
   dragging,
-  isConnectable,
 }: NodeProps<CardNodeProps>) {
   return (
     <Card className={cn("", dragging && "cursor-grabbing", className)}>

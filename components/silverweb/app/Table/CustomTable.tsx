@@ -4,7 +4,6 @@ import {
   ColumnDef,
   ColumnFiltersState,
   SortingState,
-  Updater,
   VisibilityState,
   flexRender,
   getCoreRowModel,
@@ -17,7 +16,7 @@ import {
 } from "@tanstack/react-table";
 import { LucideIcon } from "lucide-react";
 import {
-  Fragment, ReactElement, useEffect, useMemo, useState,
+  Fragment, ReactElement, useEffect, useState,
 } from "react";
 
 import Pagination from "./Pagination";
