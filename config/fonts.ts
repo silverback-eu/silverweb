@@ -34,5 +34,5 @@ export const fontGraphik = localFont({
     },
   ],
   variable: "--graphik-webfont",
-  display: "fallback",
+  display: "swap",
 });

@@ -2,6 +2,7 @@ import { Column } from "@tanstack/react-table";
 import {
   ChevronDown, ChevronUp, ChevronsUpDown, EyeOff,
 } from "lucide-react";
+import { HTMLAttributes } from "react";
 
 import { Button } from "@/components/ui/button";
 import {

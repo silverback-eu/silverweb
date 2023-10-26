@@ -1,4 +1,4 @@
-
+import { ReactNode } from "react";
 
 import { ThemeProvider } from "@/components/provider/ThemeProvider";
 

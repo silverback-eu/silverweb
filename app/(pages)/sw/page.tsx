@@ -1,6 +1,5 @@
 import { BringToFront, Tags } from "lucide-react";
 
-
 import Navbar from "@/components/silverweb/ui/Navbar";
 
 export default async function SilverWebHomePage() {

@@ -65,6 +65,7 @@ const PhoneInput = forwardRef<HTMLInputElement, PhoneInputProps>((props, ref) =>
             <Button
               variant="ghost"
               role="combobox"
+              aria-label="Select phone prefix"
               aria-expanded={open}
               className="py-1  w-10 px-3 justify-between -mr-2"
             >

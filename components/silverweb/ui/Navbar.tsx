@@ -16,7 +16,7 @@ import {
   Users2,
 } from "lucide-react";
 import Link from "next/link";
-import { Fragment, useEffect, useRef, useState } from "react";
+import { Fragment, ReactNode, useEffect, useRef, useState } from "react";
 
 import AppIcon from "@/components/silverback/AppIcon";
 import Logo from "@/components/silverback/Logo";

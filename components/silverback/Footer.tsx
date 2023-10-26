@@ -1,6 +1,5 @@
 import Link from "next/link";
 
-
 import Logo from "./Logo";
 
 import { Separator } from "@/components/ui/separator";

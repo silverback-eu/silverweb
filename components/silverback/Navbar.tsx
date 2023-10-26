@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { ComponentPropsWithoutRef, ElementRef, forwardRef, useState } from "react";
 
 import BurgerMenuIcon from "./BurgerMenuIcon";
 import Logo from "./Logo";

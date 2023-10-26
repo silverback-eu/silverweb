@@ -29,6 +29,7 @@ RadioInputProps
     cardLabel,
     cardDescription,
     value,
+    id,
     ...rest
   } = props;
 
@@ -71,6 +72,8 @@ RadioInputProps
           </div>
           <RadioGroupItem
             value={value}
+            id={id}
+            aria-label={id}
             onClick={(ev) => {
               if (ref) {
                 const Ref = ref as RefObject<HTMLButtonElement>;
@@ -94,6 +97,8 @@ RadioInputProps
   return (
     <RadioGroupItem
       value={value}
+      id={id}
+      aria-label={id}
       className={cn(className)}
       disabled={readOnly || disabled}
       ref={ref}

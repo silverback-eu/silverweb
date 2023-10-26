@@ -213,7 +213,14 @@ export function FlowBackground() {
           id: "placeholder",
           type: "cardNodeWithout",
           position: { x: 1400, y: 1000 },
-          data: {},
+          data: {
+            content: (
+              <div aria-label="placeholder" className="text-transparent">
+                Placeholder
+              </div>
+            ),
+            className: "border-0",
+          },
         },
         {
           id: "flow3-1",
@@ -457,7 +464,9 @@ export function ContactForm() {
             role="button"
             tabIndex={0}
             onKeyDown={() =>
-              window.open("mailto:work@silverback.ie?subject=Request%20via%20Website%20&body=Hey%20Team%20SilverBack%2C%0A%0AI%2FWe%20want%20to%20work%20with%20you.%0A%0AWe're%2FI'm...%0A%0ARegards%2C")}
+              window.open(
+                "mailto:work@silverback.ie?subject=Request%20via%20Website%20&body=Hey%20Team%20SilverBack%2C%0A%0AI%2FWe%20want%20to%20work%20with%20you.%0A%0AWe're%2FI'm...%0A%0ARegards%2C",
+              )}
             aria-roledescription="mail"
             onClick={() =>
               window.open(
@@ -528,8 +537,8 @@ export function WorkFlowCard({
           workFlowCardAreVisible
             ? "opacity-100 translate-x-0"
             : leftRight === "left"
-              ? "-translate-x-20 opacity-0"
-              : "translate-x-20 opacity-0",
+            ? "-translate-x-20 opacity-0"
+            : "translate-x-20 opacity-0",
         )}
       >
         <CardContent className="p-2 flex gap-2">

@@ -1,6 +1,6 @@
 "use client";
 
-
+import { ReactNode } from "react";
 import { ReactFlowProvider } from "reactflow";
 
 export default function FlowProvider({
