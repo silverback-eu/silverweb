@@ -1,7 +1,10 @@
 {
-    "cSpell.words": [
-        "notifs"
-    ],
-    "editor.formatOnSave": true,
-    "editor.formatOnPaste": true
+  "cSpell.words": ["silverweb"],
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    // For ESLint
+    "source.fixAll.eslint": true
+  }
 }

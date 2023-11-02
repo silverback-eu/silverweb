@@ -1,0 +1,5 @@
+{
+  "extends": "tsconfig/sw-storybook.json",
+  "include": ["."],
+  "exclude": ["dist", "build", "node_modules"]
+}

@@ -1,0 +1,6 @@
+{
+  "extends": "tsconfig/sw-ui.json",
+  "include": ["."],
+  "compilerOptions": {},
+  "exclude": ["dist", "build", "node_modules"]
+}
