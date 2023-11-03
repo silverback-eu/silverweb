@@ -147,12 +147,13 @@ export const columnsProject: ColumnDef<Project>[] = [
     cell: ({ row }) => (
       <div className="relative w-[278px] h-[268px] rounded-lg overflow-hidden">
         <Image
+          about="All Photos are from unsplash https://unsplash.com"
           alt={
             (row.getValue("cover") as { url: StaticImageData; alt: string }).alt
           }
-          aria-details="All Photos are from unsplash https://unsplash.com"
           className="duration-500 object-cover transition-all hover:scale-105 z-10"
           fill
+          loading="eager"
           resource="unsplash"
           sizes="100%"
           src={

@@ -17,8 +17,6 @@ export default function SilverWebHomePage(): JSX.Element {
 
   return (
     <div>
-      Hello
-      {process.env.NEXT_PUBLIC_MAPBOX_TOKEN}
       <SiteNavbar openApp={1} quickApps={quickApps} />
     </div>
   );

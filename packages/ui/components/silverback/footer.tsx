@@ -150,72 +150,99 @@ export function Footer(): JSX.Element {
               </div>
             </div>
             <div>
-              <div className="grid sm:grid-cols-3 p-10">
-                <Link href="/">
+              <div className="grid gap-1 sm:gap-0 sm:grid-cols-3 max-sm:px-10 p-0  sm:p-10">
+                <Link className="max-sm:h-12" href="/">
                   <b className="hover:opacity-60 transition-opacity text-lg">
                     Home
                   </b>
                 </Link>
-                <Link href="/connect">
+                <Link className="max-sm:h-12" href="/connect">
                   <b className="hover:opacity-60 transition-opacity text-lg">
                     Contact
                   </b>
                 </Link>
-                <Link href="/privacy-policy">
+                <Link className="max-sm:h-12" href="/privacy-policy">
                   <b className="hover:opacity-60 transition-opacity text-lg ">
                     Privacy Policy
                   </b>
                 </Link>
-                <div className="hidden sm:block opacity-0">dontfred</div>
-                <div className="hidden sm:block opacity-0">dontfred</div>
-                <div className="hidden sm:block opacity-0">dontfred</div>
+                <div className="hidden sm:block opacity-0">@dontfred</div>
+                <div className="hidden sm:block opacity-0">@dontfred</div>
+                <div className="hidden sm:block opacity-0">@dontfred</div>
                 <b className="hidden sm:block text-warm text-lg">About</b>
                 <b className="hidden sm:block text-warm text-lg">Job board</b>
                 <b className="hidden sm:block text-warm text-lg">
                   Industry insights
                 </b>
-                <Link href="/our-story">
+                <Link
+                  aria-label="Go to here to learn more about our story"
+                  href="/our-story"
+                >
                   <b className="hidden sm:block hover:opacity-60 transition-opacity ">
                     Our Story
                   </b>
                 </Link>
-                <Link href="/jobboard?category=blue-collar">
+                <Link
+                  aria-label="Go to see all available blue collar jobs"
+                  href="/jobboard?category=blue-collar"
+                >
                   <b className="hidden sm:block hover:opacity-60 transition-opacity ">
                     Blue Collar
                   </b>
                 </Link>
-                <Link href="/industry-insights?category=company-news">
+                <Link
+                  aria-label="Go to here to learn more about company news. A Blog series"
+                  href="/industry-insights?category=company-news"
+                >
                   <b className="hidden sm:block hover:opacity-60 transition-opacity ">
                     Company news
                   </b>
                 </Link>
 
-                <Link href="/methods">
+                <Link
+                  aria-label="Go to here to learn more about the methods we use"
+                  href="/methods"
+                >
                   <b className="hidden sm:block hover:opacity-60 transition-opacity ">
                     Methods
                   </b>
                 </Link>
-                <Link href="/jobboard?category=white-collar">
+                <Link
+                  aria-label="Go to see all available white collar jobs"
+                  href="/jobboard?category=white-collar"
+                >
                   <b className="hidden sm:block hover:opacity-60 transition-opacity ">
                     White Collar
                   </b>
                 </Link>
-                <Link href="/industry-insights?category=better-work">
+                <Link
+                  aria-label="Go to here to learn more about better work. A Blog series"
+                  href="/industry-insights?category=better-work"
+                >
                   <b className="hidden sm:block hover:opacity-60 transition-opacity ">
                     Better work
                   </b>
                 </Link>
-                <Link href="/partnerships">
+                <Link
+                  aria-label="Go to here to learn more about our partnerships"
+                  href="/partnerships"
+                >
                   <b className="hidden sm:block hover:opacity-60 transition-opacity ">
                     Partnerships
                   </b>
                 </Link>
-                <Link href="/jobboard">
+                <Link
+                  aria-label="Go to see all available jobs."
+                  href="/jobboard"
+                >
                   <b className="hidden sm:block hover:opacity-60 transition-opacity ">
                     All
                   </b>
                 </Link>
-                <Link href="/industry-insights/?category=around-industry">
+                <Link
+                  aria-label="Go to here to learn more around industry. A Blog series"
+                  href="/industry-insights/?category=around-industry"
+                >
                   <b className="hidden sm:block hover:opacity-60 transition-opacity ">
                     Around Industry
                   </b>

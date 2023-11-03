@@ -14,10 +14,10 @@ export default function OurStory(): JSX.Element {
         <h1 className="font-bold tracking-tight text-4xl sm:text-6xl ">
           Our Story
         </h1>
-        <h3 className="max-w-xl sm:font-medium mx-auto px-12 sm:px-4 text-lg sm:text-xl tracking-tighter text-warm mt-5">
+        <h2 className="max-w-xl sm:font-medium mx-auto px-12 sm:px-4 text-lg sm:text-xl tracking-tighter text-warm mt-5">
           How did it start, {new Date().getFullYear() - 2012} years ago that we
           became the Partner from Dublin to Bucharest and Beyond...
-        </h3>
+        </h2>
       </div>
       <div className="max-w-[1000px] mx-auto text-primary text-xl grid grid-cols-[1fr_20px_1fr] [&getAlign_:nth-child(3n)]:text-start [&_:nth-child(3n+1)]:text-end">
         <Info />
@@ -142,6 +142,23 @@ export default function OurStory(): JSX.Element {
 function Info(): JSX.Element {
   return (
     <div className="space-y-2 h-full transition-all duration-1000">
+      <div className="bg-muted h-10 w-10 rounded-lg flex justify-center items-center">
+        <Building className="w-6 h-6" />
+      </div>
+      <div className="font-bold text-xl">Lorem, ipsum</div>
+      <div className="hidden xl:block text-muted-foreground text-base">
+        Lorem ipsum dolor sit amet consecteturadipisicing elit. Recusandae,
+        fugiat rerum soluta maiores, hic iure quibusdam obcaecati laudantium
+        dignissimos fugit similique dolore minus veniam deleniti ut voluptas
+        porro sequi rem?
+      </div>
+    </div>
+  );
+}
+
+function _StoryCard(): JSX.Element {
+  return (
+    <div className="flex flex-col justify-center items-center h-full">
       <div className="bg-muted h-10 w-10 rounded-lg flex justify-center items-center">
         <Building className="w-6 h-6" />
       </div>

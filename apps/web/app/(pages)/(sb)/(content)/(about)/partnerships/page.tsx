@@ -28,10 +28,10 @@ export default function Partnerships(): JSX.Element {
         <h1 className="font-bold tracking-tight text-4xl sm:text-6xl ">
           Meet our Partners
         </h1>
-        <h3 className="max-w-xl sm:font-medium mx-auto px-12 sm:px-4 text-lg sm:text-xl tracking-tighter text-warm mt-5">
+        <h2 className="max-w-xl sm:font-medium mx-auto px-12 sm:px-4 text-lg sm:text-xl tracking-tighter text-warm mt-5">
           Alone we can do so little, together we can do so much. Who are our
           supporter...
-        </h3>
+        </h2>
       </div>
       <div className="flex flex-wrap gap-6 mt-20 justify-center z-0">
         <PartnerCard href="https://suireng.ie/" img={suir} />

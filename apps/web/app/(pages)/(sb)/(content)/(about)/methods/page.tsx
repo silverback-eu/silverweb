@@ -13,10 +13,10 @@ export default function Methods(): JSX.Element {
         <h1 className="font-bold tracking-tight text-4xl sm:text-6xl ">
           Methods
         </h1>
-        <h3 className="max-w-xl sm:font-medium mx-auto px-12 sm:px-4 text-lg sm:text-xl tracking-tighter text-warm mt-5">
+        <h2 className="max-w-xl sm:font-medium mx-auto px-12 sm:px-4 text-lg sm:text-xl tracking-tighter text-warm mt-5">
           Just doing, is sometimes not enough. A plan is what makes the
           difference...
-        </h3>
+        </h2>
       </div>
       <div className="lg:min-h-[1400px] xl:min-h-[1650px] mx-3 mt-4 grid grid-cols-1 md:grid-cols-[40%_1fr] xl:grid-cols-[30%_1fr_15%]">
         <div>

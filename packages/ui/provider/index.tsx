@@ -10,7 +10,6 @@
 
 import type { ReactNode } from "react";
 import { FlowProvider } from "../components/apps/flow";
-import { MapProvider } from "../components/apps/map";
 import { ThemeProvider } from "./theme-provider";
 
 export function Provider({ children }: { children: ReactNode }): JSX.Element {
@@ -26,4 +25,4 @@ export function Provider({ children }: { children: ReactNode }): JSX.Element {
   );
 }
 
-export { ThemeProvider, FlowProvider, MapProvider };
+export { ThemeProvider, FlowProvider };

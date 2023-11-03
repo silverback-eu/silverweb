@@ -16,7 +16,7 @@
 
 import "./styles/global.css";
 
-export { Provider, FlowProvider, ThemeProvider, MapProvider } from "./provider";
+export { Provider, FlowProvider, ThemeProvider } from "./provider";
 export { AppIcon } from "./components/silverweb/app-icon";
 export { SiteNavbar } from "./components/silverweb/site-navbar";
 export { BurgerMenuIcon } from "./components/silverback/burger-menu-icon";

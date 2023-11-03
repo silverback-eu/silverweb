@@ -31,7 +31,7 @@ function Post({
   return (
     <div className="w-[370px] relative flex flex-col space-y-2">
       <div className="aspect-[1.91/1] bg-slate-400 rounded-lg " />
-      <h3 className="text-2xl font-bold">{title}</h3>
+      <h2 className="text-2xl font-bold">{title}</h2>
       <div className="text-muted-foreground">{description}</div>
       <div className="text-sm text-muted-foreground">
         {format(new Date(date), "MMM dd, yyyy")},{category}

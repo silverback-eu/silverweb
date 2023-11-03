@@ -383,7 +383,7 @@ function AnimatedCounter({
   duration?: number;
   value: number;
   start?: boolean;
-}): number {
+}): JSX.Element {
   const [count, setCount] = useState(0);
 
   useLayoutEffect(() => {
@@ -401,7 +401,7 @@ function AnimatedCounter({
     };
   }, [start, count, duration, value]);
 
-  return count;
+  return <span>{count}</span>;
 }
 
 export function InfoFeature({
@@ -596,6 +596,7 @@ export function ProjectCard({
               alt={`${title} image`}
               className="duration-500 object-cover transition-all hover:scale-105 z-10"
               fill
+              loading="eager"
               sizes="100%"
               src={img}
             />
