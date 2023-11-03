@@ -29,7 +29,6 @@ export function PartnerCard({
     threshold: 0.5,
     trackVisibility: true,
     delay: 100,
-    initialInView: true,
   });
 
   return (

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 export default function Methods(): JSX.Element {
   return (
     <div>
-      <div className="grid justify-center text-center mt-20 mb-2">
+      <div className="grid justify-center text-center mt-20 mb-12">
         <h1 className="font-bold tracking-tight text-4xl sm:text-6xl ">
           Methods
         </h1>

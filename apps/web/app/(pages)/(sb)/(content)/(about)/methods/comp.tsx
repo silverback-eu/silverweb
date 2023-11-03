@@ -273,7 +273,7 @@ export function FlowAndNav(): JSX.Element {
                 className="p-0 min-h-6 flex justify-start text-left"
                 onClick={() => {
                   window.scrollTo({
-                    top: 200,
+                    top: 250,
                     behavior: "smooth",
                     left: 0,
                   });
@@ -297,7 +297,7 @@ export function FlowAndNav(): JSX.Element {
                 className="p-0 min-h-6 flex justify-start text-left"
                 onClick={() => {
                   window.scrollTo({
-                    top: 200,
+                    top: 250,
                     behavior: "smooth",
                     left: 0,
                   });
@@ -321,7 +321,7 @@ export function FlowAndNav(): JSX.Element {
                 className="p-0 min-h-6 flex justify-start text-left"
                 onClick={() => {
                   window.scrollTo({
-                    top: 200,
+                    top: 250,
                     behavior: "smooth",
                     left: 0,
                   });
@@ -345,7 +345,7 @@ export function FlowAndNav(): JSX.Element {
                 className="p-0 min-h-6 flex justify-start text-left"
                 onClick={() => {
                   window.scrollTo({
-                    top: 200,
+                    top: 250,
                     behavior: "smooth",
                     left: 0,
                   });
@@ -369,7 +369,7 @@ export function FlowAndNav(): JSX.Element {
                 className="p-0 min-h-6 flex justify-start text-left"
                 onClick={() => {
                   window.scrollTo({
-                    top: 200,
+                    top: 250,
                     behavior: "smooth",
                     left: 0,
                   });
@@ -393,7 +393,7 @@ export function FlowAndNav(): JSX.Element {
                 className="p-0 min-h-6 flex justify-start text-left"
                 onClick={() => {
                   window.scrollTo({
-                    top: 200,
+                    top: 250,
                     behavior: "smooth",
                     left: 0,
                   });
@@ -417,7 +417,7 @@ export function FlowAndNav(): JSX.Element {
                 className="p-0 min-h-6 flex justify-start text-left"
                 onClick={() => {
                   window.scrollTo({
-                    top: 200,
+                    top: 250,
                     behavior: "smooth",
                     left: 0,
                   });
@@ -441,7 +441,7 @@ export function FlowAndNav(): JSX.Element {
                 className="p-0 min-h-6 flex justify-start text-left"
                 onClick={() => {
                   window.scrollTo({
-                    top: 200,
+                    top: 250,
                     behavior: "smooth",
                     left: 0,
                   });
@@ -465,7 +465,7 @@ export function FlowAndNav(): JSX.Element {
                 className="p-0 min-h-6 flex justify-start text-left"
                 onClick={() => {
                   window.scrollTo({
-                    top: 200,
+                    top: 250,
                     behavior: "smooth",
                     left: 0,
                   });
@@ -489,7 +489,7 @@ export function FlowAndNav(): JSX.Element {
                 className="p-0 min-h-6 flex justify-start text-left"
                 onClick={() => {
                   window.scrollTo({
-                    top: 200,
+                    top: 250,
                     behavior: "smooth",
                     left: 0,
                   });
@@ -513,7 +513,7 @@ export function FlowAndNav(): JSX.Element {
                 className="p-0 min-h-6 flex justify-start text-left"
                 onClick={() => {
                   window.scrollTo({
-                    top: 200,
+                    top: 250,
                     behavior: "smooth",
                     left: 0,
                   });
@@ -537,7 +537,7 @@ export function FlowAndNav(): JSX.Element {
                 className="p-0 min-h-6 flex justify-start text-left"
                 onClick={() => {
                   window.scrollTo({
-                    top: 200,
+                    top: 250,
                     behavior: "smooth",
                     left: 0,
                   });
@@ -561,7 +561,7 @@ export function FlowAndNav(): JSX.Element {
                 className="p-0 min-h-6 flex justify-start text-left"
                 onClick={() => {
                   window.scrollTo({
-                    top: 200,
+                    top: 250,
                     behavior: "smooth",
                     left: 0,
                   });
