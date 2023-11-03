@@ -1361,12 +1361,12 @@ const PhoneInput = forwardRef<HTMLInputElement, PhoneInputProps>(
                                     prefixObject.country === suggestion
                                 )?.country}-flag`}
                                 height={15}
+                                loading="lazy"
                                 src={`/flags/${phonePrefix.find(
                                   (prefixObject) =>
                                     prefixObject.country === suggestion
                                 )?.country}.svg`}
                                 width={15}
-                                loading="lazy"
                               />
                               {
                                 phonePrefix.find(
