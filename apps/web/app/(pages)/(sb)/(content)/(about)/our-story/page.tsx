@@ -1,11 +1,11 @@
 import { Building, Rocket, Search, Star, TreePine, Trophy } from "lucide-react";
 import type { Metadata } from "next";
 import our_story_1 from "public/our-story/our-story-1.jpg";
-import our_story_7 from "public/our-story/our-story-7.jpg";
-import our_story_9 from "public/our-story/our-story-9.jpg";
-import our_story_10 from "public/our-story/our-story-10.jpg";
-import our_story_11 from "public/our-story/our-story-11.jpg";
-import our_story_12 from "public/our-story/our-story-12.jpg";
+import our_story_2 from "public/our-story/our-story-2.jpg";
+import our_story_3 from "public/our-story/our-story-3.jpg";
+import our_story_4 from "public/our-story/our-story-4.jpg";
+import our_story_5 from "public/our-story/our-story-5.jpg";
+import our_story_6 from "public/our-story/our-story-6.jpg";
 import { Photos, StoryCard } from "./comp";
 
 export const metadata: Metadata = {
@@ -49,7 +49,7 @@ export default function OurStory(): JSX.Element {
         <Photos image={our_story_1} justify="left" />
         <Photos
           className="hidden sm:flex"
-          image={our_story_10}
+          image={our_story_2}
           justify="right"
         />
         <div className="hidden sm:block relative h-full">
@@ -65,7 +65,7 @@ export default function OurStory(): JSX.Element {
         />
         <Photos
           className="flex sm:hidden"
-          image={our_story_10}
+          image={our_story_2}
           justify="right"
         />
         <StoryCard
@@ -79,10 +79,10 @@ export default function OurStory(): JSX.Element {
           <div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 rounded-full h-2 w-2 outline outline-border" />
           <div className="absolute bottom-0 left-1/2 -translate-x-1/2 border border-border border-dashed h-[calc(50%-8px)] w-0" />
         </div>
-        <Photos image={our_story_7} justify="left" />
+        <Photos image={our_story_3} justify="left" />
         <Photos
           className="hidden sm:flex"
-          image={our_story_12}
+          image={our_story_4}
           justify="right"
         />
         <div className="hidden sm:block relative h-full">
@@ -98,7 +98,7 @@ export default function OurStory(): JSX.Element {
         />
         <Photos
           className="flex sm:hidden"
-          image={our_story_12}
+          image={our_story_4}
           justify="right"
         />
         <StoryCard
@@ -112,10 +112,10 @@ export default function OurStory(): JSX.Element {
           <div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 rounded-full h-2 w-2 outline outline-border" />
           <div className="absolute bottom-0 left-1/2 -translate-x-1/2 border border-border border-dashed h-[calc(50%-8px)] w-0" />
         </div>
-        <Photos image={our_story_9} justify="left" />
+        <Photos image={our_story_5} justify="left" />
         <Photos
           className="hidden sm:flex"
-          image={our_story_11}
+          image={our_story_6}
           justify="right"
         />
         <div className="hidden sm:block relative h-full">
@@ -131,7 +131,7 @@ export default function OurStory(): JSX.Element {
         />
         <Photos
           className="flex sm:hidden"
-          image={our_story_11}
+          image={our_story_6}
           justify="right"
         />
       </div>
