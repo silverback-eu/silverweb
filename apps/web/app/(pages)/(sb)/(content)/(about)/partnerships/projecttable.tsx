@@ -153,7 +153,7 @@ export const columnsProject: ColumnDef<Project>[] = [
           }
           className="duration-500 object-cover transition-all hover:scale-105 z-10"
           fill
-          loading="eager"
+          loading="lazy"
           resource="unsplash"
           sizes="100%"
           src={

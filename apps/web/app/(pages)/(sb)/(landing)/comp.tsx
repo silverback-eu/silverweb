@@ -596,7 +596,7 @@ export function ProjectCard({
               alt={`${title} image`}
               className="duration-500 object-cover transition-all hover:scale-105 z-10"
               fill
-              loading="eager"
+              loading="lazy"
               sizes="100%"
               src={img}
             />

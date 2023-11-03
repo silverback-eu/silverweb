@@ -1297,6 +1297,7 @@ const PhoneInput = forwardRef<HTMLInputElement, PhoneInputProps>(
                 <Image
                   alt={`${selectedPrefix?.country || "eu"}-flag`}
                   height={20}
+                  loading="lazy"
                   src={`/flags/${selectedPrefix?.country || "eu"}.svg`}
                   width={20}
                 />
@@ -1365,6 +1366,7 @@ const PhoneInput = forwardRef<HTMLInputElement, PhoneInputProps>(
                                     prefixObject.country === suggestion
                                 )?.country}.svg`}
                                 width={15}
+                                loading="lazy"
                               />
                               {
                                 phonePrefix.find(
