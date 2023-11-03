@@ -15,7 +15,7 @@
     "twconfig": "*",
     "typescript": "^4.5.2"
   },
-  "license": "MIT",
+  "license": "AGPL",
   "scripts": {
     "lint": "eslint .",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"

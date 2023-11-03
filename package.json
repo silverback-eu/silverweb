@@ -1,5 +1,6 @@
 {
   "name": "@silverweb/mono",
+  "license": "AGPL",
   "devDependencies": {
     "@turbo/gen": "^1.10.16",
     "eslint": "^8.48.0",
