@@ -1,5 +1,10 @@
 import { HardHat, Lightbulb, MapPin, Phone } from "lucide-react";
+import type { Metadata } from "next";
 import { ContactCard, ContactInformation } from "./comp";
+
+export const metadata: Metadata = {
+  title: "Connect - Swipe right and connect to SilverBack...",
+};
 
 export default function Connect(): JSX.Element {
   return (
