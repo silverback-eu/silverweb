@@ -118,3 +118,7 @@
     opacity: 50%;
   }
 }
+
+html {
+  scroll-behavior: smooth;
+}

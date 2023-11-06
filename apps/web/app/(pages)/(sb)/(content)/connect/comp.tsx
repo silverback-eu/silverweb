@@ -57,7 +57,7 @@ export function ContactInformation({
   scope: string;
 }): JSX.Element {
   return (
-    <div className="mt-12 grid md:grid-cols-2 gap-9 mx-5 md:mx-36">
+    <div className="pt-14 grid md:grid-cols-2 gap-9 mx-5 md:mx-36">
       <Card className="p-2 w-[calc(100vw-40px)] md:w-full xl:w-[538px] h-[340px] order-2 md:order-1">
         <Card className="overflow-hidden w-[calc(100vw-58px)] md:w-full xl:w-[520px] h-80">
           <iframe

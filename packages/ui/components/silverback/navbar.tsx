@@ -148,19 +148,19 @@ const pages: (
   },
   {
     title: "Dublin",
-    href: "/connect?city=dublin",
+    href: "/connect#dublin",
   },
   {
     title: "Copenhagen",
-    href: "/connect?city=copenhagen",
+    href: "/connect#copenhagen",
   },
   {
     title: "Lublin",
-    href: "/connect?city=lublin",
+    href: "/connect#lublin",
   },
   {
     title: "Bucharest",
-    href: "/connect?city=bucharest",
+    href: "/connect#bucharest",
   },
   {
     title: "Industry insights",

@@ -58,10 +58,10 @@ export default function Connect(): JSX.Element {
           />
         </div>
       </section>
-      <section id="maps">
-        <h3 className="font-bold text-4xl sm:text-5xl tracking-tighter text-center mt-64">
-          All round europe
-        </h3>
+      <h3 className="font-bold text-4xl sm:text-5xl tracking-tighter text-center mt-64">
+        All round europe
+      </h3>
+      <section id="dublin">
         <ContactInformation
           description="SilverBack HQ in Dublin, Ireland, at Station Mews, is the Headquater of SilverBack and also the starting point of our journey. From here we manage white collar, sales, HR and IT."
           location="Station Mews, Lindsay Grove, Dublin 9, D09 CC92, Ireland"
@@ -72,6 +72,8 @@ export default function Connect(): JSX.Element {
           scope="White Collar, Sales, HR, IT, Managment, Recruitment"
           shortLoc="Dublin, Ireland"
         />
+      </section>
+      <section id="lublin">
         <ContactInformation
           description="SilverBack Polska in Lubin, Poland, is the center of Administion and also the first abroad office. From here we manage finace, accounting, administration, blue collar."
           location="Prezydenta Gabriela Narutowicza 55 B, 20-016 Lublin, Poland"
@@ -82,6 +84,8 @@ export default function Connect(): JSX.Element {
           scope="Finance, Accounting, Administration, Blue Collar, Recruitment"
           shortLoc="Lublin, Poland"
         />
+      </section>
+      <section id="bucharest">
         <ContactInformation
           description="SilverBack Instal in Bucurest, Romania, is the center of Blue Collar. From here we manage blue collar, project control and recruitment."
           location="Calea Serban Voda nr. 133, Bl. Central Business Park, Bucurest, Romania"
@@ -92,6 +96,8 @@ export default function Connect(): JSX.Element {
           scope="Blue Collar, Project Control, Recruitment"
           shortLoc="Bucurest, Romania"
         />
+      </section>
+      <section id="copenhagen">
         <ContactInformation
           description="SilverBack Danmark in Copenhagen, Denmark, is the office of Scandinavia."
           location="Pilestræde 58, 1112 København K, Danmark"
