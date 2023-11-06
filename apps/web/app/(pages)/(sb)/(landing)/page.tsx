@@ -252,39 +252,39 @@ export default function Landing(): JSX.Element {
             </div>
             <div className="grid sm:flex justify-center gap-5 mt-12">
               <PartnerCard
-                className="animate-[glowUp_10s_linear_infinite_1s] hover:opacity-50"
+                className="animate-[glowUp_10s_linear_infinite_1s] duration-[10s] hover:opacity-50"
                 href="https://www.assemblin.com/"
                 img={assemblin}
               />
               <PartnerCard
-                className="animate-[glowUp_10s_linear_infinite_2.5s] hover:opacity-50"
+                className="animate-[glowUp_10s_linear_infinite_2.5s] duration-[10s] hover:opacity-50"
                 href="https://www.bravida.se/"
                 img={bravida}
               />
               <PartnerCard
-                className="animate-[glowUp_10s_linear_infinite_4s] hover:opacity-50"
+                className="animate-[glowUp_10s_linear_infinite_4s] duration-[10s] hover:opacity-50"
                 href="https://northvolt.com/"
                 img={northvolt}
               />
               <PartnerCard
-                className="animate-[glowUp_10s_linear_infinite_5.5s] hover:opacity-50"
+                className="animate-[glowUp_10s_linear_infinite_5.5s] duration-[10s] hover:opacity-50"
                 href="https://avtelglobal.com/"
                 img={avtel}
               />
             </div>
             <div className="grid sm:flex justify-center gap-5 mt-5">
               <PartnerCard
-                className="animate-[glowUp_10s_linear_infinite_7s] hover:opacity-50"
+                className="animate-[glowUp_10s_linear_infinite_7s] duration-[10s] hover:opacity-50"
                 href="https://suireng.ie/"
                 img={suir}
               />
               <PartnerCard
-                className="animate-[glowUp_10s_linear_infinite_8.5s] hover:opacity-50"
+                className="animate-[glowUp_10s_linear_infinite_8.5s] duration-[10s] hover:opacity-50"
                 href="https://www.hmvengineering.com/"
                 img={hmv}
               />
               <PartnerCard
-                className="animate-[glowUp_10s_linear_infinite_10s] hover:opacity-50"
+                className="animate-[glowUp_10s_linear_infinite_10s] duration-[10s] hover:opacity-50"
                 href="https://joneseng.com/"
                 img={joneseng}
               />
