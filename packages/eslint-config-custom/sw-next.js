@@ -39,6 +39,7 @@ module.exports = {
     "import/no-default-export": "off",
     "@typescript-eslint/no-unsafe-assignment": "off",
     "@typescript-eslint/no-unnecessary-type-assertion": "off",
+    "@typescript-eslint/no-unsafe-member-access": "off",
     "no-console": ["error", { allow: ["warn", "error"] }],
     "react/jsx-fragments": ["error", "element"],
     "react/jsx-pascal-case": ["error", { allowNamespace: true }],

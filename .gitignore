@@ -13,6 +13,9 @@ coverage
 out/
 build
 
+# contentlayer
+.contentlayer
+
 # misc
 .DS_Store
 *.pem
