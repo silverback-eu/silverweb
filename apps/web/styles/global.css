@@ -122,3 +122,39 @@
 html {
   scroll-behavior: smooth;
 }
+
+@keyframes dancingDino {
+  0% {
+    transform: translateX(200%) translateY(0%) scale(-1, 1);
+  }
+  8.75% {
+    transform: translateX(150%) translateY(-20%) scale(-1, 1);
+  }
+  17.5% {
+    transform: translateX(100%) translateY(0%) scale(-1, 1);
+  }
+  21.25% {
+    transform: translateX(50%) translateY(-20%) scale(-1, 1);
+  }
+  25% {
+    transform: translateX(0%) translateY(0%) scale(-1, 1);
+  }
+  37.5% {
+    transform: translateX(-100%) translateY(-20%) scale(-1, 1);
+  }
+  50% {
+    transform: translateX(-200%) translateY(0%);
+  }
+  67.5% {
+    transform: translateX(-100%) translateY(-20%);
+  }
+  75% {
+    transform: translateX(0%) translateY(0%);
+  }
+  87.5% {
+    transform: translateX(100%) translateY(-20%);
+  }
+  100% {
+    transform: translateX(200%) translateY(0%) scale(-1, 1);
+  }
+}

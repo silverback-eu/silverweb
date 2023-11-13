@@ -51,7 +51,7 @@ export function InfoCards({
       )}
       ref={infoCards}
     >
-      <CardHeader className="p-3 pb-1 space-y-0">
+      <CardHeader className="p-3 pb-1">
         <CardTitle className="text-base">{heading}</CardTitle>
       </CardHeader>
       <CardContent className="text-sm p-3 pt-0">{content}</CardContent>

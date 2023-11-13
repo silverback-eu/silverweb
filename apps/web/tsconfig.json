@@ -1,5 +1,5 @@
 {
-  "extends": "tsconfig/nextjs.json",
+  "extends": "tsconfig/sw-next.json",
   "compilerOptions": {
     "plugins": [{ "name": "next" }],
     "paths": {
