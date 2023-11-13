@@ -13,6 +13,7 @@ import type { StaticImageData } from "next/image";
 import Image from "next/image";
 import Link from "next/link";
 import { useInView } from "react-intersection-observer";
+import type { CSSProperties } from "react";
 import { cn } from "../../lib/utils";
 import { Card, CardContent } from "./card";
 
@@ -20,10 +21,12 @@ export function PartnerCard({
   img,
   href,
   className,
+  style,
 }: {
   img: StaticImageData;
   href: string;
   className?: string;
+  style?: CSSProperties;
 }): JSX.Element {
   const [CardRef, CardIsVisible] = useInView({
     threshold: 0.5,
@@ -47,6 +50,7 @@ export function PartnerCard({
           "opacity-50 hover:opacity-100 transition-all duration-500 select-none",
           className
         )}
+        style={style}
       >
         <CardContent className="p-5">
           <Image
