@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { PartnerCard } from "@silverweb/ui/components/shared";
 import ardmac from "public/brands/ARDMAC.png";
 import assemblin from "public/brands/ASSEMBLIN.png";
 import avtel from "public/brands/AVTEL.png";
@@ -14,7 +15,6 @@ import joneseng from "public/brands/Jones Eng.png";
 import northvolt from "public/brands/Northvolt.png";
 import sisk from "public/brands/SISK.png";
 import suir from "public/brands/SUIR.png";
-import { PartnerCard } from "@silverweb/ui/components/shared";
 import { ProjectTable } from "./comp";
 
 export const metadata: Metadata = {

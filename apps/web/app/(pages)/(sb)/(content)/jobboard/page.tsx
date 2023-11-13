@@ -1,3 +1,3 @@
-export default function About() {
-  return <div>About</div>;
+export default function JobBoard(): JSX.Element {
+  return <div>JobBoard</div>;
 }

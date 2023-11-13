@@ -41,6 +41,9 @@ import {
   Workflow,
   Wrench,
 } from "lucide-react";
+import { Button, PartnerCard } from "@silverweb/ui/components/shared";
+import { PhoneInput } from "@silverweb/ui/components/inputs/default";
+import Link from "next/link";
 import assemblin from "public/brands/ASSEMBLIN.png";
 import avtel from "public/brands/AVTEL.png";
 import bravida from "public/brands/Bravida.png";
@@ -51,9 +54,6 @@ import suir from "public/brands/SUIR.png";
 import datacentre_1 from "public/projects/datacentre-1.jpg";
 import lillestrom_1_min from "public/projects/lillestrom-1-min.jpg";
 import northvolt_ett_1 from "public/projects/northvolt-ett-1.jpg";
-import { Button, PartnerCard } from "@silverweb/ui/components/shared";
-import { PhoneInput } from "@silverweb/ui/components/inputs/default";
-import Link from "next/link";
 import {
   ContactForm,
   FeaturesCard,

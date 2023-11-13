@@ -1,13 +1,13 @@
 import React from "react";
-import type { MDX } from "contentlayer/generated";
-import { allDocuments } from "contentlayer/generated";
+import dayjs from "dayjs";
 import type { RawDocumentData } from "contentlayer/source-files";
 import { notFound } from "next/navigation";
 import { Button, Separator } from "@silverweb/ui/components/shared";
 import Link from "next/link";
 import type { Metadata } from "next";
 import Image from "next/image";
-import dayjs from "dayjs";
+import type { MDX } from "contentlayer/generated";
+import { allDocuments } from "contentlayer/generated";
 import { MarkdownWrapper } from "./comp";
 
 export interface BlogPost {

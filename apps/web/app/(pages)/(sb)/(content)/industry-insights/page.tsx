@@ -1,8 +1,8 @@
 import type { RawDocumentData } from "contentlayer/source-files";
-import type { MDX } from "contentlayer/generated";
-import { allDocuments } from "contentlayer/generated";
 import dayjs from "dayjs";
 import { Separator } from "@silverweb/ui/components/shared";
+import type { MDX } from "contentlayer/generated";
+import { allDocuments } from "contentlayer/generated";
 import { NavBar, Post } from "./comp";
 
 export interface BlogPost {
