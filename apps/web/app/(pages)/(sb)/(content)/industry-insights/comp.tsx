@@ -20,14 +20,16 @@ export function NavBar({
 }): JSX.Element {
   return (
     <NavigationMenu>
-      <NavigationMenuList>
+      <NavigationMenuList className="flex-wrap justify-start">
         <NavigationMenuItem>
           <Link
             href="/industry-insights?category=company-news"
             legacyBehavior
             passHref
           >
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+            <NavigationMenuLink
+              className={`${navigationMenuTriggerStyle()} px-0.5 sm:px-4 justify-start sm:justify-center`}
+            >
               <div
                 className={cn(
                   "transition-all",
@@ -41,13 +43,16 @@ export function NavBar({
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
+        <Separator className="h-5 block sm:hidden" orientation="vertical" />
         <NavigationMenuItem>
           <Link
             href="/industry-insights?category=better-work"
             legacyBehavior
             passHref
           >
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+            <NavigationMenuLink
+              className={`${navigationMenuTriggerStyle()} px-0.5 sm:px-4 justify-start sm:justify-center`}
+            >
               <div
                 className={cn(
                   "transition-all",
@@ -61,13 +66,16 @@ export function NavBar({
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
+        <Separator className="h-5 block sm:hidden" orientation="vertical" />
         <NavigationMenuItem>
           <Link
             href="/industry-insights?category=around-industry"
             legacyBehavior
             passHref
           >
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+            <NavigationMenuLink
+              className={`${navigationMenuTriggerStyle()} px-0.5 sm:px-4 justify-start sm:justify-center`}
+            >
               <div
                 className={cn(
                   "transition-all",
@@ -84,7 +92,9 @@ export function NavBar({
         <Separator className="h-5" orientation="vertical" />
         <NavigationMenuItem>
           <Link href="/industry-insights" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+            <NavigationMenuLink
+              className={`${navigationMenuTriggerStyle()} px-0.5 sm:px-4`}
+            >
               <div className={cn("transition-all")}>All</div>
             </NavigationMenuLink>
           </Link>

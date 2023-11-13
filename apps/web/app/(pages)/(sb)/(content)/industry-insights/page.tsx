@@ -3,6 +3,7 @@ import dayjs from "dayjs";
 import { Separator } from "@silverweb/ui/components/shared";
 import type { MDX } from "contentlayer/generated";
 import { allDocuments } from "contentlayer/generated";
+import type { Metadata } from "next";
 import { NavBar, Post } from "./comp";
 
 export interface BlogPost {
@@ -26,6 +27,11 @@ export interface BlogPost {
   slugAsParams: string;
 }
 
+export const metadata: Metadata = {
+  title:
+    "Industry Insights - What is going on in the industry? What are the latest trends? What are we doing?...",
+};
+
 export default function IndustryInsights({
   searchParams,
 }: {
@@ -39,7 +45,7 @@ export default function IndustryInsights({
         : 1
   );
   return (
-    <div className="max-w-7xl mx-auto">
+    <div className="max-w-7xl mx-auto px-4">
       <section aria-label="Heading">
         <div className="grid justify-center text-center mt-20">
           <h1 className="font-bold tracking-tight text-4xl sm:text-6xl ">

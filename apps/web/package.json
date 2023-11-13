@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "contentlayer dev && next dev",
+    "dev": "contentlayer build && next dev",
     "build": "contentlayer build && next build",
     "start": "next start",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf .next",

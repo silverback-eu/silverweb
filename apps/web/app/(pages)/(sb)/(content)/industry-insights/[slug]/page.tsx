@@ -88,7 +88,7 @@ export default function IndustryInsights({
 }): JSX.Element {
   const ii_post = getPostFromParams(params.slug);
   return (
-    <div className="max-w-4xl mx-auto mt-8 space-y-4">
+    <div className="max-w-4xl mx-auto mt-8 space-y-4 px-4">
       <div className="flex justify-between">
         <Button asChild className="p-0 h-auto" variant="link">
           <Link href="/industry-insights">See all posts</Link>
