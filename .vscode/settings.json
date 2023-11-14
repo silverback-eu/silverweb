@@ -7,5 +7,6 @@
     // For ESLint
     "source.fixAll.eslint": true
   },
-  "css.customData": [".vscode/css_custom_data.json"]
+  "css.customData": [".vscode/css_custom_data.json"],
+  "mdx.server.enable": false
 }

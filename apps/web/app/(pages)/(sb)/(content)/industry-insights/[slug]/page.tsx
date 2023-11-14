@@ -21,7 +21,7 @@ export interface BlogPost {
     type: "META";
     author?: string | undefined;
     description?: string | undefined;
-    keywords?: string | undefined;
+    keywords?: string[] | undefined;
     date?: string | undefined;
   };
   category: string;

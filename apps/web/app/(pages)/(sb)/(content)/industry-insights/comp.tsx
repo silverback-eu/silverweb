@@ -123,8 +123,8 @@ export function Post({
         <Image alt={title} className="object-cover" fill src={`${url}.jpg`} />
       </div>
       <h2 className="text-2xl font-bold">{title}</h2>
-      <div className="text-muted-foreground line-clamp-2 flex-1">
-        {description}
+      <div className="flex-1">
+        <div className="text-muted-foreground line-clamp-3">{description}</div>
       </div>
       <div className="text-sm text-muted-foreground">
         {dayjs(new Date(date)).format("DD MMM YYYY")}, {category}

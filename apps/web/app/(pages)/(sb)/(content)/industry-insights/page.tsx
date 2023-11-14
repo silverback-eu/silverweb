@@ -81,48 +81,6 @@ export default function IndustryInsights({
                 url={`/industry-insights/${post.slugAsParams}`}
               />
             ))}
-          <Post
-            category="Industry insights"
-            date="August 16, 2023"
-            description="Spain's cleantech leadership and the opportunity of tapping into Latin America's skilled workforce."
-            title="Spain Takes The Lead On Cleantech"
-            url="/industry-insights/spain"
-          />
-          <Post
-            category="Industry insights"
-            date="August 16, 2023"
-            description="Spain's cleantech leadership and the opportunity of tapping into Latin America's skilled workforce."
-            title="Spain Takes The Lead On Cleantech"
-            url="/industry-insights/spain"
-          />
-          <Post
-            category="Industry insights"
-            date="August 16, 2023"
-            description="Spain's cleantech leadership and the opportunity of tapping into Latin America's skilled workforce."
-            title="Spain Takes The Lead On Cleantech"
-            url="/industry-insights/spain"
-          />
-          <Post
-            category="Industry insights"
-            date="August 16, 2023"
-            description="Spain's cleantech leadership and the opportunity of tapping into Latin America's skilled workforce."
-            title="Spain Takes The Lead On Cleantech"
-            url="/industry-insights/spain"
-          />
-          <Post
-            category="Industry insights"
-            date="August 16, 2023"
-            description="Spain's cleantech leadership and the opportunity of tapping into Latin America's skilled workforce."
-            title="Spain Takes The Lead On Cleantech"
-            url="/industry-insights/spain"
-          />
-          <Post
-            category="Industry insights"
-            date="August 16, 2023"
-            description="Spain's cleantech leadership and the opportunity of tapping into Latin America's skilled workforce."
-            title="Spain Takes The Lead On Cleantech"
-            url="/industry-insights/spain"
-          />
         </div>
       </section>
     </div>

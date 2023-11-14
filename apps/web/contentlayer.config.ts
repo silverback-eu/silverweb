@@ -26,7 +26,7 @@ const META = defineNestedType(() => ({
   fields: {
     author: { type: "string" },
     description: { type: "string" },
-    keywords: { type: "string" },
+    keywords: { type: "list", of: { type: "string" } },
     date: { type: "date" },
   },
 }));
