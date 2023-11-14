@@ -5,7 +5,8 @@ import { useSearchParams } from "next/navigation";
 import type { ReactNode } from "react";
 import { CustomTable } from "@silverweb/ui/apps";
 import { EmailInput } from "@silverweb/ui/components/inputs/default";
-import { categories, columnsJob, countries, dataJob, jobs } from "./jobtable";
+import type { Job } from "./jobtable";
+import { categories, columnsJob, countries, jobs } from "./jobtable";
 
 export function TableContainer({
   children,
@@ -53,7 +54,7 @@ export function NoResult(): JSX.Element {
     </Card>
   );
 }
-export function JobTable(): JSX.Element {
+export function JobTable({ data }: { data: Job[] }): JSX.Element {
   const searchParams = useSearchParams();
   const category = searchParams.get("category");
   const job = searchParams.get("job");
@@ -67,7 +68,7 @@ export function JobTable(): JSX.Element {
     <CustomTable
       {...{
         initFilters: category || job ? initFilters : undefined,
-        data: dataJob,
+        data,
         columns: columnsJob,
         TableContainer: <TableContainer />,
         toolbar: {
