@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 import { JobTable } from "./comp";
 import type { Job } from "./jobtable";
 
-export const dataJob: Job[] = [
+const dataJob: Job[] = [
   {
     id: "bszbji",
     name: "general-operative",
