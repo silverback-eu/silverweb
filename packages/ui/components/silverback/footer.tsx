@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Separator, Logo } from "../shared";
+import { Separator, Logo } from "../../shared";
 
 export function Footer(): JSX.Element {
   return (

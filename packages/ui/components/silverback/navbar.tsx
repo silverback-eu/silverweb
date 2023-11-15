@@ -19,7 +19,7 @@ import {
   Sheet,
   SheetContent,
   SheetTrigger,
-} from "../shared";
+} from "../../shared";
 import { cn } from "../../lib/utils";
 import { BurgerMenuIcon } from "./burger-menu-icon";
 

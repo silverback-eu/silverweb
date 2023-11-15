@@ -22,7 +22,14 @@ import {
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { Fragment, useEffect, useRef, useState } from "react";
-import { Logo, Badge, Card, CardContent, Separator, Skeleton } from "../shared";
+import {
+  Logo,
+  Badge,
+  Card,
+  CardContent,
+  Separator,
+  Skeleton,
+} from "../../shared";
 import { cn } from "../../lib/utils";
 import { AppIcon } from "./app-icon";
 

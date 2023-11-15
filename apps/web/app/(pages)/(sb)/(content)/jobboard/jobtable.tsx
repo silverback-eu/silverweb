@@ -345,7 +345,7 @@ export const columnsJob: ColumnDef<Job>[] = [
     accessorKey: "name",
     cell: ({ row }) => {
       const Icon = (
-        jobs.findLast(
+        jobs.find(
           (job) => job.value === (row.getValue("name") as Job["name"])
         ) as { label: string; value: string; icon: LucideIcon } | undefined
       )?.icon;

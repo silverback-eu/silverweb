@@ -1,4 +1,4 @@
-import { Footer, Navbar } from "@silverweb/ui";
+import { Footer, Navbar } from "@silverweb/ui/silverback";
 import type { ReactNode } from "react";
 
 export default function Template({

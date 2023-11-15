@@ -1,4 +1,4 @@
-import { SiteNavbar } from "@silverweb/ui";
+import { SiteNavbar } from "@silverweb/ui/silverweb";
 import { BringToFront, Tags } from "lucide-react";
 
 export default function SilverWebHomePage(): JSX.Element {

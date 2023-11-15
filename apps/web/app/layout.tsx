@@ -2,7 +2,7 @@ import "@/styles/global.css";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import type { NextFontWithVariable } from "next/dist/compiled/@next/font";
-import { Provider } from "@silverweb/ui";
+import { Provider } from "@silverweb/ui/provider";
 import { metadataConfig } from "@/config/site";
 import { fontGraphik } from "@/config/fonts";
 
