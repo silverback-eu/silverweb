@@ -1,17 +1,3 @@
-/**
- *
- * Copyright (c) SilverBack Staffing Ltd., affiliates and Frederik W. Grimm.
- *
- * This source code is licensed under the AGPL license found in the
- * LICENSE file in the root directory of this source tree.
- *
- * Inspired, copied and slightly modified or directly copied from:
- * https://reactflow.dev/
- * https://webkid.io/
- * Many Thanks to reactflow-team / webkid GmbH
- *
- */
-
 "use client";
 
 import { useCallback } from "react";

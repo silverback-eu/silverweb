@@ -1,16 +1,3 @@
-/**
- *
- * Copyright (c) SilverBack Staffing Ltd., affiliates and Frederik W. Grimm.
- *
- * This source code is licensed under the AGPL license found in the
- * LICENSE file in the root directory of this source tree.
- *
- * Inspired, copied and slightly modified or directly copied from:
- * https://ui.shadcn.com/
- * Many Thanks to shadcn
- *
- */
-
 import { cva, type VariantProps } from "class-variance-authority";
 import type { HTMLAttributes } from "react";
 import { cn } from "../../lib/utils";

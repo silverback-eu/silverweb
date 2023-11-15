@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 import { memo } from "react";
 import type { NodeProps } from "reactflow";
 import { Handle, Position } from "reactflow";
-import { Card } from "../../shared";
+import { Card } from "../../../shared";
 import { cn } from "../../../lib/utils";
 
 export interface CardNodeProps {
