@@ -11,7 +11,7 @@
 
 import type { InputHTMLAttributes, RefObject } from "react";
 import { forwardRef, useRef } from "react";
-import { Button, Input } from "../../shared";
+import { Button, Input } from "../../../shared";
 import { cn } from "../../../lib/utils";
 
 export interface NumberInputProps

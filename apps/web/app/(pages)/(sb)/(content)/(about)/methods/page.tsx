@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Separator } from "@silverweb/ui/components/shared";
+import { Separator } from "@silverweb/ui/shared";
 import { FlowAndNav, InfoCards } from "./comp";
 
 export const metadata: Metadata = {

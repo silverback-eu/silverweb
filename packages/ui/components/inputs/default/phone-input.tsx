@@ -25,7 +25,7 @@ import {
   PopoverContent,
   PopoverTrigger,
   ScrollArea,
-} from "../../shared";
+} from "../../../shared";
 import { cn } from "../../../lib/utils";
 
 const phonePrefix = [

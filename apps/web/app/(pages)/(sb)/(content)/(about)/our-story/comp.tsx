@@ -1,6 +1,6 @@
 "use client";
 
-import { Card } from "@silverweb/ui/components/shared";
+import { Card } from "@silverweb/ui/shared";
 import { cn } from "@silverweb/ui/lib/utils";
 import type { StaticImageData } from "next/image";
 import Image from "next/image";

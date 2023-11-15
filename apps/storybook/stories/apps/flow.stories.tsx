@@ -8,17 +8,17 @@
  */
 
 import type { Meta, StoryObj } from "@storybook/react";
-import { DateRangePicker } from "@silverweb/ui/sw-inputs/default";
+import { Flow } from "@silverweb/ui/apps";
 
-const meta: Meta<typeof DateRangePicker> = {
-  title: "SilverBack/ DateRangePicker",
+const meta: Meta<typeof Flow> = {
+  title: "Apps/ Flow",
   tags: ["autodocs"],
-  component: DateRangePicker,
+  component: Flow,
 };
 
 export default meta;
 
-type Story = StoryObj<typeof DateRangePicker>;
+type Story = StoryObj<typeof Flow>;
 
 export const Normal: Story = {
   args: {},

@@ -1,5 +1,5 @@
-import { EmailInput } from "@silverweb/ui/components/inputs/default";
-import { Button, Card } from "@silverweb/ui/components/shared";
+import { EmailInput } from "@silverweb/ui/sw-inputs/default";
+import { Button, Card } from "@silverweb/ui/shared";
 import { Mail } from "lucide-react";
 import type { Metadata } from "next";
 import { JobTable } from "./comp";

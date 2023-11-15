@@ -1,4 +1,4 @@
-import { Button } from "@silverweb/ui/components/shared";
+import { Button } from "@silverweb/ui/shared";
 import type { Metadata } from "next";
 import Link from "next/link";
 

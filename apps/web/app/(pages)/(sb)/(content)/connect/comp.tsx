@@ -1,4 +1,4 @@
-import { Button, Card } from "@silverweb/ui/components/shared";
+import { Button, Card } from "@silverweb/ui/shared";
 import { DoorOpen, LocateFixed, Phone, Users2 } from "lucide-react";
 import Link from "next/link";
 import type { ReactElement } from "react";

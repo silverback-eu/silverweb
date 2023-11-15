@@ -1,10 +1,10 @@
 "use client";
 
-import { Button, Card } from "@silverweb/ui/components/shared";
+import { Button, Card } from "@silverweb/ui/shared";
 import { useSearchParams } from "next/navigation";
 import type { ReactNode } from "react";
 import { CustomTable } from "@silverweb/ui/apps";
-import { EmailInput } from "@silverweb/ui/components/inputs/default";
+import { EmailInput } from "@silverweb/ui/sw-inputs/default";
 import type { Job } from "./jobtable";
 import { categories, columnsJob, countries, jobs } from "./jobtable";
 

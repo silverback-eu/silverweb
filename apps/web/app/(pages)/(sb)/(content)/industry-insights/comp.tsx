@@ -7,7 +7,7 @@ import {
   NavigationMenuList,
   Separator,
   navigationMenuTriggerStyle,
-} from "@silverweb/ui/components/shared";
+} from "@silverweb/ui/shared";
 import { cn } from "@silverweb/ui/lib/utils";
 import dayjs from "dayjs";
 import Image from "next/image";
@@ -119,8 +119,9 @@ export function Post({
 }): JSX.Element {
   return (
     <div className="w-[370px] relative flex flex-col space-y-2">
-      <div className="relative overflow-hidden aspect-[1.91/1] bg-slate-400 rounded-lg">
+      <div className="relative overflow-hidden aspect-[1.91/1] rounded-lg">
         <Image alt={title} className="object-cover" fill src={`${url}.jpg`} />
+        <div className="animate-pulse absolute top-0 right-0 bottom-0 left-0 bg-primary/10" />
       </div>
       <h2 className="text-2xl font-bold">{title}</h2>
       <div className="flex-1">

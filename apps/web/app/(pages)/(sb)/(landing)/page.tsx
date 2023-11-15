@@ -41,8 +41,8 @@ import {
   Workflow,
   Wrench,
 } from "lucide-react";
-import { Button, PartnerCard } from "@silverweb/ui/components/shared";
-import { PhoneInput } from "@silverweb/ui/components/inputs/default";
+import { Button, PartnerCard } from "@silverweb/ui/shared";
+import { PhoneInput } from "@silverweb/ui/sw-inputs/default";
 import Link from "next/link";
 import assemblin from "public/brands/ASSEMBLIN.png";
 import avtel from "public/brands/AVTEL.png";

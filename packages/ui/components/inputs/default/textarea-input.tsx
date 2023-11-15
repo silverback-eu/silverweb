@@ -9,7 +9,7 @@
 
 import type { TextareaHTMLAttributes } from "react";
 import { forwardRef } from "react";
-import { Textarea } from "../../shared";
+import { Textarea } from "../../../shared";
 import { cn } from "../../../lib/utils";
 
 export interface TextareaInputProps

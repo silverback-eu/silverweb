@@ -2,7 +2,7 @@
 
 import { useSearchParams } from "next/navigation";
 import type { ReactNode } from "react";
-import { Card } from "@silverweb/ui/components/shared";
+import { Card } from "@silverweb/ui/shared";
 import { CustomTable } from "@silverweb/ui/apps";
 import {
   categories,

@@ -23,7 +23,7 @@ import {
 } from "lucide-react";
 import type { ChangeEvent, DragEvent, InputHTMLAttributes } from "react";
 import { Fragment, forwardRef, useEffect, useState } from "react";
-import { Button, Card, CardContent, Input, Label } from "../../shared";
+import { Button, Card, CardContent, Input, Label } from "../../../shared";
 import { cn } from "../../../lib/utils";
 
 export interface FileIconProps {

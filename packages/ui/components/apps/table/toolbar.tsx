@@ -13,7 +13,7 @@ import type { Table } from "@tanstack/react-table";
 import type { LucideIcon } from "lucide-react";
 import { X } from "lucide-react";
 import { Fragment } from "react";
-import { Button, Input } from "../../shared";
+import { Button, Input } from "../../../shared";
 import { ColumnFilter } from "./column-filter";
 import { FilterDropdown } from "./filter-dropdown";
 

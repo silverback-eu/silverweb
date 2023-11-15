@@ -1,9 +1,9 @@
 import type { RawDocumentData } from "contentlayer/source-files";
 import dayjs from "dayjs";
-import { Separator } from "@silverweb/ui/components/shared";
+import { Separator } from "@silverweb/ui/shared";
+import type { Metadata } from "next";
 import type { MDX } from "contentlayer/generated";
 import { allDocuments } from "contentlayer/generated";
-import type { Metadata } from "next";
 import { NavBar, Post } from "./comp";
 
 export interface BlogPost {

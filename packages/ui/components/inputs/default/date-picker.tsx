@@ -19,7 +19,7 @@ import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "../../shared";
+} from "../../../shared";
 import { cn } from "../../../lib/utils";
 
 export interface DatePickerProps

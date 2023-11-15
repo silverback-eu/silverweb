@@ -8,7 +8,7 @@ import {
   CardHeader,
   CardTitle,
   Separator,
-} from "@silverweb/ui/components/shared";
+} from "@silverweb/ui/shared";
 import { cn } from "@silverweb/ui/lib/utils";
 import {
   Bed,

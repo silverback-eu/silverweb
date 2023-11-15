@@ -2,7 +2,7 @@ import React from "react";
 import dayjs from "dayjs";
 import type { RawDocumentData } from "contentlayer/source-files";
 import { notFound } from "next/navigation";
-import { Button, Separator } from "@silverweb/ui/components/shared";
+import { Button, Separator } from "@silverweb/ui/shared";
 import Link from "next/link";
 import type { Metadata } from "next";
 import Image from "next/image";

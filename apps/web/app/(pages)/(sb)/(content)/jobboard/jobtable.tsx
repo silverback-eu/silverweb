@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "@silverweb/ui/components/shared";
+import { Button } from "@silverweb/ui/shared";
 import type { ColumnDef } from "@tanstack/react-table";
 import type { LucideIcon } from "lucide-react";
 import {

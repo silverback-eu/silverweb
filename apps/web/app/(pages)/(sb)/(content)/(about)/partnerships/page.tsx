@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { PartnerCard } from "@silverweb/ui/components/shared";
+import { PartnerCard } from "@silverweb/ui/shared";
 import ardmac from "public/brands/ARDMAC.png";
 import assemblin from "public/brands/ASSEMBLIN.png";
 import avtel from "public/brands/AVTEL.png";

@@ -7,9 +7,9 @@ import {
   CardContent,
   DisplayCard,
   RadioGroup,
-} from "@silverweb/ui/components/shared";
+} from "@silverweb/ui/shared";
 import { cn } from "@silverweb/ui/lib/utils";
-import { RadioInput } from "@silverweb/ui/components/inputs/default";
+import { RadioInput } from "@silverweb/ui/sw-inputs/default";
 import {
   ClipboardList,
   ClipboardSignature,
