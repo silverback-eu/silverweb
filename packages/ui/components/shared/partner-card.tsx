@@ -1,14 +1,5 @@
 "use client";
 
-/**
- *
- * Copyright (c) SilverBack Staffing Ltd., affiliates and Frederik W. Grimm.
- *
- * This source code is licensed under the AGPL license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
-
 import type { StaticImageData } from "next/image";
 import Image from "next/image";
 import Link from "next/link";

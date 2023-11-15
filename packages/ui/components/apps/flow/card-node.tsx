@@ -1,12 +1,3 @@
-/**
- *
- * Copyright (c) SilverBack Staffing Ltd., affiliates and Frederik W. Grimm.
- *
- * This source code is licensed under the AGPL license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
-
 import type { ReactNode } from "react";
 import { memo } from "react";
 import type { NodeProps } from "reactflow";
