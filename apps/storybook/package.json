@@ -12,8 +12,8 @@
   "dependencies": {
     "@silverweb/ui": "*",
     "@storybook/addon-themes": "^7.5.2",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": "latest",
+    "react-dom": "latest"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^7.4.0",
