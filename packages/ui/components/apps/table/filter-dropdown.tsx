@@ -18,7 +18,7 @@ import {
   PopoverContent,
   PopoverTrigger,
   Separator,
-} from "../../shared";
+} from "../../../shared";
 import { cn } from "../../../lib/utils";
 
 interface FilterDropdownProps<TData, TValue> {

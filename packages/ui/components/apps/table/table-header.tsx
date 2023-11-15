@@ -9,7 +9,7 @@ import {
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "../../shared";
+} from "../../../shared";
 
 interface TableHeaderProps<TData, TValue>
   extends HTMLAttributes<HTMLDivElement> {

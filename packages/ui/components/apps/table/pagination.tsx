@@ -12,7 +12,7 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "../../shared";
+} from "../../../shared";
 
 interface PaginationProps<TData> {
   table: Table<TData>;

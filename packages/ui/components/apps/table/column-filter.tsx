@@ -10,7 +10,7 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "../../shared";
+} from "../../../shared";
 
 interface ColumnFilterProps<TData> {
   table: Table<TData>;

@@ -1,6 +1,6 @@
 import type { InputHTMLAttributes } from "react";
 import { forwardRef } from "react";
-import { Input } from "../../shared";
+import { Input } from "../../../shared";
 import { cn } from "../../../lib/utils";
 
 export interface EmailInputProps extends InputHTMLAttributes<HTMLInputElement> {

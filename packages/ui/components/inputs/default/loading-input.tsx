@@ -1,4 +1,4 @@
-import { Card, CardContent, Skeleton } from "../../shared";
+import { Card, CardContent, Skeleton } from "../../../shared";
 
 export interface LoadingInputProps {
   variant:

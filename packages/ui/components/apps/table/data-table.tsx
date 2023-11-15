@@ -25,7 +25,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "../../shared";
+} from "../../../shared";
 import { Pagination } from "./pagination";
 import { Toolbar } from "./toolbar";
 

@@ -5,7 +5,7 @@ import { ListTodo } from "lucide-react";
 import type { ComponentPropsWithoutRef, ElementRef, RefObject } from "react";
 import { forwardRef, useRef } from "react";
 import { Checkbox } from "../../shared/checkbox";
-import { Card, CardContent } from "../../shared";
+import { Card, CardContent } from "../../../shared";
 import { cn } from "../../../lib/utils";
 
 export interface CheckboxInputProps
