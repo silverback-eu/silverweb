@@ -18,6 +18,7 @@ export interface DatePickerProps
   status?: "success" | "error" | "default";
   readOnly?: boolean;
   valueCalendar?: Date;
+  defaultDateValue?: Date;
   onChangeCalendar?: (date: Date | undefined) => void;
 }
 
@@ -27,14 +28,16 @@ const DatePicker = forwardRef<HTMLButtonElement, DatePickerProps>(
       status,
       readOnly,
       disabled,
+      defaultDateValue,
       valueCalendar,
       onChangeCalendar,
+      placeholder,
       ...rest
     } = props;
-    const [dateDefault, setDateDefault] = useState<Date>();
+    const [dateDefault, setDateDefault] = useState<Date | undefined>();
     useEffect(() => {
-      setDateDefault(valueCalendar);
-    }, [valueCalendar]);
+      setDateDefault(valueCalendar || defaultDateValue);
+    }, [valueCalendar, defaultDateValue]);
 
     function getDateDisplayed(): string | JSX.Element {
       if (valueCalendar) {
@@ -50,7 +53,7 @@ const DatePicker = forwardRef<HTMLButtonElement, DatePickerProps>(
             status === "success" && "text-lime-600 opacity-80"
           )}
         >
-          Pick a date
+          {placeholder || "Pick a date"}
         </span>
       );
     }
@@ -67,6 +70,7 @@ const DatePicker = forwardRef<HTMLButtonElement, DatePickerProps>(
                 "text-red-500 placeholder:opacity-80 placeholder:text-red-500 hover:ring-1 hover:ring-red-600 focus-visible:ring-1 focus-visible:ring-red-500",
               !valueCalendar && !dateDefault && "text-muted-foreground"
             )}
+            disabled={disabled || readOnly}
             ref={ref}
             variant="outline"
             {...rest}

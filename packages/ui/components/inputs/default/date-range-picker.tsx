@@ -18,6 +18,7 @@ export interface DateRangePickerProps
   extends ButtonHTMLAttributes<HTMLButtonElement> {
   status?: "success" | "error" | "default";
   valueCalendar?: DateRange;
+  defaultDateValue?: DateRange;
   readOnly?: boolean;
   onChangeCalendar?: (date: DateRange | undefined) => void;
 }
@@ -29,6 +30,8 @@ const DateRangePicker = forwardRef<HTMLButtonElement, DateRangePickerProps>(
       status,
       readOnly,
       disabled,
+      placeholder,
+      defaultDateValue,
       valueCalendar,
       onChangeCalendar,
       ...rest
@@ -37,8 +40,8 @@ const DateRangePicker = forwardRef<HTMLButtonElement, DateRangePickerProps>(
     const [dateDefault, setDateDefault] = useState<DateRange | undefined>();
 
     useEffect(() => {
-      setDateDefault(valueCalendar);
-    }, [valueCalendar]);
+      setDateDefault(valueCalendar || defaultDateValue);
+    }, [valueCalendar, defaultDateValue]);
 
     function getDatesDisplayed(): string | JSX.Element {
       if (valueCalendar?.from) {
@@ -70,7 +73,7 @@ const DateRangePicker = forwardRef<HTMLButtonElement, DateRangePickerProps>(
             status === "success" && "text-lime-600 opacity-80"
           )}
         >
-          Pick a date
+          {placeholder || "Pick a date"}
         </span>
       );
     }
@@ -87,10 +90,9 @@ const DateRangePicker = forwardRef<HTMLButtonElement, DateRangePickerProps>(
                   "text-lime-600 placeholder:opacity-80 placeholder:text-lime-600 hover:ring-1 hover:ring-lime-600 focus-visible:ring-1 focus-visible:ring-lime-500",
                 status === "error" &&
                   "text-red-500 placeholder:opacity-80 placeholder:text-red-500 hover:ring-1 hover:ring-red-600 focus-visible:ring-1 focus-visible:ring-red-500",
-                !valueCalendar && !dateDefault && "text-muted-foreground",
-                disabled &&
-                  "cursor-not-allowed text-muted-foreground hover:text-muted-foreground"
+                !valueCalendar && !dateDefault && "text-muted-foreground"
               )}
+              disabled={disabled || readOnly}
               id="date"
               ref={ref}
               variant="outline"
