@@ -1,16 +1,16 @@
-import { Toast } from "@silverweb/ui/shared";
+import { Toaster } from "@silverweb/ui/apps";
 import type { Meta, StoryObj } from "@storybook/react";
 
-const meta: Meta<typeof Toast> = {
+const meta: Meta<typeof Toaster> = {
   title: "Shared/ Toast",
   tags: ["autodocs"],
-  component: Toast,
+  component: Toaster,
 };
 
 export default meta;
 
-type Story = StoryObj<typeof Toast>;
+type Story = StoryObj<typeof Toaster>;
 
 export const Normal: Story = {
-  render: () => <Toast />,
+  render: () => <Toaster />,
 };

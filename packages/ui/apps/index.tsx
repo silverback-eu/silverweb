@@ -9,3 +9,7 @@ export { CustomTable } from "../components/apps/table";
 export { DataTable } from "../components/apps/table";
 export { TableHeader } from "../components/apps/table";
 export type { ColumnDef } from "../components/apps/table";
+
+export { Toaster } from "../components/apps/toaster";
+export type { ToasterProps } from "../components/apps/toaster";
+export { toast } from "../components/apps/toaster";
