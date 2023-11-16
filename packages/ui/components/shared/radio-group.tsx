@@ -1,7 +1,7 @@
 "use client";
 
 import { Root, Item, Indicator } from "@radix-ui/react-radio-group";
-import { CircleDot } from "lucide-react";
+import { Circle } from "lucide-react";
 import type { ComponentPropsWithoutRef, ElementRef } from "react";
 import { forwardRef } from "react";
 import { cn } from "../../lib/utils";
@@ -32,7 +32,7 @@ const RadioGroupItem = forwardRef<ElementRef<typeof Item>, RadioGroupItemProps>(
       {...props}
     >
       <Indicator className="flex items-center justify-center">
-        <CircleDot className="h-3.5 w-3.5 fill-primary" />
+        <Circle className="h-2.5 w-2.5 fill-current text-current" />
       </Indicator>
     </Item>
   )

@@ -85,10 +85,10 @@ export const ReadOnly: Story = {
 
 export const Success: Story = {
   args: {
-    className: "border-green-500 data-[state=checked]:bg-green-500",
+    className: "border-green-500 text-green-500",
   },
   render: (args) => (
-    <RadioGroup className="grid gap-5">
+    <RadioGroup className="grid gap-5 text-green-500">
       <div className="flex gap-2">
         <RadioInput {...args} id="1" value="1" />
         <Label htmlFor="1">Label Eins</Label>
@@ -107,10 +107,10 @@ export const Success: Story = {
 
 export const Error: Story = {
   args: {
-    className: "border-red-500 data-[state=checked]:bg-red-500",
+    className: "border-red-500 text-red-500",
   },
   render: (args) => (
-    <RadioGroup className="grid gap-5">
+    <RadioGroup className="grid gap-5 text-red-500">
       <div className="flex gap-2">
         <RadioInput {...args} id="1" value="1" />
         <Label htmlFor="1">Label Eins</Label>
@@ -198,7 +198,7 @@ export const ReadOnlyBig: Story = {
 export const SuccessBig: Story = {
   args: {
     className:
-      "text-green-500 [&_>_div_>button]:border-green-500 [&_>_div_>button[data-state=checked]]:!bg-green-500",
+      "text-green-500 [&_>_div_>button]:border-green-500 [&_>_div_>_button_svg]:text-green-500",
     variant: "big",
     icon: <HardHat size={24} />,
     cardLabel: "Big Card Label",
@@ -222,9 +222,9 @@ export const SuccessBig: Story = {
 export const ErrorBig: Story = {
   args: {
     className:
-      "text-red-500 [&_>_div_>button]:border-red-500 [&_>_div_>button[data-state=checked]]:!bg-red-500",
+      "text-red-500 [&_>_div_>button]:border-red-500 [&_>_div_>_button_svg]:text-red-500",
     variant: "big",
-    icon: <HardHat size={24} />,
+    icon: <HardHat className="fill-transparent" size={24} />,
     cardLabel: "Big Card Label",
     cardDescription: "Big Card Description",
   },
