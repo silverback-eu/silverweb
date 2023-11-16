@@ -42,5 +42,6 @@ module.exports = {
     "import/no-default-export": "off",
     "@typescript-eslint/no-unsafe-member-access": "off",
     "@typescript-eslint/no-unsafe-assignment": "off",
+    "react/jsx-fragments": ["error", "element"],
   },
 };

@@ -6,6 +6,8 @@ import { DayPicker } from "react-day-picker";
 import { cn } from "../../lib/utils";
 import { buttonVariants } from "./button";
 
+export type { DateRange } from "react-day-picker";
+
 interface IconProps {
   className?: string | undefined;
   style?: CSSProperties | undefined;

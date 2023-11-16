@@ -3,8 +3,8 @@
 import { Calendar as CalendarIcon } from "lucide-react";
 import type { ButtonHTMLAttributes } from "react";
 import { Fragment, forwardRef, useEffect, useState } from "react";
-import type { DateRange } from "react-day-picker";
 import dayjs from "dayjs";
+import type { DateRange } from "../../../shared";
 import {
   Button,
   Calendar,

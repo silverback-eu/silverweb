@@ -13,7 +13,11 @@ export {
   type ButtonProps,
   buttonVariants,
 } from "../components/shared/button";
-export { Calendar, type CalendarProps } from "../components/shared/calendar";
+export {
+  Calendar,
+  type CalendarProps,
+  type DateRange,
+} from "../components/shared/calendar";
 export { PartnerCard } from "../components/shared/partner-card";
 export {
   Card,

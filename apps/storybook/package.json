@@ -12,8 +12,10 @@
   "dependencies": {
     "@silverweb/ui": "*",
     "@storybook/addon-themes": "^7.5.2",
+    "lucide-react": "^0.292.0",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^7.4.0",

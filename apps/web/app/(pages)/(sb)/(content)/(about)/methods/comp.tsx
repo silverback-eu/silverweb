@@ -1,6 +1,6 @@
 "use client";
 
-import { Flow } from "@silverweb/ui/apps";
+import { Flow, useFlow } from "@silverweb/ui/apps";
 import {
   Button,
   Card,
@@ -26,7 +26,6 @@ import {
 import type { ReactNode } from "react";
 import { Fragment } from "react";
 import { useInView } from "react-intersection-observer";
-import { useReactFlow } from "reactflow";
 
 export function InfoCards({
   heading,
@@ -60,7 +59,7 @@ export function InfoCards({
 }
 
 export function FlowAndNav(): JSX.Element {
-  const { fitBounds, fitView } = useReactFlow();
+  const { fitBounds, fitView } = useFlow();
 
   return (
     <Fragment>
