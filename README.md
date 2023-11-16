@@ -2,19 +2,7 @@
 
 # SilverWeb
 
-is a SaaS. It is build with the personalized Stack **SilverStack**. SilverWeb includes a suite collection, for example:
-
-- Analysing Software (data visualisation)
-- Customer Relationship Manager
-- Schedule Planner
-- HR and Recruitment Manager
-- Ticket Manager
-- Content Managing Software
-  ⠀
-- Whiteboard App
-- Kanban App
-- Drag’n’Drop Form Builder
-- Drag’n’Drop Content Builder
+is a SaaS. It is build with the personalized Stack **SilverStack**. SilverWeb includes a suite collection with landing page.
 
 ## Authors
 
