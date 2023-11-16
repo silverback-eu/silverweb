@@ -1,4 +1,4 @@
-import { DisplayCard } from "@silverweb/ui/shared";
+import { DisplayCard, LoadingCard } from "@silverweb/ui/shared";
 import type { Meta, StoryObj } from "@storybook/react";
 import { HardHat } from "lucide-react";
 
@@ -34,4 +34,8 @@ export const Styled: Story = {
     className: "text-red-500",
     Icon: <HardHat />,
   },
+};
+
+export const Loading: Story = {
+  render: () => <LoadingCard />,
 };
