@@ -13,3 +13,6 @@ export type { ColumnDef } from "../components/apps/table";
 export { Toaster } from "../components/apps/toaster";
 export type { ToasterProps } from "../components/apps/toaster";
 export { toast } from "../components/apps/toaster";
+
+export { FormGenerator } from "../components/apps/form-gen";
+export type { FormGeneratorProps } from "../components/apps/form-gen/types";

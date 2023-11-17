@@ -115,7 +115,7 @@ const FormLabel = forwardRef<ElementRef<typeof Root>, FormLabelProps>(
 
     return (
       <Label
-        className={cn(error && "text-destructive", className)}
+        className={cn(error && "text-red-500", className)}
         htmlFor={formItemId}
         ref={ref}
         {...props}
@@ -183,7 +183,7 @@ const FormMessage = forwardRef<HTMLParagraphElement, FormMessageProps>(
 
     return (
       <p
-        className={cn("text-[0.8rem] font-medium text-destructive", className)}
+        className={cn("text-[0.8rem] font-medium text-red-500", className)}
         id={formMessageId}
         ref={ref}
         {...props}

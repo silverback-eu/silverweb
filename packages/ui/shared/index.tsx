@@ -142,3 +142,9 @@ export { LoadingCard } from "../components/shared/loading-card";
 export { FileCard } from "../components/shared/file-card";
 export { BusinessCard } from "../components/shared/business-card";
 export { ContactCard } from "../components/shared/contact-card";
+export {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "../components/shared/tabs";

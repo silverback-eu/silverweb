@@ -15,7 +15,8 @@
     "lucide-react": "^0.292.0",
     "react": "latest",
     "react-dom": "latest",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^7.4.0",
