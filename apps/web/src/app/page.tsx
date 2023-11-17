@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Card } from "ui";
+import { Card } from "@dontfred/ui";
 
 function Gradient({
   conic,

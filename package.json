@@ -4,7 +4,7 @@
     "build": "turbo build",
     "dev": "turbo dev",
     "lint": "turbo lint",
-    "clean": "turbo clean",
+    "clean": "turbo run clean && rm -rf node_modules && rm -rf .turbo && rm -rf bun.lockb && bun install",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {

@@ -1,5 +1,5 @@
 {
-  "extends": "tsconfig/nextjs.json",
+  "extends": "tsconfig/dontfred-next.json",
   "compilerOptions": {
     "plugins": [{ "name": "next" }]
   },
