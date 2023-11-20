@@ -1,51 +1,29 @@
-# Turborepo Tailwind CSS starter
+# Turbo Plus Template
 
-This is an official starter Turborepo.
+is a [Turbo Repo](https://turbo.build/) Template. The Template is used for the turbo-plus cli.
 
-## Using this example
+## ✍🏻 Authors
 
-Run the following command:
+- [@dontfred](https://www.github.com/dontfred)
 
-```sh
-npx create-turbo@latest -e with-tailwind
-```
+## 📚 Stack
 
-## What's inside?
+**Tooling:** Bun
 
-This Turborepo includes the following packages/apps:
+**Monorepo:** Turborepo
 
-### Apps and Packages
+**Client:** NextJS
 
-- `docs`: a [Next.js](https://nextjs.org/) app with [Tailwind CSS](https://tailwindcss.com/)
-- `web`: another [Next.js](https://nextjs.org/) app with [Tailwind CSS](https://tailwindcss.com/)
-- `ui`: a stub React component library with [Tailwind CSS](https://tailwindcss.com/) shared by both `web` and `docs` applications
-- `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `tsconfig`: `tsconfig.json`s used throughout the monorepo
+**UI:** Storybook, Vite, React
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+**Testing:** Storybook
 
-### Building packages/ui
+## 🐕‍🦺 Support
 
-This example is setup to build `packages/ui` and output the transpiled source and compiled styles to `dist/`. This was chosen to make sharing one `tailwind.config.js` as easy as possible, and to ensure only the CSS that is used by the current application and its dependencies is generated.
+For support, email fgrimm@grimm-integrations.cc.
 
-Another option is to consume `packages/ui` directly from source without building. If using this option, you will need to update your `tailwind.config.js` to be aware of your package locations, so it can find all usages of the `tailwindcss` class names.
+## 🔐 MIT
 
-For example, in [tailwind.config.js](packages/tailwind-config/tailwind.config.js):
+Copyright ([©](https://www.ipoi.gov.ie/en/types-of-ip/copyright1/understanding-copyright/the-copyright-notice-and-symbol-%C2%A9/)) 2023 - present Grimm Integrations.
 
-```js
-  content: [
-    // app content
-    `src/**/*.{js,ts,jsx,tsx}`,
-    // include packages if not transpiling
-    "../../packages/**/*.{js,ts,jsx,tsx}",
-  ],
-```
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [Tailwind CSS](https://tailwindcss.com/) for styles
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+This source code is licensed under the MIT license found in the LICENSE file in the root directory of this source tree.
