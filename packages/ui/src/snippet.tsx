@@ -11,8 +11,8 @@ export function Snippet({ children }: { children: ReactNode }): JSX.Element {
           <button
             className="transition-opacity duration-200"
             onClick={(ev) => {
-              const style = ev.currentTarget.style;
               ev.preventDefault();
+              const style = ev.currentTarget.style;
               style.opacity = "0";
               navigator.clipboard
                 .writeText(children?.toString() || "")
@@ -22,10 +22,14 @@ export function Snippet({ children }: { children: ReactNode }): JSX.Element {
               setTimeout(() => {
                 setIsCopied(true);
                 style.opacity = "1";
-              }, 200);
+              }, 100);
               setTimeout(() => {
-                setIsCopied(false);
+                style.opacity = "0";
               }, 3000);
+              setTimeout(() => {
+                style.opacity = "1";
+                setIsCopied(false);
+              }, 3100);
             }}
             type="button"
           >

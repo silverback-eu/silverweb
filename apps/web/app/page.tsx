@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function Home(): JSX.Element {
   return (
-    <div className="min-h-screen text-white">
+    <div className="min-h-screen text-black dark:text-white">
       <div className="max-w-6xl mx-auto pt-20 flex justify-between z-50 relative">
         <div className="font-mono text-sm border rounded-xl border-stone-500 border-opacity-50 px-4 py-2">
           @turboplus/<b>web</b>
@@ -21,8 +21,8 @@ export default function Home(): JSX.Element {
       <div className="max-w-3xl mx-auto mt-32 space-y-4 relative ">
         <div className="flex justify-center items-center gap-2">
           <div className="text-5xl font-bold ">Welcome to</div>
-          <div className="grid grid-cols-[70px_1fr] p-4 text-black">
-            <div className="relative w-16 h-16 drop-shadow-[0px_1px_20px_rgb(255_255_255_/_45%)]">
+          <div className="grid grid-cols-[70px_1fr] p-4 text-black dark:text-white">
+            <div className="relative w-16 h-16 drop-shadow-[0px_1px_20px_rgb(255_255_255_/_45%)] ">
               <Image alt="Turbo-Plus Logo" fill src="/turbo-plus.svg" />
             </div>
             <div className="pt-3">
@@ -33,7 +33,7 @@ export default function Home(): JSX.Element {
                 connecting <span className="font-semibold">tools</span>,
                 building <span className="font-semibold">smarter</span>
               </div>
-              <div className="text-xl font-light text-[#0495FF] -mt-1 pl-1">
+              <div className="text-xl font-light text-white dark:text-black -mt-1 pl-1">
                 tailwind, storybook and next
               </div>
             </div>

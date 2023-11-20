@@ -9,7 +9,7 @@ export function Card({
 }): JSX.Element {
   return (
     <a
-      className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-neutral-700 hover:bg-neutral-800/30"
+      className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-stone-500 hover:border-opacity-50"
       href={`${href}`}
       rel="noopener noreferrer"
       target="_blank"
