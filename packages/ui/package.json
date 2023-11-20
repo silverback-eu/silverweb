@@ -1,5 +1,5 @@
 {
-  "name": "@dontfred/ui",
+  "name": "@turboplus/ui",
   "version": "0.0.0",
   "sideEffects": [
     "**/*.css"
@@ -15,7 +15,7 @@
     "lint": "eslint src/",
     "dev": "tsup --watch",
     "check-types": "tsc --noEmit",
-    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist && tsup"
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
   "peerDependencies": {
     "react": "^18.2.0"

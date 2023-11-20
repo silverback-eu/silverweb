@@ -1,5 +1,5 @@
 {
-  "extends": "tsconfig/dontfred-react.json",
+  "extends": "tsconfig/turboplus-react.json",
   "include": ["."],
   "exclude": ["dist", "build", "node_modules"]
 }

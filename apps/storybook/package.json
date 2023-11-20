@@ -1,5 +1,5 @@
 {
-  "name": "@dontfred/storybook",
+  "name": "@turboplus/storybook",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,7 +11,7 @@
     "lint": "eslint ./stories/*.stories.tsx"
   },
   "dependencies": {
-    "@dontfred/ui": "*",
+    "@turboplus/ui": "*",
     "@storybook/manager-api": "^7.5.3",
     "@storybook/theming": "^7.5.3",
     "react": "^18.2.0",

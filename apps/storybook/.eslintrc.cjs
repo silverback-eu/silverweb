@@ -1,3 +1,3 @@
 module.exports = {
-  extends: ["custom/dontfred-storybook"],
+  extends: ["custom/turboplus-storybook"],
 };

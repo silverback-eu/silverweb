@@ -1,5 +1,5 @@
 {
-  "name": "@dontfred/web",
+  "name": "@turboplus/web",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -10,7 +10,7 @@
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf .next"
   },
   "dependencies": {
-    "@dontfred/ui": "*",
+    "@turboplus/ui": "*",
     "react": "^18",
     "react-dom": "^18",
     "next": "latest"

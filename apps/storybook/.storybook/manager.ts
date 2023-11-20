@@ -4,7 +4,7 @@ import { create } from "@storybook/theming";
 addons.setConfig({
   theme: create({
     base: "dark",
-    brandTitle: "dontfred",
+    brandTitle: "turboplus",
     brandUrl: "/",
     brandTarget: "_self",
   }),
