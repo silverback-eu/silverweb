@@ -1,6 +1,6 @@
 {
   "name": "@dontfred/web",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -11,21 +11,21 @@
   },
   "dependencies": {
     "@dontfred/ui": "*",
-    "next": "^13.4.19",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": "^18",
+    "react-dom": "^18",
+    "next": "latest"
   },
   "devDependencies": {
-    "@next/eslint-plugin-next": "^13.4.19",
-    "@types/node": "^18.11.17",
-    "@types/react": "^18.2.5",
-    "@types/react-dom": "^18.2.4",
-    "autoprefixer": "^10.4.13",
-    "eslint-config-custom": "*",
-    "postcss": "^8.4.20",
-    "tailwind-config": "*",
-    "tailwindcss": "^3.2.4",
+    "typescript": "^5",
     "tsconfig": "*",
-    "typescript": "^5.2.2"
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "autoprefixer": "^10.0.1",
+    "postcss": "^8",
+    "tailwindcss": "^3.3.0",
+    "tailwind-config": "*",
+    "eslint": "^8",
+    "eslint-config-next": "latest"
   }
 }
