@@ -8,15 +8,15 @@ is a [Turbo Repo](https://turbo.build/) Template. The Template is used for the t
 
 ## 📚 Stack
 
-**Tooling:** Bun
+**Tooling:** 🥟 Bun
 
-**Monorepo:** Turborepo
+**Monorepo:** 🔄 Turborepo
 
-**Client:** NextJS
+**Client:** ➡️ NextJS
 
-**UI:** Storybook, Vite, React
+**UI:** ☸️ Storybook, ❇️ Vite, ⚛️ React, 🌊 Tailwind
 
-**Testing:** Storybook
+**Testing:** ☸️ Storybook
 
 ## 🐕‍🦺 Support
 
