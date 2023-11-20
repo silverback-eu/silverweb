@@ -11,9 +11,11 @@
     "lint": "eslint ./stories/*.stories.tsx"
   },
   "dependencies": {
+    "@dontfred/ui": "*",
+    "@storybook/manager-api": "^7.5.3",
+    "@storybook/theming": "^7.5.3",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "@dontfred/ui": "*"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.5.3",

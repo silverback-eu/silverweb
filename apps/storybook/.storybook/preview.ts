@@ -1,5 +1,4 @@
 import type { Preview } from "@storybook/react";
-
 import "@dontfred/ui/dist/index.css";
 
 const preview: Preview = {
