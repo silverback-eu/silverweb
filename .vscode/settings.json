@@ -1,0 +1,12 @@
+{
+  "cSpell.words": ["silverweb"],
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    // For ESLint
+    "source.fixAll.eslint": true
+  },
+  "css.customData": [".vscode/css_custom_data.json"],
+  "mdx.server.enable": false
+}

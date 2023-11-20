@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const meta: Metadata = {
   title: {
     default:
-      "Turbo-plus - The mono repo starter pack with everything that you need",
+      "Turbo plus - The mono repo starter pack with everything that you need",
     template: "%s | Turbo-plus",
   },
   description:

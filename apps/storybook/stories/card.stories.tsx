@@ -2,9 +2,22 @@ import { Card } from "@turboplus/ui";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof Card> = {
-  title: "Shared/ Card",
+  title: "Card",
   tags: ["autodocs"],
   component: Card,
+  decorators: [
+    (Story) => (
+      <div
+        style={{
+          width: 300,
+          display: "grid",
+          textAlign: "left",
+        }}
+      >
+        <Story />
+      </div>
+    ),
+  ],
 };
 
 export default meta;
@@ -13,8 +26,9 @@ type Story = StoryObj<typeof Card>;
 
 export const Normal: Story = {
   args: {
-    href: "https://turbo.build/repo/docs",
-    title: "Docs",
-    children: "Find in-depth information about Turborepo features and API.",
+    title: "Lorem ipsum dolor",
+    children:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis qui, quo distinctio ab assumenda.",
+    href: "/",
   },
 };

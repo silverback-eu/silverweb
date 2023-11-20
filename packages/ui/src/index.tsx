@@ -2,4 +2,5 @@
 import "./styles.css";
 
 // components
+export * from "./snippet";
 export * from "./card";
