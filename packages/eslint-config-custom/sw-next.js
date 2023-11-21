@@ -43,6 +43,15 @@ module.exports = {
     "no-console": ["error", { allow: ["warn", "error"] }],
     "react/jsx-fragments": ["error", "element"],
     "react/jsx-pascal-case": ["error", { allowNamespace: true }],
+    "@typescript-eslint/no-misused-promises": [
+      "error",
+      {
+        checksVoidReturn: {
+          arguments: false,
+          attributes: false,
+        },
+      },
+    ],
     camelcase: "off",
   },
 };
