@@ -6,7 +6,7 @@ import type { ComponentPropsWithoutRef, ElementRef } from "react";
 import { forwardRef } from "react";
 import { cn } from "../../lib/utils";
 
-type CheckboxProps = {
+export type CheckboxProps = {
   className?: string;
 } & ComponentPropsWithoutRef<typeof Root>;
 

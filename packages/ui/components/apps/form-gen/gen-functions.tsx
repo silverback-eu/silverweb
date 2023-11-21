@@ -12,6 +12,8 @@ export function renderFields(
       return (
         <TextInput key={name} {...fieldProps} control={control} name={name} />
       );
+    case "checkbox":
+      return <div>Checkbox</div>;
     default:
       return <div>Unknown field type: {fieldProps.type}</div>;
   }

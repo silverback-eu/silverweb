@@ -1,9 +1,10 @@
 "use client";
 
-import type { CheckboxProps } from "@radix-ui/react-checkbox";
 import { ListTodo } from "lucide-react";
 import type { ComponentPropsWithoutRef, ElementRef, RefObject } from "react";
 import { forwardRef, useRef } from "react";
+import type { CheckedState } from "@radix-ui/react-checkbox";
+import type { CheckboxProps } from "../../shared/checkbox";
 import { Checkbox } from "../../shared/checkbox";
 import { Card, CardContent } from "../../../shared";
 import { cn } from "../../../lib/utils";
@@ -14,6 +15,7 @@ export interface CheckboxInputProps
       CheckboxProps & React.RefAttributes<HTMLButtonElement>
     >
   > {
+  checked?: CheckedState;
   readOnly?: boolean;
   variant?: "default" | "big";
   cardLabel?: string;

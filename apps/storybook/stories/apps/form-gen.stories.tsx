@@ -40,6 +40,19 @@ const fields: FormGeneratorProps["fields"] = [
         label: "Email",
         rules: z.string().email(),
       },
+      subscription: {
+        type: "checkbox",
+        label: "Subscribe to newsletter",
+        items: [
+          {
+            label: "Subscribe to all newsletter",
+            value: "subscribeAll",
+          },
+          {
+            label: "Subscribe to job newsletter",
+          },
+        ],
+      },
     },
   },
   {
