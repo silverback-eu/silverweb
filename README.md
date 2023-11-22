@@ -4,25 +4,25 @@
 
 is a SaaS. It is build with the personalized Stack **SilverStack**. SilverWeb includes a suite collection with landing page.
 
-## Authors
+## ✍🏻 Authors
 
 - [@dontfred](https://www.github.com/dontfred)
 
-## SilverStack
+## ❇️ SilverStack
 
-**Tooling:** Bun
+**Tooling:** 🥟 Bun
 
-**Monorepo:** Turborepo
+**Monorepo:** 🔄 Turborepo
 
-**Client:** NextJS
+**Client:** ➡️ NextJS
 
-**UI:** Storybook, Vite, React
+**UI:** ☸️ Storybook, ❇️ Vite, ⚛️ React, 🌊 Tailwind
 
-**Testing:** Storybook
+**Testing:** ☸️ Storybook
 
-**Server:** NextJS, NodeJS
+**Server:** ➡️ NextJS, ✳️ NodeJS
 
-**Backend:** Prisma, tRPC, WebAuthN, PostgreSQL, Redis
+**Backend:** ⏃ Prisma, 🗳️ tRPC, 🔐 WebAuthN, 🐘 PostgreSQL, 🔑 Redis
 
 ## Used By
 
@@ -39,7 +39,7 @@ For support, email fgrimm@silverback.ie.
 
 [![SilverBack](./.README/SilverBackIcon.svg)](https://silverback.ie/)
 
-## AGPL
+## 🔐 AGPL
 
 Copyright ([©](https://www.ipoi.gov.ie/en/types-of-ip/copyright1/understanding-copyright/the-copyright-notice-and-symbol-%C2%A9/)) 2023 - present Frederik W. Grimm for SilverBack Staffing Ltd.
 
