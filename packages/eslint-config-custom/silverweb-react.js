@@ -37,5 +37,6 @@ module.exports = {
   // add rules configurations here
   rules: {
     "import/no-default-export": "off",
+    "react/jsx-pascal-case": ["error", { allowAllCaps: "false" }],
   },
 };
