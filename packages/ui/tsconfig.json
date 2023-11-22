@@ -1,5 +1,5 @@
 {
-  "extends": "tsconfig/turboplus-react.json",
+  "extends": "tsconfig/silverweb-react.json",
   "include": ["."],
   "exclude": ["dist", "build", "node_modules"]
 }

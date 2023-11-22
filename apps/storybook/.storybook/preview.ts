@@ -1,5 +1,5 @@
 import type { Preview } from "@storybook/react";
-import "@turboplus/ui/dist/index.css";
+import "@silverweb/ui/dist/index.css";
 
 const preview: Preview = {
   parameters: {

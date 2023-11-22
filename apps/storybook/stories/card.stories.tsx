@@ -1,4 +1,4 @@
-import { Card } from "@turboplus/ui";
+import { Card } from "@silverweb/ui";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof Card> = {

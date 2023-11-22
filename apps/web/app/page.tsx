@@ -1,6 +1,6 @@
 "use client";
 
-import { Card, Snippet } from "@turboplus/ui";
+import { Card, Snippet } from "@silverweb/ui";
 import Image from "next/image";
 
 export default function Home(): JSX.Element {
@@ -8,7 +8,7 @@ export default function Home(): JSX.Element {
     <div className="min-h-screen text-black dark:text-white">
       <div className="max-w-6xl mx-auto pt-20 flex justify-between z-50 relative">
         <div className="font-mono text-sm border rounded-xl border-stone-500 border-opacity-50 px-4 py-2">
-          @turboplus/<b>web</b>
+          @silverweb/<b>web</b>
         </div>
         <div className="flex gap-1 text-sm">
           By{" "}

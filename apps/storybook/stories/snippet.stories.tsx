@@ -1,4 +1,4 @@
-import { Snippet } from "@turboplus/ui";
+import { Snippet } from "@silverweb/ui";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof Snippet> = {

@@ -1,5 +1,5 @@
 {
-  "name": "@turboplus/ui",
+  "name": "@silverweb/ui",
   "version": "0.0.0",
   "sideEffects": [
     "**/*.css"

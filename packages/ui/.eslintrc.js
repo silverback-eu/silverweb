@@ -1,3 +1,3 @@
 module.exports = {
-  extends: ["custom/turboplus-react"],
+  extends: ["custom/silverweb-react"],
 };

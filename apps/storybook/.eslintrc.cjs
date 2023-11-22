@@ -1,3 +1,3 @@
 module.exports = {
-  extends: ["custom/turboplus-storybook"],
+  extends: ["custom/silverweb-storybook"],
 };

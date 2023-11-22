@@ -1,5 +1,5 @@
 {
-  "name": "@turboplus/web",
+  "name": "@silverweb/web",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -10,7 +10,7 @@
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf .next"
   },
   "dependencies": {
-    "@turboplus/ui": "*",
+    "@silverweb/ui": "*",
     "react": "^18",
     "react-dom": "^18",
     "next": "latest"

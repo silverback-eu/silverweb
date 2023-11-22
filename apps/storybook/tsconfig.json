@@ -1,11 +1,11 @@
 {
-  "extends": "tsconfig/turboplus-storybook.json",
+  "extends": "tsconfig/silverweb-storybook.json",
   "include": ["."],
   "exclude": [
     "dist",
     "build",
     "node_modules",
     "storybook-static",
-    "@turboplus/ui"
+    "@silverweb/ui"
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "extends": "tsconfig/turboplus-next.json",
+  "extends": "tsconfig/silverweb-next.json",
   "compilerOptions": {
     "plugins": [{ "name": "next" }]
   },

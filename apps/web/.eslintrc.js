@@ -1,3 +1,3 @@
 module.exports = {
-  extends: ["custom/turboplus-next"],
+  extends: ["custom/silverweb-next"],
 };
