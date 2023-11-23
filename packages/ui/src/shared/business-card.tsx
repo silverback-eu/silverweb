@@ -1,10 +1,11 @@
 import { Building, Building2, Mails, TabletSmartphone } from "lucide-react";
+import type { HTMLAttributes} from "react";
+import { forwardRef } from "react";
 import { CompanyCardCommentSection, CardPopoverItem } from "./card-helper";
 import { Button } from "./button";
 import { Popover, PopoverContent, PopoverTrigger } from "./popover";
 import { Separator } from "./separator";
 import { DisplayCard } from "./display-card";
-import { HTMLAttributes, forwardRef } from "react";
 
 type BusinessCardProps = HTMLAttributes<HTMLDivElement> &
   (
@@ -25,18 +26,18 @@ type BusinessCardProps = HTMLAttributes<HTMLDivElement> &
 const BusinessCard = forwardRef<HTMLDivElement, BusinessCardProps>(
   ({ className, ...props }, ref) => {
     if ("loading" in props) {
-      return <DisplayCard ref={ref} className={className} loading />;
+      return <DisplayCard className={className} loading ref={ref} />;
     }
     const { info, comments, ...rest } = props;
     return (
       <Popover>
         <PopoverTrigger className="w-full">
           <DisplayCard
-            ref={ref}
-            className={className}
             Icon={<Building />}
+            className={className}
             description={info.workingField}
             header={info.name}
+            ref={ref}
             {...rest}
           />
         </PopoverTrigger>

@@ -11,12 +11,13 @@ import {
   Ruler,
 } from "lucide-react";
 import dayjs from "dayjs";
+import type { HTMLAttributes } from "react";
+import { forwardRef } from "react";
 import { CardPopoverItem } from "./card-helper";
 import { Button } from "./button";
 import { Popover, PopoverContent, PopoverTrigger } from "./popover";
 import { Separator } from "./separator";
 import { DisplayCard } from "./display-card";
-import { HTMLAttributes, forwardRef } from "react";
 
 type FileCardProps = HTMLAttributes<HTMLDivElement> &
   (
@@ -35,7 +36,7 @@ type FileCardProps = HTMLAttributes<HTMLDivElement> &
 const FileCard = forwardRef<HTMLDivElement, FileCardProps>((props, ref) => {
   if ("loading" in props) {
     const { className, ...rest } = props;
-    return <DisplayCard ref={ref} className={className} loading />;
+    return <DisplayCard {...rest} className={className} loading ref={ref} />;
   }
   const { info, className, ...rest } = props;
   let FileIcon = <FileText />;
@@ -90,8 +91,8 @@ const FileCard = forwardRef<HTMLDivElement, FileCardProps>((props, ref) => {
         <DisplayCard
           ref={ref}
           {...rest}
-          className={className}
           Icon={FileIcon}
+          className={className}
           description={info.type}
           header={info.name}
         />

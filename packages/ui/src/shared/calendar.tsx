@@ -78,7 +78,7 @@ function Calendar({
         IconLeft,
         IconRight,
       }}
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any -- Had to do any, as it was complaining about the type of mode being "default" | "single" | "multiple" | "range"  and "range", because the conditional was not working
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-assignment -- Had to do any, as it was complaining about the type of mode being "default" | "single" | "multiple" | "range"  and "range", because the conditional was not working
       mode={mode as any}
       showOutsideDays={showOutsideDays}
       {...props}

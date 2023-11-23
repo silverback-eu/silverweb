@@ -1,7 +1,7 @@
 import type { HTMLAttributes, ReactElement, ReactNode } from "react";
 import { forwardRef } from "react";
-import { Card, CardContent } from "./card";
 import { cn } from "../lib/utils";
+import { Card, CardContent } from "./card";
 import { Skeleton } from "./skeleton";
 
 type DisplayCardProps = {
