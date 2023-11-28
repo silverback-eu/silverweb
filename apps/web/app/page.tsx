@@ -1,5 +1,3 @@
-"use client";
-
 import { Card, Snippet } from "@silverweb/ui";
 import Image from "next/image";
 
