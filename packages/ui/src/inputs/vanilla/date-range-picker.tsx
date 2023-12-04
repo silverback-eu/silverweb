@@ -1,5 +1,3 @@
-"use client";
-
 import { Calendar as CalendarIcon } from "lucide-react";
 import type { ButtonHTMLAttributes } from "react";
 import { Fragment, forwardRef, useEffect, useState } from "react";
@@ -47,20 +45,20 @@ const DateRangePicker = forwardRef<HTMLButtonElement, DateRangePickerProps>(
       if (valueCalendar?.from) {
         if (valueCalendar.to) {
           return (
-            <>
+            <Fragment>
               {dayjs(valueCalendar.from).format("MMM DD, YYYY")} -{" "}
               {dayjs(valueCalendar.to).format("MMM DD, YYYY")}
-            </>
+            </Fragment>
           );
         }
         return dayjs(valueCalendar.from).format("MMM DD, YYYY");
       } else if (dateDefault?.from) {
         if (dateDefault.to) {
           return (
-            <>
+            <Fragment>
               {dayjs(dateDefault.from).format("MMM DD, YYYY")} -{" "}
               {dayjs(dateDefault.to).format("MMM DD, YYYY")}
-            </>
+            </Fragment>
           );
         }
         return dayjs(dateDefault.from).format("MMM DD, YYYY");

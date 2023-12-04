@@ -12,7 +12,6 @@ import {
   Tags,
   User2,
 } from "lucide-react";
-import Link from "next/link";
 import type { ReactElement } from "react";
 import { Fragment } from "react";
 import { cn } from "../lib/utils";
@@ -223,13 +222,13 @@ export function User({
               <DropdownMenuGroup>
                 {list.map((item) => (
                   <DropdownMenuItem key={item.href + Math.random()}>
-                    <Link className="flex w-full items-center" href={item.href}>
+                    <a className="flex w-full items-center" href={item.href}>
                       <item.Icon.type
                         {...item.Icon.props}
                         className="mr-2 h-4 w-4"
                       />
                       <span>{item.label}</span>
-                    </Link>
+                    </a>
                   </DropdownMenuItem>
                 ))}
               </DropdownMenuGroup>

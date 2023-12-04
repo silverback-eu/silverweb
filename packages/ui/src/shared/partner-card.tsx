@@ -1,6 +1,3 @@
-import type { StaticImageData } from "next/image";
-import Image from "next/image";
-import Link from "next/link";
 import { useInView } from "react-intersection-observer";
 import type { CSSProperties } from "react";
 import { cn } from "../lib/utils";
@@ -12,7 +9,14 @@ export function PartnerCard({
   className,
   style,
 }: {
-  img: StaticImageData;
+  img: {
+    src: string;
+    height: number;
+    width: number;
+    blurDataURL?: string;
+    blurWidth?: number;
+    blurHeight?: number;
+  };
   href: string;
   className?: string;
   style?: CSSProperties;
@@ -24,7 +28,7 @@ export function PartnerCard({
   });
 
   return (
-    <Link
+    <a
       className={cn(
         "transition-all duration-500",
         CardIsVisible ? "opacity-100" : "opacity-0"
@@ -32,6 +36,7 @@ export function PartnerCard({
       draggable={false}
       href={`${href} `}
       ref={CardRef}
+      rel="noopener"
       target="_blank"
     >
       <Card
@@ -42,16 +47,16 @@ export function PartnerCard({
         style={style}
       >
         <CardContent className="p-5">
-          <Image
+          <img
             alt={img.src}
             className="w-[200px] h-auto"
             draggable={false}
             height={67.19}
-            src={img}
+            src={img.src}
             width={200}
           />
         </CardContent>
       </Card>
-    </Link>
+    </a>
   );
 }

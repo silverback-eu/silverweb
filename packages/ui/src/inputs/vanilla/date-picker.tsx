@@ -1,5 +1,3 @@
-"use client";
-
 import { Calendar as CalendarIcon } from "lucide-react";
 import type { ButtonHTMLAttributes } from "react";
 import { forwardRef, useEffect, useState } from "react";

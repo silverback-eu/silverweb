@@ -1,5 +1,4 @@
 import type { LucideIcon } from "lucide-react";
-import Link from "next/link";
 import { cn } from "../lib/utils";
 
 export function AppIcon(props: {
@@ -27,7 +26,7 @@ export function AppIcon(props: {
   const { gradient, size, name, link, ...rest } = props;
 
   return (
-    <Link className="relative" href={link}>
+    <a className="relative" href={link}>
       <div
         className={cn(
           "rounded-md bg-gradient-to-r  p-1 w-12 h-12 flex justify-center content-center flex-wrap",
@@ -42,6 +41,6 @@ export function AppIcon(props: {
           {name}
         </span>
       ) : null}
-    </Link>
+    </a>
   );
 }

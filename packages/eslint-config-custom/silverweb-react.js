@@ -37,5 +37,6 @@ module.exports = {
   rules: {
     "import/no-default-export": "off",
     "react/jsx-pascal-case": ["error", { allowNamespace: true }],
+    "react/jsx-fragments": ["error", "element"],
   },
 };

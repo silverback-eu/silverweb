@@ -1,5 +1,3 @@
-"use client";
-
 import type { ComponentPropsWithoutRef, ElementRef } from "react";
 import { createContext, forwardRef, useContext } from "react";
 import { Root, Item } from "@radix-ui/react-toggle-group";

@@ -4,8 +4,9 @@ import { create } from "@storybook/theming";
 addons.setConfig({
   theme: create({
     base: "dark",
-    brandTitle: "silverweb",
-    brandUrl: "/",
+    brandTitle: "SilverBack Group",
+    brandUrl: "https://silverback-group.eu",
+    brandImage: "/storybook_logo.png",
     brandTarget: "_self",
   }),
 });

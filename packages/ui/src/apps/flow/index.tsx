@@ -1,5 +1,3 @@
-"use client";
-
 export { Flow } from "./flow";
 export type { CardNodeProps } from "./nodes/card";
 export type { DisplayNodeProps } from "./nodes/display";

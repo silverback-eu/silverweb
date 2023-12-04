@@ -1,5 +1,3 @@
-"use client";
-
 import { Check, ListTodo } from "lucide-react";
 import type {
   ComponentPropsWithoutRef,

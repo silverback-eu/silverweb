@@ -1,5 +1,3 @@
-"use client";
-
 import type { InputHTMLAttributes, RefObject } from "react";
 import { forwardRef, useRef } from "react";
 import { Button } from "../../shared";

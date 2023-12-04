@@ -1,5 +1,3 @@
-"use client";
-
 import { Root, Indicator } from "@radix-ui/react-progress";
 import type { ComponentPropsWithoutRef, ElementRef } from "react";
 import { forwardRef } from "react";

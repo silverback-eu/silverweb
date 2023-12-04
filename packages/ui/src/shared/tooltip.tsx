@@ -1,5 +1,3 @@
-"use client";
-
 import type { ElementRef, ComponentPropsWithoutRef } from "react";
 import { forwardRef } from "react";
 import { Provider, Root, Trigger, Content } from "@radix-ui/react-tooltip";

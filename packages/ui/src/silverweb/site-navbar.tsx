@@ -1,5 +1,3 @@
-"use client";
-
 import {
   HoverCard,
   HoverCardContent,
@@ -19,7 +17,6 @@ import {
   Tags,
   Users2,
 } from "lucide-react";
-import Link from "next/link";
 import type { ReactNode } from "react";
 import { Fragment, useEffect, useRef, useState } from "react";
 import { Logo, Badge, Card, CardContent, Separator, Skeleton } from "../shared";
@@ -48,12 +45,10 @@ function NavAppIcon(props: {
     >
       <HoverCard>
         <HoverCardTrigger asChild>
-          <Link
+          <a
             aria-disabled={disabled}
             className={cn("flex items-center justify-center", className)}
             href={link}
-            legacyBehavior={disabled}
-            passHref={disabled}
           >
             <div className="relative">
               <div
@@ -73,7 +68,7 @@ function NavAppIcon(props: {
                 strokeWidth={1.5}
               />
             </div>
-          </Link>
+          </a>
         </HoverCardTrigger>
         <HoverCardContent
           className="min-w-48 h-[calc(100vh-48px)] m-6"
@@ -137,7 +132,7 @@ function HomeInsidesCards({
   number: number;
 }): JSX.Element {
   return (
-    <Link href={link}>
+    <a href={link}>
       <Card className="hover:brightness-150 cursor-pointer transition-all">
         <CardContent className="py-2 px-3 flex justify-between gap-2">
           <div className="flex items-center gap-2">
@@ -147,7 +142,7 @@ function HomeInsidesCards({
           <Badge variant="secondary">{number}</Badge>
         </CardContent>
       </Card>
-    </Link>
+    </a>
   );
 }
 
@@ -303,7 +298,7 @@ export function SiteNavbar({
               {quickApps.map((app, index) => (
                 <Fragment key={app.link}>
                   {index + 1 < restNumberForAppsInCard && (
-                    <Link href={app.link}>
+                    <a href={app.link}>
                       <div
                         className={cn(
                           "rounded-md bg-gradient-to-r p-1",
@@ -312,7 +307,7 @@ export function SiteNavbar({
                       >
                         {app.icon}
                       </div>
-                    </Link>
+                    </a>
                   )}
                 </Fragment>
               ))}
@@ -349,7 +344,7 @@ function LoadingHomeInsidesCards({
   icon: JSX.Element;
 }): JSX.Element {
   return (
-    <Link href={link}>
+    <a href={link}>
       <Card className="hover:brightness-150 cursor-pointer transition-all">
         <CardContent className="py-2 px-3 flex justify-between gap-2">
           <div className="flex items-center gap-2">
@@ -359,7 +354,7 @@ function LoadingHomeInsidesCards({
           <Skeleton className="h-[22px] w-8" />
         </CardContent>
       </Card>
-    </Link>
+    </a>
   );
 }
 

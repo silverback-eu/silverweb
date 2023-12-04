@@ -1,5 +1,3 @@
-"use client";
-
 import { Root, Item, Indicator } from "@radix-ui/react-radio-group";
 import { Circle } from "lucide-react";
 import type { ComponentPropsWithoutRef, ElementRef } from "react";

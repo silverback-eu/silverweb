@@ -1,7 +1,5 @@
-"use client";
-
 import type { InputHTMLAttributes } from "react";
-import { forwardRef, useRef } from "react";
+import { Fragment, forwardRef, useRef } from "react";
 import { cn } from "../../lib/utils";
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
@@ -28,7 +26,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
     const PrefixRef = useRef<HTMLSpanElement>(null);
 
     return (
-      <>
+      <Fragment>
         {prefix ? (
           <div className="relative w-full">
             <span
@@ -114,7 +112,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             }}
           />
         )}
-      </>
+      </Fragment>
     );
   }
 );

@@ -1,6 +1,3 @@
-"use client";
-
-import Image from "next/image";
 import type { InputHTMLAttributes } from "react";
 import { Fragment, forwardRef, useRef, useState } from "react";
 import { Check } from "lucide-react";
@@ -1580,19 +1577,6 @@ const PhoneInput = forwardRef<HTMLInputElement, PhoneInputProps>(
                                 )?.name
                               }
                             >
-                              <Image
-                                alt={`${phonePrefix.find(
-                                  (prefixObject) =>
-                                    prefixObject.country === suggestion
-                                )?.country}-flag`}
-                                height={15}
-                                loading="lazy"
-                                src={`/flags/${phonePrefix.find(
-                                  (prefixObject) =>
-                                    prefixObject.country === suggestion
-                                )?.country}.svg`}
-                                width={15}
-                              />
                               {
                                 phonePrefix.find(
                                   (prefixObject) =>
@@ -1637,12 +1621,7 @@ const PhoneInput = forwardRef<HTMLInputElement, PhoneInputProps>(
                           }}
                           value={prefixInMap.name}
                         >
-                          <Image
-                            alt={`${prefixInMap.country}-flag`}
-                            height={15}
-                            src={`/flags/${prefixInMap.country}.svg`}
-                            width={15}
-                          />
+                          <span>{prefixInMap.flag}</span>
                           {prefixInMap.name}
                           <Check
                             className={cn(

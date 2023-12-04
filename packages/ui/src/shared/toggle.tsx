@@ -1,5 +1,3 @@
-"use client";
-
 import { Root } from "@radix-ui/react-toggle";
 import { cva, type VariantProps } from "class-variance-authority";
 import type { ComponentPropsWithoutRef, ElementRef } from "react";

@@ -1,5 +1,3 @@
-"use client";
-
 import { Root, Track, Range, Thumb } from "@radix-ui/react-slider";
 import type { ComponentPropsWithoutRef, ElementRef } from "react";
 import { forwardRef } from "react";

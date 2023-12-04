@@ -1,9 +1,8 @@
-"use client";
-
 import type { Column } from "@tanstack/react-table";
 import type { LucideIcon } from "lucide-react";
 import { Check, PlusCircle } from "lucide-react";
 import { CommandSeparator } from "cmdk";
+import { Fragment } from "react";
 import {
   Badge,
   Button,
@@ -63,7 +62,7 @@ export function FilterDropdown<TData, TValue>({
           <PlusCircle className="mr-2 h-4 w-4" />
           {title}
           {selectedValues.size > 0 && (
-            <>
+            <Fragment>
               <Separator className="mx-2 h-4" orientation="vertical" />
               <Badge
                 className="rounded-sm px-1 font-normal lg:hidden"
@@ -93,7 +92,7 @@ export function FilterDropdown<TData, TValue>({
                     ))
                 )}
               </div>
-            </>
+            </Fragment>
           )}
         </Button>
       </PopoverTrigger>
@@ -158,7 +157,7 @@ export function FilterDropdown<TData, TValue>({
               })}
             </CommandGroup>
             {selectedValues.size > 0 && (
-              <>
+              <Fragment>
                 <CommandSeparator />
                 <CommandGroup>
                   <CommandItem
@@ -168,7 +167,7 @@ export function FilterDropdown<TData, TValue>({
                     Clear filters
                   </CommandItem>
                 </CommandGroup>
-              </>
+              </Fragment>
             )}
           </CommandList>
         </Command>

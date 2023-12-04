@@ -1,9 +1,5 @@
-"use client";
-
-import Link from "next/link";
-import { usePathname } from "next/navigation";
 import type { ComponentPropsWithoutRef, ElementRef } from "react";
-import { forwardRef, useState } from "react";
+import { forwardRef, useEffect, useState } from "react";
 import {
   Logo,
   User,
@@ -249,7 +245,11 @@ export function Navbar({
   };
 }): JSX.Element {
   const [openSideMenu, setOpenSideMenu] = useState(false);
-  const pathname = usePathname();
+  const [pathname, setPathname] = useState<string>();
+
+  useEffect(() => {
+    setPathname(window.location.pathname);
+  }, []);
 
   return (
     <header className={cn("h-[53px] z-50 relative")}>
@@ -270,7 +270,7 @@ export function Navbar({
                     />
                   </SheetTrigger>
                   <SheetContent>
-                    <Link href="/">
+                    <a href="/">
                       <div className="flex content-center">
                         <div className="content-center flex-wrap select-none flex">
                           <Logo wh={22} />
@@ -284,7 +284,7 @@ export function Navbar({
                           </div>
                         </div>
                       </div>
-                    </Link>
+                    </a>
                     <Separator className="mt-4 opacity-0" />
                     <ScrollArea className="h-[calc(100vh-100px)] grid gap-1">
                       {pages.map((page, idx) => (
@@ -292,18 +292,15 @@ export function Navbar({
                           {page.heading ? (
                             <b className="font-bold">
                               {page.href ? (
-                                <Link href={page.href}>{page.title}</Link>
+                                <a href={page.href}>{page.title}</a>
                               ) : (
                                 page.title
                               )}
                             </b>
                           ) : (
-                            <Link
-                              className="opacity-70"
-                              href={page.href || "#"}
-                            >
+                            <a className="opacity-70" href={page.href || "#"}>
                               {page.title}
-                            </Link>
+                            </a>
                           )}
                           {pages[idx + 1] && pages[idx + 1].heading ? (
                             <Separator className="my-2" />
@@ -321,7 +318,7 @@ export function Navbar({
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem className={cn("grid gap-1 grid-flow-col")}>
-                <Link className="mx-3 grid gap-1 grid-flow-col" href="/">
+                <a className="mx-3 grid gap-1 grid-flow-col" href="/">
                   <div className="hidden sm:flex content-center flex-wrap translate-y-[0.5px] select-none">
                     <Logo wh={22} />
                   </div>
@@ -333,14 +330,14 @@ export function Navbar({
                       group
                     </div>
                   </div>
-                </Link>
+                </a>
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem className="hidden md:block">
-                <Link href="/" legacyBehavior passHref>
+                <a href="/">
                   <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                     <div
                       className={cn(
@@ -352,7 +349,7 @@ export function Navbar({
                       Home
                     </div>
                   </NavigationMenuLink>
-                </Link>
+                </a>
               </NavigationMenuItem>
               <NavigationMenuItem className="hidden md:block">
                 <NavigationMenuTrigger>
@@ -432,7 +429,7 @@ export function Navbar({
                 </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem className="hidden md:block">
-                <Link href="/connect" legacyBehavior passHref>
+                <a href="/connect">
                   <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                     <div
                       className={cn(
@@ -444,10 +441,10 @@ export function Navbar({
                       Connect
                     </div>
                   </NavigationMenuLink>
-                </Link>
+                </a>
               </NavigationMenuItem>
               <NavigationMenuItem className="hidden md:block">
-                <Link href="/industry-insights" legacyBehavior passHref>
+                <a href="/industry-insights">
                   <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                     <div
                       className={cn(
@@ -459,7 +456,7 @@ export function Navbar({
                       Industry insights
                     </div>
                   </NavigationMenuLink>
-                </Link>
+                </a>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 {loginUser ? (
@@ -470,13 +467,13 @@ export function Navbar({
                     type={loginUser.type}
                   />
                 ) : (
-                  <Link href="#login" legacyBehavior passHref>
+                  <a href="#login">
                     <NavigationMenuLink
                       className={navigationMenuTriggerStyle()}
                     >
                       Login
                     </NavigationMenuLink>
-                  </Link>
+                  </a>
                 )}
               </NavigationMenuItem>
             </NavigationMenuList>

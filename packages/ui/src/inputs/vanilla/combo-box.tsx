@@ -1,7 +1,5 @@
-"use client";
-
 import type { ButtonHTMLAttributes } from "react";
-import { forwardRef, useState } from "react";
+import { Fragment, forwardRef, useState } from "react";
 import { Check, ChevronsUpDown } from "lucide-react";
 import {
   Button,
@@ -107,13 +105,13 @@ const ComboBox = forwardRef<HTMLButtonElement, ComboBoxProps>((props, ref) => {
           <CommandInput className="h-9" placeholder={placeholder} />
           <CommandEmpty>No framework found.</CommandEmpty>
           {grouped === true ? (
-            <>
+            <Fragment>
               {Object.entries(items).map(([key, OptionListGrouped]) => (
                 <CommandGroup heading={key} key={key}>
                   {OptionListGrouped.map((item) => (
                     <CommandItem
                       key={item.value}
-                      onSelect={(currentValue) => {
+                      onSelect={(currentValue: string) => {
                         setValue(currentValue === value ? "" : currentValue);
                         if (onChange)
                           onChange(currentValue === value ? "" : currentValue);
@@ -132,13 +130,13 @@ const ComboBox = forwardRef<HTMLButtonElement, ComboBoxProps>((props, ref) => {
                   ))}
                 </CommandGroup>
               ))}
-            </>
+            </Fragment>
           ) : (
             <CommandGroup>
               {items.map((item) => (
                 <CommandItem
                   key={item.value}
-                  onSelect={(currentValue) => {
+                  onSelect={(currentValue: string) => {
                     setValue(currentValue === value ? "" : currentValue);
                     if (onChange)
                       onChange(currentValue === value ? "" : currentValue);

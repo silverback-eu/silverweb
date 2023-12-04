@@ -146,6 +146,7 @@ export {
   SheetTrigger,
 } from "./sheet";
 export { Skeleton } from "./skeleton";
+export { Snippet } from "./snippet";
 export { Tabs, TabsContent, TabsList, TabsTrigger } from "./tabs";
 export { Toggle, toggleVariants } from "./toggle";
 export { ToggleGroup, ToggleGroupItem } from "./toggle-group";

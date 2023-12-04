@@ -1,3 +1,3 @@
 module.exports = {
-  extends: ["custom/silverweb-storybook"],
+  extends: ["custom/silverweb-storybook", "plugin:storybook/recommended"],
 };

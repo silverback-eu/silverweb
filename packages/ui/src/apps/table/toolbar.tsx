@@ -1,5 +1,3 @@
-"use client";
-
 import type { Table } from "@tanstack/react-table";
 import type { LucideIcon } from "lucide-react";
 import { X } from "lucide-react";
@@ -54,7 +52,7 @@ export function Toolbar<TData>({
           />
         ) : null}
         {filter ? (
-          <>
+          <Fragment>
             {filter.map((filterItem) => (
               <Fragment key={filterItem.name}>
                 {table.getColumn(filterItem.name.split(".")[0]) && (
@@ -68,7 +66,7 @@ export function Toolbar<TData>({
                 )}
               </Fragment>
             ))}
-          </>
+          </Fragment>
         ) : null}
         {resetFilter && isFiltered ? (
           <Button

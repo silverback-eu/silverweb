@@ -1,5 +1,3 @@
-"use client";
-
 import type { Item } from "@radix-ui/react-radio-group";
 import { ListTodo } from "lucide-react";
 import type { ComponentPropsWithoutRef, ElementRef, RefObject } from "react";

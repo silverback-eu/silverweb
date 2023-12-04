@@ -1,5 +1,3 @@
-"use client";
-
 import {
   CollapsibleTrigger as PCollapsibleTrigger,
   Root,
