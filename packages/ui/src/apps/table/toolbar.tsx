@@ -3,7 +3,7 @@ import type { LucideIcon } from "lucide-react";
 import { X } from "lucide-react";
 import { Fragment } from "react";
 import { Button } from "../../shared";
-import { Input } from "../../inputs/vanilla";
+import { VanillaInput } from "../../inputs/vanilla";
 import { ColumnFilter } from "./column-filter";
 import { FilterDropdown } from "./filter-dropdown";
 
@@ -40,7 +40,7 @@ export function Toolbar<TData>({
     <div className="flex items-center justify-between">
       <div className="flex flex-1 items-center space-x-2">
         {search ? (
-          <Input
+          <VanillaInput
             className="h-8 w-[150px] lg:w-[250px]"
             onChange={(event) =>
               table.getColumn(search.name)?.setFilterValue(event.target.value)

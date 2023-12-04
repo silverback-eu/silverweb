@@ -130,7 +130,6 @@ export {
   NavigationMenuViewport,
   navigationMenuTriggerStyle,
 } from "./navigation-menu";
-export { PartnerCard } from "./partner-card";
 export { Popover, PopoverContent, PopoverTrigger } from "./popover";
 export { Progress } from "./progress";
 export { ScrollArea, ScrollBar } from "./scroll-area";

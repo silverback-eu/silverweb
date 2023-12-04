@@ -7,11 +7,11 @@ import {
 } from "lucide-react";
 import { Button } from "../../shared";
 import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
+  VanillaSelect,
+  VanillaSelectContent,
+  VanillaSelectItem,
+  VanillaSelectTrigger,
+  VanillaSelectValue,
 } from "../../inputs/vanilla";
 
 interface PaginationProps<TData> {
@@ -30,23 +30,25 @@ export function Pagination<TData>({
       <div className="flex items-center space-x-6 lg:space-x-8">
         <div className="flex items-center space-x-2">
           <p className="text-sm font-medium">Rows per page</p>
-          <Select
+          <VanillaSelect
             onValueChange={(value) => {
               table.setPageSize(Number(value));
             }}
             value={`${table.getState().pagination.pageSize}`}
           >
-            <SelectTrigger className="h-8 w-[70px]">
-              <SelectValue placeholder={table.getState().pagination.pageSize} />
-            </SelectTrigger>
-            <SelectContent side="top">
+            <VanillaSelectTrigger className="h-8 w-[70px]">
+              <VanillaSelectValue
+                placeholder={table.getState().pagination.pageSize}
+              />
+            </VanillaSelectTrigger>
+            <VanillaSelectContent side="top">
               {[10, 20, 30, 40, 50].map((pageSize) => (
-                <SelectItem key={pageSize} value={`${pageSize}`}>
+                <VanillaSelectItem key={pageSize} value={`${pageSize}`}>
                   {pageSize}
-                </SelectItem>
+                </VanillaSelectItem>
               ))}
-            </SelectContent>
-          </Select>
+            </VanillaSelectContent>
+          </VanillaSelect>
         </div>
         <div className="flex w-[100px] items-center justify-center text-sm font-medium">
           Page {table.getState().pagination.pageIndex + 1} of{" "}
