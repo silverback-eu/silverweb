@@ -1,4 +1,5 @@
 import "@/styles/global.css";
+import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import type { NextFontWithVariable } from "next/dist/compiled/@next/font";
@@ -21,6 +22,7 @@ export default function RootLayout({
         } min-h-screen bg-background antialiased dark font-graphik selection:bg-gray-500 selection:bg-opacity-30 selection:text-opacity-75`}
       >
         <Provider>{children}</Provider>
+        <Analytics />
       </body>
     </html>
   );

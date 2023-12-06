@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@silverweb/ui": "*",
+    "@vercel/analytics": "^1.1.1",
     "contentlayer": "^0.3.4",
     "dayjs": "^1.11.10",
     "lucide-react": "^0.292.0",
