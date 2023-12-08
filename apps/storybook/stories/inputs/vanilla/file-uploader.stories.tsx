@@ -1,10 +1,10 @@
-import { LoadingInput, FileUploader } from "@silverweb/ui";
+import { LoadingInput, useFileUploader } from "@silverweb/ui";
 import type { Meta, StoryObj } from "@storybook/react";
 
-const meta: Meta<typeof FileUploader> = {
+const meta: Meta<typeof useFileUploader> = {
   title: "Inputs/ Vanilla/ FileUploader",
   tags: ["autodocs"],
-  component: FileUploader,
+  component: useFileUploader,
   decorators: [
     (Story) => (
       <div className="w-96 m-3">
@@ -16,7 +16,7 @@ const meta: Meta<typeof FileUploader> = {
 
 export default meta;
 
-type Story = StoryObj<typeof FileUploader>;
+type Story = StoryObj<typeof useFileUploader>;
 
 export const Normal: Story = {};
 
