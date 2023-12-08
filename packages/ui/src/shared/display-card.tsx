@@ -75,7 +75,7 @@ const DisplayCard = forwardRef<HTMLDivElement, DisplayCardProps>(
           </div>
           <div
             className={cn(
-              "grid content-center w-[calc(100%-40px)]",
+              "grid content-center w-[calc(100%-48px)]",
               textContainerClassName
             )}
           >

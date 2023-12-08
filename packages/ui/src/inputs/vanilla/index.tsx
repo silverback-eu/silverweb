@@ -1,4 +1,4 @@
-export { FileUploader } from "./fileuploader";
+export { FileUploader } from "./file-uploader";
 export {
   CheckboxInput as VanillaCheckboxInput,
   type CheckboxInputProps as VanillaCheckboxInputProps,

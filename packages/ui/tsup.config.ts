@@ -1,7 +1,13 @@
 import * as fs from "node:fs/promises";
 import * as path from "node:path";
+import { env } from "node:process";
 import type { Options } from "tsup";
 import { defineConfig } from "tsup";
+import * as dotenv from "dotenv";
+
+dotenv.config({
+  path: `${__dirname}/../../.env.local`,
+});
 
 const DIST_PATH = "./dist";
 
@@ -48,5 +54,10 @@ export default defineConfig((options: Options) => ({
   splitting: true,
   target: "esnext",
   treeshake: true,
+  esbuildOptions(esOptions) {
+    esOptions.define = {
+      "process.env": JSON.stringify(env),
+    };
+  },
   ...options,
 }));
