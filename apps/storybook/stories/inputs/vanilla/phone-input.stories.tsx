@@ -2,7 +2,7 @@ import { LoadingInput, VanillaPhoneInput } from "@silverweb/ui";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof VanillaPhoneInput> = {
-  title: "Inputs/ Vanilla/ VanillaPhoneInput",
+  title: "Inputs/ Vanilla/ PhoneInput",
   tags: ["autodocs"],
   component: VanillaPhoneInput,
   decorators: [

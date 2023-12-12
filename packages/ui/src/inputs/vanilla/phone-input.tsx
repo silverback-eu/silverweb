@@ -1518,11 +1518,11 @@ const PhoneInput = forwardRef<HTMLInputElement, PhoneInputProps>(
               <Button
                 aria-expanded={open}
                 aria-label="Select phone prefix"
-                className="py-1  w-10 px-3 justify-between -mr-2"
+                className="flex justify-center items-center text-lg p-0 w-10"
                 role="combobox"
                 variant="ghost"
               >
-                <span>{selectedPrefix?.flag}</span>
+                <span>{selectedPrefix ? selectedPrefix.flag : "🇪🇺"}</span>
               </Button>
             </PopoverTrigger>
             <PopoverContent
@@ -1577,6 +1577,14 @@ const PhoneInput = forwardRef<HTMLInputElement, PhoneInputProps>(
                                 )?.name
                               }
                             >
+                              <span>
+                                {
+                                  phonePrefix.find(
+                                    (prefixObject) =>
+                                      prefixObject.country === suggestion
+                                  )?.flag
+                                }
+                              </span>
                               {
                                 phonePrefix.find(
                                   (prefixObject) =>

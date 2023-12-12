@@ -2,7 +2,7 @@ import { LoadingInput, VanillaPasswordInput } from "@silverweb/ui";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof VanillaPasswordInput> = {
-  title: "Inputs/ Vanilla/ VanillaPasswordInput",
+  title: "Inputs/ Vanilla/ PasswordInput",
   tags: ["autodocs"],
   component: VanillaPasswordInput,
   decorators: [
