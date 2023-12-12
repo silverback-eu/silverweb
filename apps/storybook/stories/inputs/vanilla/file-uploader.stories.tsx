@@ -15,7 +15,7 @@ const meta: Meta<typeof Uploader> = {
   tags: ["autodocs"],
   decorators: [
     (Story) => (
-      <div className="w-96 m-3">
+      <div className="m-3 w-96">
         <Story />
       </div>
     ),
@@ -95,7 +95,7 @@ function NormalComponent(): JSX.Element {
       />
       <div>
         <div className="font-bold">AcceptedFiles:</div>
-        <ul className="p-2 space-y-2">
+        <ul className="space-y-2 p-2">
           {acceptedFiles.map((file) => (
             <li key={file.name}>
               <AcceptedFile
@@ -111,7 +111,7 @@ function NormalComponent(): JSX.Element {
       </div>
       <div>
         <div className="font-bold">RejectedFiles:</div>
-        <ul className="p-2 space-y-2">
+        <ul className="space-y-2 p-2">
           {fileRejections.map((file) => (
             <li key={file.file.name}>
               <RejectedFile
@@ -127,7 +127,7 @@ function NormalComponent(): JSX.Element {
       </div>
       <div>
         <div className="font-bold tracking-tight">Status:</div>
-        <div className="p-2 gap-y-3 grid grid-cols-2">
+        <div className="grid grid-cols-2 gap-y-3 p-2">
           <Label htmlFor="isDragAccept">isDragAccept</Label>
           <VanillaSwitch checked={isDragAccept} id="isDragAccept" />
 
@@ -205,7 +205,7 @@ function ChangedComponent(props: Story["args"]): JSX.Element {
       />
       <div>
         <div className="font-bold">AcceptedFiles:</div>
-        <ul className="p-2 space-y-2">
+        <ul className="space-y-2 p-2">
           {acceptedFiles.map((file) => (
             <li key={file.name}>
               <AcceptedFile
@@ -221,7 +221,7 @@ function ChangedComponent(props: Story["args"]): JSX.Element {
       </div>
       <div>
         <div className="font-bold">RejectedFiles:</div>
-        <ul className="p-2 space-y-2">
+        <ul className="space-y-2 p-2">
           {fileRejections.map((file) => (
             <li key={file.file.name}>
               <RejectedFile
@@ -237,7 +237,7 @@ function ChangedComponent(props: Story["args"]): JSX.Element {
       </div>
       <div>
         <div className="font-bold tracking-tight">Status:</div>
-        <div className="p-2 gap-y-3 grid grid-cols-2">
+        <div className="grid grid-cols-2 gap-y-3 p-2">
           <Label htmlFor="isDragAccept">isDragAccept</Label>
           <VanillaSwitch checked={isDragAccept} id="isDragAccept" />
 
@@ -315,7 +315,7 @@ function DisabledComponent(props: Story["args"]): JSX.Element {
       />
       <div>
         <div className="font-bold">AcceptedFiles:</div>
-        <ul className="p-2 space-y-2">
+        <ul className="space-y-2 p-2">
           {acceptedFiles.map((file) => (
             <li key={file.name}>
               <AcceptedFile
@@ -331,7 +331,7 @@ function DisabledComponent(props: Story["args"]): JSX.Element {
       </div>
       <div>
         <div className="font-bold">RejectedFiles:</div>
-        <ul className="p-2 space-y-2">
+        <ul className="space-y-2 p-2">
           {fileRejections.map((file) => (
             <li key={file.file.name}>
               <RejectedFile
@@ -347,7 +347,7 @@ function DisabledComponent(props: Story["args"]): JSX.Element {
       </div>
       <div>
         <div className="font-bold tracking-tight">Status:</div>
-        <div className="p-2 gap-y-3 grid grid-cols-2">
+        <div className="grid grid-cols-2 gap-y-3 p-2">
           <Label htmlFor="isDragAccept">isDragAccept</Label>
           <VanillaSwitch checked={isDragAccept} id="isDragAccept" />
 
@@ -425,7 +425,7 @@ function ReadOnlyComponent(props: Story["args"]): JSX.Element {
       />
       <div>
         <div className="font-bold">AcceptedFiles:</div>
-        <ul className="p-2 space-y-2">
+        <ul className="space-y-2 p-2">
           {acceptedFiles.map((file) => (
             <li key={file.name}>
               <AcceptedFile
@@ -441,7 +441,7 @@ function ReadOnlyComponent(props: Story["args"]): JSX.Element {
       </div>
       <div>
         <div className="font-bold">RejectedFiles:</div>
-        <ul className="p-2 space-y-2">
+        <ul className="space-y-2 p-2">
           {fileRejections.map((file) => (
             <li key={file.file.name}>
               <RejectedFile
@@ -457,7 +457,7 @@ function ReadOnlyComponent(props: Story["args"]): JSX.Element {
       </div>
       <div>
         <div className="font-bold tracking-tight">Status:</div>
-        <div className="p-2 gap-y-3 grid grid-cols-2">
+        <div className="grid grid-cols-2 gap-y-3 p-2">
           <Label htmlFor="isDragAccept">isDragAccept</Label>
           <VanillaSwitch checked={isDragAccept} id="isDragAccept" />
 
@@ -533,7 +533,7 @@ function StatusComponent(props: Story["args"]): JSX.Element {
       />
       <div>
         <div className="font-bold">AcceptedFiles:</div>
-        <ul className="p-2 space-y-2">
+        <ul className="space-y-2 p-2">
           {acceptedFiles.map((file) => (
             <li key={file.name}>
               <AcceptedFile
@@ -549,7 +549,7 @@ function StatusComponent(props: Story["args"]): JSX.Element {
       </div>
       <div>
         <div className="font-bold">RejectedFiles:</div>
-        <ul className="p-2 space-y-2">
+        <ul className="space-y-2 p-2">
           {fileRejections.map((file) => (
             <li key={file.file.name}>
               <RejectedFile
@@ -565,7 +565,7 @@ function StatusComponent(props: Story["args"]): JSX.Element {
       </div>
       <div>
         <div className="font-bold tracking-tight">Status:</div>
-        <div className="p-2 gap-y-3 grid grid-cols-2">
+        <div className="grid grid-cols-2 gap-y-3 p-2">
           <Label htmlFor="isDragAccept">isDragAccept</Label>
           <VanillaSwitch checked={isDragAccept} id="isDragAccept" />
 

@@ -42,7 +42,7 @@ const Menubar = forwardRef<
   <Root
     className={cn(
       "flex h-10 items-center space-x-1 rounded-md border bg-background p-1",
-      className
+      className,
     )}
     ref={ref}
     {...props}
@@ -57,7 +57,7 @@ const MenubarTrigger = forwardRef<
   <Trigger
     className={cn(
       "flex cursor-default select-none items-center rounded-sm px-3 py-1.5 text-sm font-medium outline-none focus:bg-accent focus:text-accent-foreground data-[state=open]:bg-accent data-[state=open]:text-accent-foreground",
-      className
+      className,
     )}
     ref={ref}
     {...props}
@@ -75,7 +75,7 @@ const MenubarSubTrigger = forwardRef<
     className={cn(
       "flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[state=open]:bg-accent data-[state=open]:text-accent-foreground",
       inset && "pl-8",
-      className
+      className,
     )}
     ref={ref}
     {...props}
@@ -93,7 +93,7 @@ const MenubarSubContent = forwardRef<
   <SubContent
     className={cn(
       "z-50 min-w-[8rem] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
-      className
+      className,
     )}
     ref={ref}
     {...props}
@@ -107,7 +107,7 @@ const MenubarContent = forwardRef<
 >(
   (
     { className, align = "start", alignOffset = -4, sideOffset = 8, ...props },
-    ref
+    ref,
   ) => (
     <Portal>
       <Content
@@ -115,14 +115,14 @@ const MenubarContent = forwardRef<
         alignOffset={alignOffset}
         className={cn(
           "z-50 min-w-[12rem] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md data-[state=open]:animate-in data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
-          className
+          className,
         )}
         ref={ref}
         sideOffset={sideOffset}
         {...props}
       />
     </Portal>
-  )
+  ),
 );
 MenubarContent.displayName = Content.displayName;
 
@@ -136,7 +136,7 @@ const MenubarItem = forwardRef<
     className={cn(
       "relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
       inset && "pl-8",
-      className
+      className,
     )}
     ref={ref}
     {...props}
@@ -152,7 +152,7 @@ const MenubarCheckboxItem = forwardRef<
     checked={checked}
     className={cn(
       "relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
-      className
+      className,
     )}
     ref={ref}
     {...props}
@@ -174,7 +174,7 @@ const MenubarRadioItem = forwardRef<
   <RadioItem
     className={cn(
       "relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
-      className
+      className,
     )}
     ref={ref}
     {...props}
@@ -199,7 +199,7 @@ const MenubarLabel = forwardRef<
     className={cn(
       "px-2 py-1.5 text-sm font-semibold",
       inset && "pl-8",
-      className
+      className,
     )}
     ref={ref}
     {...props}
@@ -227,7 +227,7 @@ function MenubarShortcut({
     <span
       className={cn(
         "ml-auto text-xs tracking-widest text-muted-foreground",
-        className
+        className,
       )}
       {...props}
     />

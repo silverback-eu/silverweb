@@ -7,18 +7,18 @@ const BurgerMenuIconPrimitive = forwardRef(
       open,
       onOpenChange,
     }: { open?: boolean; onOpenChange?: (open: boolean) => void },
-    ref
+    ref,
   ) => (
     <div>
       <div>
-        <div className="overflow-hidden w-8 h-8 relative">
-          <div className="scale-[0.25] absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+        <div className="relative h-8 w-8 overflow-hidden">
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 scale-[0.25]">
             <label
-              className="flex flex-col w-[70px] cursor-pointer [&_span]:bg-current [&_span]:rounded-[10px] [&_span]:h-[7px] [&_span]:my-[7px] [&_span]:transition-[0.4s_cubic-bezier(0.68,-0.6,0.32,1.6)]"
+              className="flex w-[70px] cursor-pointer flex-col [&_span]:my-[7px] [&_span]:h-[7px] [&_span]:rounded-[10px] [&_span]:bg-current [&_span]:transition-[0.4s_cubic-bezier(0.68,-0.6,0.32,1.6)]"
               htmlFor="check"
             >
               <input
-                className="hidden [&:checked_~_span:nth-of-type(1)]:origin-bottom [&:checked_~_span:nth-of-type(1)]:[transform:rotatez(45deg)_translate(8px,0px)] [&:checked_~_span:nth-of-type(2)]:origin-top [&:checked_~_span:nth-of-type(2)]:[transform:rotatez(-45deg)] [&:checked_~_span:nth-of-type(3)]:origin-bottom  [&:checked_~_span:nth-of-type(3)]:w-1/2 [&:checked_~_span:nth-of-type(3)]:[transform:translate(30px,-11px)_rotatez(45deg)]"
+                className="hidden [&:checked_~_span:nth-of-type(1)]:origin-bottom [&:checked_~_span:nth-of-type(1)]:[transform:rotatez(45deg)_translate(8px,0px)] [&:checked_~_span:nth-of-type(2)]:origin-top [&:checked_~_span:nth-of-type(2)]:[transform:rotatez(-45deg)] [&:checked_~_span:nth-of-type(3)]:w-1/2  [&:checked_~_span:nth-of-type(3)]:origin-bottom [&:checked_~_span:nth-of-type(3)]:[transform:translate(30px,-11px)_rotatez(45deg)]"
                 id="check"
                 ref={ref as unknown as LegacyRef<HTMLInputElement>}
                 type="checkbox"
@@ -38,7 +38,7 @@ const BurgerMenuIconPrimitive = forwardRef(
         </div>
       </div>
     </div>
-  )
+  ),
 );
 
 BurgerMenuIconPrimitive.displayName = "BurderMenuIcon";

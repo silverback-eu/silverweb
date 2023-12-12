@@ -14,15 +14,15 @@ const TextareaInput = forwardRef<HTMLTextAreaElement, TextareaInputProps>(
     return (
       <textarea
         className={cn(
-          "flex min-h-[60px] w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 resize-none",
+          "flex min-h-[60px] w-full resize-none rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50",
           rest.readOnly
             ? "focus-visible:ring-1 focus-visible:ring-accent"
-            : "hover:ring-1 hover:ring-secondary transition-all focus:-translate-y-[1px]",
+            : "transition-all hover:ring-1 hover:ring-secondary focus:-translate-y-[1px]",
           status === "success" &&
-            "text-lime-600 placeholder:opacity-80 placeholder:text-lime-600 hover:ring-1 hover:ring-lime-600 focus-visible:ring-1 focus-visible:ring-lime-500",
+            "text-lime-600 placeholder:text-lime-600 placeholder:opacity-80 hover:ring-1 hover:ring-lime-600 focus-visible:ring-1 focus-visible:ring-lime-500",
           status === "error" &&
-            "text-red-500 placeholder:opacity-80 placeholder:text-red-500 hover:ring-1 hover:ring-red-600 focus-visible:ring-1 focus-visible:ring-red-500",
-          className
+            "text-red-500 placeholder:text-red-500 placeholder:opacity-80 hover:ring-1 hover:ring-red-600 focus-visible:ring-1 focus-visible:ring-red-500",
+          className,
         )}
         onChange={(ev) => {
           ev.currentTarget.style.height = "auto";
@@ -35,7 +35,7 @@ const TextareaInput = forwardRef<HTMLTextAreaElement, TextareaInputProps>(
         {...rest}
       />
     );
-  }
+  },
 );
 
 TextareaInput.displayName = "TextareaInput";

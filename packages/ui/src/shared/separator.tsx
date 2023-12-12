@@ -12,20 +12,20 @@ type SeparatorProps = {
 const Separator = forwardRef<ElementRef<typeof Root>, SeparatorProps>(
   (
     { className, orientation = "horizontal", decorative = true, ...props },
-    ref
+    ref,
   ) => (
     <Root
       className={cn(
         "shrink-0 bg-border",
         orientation === "horizontal" ? "h-[1px] w-full" : "h-full w-[1px]",
-        className
+        className,
       )}
       decorative={decorative}
       orientation={orientation}
       ref={ref}
       {...props}
     />
-  )
+  ),
 );
 Separator.displayName = Root.displayName;
 

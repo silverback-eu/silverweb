@@ -70,7 +70,7 @@ export function Toolbar<TData>({
         ) : null}
         {resetFilter && isFiltered ? (
           <Button
-            className="h-8 px-2 lg:px-3 items-center flex"
+            className="flex h-8 items-center px-2 lg:px-3"
             onClick={() => {
               table.resetColumnFilters();
             }}

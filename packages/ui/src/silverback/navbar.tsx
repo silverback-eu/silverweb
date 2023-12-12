@@ -218,7 +218,7 @@ const ListItem = forwardRef<ElementRef<"a">, ListItemProps>(
         <a
           className={cn(
             "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-            className
+            className,
           )}
           ref={ref}
           {...props}
@@ -230,7 +230,7 @@ const ListItem = forwardRef<ElementRef<"a">, ListItemProps>(
         </a>
       </NavigationMenuLink>
     </li>
-  )
+  ),
 );
 ListItem.displayName = "ListItem";
 
@@ -252,13 +252,13 @@ export function Navbar({
   }, []);
 
   return (
-    <header className={cn("h-[53px] z-50 relative")}>
+    <header className={cn("relative z-50 h-[53px]")}>
       <div
         className={cn(
-          "w-screen right-0 fixed backdrop-blur-[5px] backdrop-saturate-150 bg-black bg-opacity-80 from-background via-background to-[rgba(0,0,0,0.6)]"
+          "fixed right-0 w-screen bg-black bg-opacity-80 from-background via-background to-[rgba(0,0,0,0.6)] backdrop-blur-[5px] backdrop-saturate-150",
         )}
       >
-        <div className="max-w-[1400px] px-3 mx-auto flex py-2 content-center justify-between">
+        <div className="mx-auto flex max-w-[1400px] content-center justify-between px-3 py-2">
           <NavigationMenu className="md:hidden">
             <NavigationMenuList>
               <NavigationMenuItem>
@@ -272,21 +272,21 @@ export function Navbar({
                   <SheetContent>
                     <a href="/">
                       <div className="flex content-center">
-                        <div className="content-center flex-wrap select-none flex">
+                        <div className="flex select-none flex-wrap content-center">
                           <Logo wh={22} />
                         </div>
                         <div className="flex -translate-y-[2.5%]">
-                          <div className="text-lg tracking-[-0.02em] font-bold content-center grid select-none">
+                          <div className="grid select-none content-center text-lg font-bold tracking-[-0.02em]">
                             SilverBack
                           </div>
-                          <div className="text-[1.1em] pl-0.5 tracking-[-0.03em] font-medium text-warm translate-y-[1px] content-center select-none">
+                          <div className="translate-y-[1px] select-none content-center pl-0.5 text-[1.1em] font-medium tracking-[-0.03em] text-warm">
                             group
                           </div>
                         </div>
                       </div>
                     </a>
                     <Separator className="mt-4 opacity-0" />
-                    <ScrollArea className="h-[calc(100vh-100px)] grid gap-1">
+                    <ScrollArea className="grid h-[calc(100vh-100px)] gap-1">
                       {pages.map((page, idx) => (
                         <div key={page.title}>
                           {page.heading ? (
@@ -317,16 +317,16 @@ export function Navbar({
           </NavigationMenu>
           <NavigationMenu>
             <NavigationMenuList>
-              <NavigationMenuItem className={cn("grid gap-1 grid-flow-col")}>
-                <a className="mx-3 grid gap-1 grid-flow-col" href="/">
-                  <div className="hidden sm:flex content-center flex-wrap translate-y-[0.5px] select-none">
+              <NavigationMenuItem className={cn("grid grid-flow-col gap-1")}>
+                <a className="mx-3 grid grid-flow-col gap-1" href="/">
+                  <div className="hidden translate-y-[0.5px] select-none flex-wrap content-center sm:flex">
                     <Logo wh={22} />
                   </div>
                   <div className="flex translate-x-5 sm:translate-x-0">
-                    <div className="text-lg tracking-[-0.03em] font-bold content-center grid select-none">
+                    <div className="grid select-none content-center text-lg font-bold tracking-[-0.03em]">
                       SilverBack
                     </div>
-                    <div className="text-[1.1em] pl-0.5 tracking-[-0.08em] font-medium text-warm translate-y-[0px] content-center hidden sm:grid select-none">
+                    <div className="hidden translate-y-[0px] select-none content-center pl-0.5 text-[1.1em] font-medium tracking-[-0.08em] text-warm sm:grid">
                       group
                     </div>
                   </div>
@@ -343,7 +343,7 @@ export function Navbar({
                       className={cn(
                         "",
                         pathname === "/" &&
-                          "font-bold drop-shadow-[0_1px_4px_rgba(255,255,255,0.4)]"
+                          "font-bold drop-shadow-[0_1px_4px_rgba(255,255,255,0.4)]",
                       )}
                     >
                       Home
@@ -359,7 +359,7 @@ export function Navbar({
                       (pathname === "/our-story" ||
                         pathname === "/methods" ||
                         pathname === "/partnerships") &&
-                        "font-bold drop-shadow-[0_1px_4px_rgba(255,255,255,0.4)]"
+                        "font-bold drop-shadow-[0_1px_4px_rgba(255,255,255,0.4)]",
                     )}
                   >
                     About
@@ -376,10 +376,10 @@ export function Navbar({
                           <div className="-translate-x-3 translate-y-3">
                             <Logo wh={60} />
                           </div>
-                          <div className="mb-2 mt-4 text-lg font-bold tracking-[-0.03em] select-none">
+                          <div className="mb-2 mt-4 select-none text-lg font-bold tracking-[-0.03em]">
                             SilverBack
                           </div>
-                          <p className="text-sm leading-tight text-muted-foreground select-none">
+                          <p className="select-none text-sm leading-tight text-muted-foreground">
                             Powering mission-critical construction throughout
                             Europe.
                           </p>
@@ -408,7 +408,7 @@ export function Navbar({
                     className={cn(
                       "",
                       pathname === "/jobboard" &&
-                        "font-bold drop-shadow-[0_1px_4px_rgba(255,255,255,0.4)]"
+                        "font-bold drop-shadow-[0_1px_4px_rgba(255,255,255,0.4)]",
                     )}
                   >
                     Job board
@@ -435,7 +435,7 @@ export function Navbar({
                       className={cn(
                         "",
                         pathname === "/connect" &&
-                          "font-bold drop-shadow-[0_1px_4px_rgba(255,255,255,0.4)]"
+                          "font-bold drop-shadow-[0_1px_4px_rgba(255,255,255,0.4)]",
                       )}
                     >
                       Connect
@@ -450,7 +450,7 @@ export function Navbar({
                       className={cn(
                         "",
                         pathname === "/industry-insights" &&
-                          "font-bold drop-shadow-[0_1px_4px_rgba(255,255,255,0.4)]"
+                          "font-bold drop-shadow-[0_1px_4px_rgba(255,255,255,0.4)]",
                       )}
                     >
                       Industry insights

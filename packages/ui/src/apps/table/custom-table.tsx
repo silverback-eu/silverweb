@@ -67,7 +67,7 @@ export function CustomTable<TData, TValue>({
   const [rowSelection, setRowSelection] = useState({});
   const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({});
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>(
-    initFilters || []
+    initFilters || [],
   );
   const [sorting, setSorting] = useState<SortingState>([]);
 
@@ -117,7 +117,7 @@ export function CustomTable<TData, TValue>({
                             ? null
                             : flexRender(
                                 header.column.columnDef.header,
-                                header.getContext()
+                                header.getContext(),
                               )}
                         </TableHeaderItem.type>
                       ) : null}
@@ -139,7 +139,7 @@ export function CustomTable<TData, TValue>({
                     <Fragment key={cell.id}>
                       {flexRender(
                         cell.column.columnDef.cell,
-                        cell.getContext()
+                        cell.getContext(),
                       )}
                     </Fragment>
                   ))}

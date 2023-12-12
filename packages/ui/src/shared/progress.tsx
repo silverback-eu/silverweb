@@ -10,7 +10,7 @@ const Progress = forwardRef<
   <Root
     className={cn(
       "relative h-4 w-full overflow-hidden rounded-full bg-secondary",
-      className
+      className,
     )}
     ref={ref}
     {...props}

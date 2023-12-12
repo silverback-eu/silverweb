@@ -16,12 +16,12 @@ const EmailInput = forwardRef<HTMLInputElement, EmailInputProps>(
         className={cn(
           rest.readOnly
             ? "focus-visible:ring-1 focus-visible:ring-accent"
-            : "hover:ring-1 hover:ring-secondary transition-all focus:-translate-y-[1px]",
+            : "transition-all hover:ring-1 hover:ring-secondary focus:-translate-y-[1px]",
           status === "success" &&
-            "text-lime-600 placeholder:opacity-80 placeholder:text-lime-600 hover:ring-1 hover:ring-lime-600 focus-visible:ring-1 focus-visible:ring-lime-500",
+            "text-lime-600 placeholder:text-lime-600 placeholder:opacity-80 hover:ring-1 hover:ring-lime-600 focus-visible:ring-1 focus-visible:ring-lime-500",
           status === "error" &&
-            "text-red-500 placeholder:opacity-80 placeholder:text-red-500 hover:ring-1 hover:ring-red-600 focus-visible:ring-1 focus-visible:ring-red-500",
-          className
+            "text-red-500 placeholder:text-red-500 placeholder:opacity-80 hover:ring-1 hover:ring-red-600 focus-visible:ring-1 focus-visible:ring-red-500",
+          className,
         )}
         inputMode="email"
         ref={ref}
@@ -29,7 +29,7 @@ const EmailInput = forwardRef<HTMLInputElement, EmailInputProps>(
         {...rest}
       />
     );
-  }
+  },
 );
 
 EmailInput.displayName = "EmailInput";

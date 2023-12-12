@@ -67,7 +67,7 @@ export function Flow({
     (params: Connection | Edge) => {
       setEdges((eds) => addEdge(params, eds));
     },
-    [setEdges]
+    [setEdges],
   );
 
   return (

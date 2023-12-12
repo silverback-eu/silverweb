@@ -97,13 +97,13 @@ const FileCard = forwardRef<HTMLDivElement, FileCardProps>((props, ref) => {
           header={info.name}
         />
       </PopoverTrigger>
-      <PopoverContent className="grid gap-3 w-[280px]">
+      <PopoverContent className="grid w-[280px] gap-3">
         <div className="flex justify-between px-3">
           <div className="grid content-center">
-            <p className="text-sm font-semibold text-start truncate">
+            <p className="truncate text-start text-sm font-semibold">
               {info.name}
             </p>
-            <p className="text-xs opacity-50 text-start truncate">
+            <p className="truncate text-start text-xs opacity-50">
               {info.type}
             </p>
           </div>

@@ -43,12 +43,12 @@ const NumberInput = forwardRef<HTMLInputElement, NumberInputProps>(
             "pr-9",
             readOnly
               ? "focus-visible:ring-1 focus-visible:ring-accent"
-              : "hover:ring-1 hover:ring-secondary transition-all focus:-translate-y-[1px]",
+              : "transition-all hover:ring-1 hover:ring-secondary focus:-translate-y-[1px]",
             status === "success" &&
-              "text-lime-600 placeholder:opacity-80 placeholder:text-lime-600 hover:ring-1 hover:ring-lime-600 focus-visible:ring-1 focus-visible:ring-lime-500",
+              "text-lime-600 placeholder:text-lime-600 placeholder:opacity-80 hover:ring-1 hover:ring-lime-600 focus-visible:ring-1 focus-visible:ring-lime-500",
             status === "error" &&
-              "text-red-500 placeholder:opacity-80 placeholder:text-red-500 hover:ring-1 hover:ring-red-600 focus-visible:ring-1 focus-visible:ring-red-500",
-            className
+              "text-red-500 placeholder:text-red-500 placeholder:opacity-80 hover:ring-1 hover:ring-red-600 focus-visible:ring-1 focus-visible:ring-red-500",
+            className,
           )}
           disabled={disabled}
           inputMode="numeric"
@@ -95,11 +95,11 @@ const NumberInput = forwardRef<HTMLInputElement, NumberInputProps>(
           {...rest}
         />
         <div
-          className="transition-transform absolute inset-y-0 right-0 grid items-center text-muted-foreground h-9"
+          className="absolute inset-y-0 right-0 grid h-9 items-center text-muted-foreground transition-transform"
           ref={ButtonContainerRef}
         >
           <Button
-            className="h-[1.125rem] text-xs border-inherit leading-none px-2 pb-1 pt-1 flex align-middle justify-center items-center rounded-none rounded-tr-md border-b-[0.5px] border-t-0 border-r-0"
+            className="flex h-[1.125rem] items-center justify-center rounded-none rounded-tr-md border-b-[0.5px] border-r-0 border-t-0 border-inherit px-2 pb-1 pt-1 align-middle text-xs leading-none"
             disabled={disabled || readOnly}
             onClick={() => {
               if (InputRef.current) {
@@ -118,7 +118,7 @@ const NumberInput = forwardRef<HTMLInputElement, NumberInputProps>(
             +
           </Button>
           <Button
-            className="h-[1.125rem] text-xs border-inherit leading-none px-2 pt-0 pb-1 flex align-middle justify-center items-center rounded-none rounded-br-md border-t-[0.5px] border-b-0 border-r-0"
+            className="flex h-[1.125rem] items-center justify-center rounded-none rounded-br-md border-b-0 border-r-0 border-t-[0.5px] border-inherit px-2 pb-1 pt-0 align-middle text-xs leading-none"
             disabled={disabled || readOnly}
             onClick={() => {
               if (InputRef.current) {
@@ -145,7 +145,7 @@ const NumberInput = forwardRef<HTMLInputElement, NumberInputProps>(
         </div>
       </div>
     );
-  }
+  },
 );
 
 NumberInput.displayName = "NumberInput";

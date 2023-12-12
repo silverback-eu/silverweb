@@ -1,11 +1,11 @@
-import { Label, VanillaRadioGroup, VanillaRadioInput } from "@silverweb/ui";
+import { Label, VanillaRadioGroup, VanillaSwitch } from "@silverweb/ui";
 import type { Meta, StoryObj } from "@storybook/react";
 import { HardHat } from "lucide-react";
 
-const meta: Meta<typeof VanillaRadioInput> = {
-  title: "Inputs/ Vanilla/ RadioInput",
+const meta: Meta<typeof VanillaSwitch> = {
+  title: "Inputs/ Vanilla/ Switch",
   tags: ["autodocs"],
-  component: VanillaRadioInput,
+  component: VanillaSwitch,
   decorators: [
     (Story) => (
       <div className="m-3 w-96">
@@ -13,73 +13,36 @@ const meta: Meta<typeof VanillaRadioInput> = {
       </div>
     ),
   ],
+  render: (args) => (
+    <div className="space-2">
+      <div className="grid grid-cols-[60px_1fr] items-center gap-y-3 p-2">
+        <VanillaSwitch {...args} id="option-1" />
+        <Label htmlFor="option-1">Label Option 1</Label>
+        <VanillaSwitch {...args} id="option-2" />
+        <Label htmlFor="option-2">Label Option 2</Label>
+        <VanillaSwitch {...args} id="option-3" />
+        <Label htmlFor="option-3">Label Option 3</Label>
+      </div>
+    </div>
+  ),
 };
 
 export default meta;
 
-type Story = StoryObj<typeof VanillaRadioInput>;
+type Story = StoryObj<typeof VanillaSwitch>;
 
-export const Normal: Story = {
-  render: (args) => (
-    <VanillaRadioGroup className="grid gap-5">
-      <div className="flex gap-2">
-        <VanillaRadioInput {...args} id="1" value="1" />
-        <Label htmlFor="1">Label Eins</Label>
-      </div>
-      <div className="flex gap-2">
-        <VanillaRadioInput {...args} id="2" value="2" />
-        <Label htmlFor="2">Label Zwei</Label>
-      </div>
-      <div className="flex gap-2">
-        <VanillaRadioInput {...args} id="3" value="3" />
-        <Label htmlFor="3">Label Drei</Label>
-      </div>
-    </VanillaRadioGroup>
-  ),
-};
+export const Normal: Story = {};
 
 export const Disabled: Story = {
   args: {
     disabled: true,
   },
-  render: (args) => (
-    <VanillaRadioGroup className="grid gap-5">
-      <div className="flex gap-2">
-        <VanillaRadioInput {...args} id="1" value="1" />
-        <Label htmlFor="1">Label Eins</Label>
-      </div>
-      <div className="flex gap-2">
-        <VanillaRadioInput {...args} id="2" value="2" />
-        <Label htmlFor="2">Label Zwei</Label>
-      </div>
-      <div className="flex gap-2">
-        <VanillaRadioInput {...args} id="3" value="3" />
-        <Label htmlFor="3">Label Drei</Label>
-      </div>
-    </VanillaRadioGroup>
-  ),
 };
 
 export const ReadOnly: Story = {
   args: {
     readOnly: true,
   },
-  render: (args) => (
-    <VanillaRadioGroup className="grid gap-5">
-      <div className="flex gap-2">
-        <VanillaRadioInput {...args} id="1" value="1" />
-        <Label htmlFor="1">Label Eins</Label>
-      </div>
-      <div className="flex gap-2">
-        <VanillaRadioInput {...args} id="2" value="2" />
-        <Label htmlFor="2">Label Zwei</Label>
-      </div>
-      <div className="flex gap-2">
-        <VanillaRadioInput {...args} id="3" value="3" />
-        <Label htmlFor="3">Label Drei</Label>
-      </div>
-    </VanillaRadioGroup>
-  ),
 };
 
 export const Success: Story = {
@@ -89,15 +52,15 @@ export const Success: Story = {
   render: (args) => (
     <VanillaRadioGroup className="grid gap-5 text-green-500">
       <div className="flex gap-2">
-        <VanillaRadioInput {...args} id="1" value="1" />
+        <VanillaSwitch {...args} id="1" value="1" />
         <Label htmlFor="1">Label Eins</Label>
       </div>
       <div className="flex gap-2">
-        <VanillaRadioInput {...args} id="2" value="2" />
+        <VanillaSwitch {...args} id="2" value="2" />
         <Label htmlFor="2">Label Zwei</Label>
       </div>
       <div className="flex gap-2">
-        <VanillaRadioInput {...args} id="3" value="3" />
+        <VanillaSwitch {...args} id="3" value="3" />
         <Label htmlFor="3">Label Drei</Label>
       </div>
     </VanillaRadioGroup>
@@ -111,15 +74,15 @@ export const Error: Story = {
   render: (args) => (
     <VanillaRadioGroup className="grid gap-5 text-red-500">
       <div className="flex gap-2">
-        <VanillaRadioInput {...args} id="1" value="1" />
+        <VanillaSwitch {...args} id="1" value="1" />
         <Label htmlFor="1">Label Eins</Label>
       </div>
       <div className="flex gap-2">
-        <VanillaRadioInput {...args} id="2" value="2" />
+        <VanillaSwitch {...args} id="2" value="2" />
         <Label htmlFor="2">Label Zwei</Label>
       </div>
       <div className="flex gap-2">
-        <VanillaRadioInput {...args} id="3" value="3" />
+        <VanillaSwitch {...args} id="3" value="3" />
         <Label htmlFor="3">Label Drei</Label>
       </div>
     </VanillaRadioGroup>
@@ -136,13 +99,13 @@ export const NormalBig: Story = {
   render: (args) => (
     <VanillaRadioGroup className="grid gap-5">
       <div className="flex gap-2">
-        <VanillaRadioInput {...args} id="1" value="1" />
+        <VanillaSwitch {...args} id="1" value="1" />
       </div>
       <div className="flex gap-2">
-        <VanillaRadioInput {...args} id="2" value="2" />
+        <VanillaSwitch {...args} id="2" value="2" />
       </div>
       <div className="flex gap-2">
-        <VanillaRadioInput {...args} id="3" value="3" />
+        <VanillaSwitch {...args} id="3" value="3" />
       </div>
     </VanillaRadioGroup>
   ),
@@ -159,13 +122,13 @@ export const DisabledBig: Story = {
   render: (args) => (
     <VanillaRadioGroup className="grid gap-5">
       <div className="flex gap-2">
-        <VanillaRadioInput {...args} id="1" value="1" />
+        <VanillaSwitch {...args} id="1" value="1" />
       </div>
       <div className="flex gap-2">
-        <VanillaRadioInput {...args} id="2" value="2" />
+        <VanillaSwitch {...args} id="2" value="2" />
       </div>
       <div className="flex gap-2">
-        <VanillaRadioInput {...args} id="3" value="3" />
+        <VanillaSwitch {...args} id="3" value="3" />
       </div>
     </VanillaRadioGroup>
   ),
@@ -182,13 +145,13 @@ export const ReadOnlyBig: Story = {
   render: (args) => (
     <VanillaRadioGroup className="grid gap-5">
       <div className="flex gap-2">
-        <VanillaRadioInput {...args} id="1" value="1" />
+        <VanillaSwitch {...args} id="1" value="1" />
       </div>
       <div className="flex gap-2">
-        <VanillaRadioInput {...args} id="2" value="2" />
+        <VanillaSwitch {...args} id="2" value="2" />
       </div>
       <div className="flex gap-2">
-        <VanillaRadioInput {...args} id="3" value="3" />
+        <VanillaSwitch {...args} id="3" value="3" />
       </div>
     </VanillaRadioGroup>
   ),
@@ -206,13 +169,13 @@ export const SuccessBig: Story = {
   render: (args) => (
     <VanillaRadioGroup className="grid gap-5">
       <div className="flex gap-2">
-        <VanillaRadioInput {...args} id="1" value="1" />
+        <VanillaSwitch {...args} id="1" value="1" />
       </div>
       <div className="flex gap-2">
-        <VanillaRadioInput {...args} id="2" value="2" />
+        <VanillaSwitch {...args} id="2" value="2" />
       </div>
       <div className="flex gap-2">
-        <VanillaRadioInput {...args} id="3" value="3" />
+        <VanillaSwitch {...args} id="3" value="3" />
       </div>
     </VanillaRadioGroup>
   ),
@@ -230,13 +193,13 @@ export const ErrorBig: Story = {
   render: (args) => (
     <VanillaRadioGroup className="grid gap-5">
       <div className="flex gap-2">
-        <VanillaRadioInput {...args} id="1" value="1" />
+        <VanillaSwitch {...args} id="1" value="1" />
       </div>
       <div className="flex gap-2">
-        <VanillaRadioInput {...args} id="2" value="2" />
+        <VanillaSwitch {...args} id="2" value="2" />
       </div>
       <div className="flex gap-2">
-        <VanillaRadioInput {...args} id="3" value="3" />
+        <VanillaSwitch {...args} id="3" value="3" />
       </div>
     </VanillaRadioGroup>
   ),

@@ -86,7 +86,7 @@ export const Loading: Story = {
   args: {
     children: (
       <div className="flex items-center">
-        <Loader2 className="animate-spin mr-2 h-4 w-4" />
+        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
         Loading
       </div>
     ),

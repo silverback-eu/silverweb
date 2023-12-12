@@ -1,5 +1,5 @@
 import { Building, Mails, TabletSmartphone } from "lucide-react";
-import type { HTMLAttributes} from "react";
+import type { HTMLAttributes } from "react";
 import { forwardRef } from "react";
 import { CardPopoverItem, ContactCardCommentSection } from "./card-helper";
 import { Button } from "./button";
@@ -40,13 +40,13 @@ const ContactCard = forwardRef<HTMLDivElement, ContactCardProps>(
             {...rest}
           />
         </PopoverTrigger>
-        <PopoverContent className="grid gap-3 w-[360px] max-h-[calc(var(--radix-popover-content-available-height)-10px)]">
+        <PopoverContent className="grid max-h-[calc(var(--radix-popover-content-available-height)-10px)] w-[360px] gap-3">
           <div className="flex justify-between px-6">
             <div className="grid content-center">
-              <p className="text-sm font-semibold text-start truncate">
+              <p className="truncate text-start text-sm font-semibold">
                 {info.name}
               </p>
-              <p className="text-xs opacity-50 text-start truncate">
+              <p className="truncate text-start text-xs opacity-50">
                 {info.job}
               </p>
             </div>
@@ -75,7 +75,7 @@ const ContactCard = forwardRef<HTMLDivElement, ContactCardProps>(
         </PopoverContent>
       </Popover>
     );
-  }
+  },
 );
 
 ContactCard.displayName = "ContactCard";

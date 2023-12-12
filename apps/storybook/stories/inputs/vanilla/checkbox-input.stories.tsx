@@ -8,7 +8,7 @@ const meta: Meta<typeof VanillaCheckboxInput> = {
   component: VanillaCheckboxInput,
   decorators: [
     (Story) => (
-      <div className="w-96 m-3">
+      <div className="m-3 w-96">
         <Story />
       </div>
     ),

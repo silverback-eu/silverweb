@@ -118,7 +118,7 @@ export function FilterDropdown<TData, TValue>({
                       }
                       const filterValues = Array.from(selectedValues);
                       column?.setFilterValue(
-                        filterValues.length ? filterValues : undefined
+                        filterValues.length ? filterValues : undefined,
                       );
                     }}
                   >
@@ -127,7 +127,7 @@ export function FilterDropdown<TData, TValue>({
                         "mr-2 flex h-4 w-4 items-center justify-center rounded-sm border border-primary",
                         isSelected
                           ? "bg-primary text-primary-foreground"
-                          : "opacity-50 [&_svg]:invisible"
+                          : "opacity-50 [&_svg]:invisible",
                       )}
                     >
                       <Check className={cn("h-4 w-4")} />
@@ -141,13 +141,13 @@ export function FilterDropdown<TData, TValue>({
                     )}
                     <span>{option.label}</span>
                     {facets?.get(option.label) ? (
-                      <span className="ml-auto flex h-4 w-4 items-center justify-center font-bold text-xs">
+                      <span className="ml-auto flex h-4 w-4 items-center justify-center text-xs font-bold">
                         {facets.get(option.label)}
                       </span>
                     ) : (
                       Object.entries(nestedCounts).length > 0 &&
                       nestedCounts[option.label] && (
-                        <span className="ml-auto flex h-4 w-4 items-center justify-center font-bold text-xs">
+                        <span className="ml-auto flex h-4 w-4 items-center justify-center text-xs font-bold">
                           {nestedCounts[option.label]}
                         </span>
                       )

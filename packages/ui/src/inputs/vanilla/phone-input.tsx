@@ -1488,7 +1488,7 @@ const PhoneInput = forwardRef<HTMLInputElement, PhoneInputProps>(
     const selectedPrefix = phonePrefix
       .sort((a, b) => b.prefix.localeCompare(a.prefix))
       .find((selectedPrefixInFind) =>
-        `+${inputValue}`.startsWith(selectedPrefixInFind.prefix)
+        `+${inputValue}`.startsWith(selectedPrefixInFind.prefix),
       );
 
     function getStatusStyling(): string {
@@ -1503,12 +1503,12 @@ const PhoneInput = forwardRef<HTMLInputElement, PhoneInputProps>(
     return (
       <div
         className={cn(
-          "items-center transition-all border border-input rounded-md h-9 flex disabled:cursor-not-allowed disabled:opacity-50 hover:ring-1 hover:ring-accent",
+          "flex h-9 items-center rounded-md border border-input transition-all hover:ring-1 hover:ring-accent disabled:cursor-not-allowed disabled:opacity-50",
           status === "success" &&
             "hover:ring-lime-600 focus-visible:ring-1 focus-visible:ring-lime-500",
           status === "error" &&
             "hover:ring-red-600 focus-visible:ring-1 focus-visible:ring-red-500",
-          readOnly && ""
+          readOnly && "",
         )}
         ref={ContainerRef}
       >
@@ -1518,7 +1518,7 @@ const PhoneInput = forwardRef<HTMLInputElement, PhoneInputProps>(
               <Button
                 aria-expanded={open}
                 aria-label="Select phone prefix"
-                className="flex justify-center items-center text-lg p-0 w-10"
+                className="flex w-10 items-center justify-center p-0 text-lg"
                 role="combobox"
                 variant="ghost"
               >
@@ -1539,14 +1539,14 @@ const PhoneInput = forwardRef<HTMLInputElement, PhoneInputProps>(
                         <Fragment key={suggestion}>
                           {phonePrefix.find(
                             (prefixObject) =>
-                              prefixObject.country === suggestion
+                              prefixObject.country === suggestion,
                           ) && (
                             <CommandItem
                               className="gap-2"
                               key={
                                 phonePrefix.find(
                                   (prefixObject) =>
-                                    prefixObject.country === suggestion
+                                    prefixObject.country === suggestion,
                                 )?.prefix
                               }
                               onSelect={() => {
@@ -1554,18 +1554,18 @@ const PhoneInput = forwardRef<HTMLInputElement, PhoneInputProps>(
                                   `${phonePrefix
                                     .find(
                                       (prefixObject) =>
-                                        prefixObject.country === suggestion
+                                        prefixObject.country === suggestion,
                                     )
-                                    ?.prefix.replace(/[^0-9]/g, "")}`
+                                    ?.prefix.replace(/[^0-9]/g, "")}`,
                                 );
                                 if (onInputChange) {
                                   onInputChange(
                                     `${phonePrefix
                                       .find(
                                         (prefixObject) =>
-                                          prefixObject.country === suggestion
+                                          prefixObject.country === suggestion,
                                       )
-                                      ?.prefix.replace(/[^0-9]/g, "")}`
+                                      ?.prefix.replace(/[^0-9]/g, "")}`,
                                   );
                                 }
                                 setOpen(false);
@@ -1573,7 +1573,7 @@ const PhoneInput = forwardRef<HTMLInputElement, PhoneInputProps>(
                               value={
                                 phonePrefix.find(
                                   (prefixObject) =>
-                                    prefixObject.country === suggestion
+                                    prefixObject.country === suggestion,
                                 )?.name
                               }
                             >
@@ -1581,14 +1581,14 @@ const PhoneInput = forwardRef<HTMLInputElement, PhoneInputProps>(
                                 {
                                   phonePrefix.find(
                                     (prefixObject) =>
-                                      prefixObject.country === suggestion
+                                      prefixObject.country === suggestion,
                                   )?.flag
                                 }
                               </span>
                               {
                                 phonePrefix.find(
                                   (prefixObject) =>
-                                    prefixObject.country === suggestion
+                                    prefixObject.country === suggestion,
                                 )?.name
                               }
                               <Check
@@ -1597,10 +1597,10 @@ const PhoneInput = forwardRef<HTMLInputElement, PhoneInputProps>(
                                   selectedPrefix ===
                                     phonePrefix.find(
                                       (prefixObject) =>
-                                        prefixObject.country === suggestion
+                                        prefixObject.country === suggestion,
                                     )
                                     ? "opacity-100"
-                                    : "opacity-0"
+                                    : "opacity-0",
                                 )}
                               />
                             </CommandItem>
@@ -1618,11 +1618,11 @@ const PhoneInput = forwardRef<HTMLInputElement, PhoneInputProps>(
                           key={prefixInMap.prefix}
                           onSelect={() => {
                             setInputValue(
-                              prefixInMap.prefix.replace(/[^0-9]/g, "")
+                              prefixInMap.prefix.replace(/[^0-9]/g, ""),
                             );
                             if (onInputChange) {
                               onInputChange(
-                                prefixInMap.prefix.replace(/[^0-9]/g, "")
+                                prefixInMap.prefix.replace(/[^0-9]/g, ""),
                               );
                             }
                             setOpen(false);
@@ -1636,7 +1636,7 @@ const PhoneInput = forwardRef<HTMLInputElement, PhoneInputProps>(
                               "ml-auto h-4 w-4",
                               selectedPrefix === prefixInMap
                                 ? "opacity-100"
-                                : "opacity-0"
+                                : "opacity-0",
                             )}
                           />
                         </CommandItem>
@@ -1649,12 +1649,12 @@ const PhoneInput = forwardRef<HTMLInputElement, PhoneInputProps>(
         </div>
         <Input
           className={cn(
-            "flex h-9 w-full rounded-md border-0 px-3 py-1 text-sm shadow-none transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-0 disabled:cursor-not-allowed disabled:opacity-50 bg-transparent",
+            "flex h-9 w-full rounded-md border-0 bg-transparent px-3 py-1 text-sm shadow-none transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-0 disabled:cursor-not-allowed disabled:opacity-50",
             status === "success" &&
-              "text-lime-600 placeholder:opacity-80 placeholder:text-lime-600",
+              "text-lime-600 placeholder:text-lime-600 placeholder:opacity-80",
             status === "error" &&
-              "text-red-500 placeholder:opacity-80 placeholder:text-red-500",
-            className
+              "text-red-500 placeholder:text-red-500 placeholder:opacity-80",
+            className,
           )}
           disabled={disabled}
           inputMode="tel"
@@ -1691,7 +1691,7 @@ const PhoneInput = forwardRef<HTMLInputElement, PhoneInputProps>(
         />
       </div>
     );
-  }
+  },
 );
 
 PhoneInput.displayName = "PhoneInput";

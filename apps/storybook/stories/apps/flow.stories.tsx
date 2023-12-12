@@ -282,7 +282,7 @@ function FlowWithProviderAndHook(prop: Story["args"]): JSX.Element {
               height: 112,
               width: 300,
             },
-            { duration: 800, padding: 0.8 }
+            { duration: 800, padding: 0.8 },
           );
         }}
       >

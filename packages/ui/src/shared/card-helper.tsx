@@ -12,7 +12,7 @@ export function CardPopoverItem({
 }): JSX.Element {
   return (
     <div className="grid grid-cols-[0.5fr_1fr] px-3">
-      <div className="flex gap-2 items-center opacity-50">
+      <div className="flex items-center gap-2 opacity-50">
         {icon}
         <p className="text-sm font-medium">{label}</p>
       </div>
@@ -27,8 +27,8 @@ function CardComment({
   comment: { author: string; text: string; createdAt: string };
 }): JSX.Element {
   return (
-    <div className="px-3 grid grid-cols-[36px_1fr] gap-2">
-      <div className="relative flex h-9 w-9 shrink-0 overflow-hidden rounded-full items-center justify-center bg-purple-900">
+    <div className="grid grid-cols-[36px_1fr] gap-2 px-3">
+      <div className="relative flex h-9 w-9 shrink-0 items-center justify-center overflow-hidden rounded-full bg-purple-900">
         <Avatar>
           <AvatarImage alt="@shadcn" src="https://github.com/shadcn.png" />
           <AvatarFallback>CN</AvatarFallback>
@@ -51,10 +51,10 @@ export function CompanyCardCommentSection({
   comments: { author: string; text: string; createdAt: string }[];
 }): JSX.Element {
   return (
-    <div className="px-3 gap-5 grid">
+    <div className="grid gap-5 px-3">
       <div className="flex gap-2">
         <p className="text-[0.66rem] opacity-50">Comments</p>
-        <p className="font-bold text-[0.66rem] opacity-50">{comments.length}</p>
+        <p className="text-[0.66rem] font-bold opacity-50">{comments.length}</p>
       </div>
       <ScrollArea className="h-[calc(var(--radix-popover-content-available-height)-10px-350px)]">
         <div className="grid gap-4">
@@ -73,10 +73,10 @@ export function ContactCardCommentSection({
   comments: { author: string; text: string; createdAt: string }[];
 }): JSX.Element {
   return (
-    <div className="px-3 gap-5 grid">
+    <div className="grid gap-5 px-3">
       <div className="flex gap-2">
         <p className="text-[0.66rem] opacity-50">Comments</p>
-        <p className="font-bold text-[0.66rem] opacity-50">{comments.length}</p>
+        <p className="text-[0.66rem] font-bold opacity-50">{comments.length}</p>
       </div>
       <ScrollArea className="h-[calc(var(--radix-popover-content-available-height)-10px-250px)]">
         <div className="grid gap-4">

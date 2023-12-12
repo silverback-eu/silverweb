@@ -40,7 +40,7 @@ const RadioInput = forwardRef<ElementRef<typeof Item>, RadioInputProps>(
             !readOnly && !disabled
               ? " cursor-pointer"
               : "cursor-not-allowed opacity-50",
-            className
+            className,
           )}
           onClick={() => {
             if (ref) {
@@ -53,16 +53,16 @@ const RadioInput = forwardRef<ElementRef<typeof Item>, RadioInputProps>(
             }
           }}
         >
-          <CardContent className="p-2 pr-5 flex gap-2 items-center justify-between">
-            <div className="flex gap-2 items-center">
-              <div className="flex justify-center items-center bg-muted rounded-xl h-10 w-10">
+          <CardContent className="flex items-center justify-between gap-2 p-2 pr-5">
+            <div className="flex items-center gap-2">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-muted">
                 {props.icon || <ListTodo size={24} />}
               </div>
               <div className="grid content-center">
-                <p className="text-sm font-semibold text-start select-none">
+                <p className="select-none text-start text-sm font-semibold">
                   {cardLabel || "Label"}
                 </p>
-                <p className="text-xs opacity-50 text-start select-none">
+                <p className="select-none text-start text-xs opacity-50">
                   {cardDescription || "Description"}
                 </p>
               </div>
@@ -102,7 +102,7 @@ const RadioInput = forwardRef<ElementRef<typeof Item>, RadioInputProps>(
         {...rest}
       />
     );
-  }
+  },
 );
 
 RadioInput.displayName = "RadioInput";

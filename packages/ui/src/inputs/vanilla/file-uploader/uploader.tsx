@@ -25,17 +25,17 @@ export function Uploader({
     <Card
       {...getRootProps({ className: "dropzone" })}
       className={cn(
-        "h-48 overflow-hidden relative px-4 py-8 w-full text-center space-y-3 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring hover:ring-1 hover:ring-secondary transition-all",
+        "relative h-48 w-full space-y-3 overflow-hidden px-4 py-8 text-center transition-all hover:ring-1 hover:ring-secondary focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring",
         (isDragActive || isFileDialogActive) && "ring-1 ring-ring",
         status === "success" && "!text-green-500",
         status === "error" && "!text-red-500",
-        disabled && "select-none cursor-not-allowed opacity-50",
-        readOnly && "select-none"
+        disabled && "cursor-not-allowed select-none opacity-50",
+        readOnly && "select-none",
       )}
     >
       <input {...getInputProps()} />
       <Fragment>
-        <div className="flex justify-center items-center !mt-0 bg-muted mx-auto rounded-xl h-10 w-10">
+        <div className="mx-auto !mt-0 flex h-10 w-10 items-center justify-center rounded-xl bg-muted">
           <UploadCloud className="h-6 w-6" />
         </div>
         <p className="text-sm font-bold tracking-tight">
@@ -47,7 +47,7 @@ export function Uploader({
           className={cn(
             "text-xs text-warm",
             status === "success" && "!text-green-500 opacity-70",
-            status === "error" && "!text-red-500 opacity-70"
+            status === "error" && "!text-red-500 opacity-70",
           )}
         >
           Support for single or bulk upload. Only *.pdf, *.png, *jpg, *.doc and
@@ -81,13 +81,13 @@ export function AcceptedFile({
   }
   return (
     <Card>
-      <CardContent className="p-2 flex gap-2 items-center">
-        <div className="flex justify-center items-center bg-muted rounded-xl h-10 w-10">
+      <CardContent className="flex items-center gap-2 p-2">
+        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-muted">
           <Icon className="h-6 w-6" />
         </div>
-        <div className="grid content-center w-[calc(100%-92px)]">
-          <p className="text-sm font-semibold text-start truncate">{name}</p>
-          <p className="text-xs opacity-50 text-start truncate">
+        <div className="grid w-[calc(100%-92px)] content-center">
+          <p className="truncate text-start text-sm font-semibold">{name}</p>
+          <p className="truncate text-start text-xs opacity-50">
             {typeGroup}/{name.split(".")[name.split(".").length - 1]}{" "}
             {Math.round(size * 0.001 * 100) / 100} KB
           </p>
@@ -99,7 +99,7 @@ export function AcceptedFile({
           size="icon"
           variant="link"
         >
-          <X className="w-5 h-5" />
+          <X className="h-5 w-5" />
         </Button>
       </CardContent>
     </Card>
@@ -138,13 +138,13 @@ export function RejectedFile({
   });
   return (
     <Card className="text-red-500">
-      <CardContent className="p-2 flex gap-2 items-center">
-        <div className="flex justify-center items-center bg-muted rounded-xl h-10 w-10">
+      <CardContent className="flex items-center gap-2 p-2">
+        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-muted">
           <Icon className="h-6 w-6" />
         </div>
-        <div className="grid content-center w-[calc(100%-92px)]">
-          <p className="text-sm font-semibold text-start truncate">{name}</p>
-          <p className="text-xs opacity-50 text-start truncate">
+        <div className="grid w-[calc(100%-92px)] content-center">
+          <p className="truncate text-start text-sm font-semibold">{name}</p>
+          <p className="truncate text-start text-xs opacity-50">
             {ErrorMessage}
           </p>
         </div>
@@ -155,7 +155,7 @@ export function RejectedFile({
           size="icon"
           variant="link"
         >
-          <X className="w-5 h-5" />
+          <X className="h-5 w-5" />
         </Button>
       </CardContent>
     </Card>

@@ -14,7 +14,7 @@ const PasswordInput = forwardRef<HTMLInputElement, PasswordInputProps>(
     const { className, status, onFocus, onBlur, disabled, readOnly, ...rest } =
       props;
     const [showPassword, setShowPassword] = useState(
-      Boolean(disabled || readOnly)
+      Boolean(disabled || readOnly),
     );
     const IconContainerRef = useRef<HTMLDivElement>(null);
 
@@ -29,12 +29,12 @@ const PasswordInput = forwardRef<HTMLInputElement, PasswordInputProps>(
           className={cn(
             readOnly
               ? "focus-visible:ring-1 focus-visible:ring-accent"
-              : "hover:ring-1 hover:ring-secondary transition-all focus:-translate-y-[1px]",
+              : "transition-all hover:ring-1 hover:ring-secondary focus:-translate-y-[1px]",
             status === "success" &&
-              "text-lime-600 placeholder:opacity-80 placeholder:text-lime-600 hover:ring-1 hover:ring-lime-600 focus-visible:ring-1 focus-visible:ring-lime-500",
+              "text-lime-600 placeholder:text-lime-600 placeholder:opacity-80 hover:ring-1 hover:ring-lime-600 focus-visible:ring-1 focus-visible:ring-lime-500",
             status === "error" &&
-              "text-red-500 placeholder:opacity-80 placeholder:text-red-500 hover:ring-1 hover:ring-red-600 focus-visible:ring-1 focus-visible:ring-red-500",
-            className
+              "text-red-500 placeholder:text-red-500 placeholder:opacity-80 hover:ring-1 hover:ring-red-600 focus-visible:ring-1 focus-visible:ring-red-500",
+            className,
           )}
           disabled={disabled}
           onBlur={(ev) => {
@@ -55,7 +55,7 @@ const PasswordInput = forwardRef<HTMLInputElement, PasswordInputProps>(
           {...rest}
         />
         <div
-          className="transition-all absolute inset-y-0 right-3 flex items-center text-muted-foreground cursor-pointer"
+          className="absolute inset-y-0 right-3 flex cursor-pointer items-center text-muted-foreground transition-all"
           onClick={() => {
             setShowPassword(!showPassword);
           }}
@@ -70,7 +70,7 @@ const PasswordInput = forwardRef<HTMLInputElement, PasswordInputProps>(
         </div>
       </div>
     );
-  }
+  },
 );
 
 PasswordInput.displayName = "PasswordInput";

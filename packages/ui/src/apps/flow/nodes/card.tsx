@@ -35,8 +35,8 @@ function CardNodeDf({
       <Handle
         className={cn(
           direction === "horizontal"
-            ? "!h-8 !min-w-0 !w-0.5 !transform translate-x-0.5 -translate-y-1/2 !bg-muted !border-border !rounded-l-sm !rounded-r-none"
-            : "!w-8 !min-h-0 !h-0.5 !mt-0.5 !bg-muted !border-border !rounded-t-sm !rounded-b-none"
+            ? "!h-8 !w-0.5 !min-w-0 -translate-y-1/2 translate-x-0.5 !transform !rounded-l-sm !rounded-r-none !border-border !bg-muted"
+            : "!mt-0.5 !h-0.5 !min-h-0 !w-8 !rounded-b-none !rounded-t-sm !border-border !bg-muted",
         )}
         isConnectable={isConnectable}
         position={direction === "horizontal" ? Position.Left : Position.Top}
@@ -45,8 +45,8 @@ function CardNodeDf({
       <Handle
         className={cn(
           direction === "horizontal"
-            ? "!h-8 !min-w-0 !w-0.5 !transform -translate-x-0.5 -translate-y-1/2  !bg-muted !border-border !rounded-r-sm !rounded-l-none"
-            : "!w-8 !min-h-0 !h-0.5 !transform -translate-x-1/2 -translate-y-0.5  !bg-muted !border-border !rounded-b-sm !rounded-t-none"
+            ? "!h-8 !w-0.5 !min-w-0 -translate-x-0.5 -translate-y-1/2 !transform  !rounded-l-none !rounded-r-sm !border-border !bg-muted"
+            : "!h-0.5 !min-h-0 !w-8 -translate-x-1/2 -translate-y-0.5 !transform  !rounded-b-sm !rounded-t-none !border-border !bg-muted",
         )}
         isConnectable={isConnectable}
         position={direction === "horizontal" ? Position.Right : Position.Bottom}
@@ -69,8 +69,8 @@ function CardNodeIn({
       <Handle
         className={cn(
           direction === "horizontal"
-            ? "!h-8 !min-w-0 !w-0.5 !transform translate-x-0.5 -translate-y-1/2 !bg-muted !border-border !rounded-l-sm !rounded-r-none"
-            : "!w-8 !min-h-0 !h-0.5 !mt-0.5 !bg-muted !border-border !rounded-t-sm !rounded-b-none"
+            ? "!h-8 !w-0.5 !min-w-0 -translate-y-1/2 translate-x-0.5 !transform !rounded-l-sm !rounded-r-none !border-border !bg-muted"
+            : "!mt-0.5 !h-0.5 !min-h-0 !w-8 !rounded-b-none !rounded-t-sm !border-border !bg-muted",
         )}
         isConnectable={isConnectable}
         position={direction === "horizontal" ? Position.Left : Position.Top}
@@ -93,8 +93,8 @@ function CardNodeOut({
       <Handle
         className={cn(
           direction === "horizontal"
-            ? "!h-8 !min-w-0 !w-0.5 !transform -translate-x-0.5 -translate-y-1/2  !bg-muted !border-border !rounded-r-sm !rounded-l-none"
-            : "!w-8 !min-h-0 !h-0.5 !transform -translate-x-1/2 -translate-y-0.5  !bg-muted !border-border !rounded-b-sm !rounded-t-none"
+            ? "!h-8 !w-0.5 !min-w-0 -translate-x-0.5 -translate-y-1/2 !transform  !rounded-l-none !rounded-r-sm !border-border !bg-muted"
+            : "!h-0.5 !min-h-0 !w-8 -translate-x-1/2 -translate-y-0.5 !transform  !rounded-b-sm !rounded-t-none !border-border !bg-muted",
         )}
         isConnectable={isConnectable}
         position={direction === "horizontal" ? Position.Right : Position.Bottom}

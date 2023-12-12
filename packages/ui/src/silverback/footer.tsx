@@ -2,24 +2,24 @@ import { Separator, Logo } from "../shared";
 
 export function Footer(): JSX.Element {
   return (
-    <footer className="overflow-visible mx-auto mt-[300px]">
+    <footer className="mx-auto mt-[300px] overflow-visible">
       <Separator />
       <div className="bg-zinc-700 bg-opacity-10">
-        <div className="w-full mx-auto max-w-[1400px] p-4 relative h-[500px] sm:h-[600px] lg:h-[350px]">
-          <div className="bottom-16 absolute grid lg:grid-cols-2 w-[calc(100%-32px)]">
+        <div className="relative mx-auto h-[500px] w-full max-w-[1400px] p-4 sm:h-[600px] lg:h-[350px]">
+          <div className="absolute bottom-16 grid w-[calc(100%-32px)] lg:grid-cols-2">
             <div>
               <div className="hidden sm:block">
-                <p className="text-3xl tracking-[-0.05em] font-bold content-center  ml-7">
+                <p className="ml-7 content-center text-3xl font-bold  tracking-[-0.05em]">
                   Powering mission-critical <br /> construction throughout
                   Europe.
                 </p>
-                <p className="px-7 text-sm mb-2  mt-2">
+                <p className="mb-2 mt-2 px-7 text-sm ">
                   SilverBack HQ ⌁ Station Mews, Lindsay Grove, Dublin 9, D09
                   CC92, Ireland <br />
                   <a href="tel:+353 1 441 0102">+353 1 441 0102</a> |{" "}
                   <a href="mailto:work@silverback.ie">work@silverback.ie</a>
                 </p>
-                <div className="px-7 flex gap-3 mb-10">
+                <div className="mb-10 flex gap-3 px-7">
                   <a
                     href="https://www.facebook.com/SilverBackStaffing"
                     rel="noopener noreferrer"
@@ -76,20 +76,20 @@ export function Footer(): JSX.Element {
               <div className="flex">
                 <div className="flex">
                   <Logo wh={40} />
-                  <p className="text-3xl tracking-[-0.05em] font-bold content-center select-none">
+                  <p className="select-none content-center text-3xl font-bold tracking-[-0.05em]">
                     SilverBack <b className="text-warm">group</b>
                   </p>
                 </div>
               </div>
               <p className="pl-7">Copyright ©{new Date().getFullYear()}</p>
               <div className="sm:hidden">
-                <p className="px-7 text-sm mb-2  mt-2">
+                <p className="mb-2 mt-2 px-7 text-sm ">
                   SilverBack HQ - Station Mews, Lindsay Grove, Dublin 9, D09
                   CC92, Ireland <br />
                   <a href="tel:+353 1 441 0102">+353 1 441 0102</a> |{" "}
                   <a href="mailto:work@silverback.ie">work@silverback.ie</a>
                 </p>
-                <div className="px-7 flex gap-3 mb-10">
+                <div className="mb-10 flex gap-3 px-7">
                   <a
                     href="https://www.facebook.com/SilverBackStaffing"
                     rel="noopener noreferrer"
@@ -145,35 +145,35 @@ export function Footer(): JSX.Element {
               </div>
             </div>
             <div>
-              <div className="grid gap-1 sm:gap-0 sm:grid-cols-3 max-sm:px-10 p-0  sm:p-10">
+              <div className="grid gap-1 p-0 max-sm:px-10 sm:grid-cols-3 sm:gap-0  sm:p-10">
                 <a className="max-sm:h-12" href="/">
-                  <b className="hover:opacity-60 transition-opacity text-lg">
+                  <b className="text-lg transition-opacity hover:opacity-60">
                     Home
                   </b>
                 </a>
                 <a className="max-sm:h-12" href="/connect">
-                  <b className="hover:opacity-60 transition-opacity text-lg">
+                  <b className="text-lg transition-opacity hover:opacity-60">
                     Contact
                   </b>
                 </a>
                 <a className="max-sm:h-12" href="/privacy-policy">
-                  <b className="hover:opacity-60 transition-opacity text-lg ">
+                  <b className="text-lg transition-opacity hover:opacity-60 ">
                     Privacy Policy
                   </b>
                 </a>
-                <div className="hidden sm:block opacity-0">@dontfred</div>
-                <div className="hidden sm:block opacity-0">@dontfred</div>
-                <div className="hidden sm:block opacity-0">@dontfred</div>
-                <b className="hidden sm:block text-warm text-lg">About</b>
-                <b className="hidden sm:block text-warm text-lg">Job board</b>
-                <b className="hidden sm:block text-warm text-lg">
+                <div className="hidden opacity-0 sm:block">@dontfred</div>
+                <div className="hidden opacity-0 sm:block">@dontfred</div>
+                <div className="hidden opacity-0 sm:block">@dontfred</div>
+                <b className="hidden text-lg text-warm sm:block">About</b>
+                <b className="hidden text-lg text-warm sm:block">Job board</b>
+                <b className="hidden text-lg text-warm sm:block">
                   Industry insights
                 </b>
                 <a
                   aria-label="Go to here to learn more about our story"
                   href="/our-story"
                 >
-                  <b className="hidden sm:block hover:opacity-60 transition-opacity ">
+                  <b className="hidden transition-opacity hover:opacity-60 sm:block ">
                     Our Story
                   </b>
                 </a>
@@ -181,7 +181,7 @@ export function Footer(): JSX.Element {
                   aria-label="Go to see all available blue collar jobs"
                   href="/jobboard?category=blue-collar"
                 >
-                  <b className="hidden sm:block hover:opacity-60 transition-opacity ">
+                  <b className="hidden transition-opacity hover:opacity-60 sm:block ">
                     Blue Collar
                   </b>
                 </a>
@@ -189,7 +189,7 @@ export function Footer(): JSX.Element {
                   aria-label="Go to here to learn more about company news. A Blog series"
                   href="/industry-insights?category=company-news"
                 >
-                  <b className="hidden sm:block hover:opacity-60 transition-opacity ">
+                  <b className="hidden transition-opacity hover:opacity-60 sm:block ">
                     Company news
                   </b>
                 </a>
@@ -198,7 +198,7 @@ export function Footer(): JSX.Element {
                   aria-label="Go to here to learn more about the methods we use"
                   href="/methods"
                 >
-                  <b className="hidden sm:block hover:opacity-60 transition-opacity ">
+                  <b className="hidden transition-opacity hover:opacity-60 sm:block ">
                     Methods
                   </b>
                 </a>
@@ -206,7 +206,7 @@ export function Footer(): JSX.Element {
                   aria-label="Go to see all available white collar jobs"
                   href="/jobboard?category=white-collar"
                 >
-                  <b className="hidden sm:block hover:opacity-60 transition-opacity ">
+                  <b className="hidden transition-opacity hover:opacity-60 sm:block ">
                     White Collar
                   </b>
                 </a>
@@ -214,7 +214,7 @@ export function Footer(): JSX.Element {
                   aria-label="Go to here to learn more about better work. A Blog series"
                   href="/industry-insights?category=better-work"
                 >
-                  <b className="hidden sm:block hover:opacity-60 transition-opacity ">
+                  <b className="hidden transition-opacity hover:opacity-60 sm:block ">
                     Better work
                   </b>
                 </a>
@@ -222,12 +222,12 @@ export function Footer(): JSX.Element {
                   aria-label="Go to here to learn more about our partnerships"
                   href="/partnerships"
                 >
-                  <b className="hidden sm:block hover:opacity-60 transition-opacity ">
+                  <b className="hidden transition-opacity hover:opacity-60 sm:block ">
                     Partnerships
                   </b>
                 </a>
                 <a aria-label="Go to see all available jobs." href="/jobboard">
-                  <b className="hidden sm:block hover:opacity-60 transition-opacity ">
+                  <b className="hidden transition-opacity hover:opacity-60 sm:block ">
                     All
                   </b>
                 </a>
@@ -235,7 +235,7 @@ export function Footer(): JSX.Element {
                   aria-label="Go to here to learn more around industry. A Blog series"
                   href="/industry-insights/?category=around-industry"
                 >
-                  <b className="hidden sm:block hover:opacity-60 transition-opacity ">
+                  <b className="hidden transition-opacity hover:opacity-60 sm:block ">
                     Around Industry
                   </b>
                 </a>

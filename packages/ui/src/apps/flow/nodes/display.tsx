@@ -21,16 +21,16 @@ function DisplayNodeWO({
     <Card
       className={cn("min-w-[200px]", dragging && "cursor-grabbing", className)}
     >
-      <CardContent className="p-2 pr-5 flex gap-2 items-center justify-between">
-        <div className="flex gap-2 items-center">
-          <div className="flex justify-center items-center bg-muted rounded-xl h-10 w-10">
+      <CardContent className="flex items-center justify-between gap-2 p-2 pr-5">
+        <div className="flex items-center gap-2">
+          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-muted">
             <Icon size={24} />
           </div>
           <div className="grid content-center">
-            <p className="text-sm font-semibold text-start select-none">
+            <p className="select-none text-start text-sm font-semibold">
               {label}
             </p>
-            <p className="text-xs opacity-50 text-start select-none">
+            <p className="select-none text-start text-xs opacity-50">
               {description}
             </p>
           </div>
@@ -51,16 +51,16 @@ function DisplayNodeDf({
     <Card
       className={cn("min-w-[200px]", dragging && "cursor-grabbing", className)}
     >
-      <CardContent className="p-2 pr-5 flex gap-2 items-center justify-between">
-        <div className="flex gap-2 items-center">
-          <div className="flex justify-center items-center bg-muted rounded-xl h-10 w-10">
+      <CardContent className="flex items-center justify-between gap-2 p-2 pr-5">
+        <div className="flex items-center gap-2">
+          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-muted">
             <Icon size={24} />
           </div>
           <div className="grid content-center">
-            <p className="text-sm font-semibold text-start select-none">
+            <p className="select-none text-start text-sm font-semibold">
               {label}
             </p>
-            <p className="text-xs opacity-50 text-start select-none">
+            <p className="select-none text-start text-xs opacity-50">
               {description}
             </p>
           </div>
@@ -69,8 +69,8 @@ function DisplayNodeDf({
       <Handle
         className={cn(
           direction === "horizontal"
-            ? "!h-8 !min-w-0 !w-0.5 !transform translate-x-0.5 -translate-y-1/2 !bg-muted !border-border !rounded-l-sm !rounded-r-none"
-            : "!w-8 !min-h-0 !h-0.5 !mt-0.5 !bg-muted !border-border !rounded-t-sm !rounded-b-none"
+            ? "!h-8 !w-0.5 !min-w-0 -translate-y-1/2 translate-x-0.5 !transform !rounded-l-sm !rounded-r-none !border-border !bg-muted"
+            : "!mt-0.5 !h-0.5 !min-h-0 !w-8 !rounded-b-none !rounded-t-sm !border-border !bg-muted",
         )}
         isConnectable={isConnectable}
         position={direction === "horizontal" ? Position.Left : Position.Top}
@@ -79,8 +79,8 @@ function DisplayNodeDf({
       <Handle
         className={cn(
           direction === "horizontal"
-            ? "!h-8 !min-w-0 !w-0.5 !transform -translate-x-0.5 -translate-y-1/2  !bg-muted !border-border !rounded-r-sm !rounded-l-none"
-            : "!w-8 !min-h-0 !h-0.5 !transform -translate-x-1/2 -translate-y-0.5  !bg-muted !border-border !rounded-b-sm !rounded-t-none"
+            ? "!h-8 !w-0.5 !min-w-0 -translate-x-0.5 -translate-y-1/2 !transform  !rounded-l-none !rounded-r-sm !border-border !bg-muted"
+            : "!h-0.5 !min-h-0 !w-8 -translate-x-1/2 -translate-y-0.5 !transform  !rounded-b-sm !rounded-t-none !border-border !bg-muted",
         )}
         isConnectable={isConnectable}
         position={direction === "horizontal" ? Position.Right : Position.Bottom}
@@ -101,16 +101,16 @@ function DisplayNodeIn({
     <Card
       className={cn("min-w-[200px]", dragging && "cursor-grabbing", className)}
     >
-      <CardContent className="p-2 pr-5 flex gap-2 items-center justify-between">
-        <div className="flex gap-2 items-center">
-          <div className="flex justify-center items-center bg-muted rounded-xl h-10 w-10">
+      <CardContent className="flex items-center justify-between gap-2 p-2 pr-5">
+        <div className="flex items-center gap-2">
+          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-muted">
             <Icon size={24} />
           </div>
           <div className="grid content-center">
-            <p className="text-sm font-semibold text-start select-none">
+            <p className="select-none text-start text-sm font-semibold">
               {label}
             </p>
-            <p className="text-xs opacity-50 text-start select-none">
+            <p className="select-none text-start text-xs opacity-50">
               {description}
             </p>
           </div>
@@ -119,8 +119,8 @@ function DisplayNodeIn({
       <Handle
         className={cn(
           direction === "horizontal"
-            ? "!h-8 !min-w-0 !w-0.5 !transform translate-x-0.5 -translate-y-1/2 !bg-muted !border-border !rounded-l-sm !rounded-r-none"
-            : "!w-8 !min-h-0 !h-0.5 !mt-0.5 !bg-muted !border-border !rounded-t-sm !rounded-b-none"
+            ? "!h-8 !w-0.5 !min-w-0 -translate-y-1/2 translate-x-0.5 !transform !rounded-l-sm !rounded-r-none !border-border !bg-muted"
+            : "!mt-0.5 !h-0.5 !min-h-0 !w-8 !rounded-b-none !rounded-t-sm !border-border !bg-muted",
         )}
         isConnectable={isConnectable}
         position={direction === "horizontal" ? Position.Left : Position.Top}
@@ -141,16 +141,16 @@ function DisplayNodeOut({
     <Card
       className={cn("min-w-[200px]", dragging && "cursor-grabbing", className)}
     >
-      <CardContent className="p-2 pr-5 flex gap-2 items-center justify-between">
-        <div className="flex gap-2 items-center">
-          <div className="flex justify-center items-center bg-muted rounded-xl h-10 w-10">
+      <CardContent className="flex items-center justify-between gap-2 p-2 pr-5">
+        <div className="flex items-center gap-2">
+          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-muted">
             <Icon size={24} />
           </div>
           <div className="grid content-center">
-            <p className="text-sm font-semibold text-start select-none">
+            <p className="select-none text-start text-sm font-semibold">
               {label}
             </p>
-            <p className="text-xs opacity-50 text-start select-none">
+            <p className="select-none text-start text-xs opacity-50">
               {description}
             </p>
           </div>
@@ -159,8 +159,8 @@ function DisplayNodeOut({
       <Handle
         className={cn(
           direction === "horizontal"
-            ? "!h-8 !min-w-0 !w-0.5 !transform -translate-x-0.5 -translate-y-1/2  !bg-muted !border-border !rounded-r-sm !rounded-l-none"
-            : "!w-8 !min-h-0 !h-0.5 !transform -translate-x-1/2 -translate-y-0.5  !bg-muted !border-border !rounded-b-sm !rounded-t-none"
+            ? "!h-8 !w-0.5 !min-w-0 -translate-x-0.5 -translate-y-1/2 !transform  !rounded-l-none !rounded-r-sm !border-border !bg-muted"
+            : "!h-0.5 !min-h-0 !w-8 -translate-x-1/2 -translate-y-0.5 !transform  !rounded-b-sm !rounded-t-none !border-border !bg-muted",
         )}
         isConnectable={isConnectable}
         position={direction === "horizontal" ? Position.Right : Position.Bottom}

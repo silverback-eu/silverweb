@@ -1,7 +1,7 @@
 import { Card, CardContent, Skeleton } from "../shared";
 
 export interface LoadingInputProps {
-  variant:
+  variant?:
     | "combo"
     | "date"
     | "range"
@@ -13,7 +13,8 @@ export interface LoadingInputProps {
     | "text"
     | "textarea"
     | "checkbox"
-    | "radio";
+    | "radio"
+    | "slider";
   checkboxRadioBig?: boolean;
 }
 
@@ -28,21 +29,21 @@ function LoadingTextAreaInput(): JSX.Element {
 function LoadingFileInput(): JSX.Element {
   return (
     <div>
-      <Card className="h-48 overflow-hidden relative px-4 py-8 w-full text-center space-y-3 transition-all">
-        <Skeleton className="flex justify-center items-center !mt-0 bg-muted mx-auto rounded-xl h-10 w-10" />
-        <Skeleton className="h-5 w-64 mx-auto" />
+      <Card className="relative h-48 w-full space-y-3 overflow-hidden px-4 py-8 text-center transition-all">
+        <Skeleton className="mx-auto !mt-0 flex h-10 w-10 items-center justify-center rounded-xl bg-muted" />
+        <Skeleton className="mx-auto h-5 w-64" />
         <p className="text-xs">
-          <span className="animate-pulse rounded-md bg-primary/10 text-transparent box-decoration-clone select-none">
+          <span className="animate-pulse select-none rounded-md bg-primary/10 box-decoration-clone text-transparent">
             Support for single or bulk upload. Only *.pdf, *.png, *jpg, *.doc
             and *.docx file types are supported.
           </span>
         </p>
       </Card>
-      <div className="grid gap-2 my-4">
+      <div className="my-4 grid gap-2">
         <Card>
-          <CardContent className="p-2 pr-5 flex gap-2 items-center justify-between">
-            <div className="flex gap-2 items-center">
-              <Skeleton className="flex justify-center items-center bg-muted rounded-xl h-8 w-8" />
+          <CardContent className="flex items-center justify-between gap-2 p-2 pr-5">
+            <div className="flex items-center gap-2">
+              <Skeleton className="flex h-8 w-8 items-center justify-center rounded-xl bg-muted" />
               <div className="grid content-center gap-[7px]">
                 <Skeleton className="h-4 w-28" />
                 <div className="flex gap-2">
@@ -55,9 +56,9 @@ function LoadingFileInput(): JSX.Element {
           </CardContent>
         </Card>
         <Card>
-          <CardContent className="p-2 pr-5 flex gap-2 items-center justify-between">
-            <div className="flex gap-2 items-center">
-              <Skeleton className="flex justify-center items-center bg-muted rounded-xl h-8 w-8" />
+          <CardContent className="flex items-center justify-between gap-2 p-2 pr-5">
+            <div className="flex items-center gap-2">
+              <Skeleton className="flex h-8 w-8 items-center justify-center rounded-xl bg-muted" />
               <div className="grid content-center gap-[7px]">
                 <Skeleton className="h-4 w-28" />
                 <div className="flex gap-2">
@@ -70,9 +71,9 @@ function LoadingFileInput(): JSX.Element {
           </CardContent>
         </Card>
         <Card>
-          <CardContent className="p-2 pr-5 flex gap-2 items-center justify-between">
-            <div className="flex gap-2 items-center">
-              <Skeleton className="flex justify-center items-center bg-muted rounded-xl h-8 w-8" />
+          <CardContent className="flex items-center justify-between gap-2 p-2 pr-5">
+            <div className="flex items-center gap-2">
+              <Skeleton className="flex h-8 w-8 items-center justify-center rounded-xl bg-muted" />
               <div className="grid content-center gap-[7px]">
                 <Skeleton className="h-4 w-28" />
                 <div className="flex gap-2">
@@ -93,9 +94,9 @@ function LoadingCheckboxInput({ big }: { big?: boolean }): JSX.Element {
   if (big) {
     return (
       <Card>
-        <CardContent className="p-2 pr-5 flex gap-2 items-center justify-between">
-          <div className="flex gap-2 items-center">
-            <Skeleton className="flex justify-center items-center bg-muted rounded-xl h-10 w-10" />
+        <CardContent className="flex items-center justify-between gap-2 p-2 pr-5">
+          <div className="flex items-center gap-2">
+            <Skeleton className="flex h-10 w-10 items-center justify-center rounded-xl bg-muted" />
             <div className="grid content-center gap-1">
               <Skeleton className="h-4 w-20" />
               <Skeleton className="h-3 w-36" />
@@ -114,9 +115,9 @@ function LoadingRadioInput({ big }: { big?: boolean }): JSX.Element {
   if (big) {
     return (
       <Card>
-        <CardContent className="p-2 pr-5 flex gap-2 items-center justify-between">
-          <div className="flex gap-2 items-center">
-            <Skeleton className="flex justify-center items-center bg-muted rounded-xl h-10 w-10" />
+        <CardContent className="flex items-center justify-between gap-2 p-2 pr-5">
+          <div className="flex items-center gap-2">
+            <Skeleton className="flex h-10 w-10 items-center justify-center rounded-xl bg-muted" />
             <div className="grid content-center gap-1">
               <Skeleton className="h-4 w-20" />
               <Skeleton className="h-3 w-36" />
@@ -129,6 +130,17 @@ function LoadingRadioInput({ big }: { big?: boolean }): JSX.Element {
   }
 
   return <Skeleton className="h-4 w-4 rounded-full" />;
+}
+
+function LoadingSlider(): JSX.Element {
+  return (
+    <div className="relative flex items-center justify-center">
+      <Skeleton className="h-2 w-full rounded-full" />
+      <div className="absolute -translate-x-12 rounded-full bg-background">
+        <Skeleton className="h-5 w-5 rounded-full " />
+      </div>
+    </div>
+  );
 }
 
 export function LoadingInput({
@@ -156,9 +168,13 @@ export function LoadingInput({
   if (variant === "radio") {
     return <LoadingRadioInput big={rest.checkboxRadioBig} />;
   }
-  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition -- Just to have a default if the variant is not handled
+
   if (variant === "checkbox") {
     return <LoadingCheckboxInput big={rest.checkboxRadioBig} />;
+  }
+
+  if (variant === "slider") {
+    return <LoadingSlider />;
   }
 
   return <div>Loading</div>;

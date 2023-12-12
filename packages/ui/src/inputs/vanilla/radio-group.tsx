@@ -11,7 +11,7 @@ type RadioGroupProps = {
 const RadioGroup = forwardRef<ElementRef<typeof Root>, RadioGroupProps>(
   ({ className, ...props }, ref) => (
     <Root className={cn("grid gap-2", className)} {...props} ref={ref} />
-  )
+  ),
 );
 RadioGroup.displayName = Root.displayName;
 
@@ -24,7 +24,7 @@ const RadioGroupItem = forwardRef<ElementRef<typeof Item>, RadioGroupItemProps>(
     <Item
       className={cn(
         "aspect-square h-4 w-4 rounded-full border border-primary text-primary shadow focus:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50",
-        className
+        className,
       )}
       ref={ref}
       {...props}
@@ -33,7 +33,7 @@ const RadioGroupItem = forwardRef<ElementRef<typeof Item>, RadioGroupItemProps>(
         <Circle className="h-2.5 w-2.5 fill-current text-current" />
       </Indicator>
     </Item>
-  )
+  ),
 );
 RadioGroupItem.displayName = Item.displayName;
 

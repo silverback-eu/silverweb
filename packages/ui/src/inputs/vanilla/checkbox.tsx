@@ -23,7 +23,7 @@ const Checkbox = forwardRef<
   <Root
     className={cn(
       "peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground",
-      className
+      className,
     )}
     ref={ref}
     {...props}
@@ -74,7 +74,7 @@ const CheckboxInput = forwardRef<
           !readOnly && !disabled
             ? " cursor-pointer"
             : "cursor-not-allowed opacity-50",
-          className
+          className,
         )}
         onClick={() => {
           if (ref) {
@@ -87,16 +87,16 @@ const CheckboxInput = forwardRef<
           }
         }}
       >
-        <CardContent className="p-2 pr-5 flex gap-2 items-center justify-between">
-          <div className="flex gap-2 items-center">
-            <div className="flex justify-center items-center bg-muted rounded-xl h-10 w-10">
+        <CardContent className="flex items-center justify-between gap-2 p-2 pr-5">
+          <div className="flex items-center gap-2">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-muted">
               {props.icon || <ListTodo size={24} />}
             </div>
             <div className="grid content-center">
-              <p className="text-sm font-semibold text-start select-none">
+              <p className="select-none text-start text-sm font-semibold">
                 {cardLabel || "Label"}
               </p>
-              <p className="text-xs opacity-50 text-start select-none">
+              <p className="select-none text-start text-xs opacity-50">
                 {cardDescription || "Description"}
               </p>
             </div>

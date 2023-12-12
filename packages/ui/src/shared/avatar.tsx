@@ -12,12 +12,12 @@ const Avatar = forwardRef<ElementRef<typeof Root>, AvatarProps>(
     <Root
       className={cn(
         "relative flex h-8 w-8 shrink-0 overflow-hidden rounded-full",
-        className
+        className,
       )}
       ref={ref}
       {...props}
     />
-  )
+  ),
 );
 Avatar.displayName = Root.displayName;
 
@@ -32,7 +32,7 @@ const AvatarImage = forwardRef<ElementRef<typeof Image>, AvatarImageProps>(
       ref={ref}
       {...props}
     />
-  )
+  ),
 );
 AvatarImage.displayName = Image.displayName;
 
@@ -47,7 +47,7 @@ const AvatarFallback = forwardRef<
   <Fallback
     className={cn(
       "flex h-full w-full items-center justify-center rounded-full bg-muted",
-      className
+      className,
     )}
     ref={ref}
     {...props}

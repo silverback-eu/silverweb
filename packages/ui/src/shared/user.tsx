@@ -203,8 +203,8 @@ export function User({
   return (
     <div
       className={cn(
-        "relative flex h-9 w-9 shrink-0 overflow-hidden rounded-full items-center justify-center",
-        BorderColor
+        "relative flex h-9 w-9 shrink-0 items-center justify-center overflow-hidden rounded-full",
+        BorderColor,
       )}
     >
       <DropdownMenu>

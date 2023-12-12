@@ -39,12 +39,12 @@ const SheetOverlay = forwardRef<ElementRef<typeof Overlay>, SheetOverlayProps>(
     <Overlay
       className={cn(
         "fixed inset-0 z-50 bg-background/20 backdrop-blur-[2px] data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
-        className
+        className,
       )}
       {...props}
       ref={ref}
     />
-  )
+  ),
 );
 SheetOverlay.displayName = Overlay.displayName;
 
@@ -64,7 +64,7 @@ const sheetVariants = cva(
     defaultVariants: {
       side: "right",
     },
-  }
+  },
 );
 
 interface SheetContentProps
@@ -87,7 +87,7 @@ const SheetContent = forwardRef<ElementRef<typeof Content>, SheetContentProps>(
         </Close>
       </Content>
     </SheetPortal>
-  )
+  ),
 );
 SheetContent.displayName = Content.displayName;
 
@@ -100,7 +100,7 @@ function SheetHeader({ className, ...props }: SheetHeaderProps): JSX.Element {
     <div
       className={cn(
         "flex flex-col space-y-2 text-center sm:text-left",
-        className
+        className,
       )}
       {...props}
     />
@@ -117,7 +117,7 @@ function SheetFooter({ className, ...props }: SheetFooterProps): JSX.Element {
     <div
       className={cn(
         "flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2",
-        className
+        className,
       )}
       {...props}
     />
@@ -136,7 +136,7 @@ const SheetTitle = forwardRef<ElementRef<typeof Title>, SheetTitleProps>(
       ref={ref}
       {...props}
     />
-  )
+  ),
 );
 SheetTitle.displayName = Title.displayName;
 

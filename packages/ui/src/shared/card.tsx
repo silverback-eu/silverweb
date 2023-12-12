@@ -11,12 +11,12 @@ const Card = forwardRef<HTMLDivElement, CardProps>(
     <div
       className={cn(
         "rounded-xl border bg-card text-card-foreground shadow",
-        className
+        className,
       )}
       ref={ref}
       {...props}
     />
-  )
+  ),
 );
 Card.displayName = "Card";
 
@@ -31,7 +31,7 @@ const CardHeader = forwardRef<HTMLDivElement, CardHeaderProps>(
       ref={ref}
       {...props}
     />
-  )
+  ),
 );
 CardHeader.displayName = "CardHeader";
 
@@ -48,7 +48,7 @@ const CardTitle = forwardRef<HTMLParagraphElement, CardTitleProps>(
     >
       {children}
     </h3>
-  )
+  ),
 );
 CardTitle.displayName = "CardTitle";
 
@@ -63,7 +63,7 @@ const CardDescription = forwardRef<HTMLParagraphElement, CardDescriptionProps>(
       ref={ref}
       {...props}
     />
-  )
+  ),
 );
 CardDescription.displayName = "CardDescription";
 
@@ -74,7 +74,7 @@ type CardContentProps = {
 const CardContent = forwardRef<HTMLDivElement, CardContentProps>(
   ({ className, ...props }, ref) => (
     <div className={cn("p-6 pt-0", className)} ref={ref} {...props} />
-  )
+  ),
 );
 CardContent.displayName = "CardContent";
 
@@ -89,7 +89,7 @@ const CardFooter = forwardRef<HTMLDivElement, CardFooterProps>(
       ref={ref}
       {...props}
     />
-  )
+  ),
 );
 CardFooter.displayName = "CardFooter";
 

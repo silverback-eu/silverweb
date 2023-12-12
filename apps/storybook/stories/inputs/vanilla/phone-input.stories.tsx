@@ -7,7 +7,7 @@ const meta: Meta<typeof VanillaPhoneInput> = {
   component: VanillaPhoneInput,
   decorators: [
     (Story) => (
-      <div className="w-96 m-3">
+      <div className="m-3 w-96">
         <Story />
       </div>
     ),

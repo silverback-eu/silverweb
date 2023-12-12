@@ -28,17 +28,17 @@ const DisplayCard = forwardRef<HTMLDivElement, DisplayCardProps>(
       } = props;
       return (
         <Card ref={ref} {...rest}>
-          <CardContent className={cn("p-2 flex gap-2", cardContentClassName)}>
+          <CardContent className={cn("flex gap-2 p-2", cardContentClassName)}>
             <Skeleton
               className={cn(
-                "flex justify-center items-center bg-muted rounded-xl h-10 w-10",
-                iconContainerClassName
+                "flex h-10 w-10 items-center justify-center rounded-xl bg-muted",
+                iconContainerClassName,
               )}
             />
             <div
               className={cn(
                 "grid content-center gap-1",
-                textContainerClassName
+                textContainerClassName,
               )}
             >
               <Skeleton className={cn("h-4 w-20", headerClassName)} />
@@ -63,34 +63,34 @@ const DisplayCard = forwardRef<HTMLDivElement, DisplayCardProps>(
     return (
       <Card className={className} ref={ref} {...rest}>
         <CardContent
-          className={cn("p-2 flex gap-2 items-center", cardContentClassName)}
+          className={cn("flex items-center gap-2 p-2", cardContentClassName)}
         >
           <div
             className={cn(
-              "flex justify-center items-center bg-muted rounded-xl h-10 w-10",
-              iconContainerClassName
+              "flex h-10 w-10 items-center justify-center rounded-xl bg-muted",
+              iconContainerClassName,
             )}
           >
             {Icon ? <Icon.type {...Icon.props} className="h-6 w-6" /> : null}
           </div>
           <div
             className={cn(
-              "grid content-center w-[calc(100%-48px)]",
-              textContainerClassName
+              "grid w-[calc(100%-48px)] content-center",
+              textContainerClassName,
             )}
           >
             <p
               className={cn(
-                "text-sm font-semibold text-start truncate",
-                headerClassName
+                "truncate text-start text-sm font-semibold",
+                headerClassName,
               )}
             >
               {header}
             </p>
             <p
               className={cn(
-                "text-xs opacity-50 text-start truncate",
-                descriptionClassName
+                "truncate text-start text-xs opacity-50",
+                descriptionClassName,
               )}
             >
               {description}
@@ -99,7 +99,7 @@ const DisplayCard = forwardRef<HTMLDivElement, DisplayCardProps>(
         </CardContent>
       </Card>
     );
-  }
+  },
 );
 DisplayCard.displayName = "DisplayCard";
 

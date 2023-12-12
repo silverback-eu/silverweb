@@ -40,7 +40,7 @@ const ToggleGroupItem = forwardRef<
           variant: context.variant || variant,
           size: context.size || size,
         }),
-        className
+        className,
       )}
       ref={ref}
       {...props}

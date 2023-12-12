@@ -57,7 +57,7 @@ const ComboBox = forwardRef<HTMLButtonElement, ComboBoxProps>((props, ref) => {
       if (grouped === true) {
         return Object.entries(items)
           .find(([, OptionList]) =>
-            OptionList.find((item) => item.value === value)
+            OptionList.find((item) => item.value === value),
           )?.[1]
           .find((item) => item.value === value)?.label;
       }
@@ -72,8 +72,8 @@ const ComboBox = forwardRef<HTMLButtonElement, ComboBoxProps>((props, ref) => {
         {readOnly ? (
           <div
             className={cn(
-              "inline-flex items-center rounded-md text-sm font-medium transition-colors border border-input bg-transparent shadow-sm h-9 px-4 py-2 w-full justify-between",
-              className
+              "inline-flex h-9 w-full items-center justify-between rounded-md border border-input bg-transparent px-4 py-2 text-sm font-medium shadow-sm transition-colors",
+              className,
             )}
           >
             {getLabel()}
@@ -88,7 +88,7 @@ const ComboBox = forwardRef<HTMLButtonElement, ComboBoxProps>((props, ref) => {
                 "border-lime-600 text-lime-600 hover:text-lime-600",
               status === "error" &&
                 "border-red-500 text-red-500 hover:text-red-500",
-              className
+              className,
             )}
             ref={ref}
             role="combobox"
@@ -123,7 +123,7 @@ const ComboBox = forwardRef<HTMLButtonElement, ComboBoxProps>((props, ref) => {
                       <Check
                         className={cn(
                           "ml-auto h-4 w-4",
-                          value === item.value ? "opacity-100" : "opacity-0"
+                          value === item.value ? "opacity-100" : "opacity-0",
                         )}
                       />
                     </CommandItem>
@@ -148,7 +148,7 @@ const ComboBox = forwardRef<HTMLButtonElement, ComboBoxProps>((props, ref) => {
                   <Check
                     className={cn(
                       "ml-auto h-4 w-4",
-                      value === item.value ? "opacity-100" : "opacity-0"
+                      value === item.value ? "opacity-100" : "opacity-0",
                     )}
                   />
                 </CommandItem>

@@ -29,15 +29,15 @@ export function AppIcon(props: {
     <a className="relative" href={link}>
       <div
         className={cn(
-          "rounded-md bg-gradient-to-r  p-1 w-12 h-12 flex justify-center content-center flex-wrap",
+          "flex h-12  w-12 flex-wrap content-center justify-center rounded-md bg-gradient-to-r p-1",
           gradient,
-          size && `w-[${size / 10}rem]`
+          size && `w-[${size / 10}rem]`,
         )}
       >
         <rest.icon size={size || 30} strokeWidth={3} />
       </div>
       {name ? (
-        <span className="text-xs absolute left-1/2 -translate-x-1/2">
+        <span className="absolute left-1/2 -translate-x-1/2 text-xs">
           {name}
         </span>
       ) : null}

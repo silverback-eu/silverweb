@@ -69,7 +69,7 @@ const DateRangePicker = forwardRef<HTMLButtonElement, DateRangePickerProps>(
           className={cn(
             "",
             status === "error" && "text-red-500 opacity-80",
-            status === "success" && "text-lime-600 opacity-80"
+            status === "success" && "text-lime-600 opacity-80",
           )}
         >
           {placeholder || "Pick a date"}
@@ -78,7 +78,7 @@ const DateRangePicker = forwardRef<HTMLButtonElement, DateRangePickerProps>(
     }
 
     return (
-      <div className={cn("grid gap-2 w-full", className)}>
+      <div className={cn("grid w-full gap-2", className)}>
         <Popover open={readOnly || disabled ? false : undefined}>
           <PopoverTrigger asChild>
             <Button
@@ -86,10 +86,10 @@ const DateRangePicker = forwardRef<HTMLButtonElement, DateRangePickerProps>(
                 "w-full justify-start text-left font-normal",
                 (readOnly || disabled) && "hover:bg-transparent",
                 status === "success" &&
-                  "text-lime-600 placeholder:opacity-80 placeholder:text-lime-600 hover:ring-1 hover:ring-lime-600 focus-visible:ring-1 focus-visible:ring-lime-500",
+                  "text-lime-600 placeholder:text-lime-600 placeholder:opacity-80 hover:ring-1 hover:ring-lime-600 focus-visible:ring-1 focus-visible:ring-lime-500",
                 status === "error" &&
-                  "text-red-500 placeholder:opacity-80 placeholder:text-red-500 hover:ring-1 hover:ring-red-600 focus-visible:ring-1 focus-visible:ring-red-500",
-                !valueCalendar && !dateDefault && "text-muted-foreground"
+                  "text-red-500 placeholder:text-red-500 placeholder:opacity-80 hover:ring-1 hover:ring-red-600 focus-visible:ring-1 focus-visible:ring-red-500",
+                !valueCalendar && !dateDefault && "text-muted-foreground",
               )}
               disabled={disabled || readOnly}
               id="date"
@@ -101,7 +101,7 @@ const DateRangePicker = forwardRef<HTMLButtonElement, DateRangePickerProps>(
                 className={cn(
                   "mr-2 h-4 w-4",
                   status === "error" && "text-red-500 opacity-80",
-                  status === "success" && "text-lime-600 opacity-80"
+                  status === "success" && "text-lime-600 opacity-80",
                 )}
               />
               {getDatesDisplayed()}
@@ -127,7 +127,7 @@ const DateRangePicker = forwardRef<HTMLButtonElement, DateRangePickerProps>(
         </Popover>
       </div>
     );
-  }
+  },
 );
 
 DateRangePicker.displayName = "DateRangePicker";

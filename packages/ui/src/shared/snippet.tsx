@@ -4,9 +4,9 @@ import { useState, type ReactNode } from "react";
 export function Snippet({ children }: { children: ReactNode }): JSX.Element {
   const [isCopied, setIsCopied] = useState(false);
   return (
-    <div className="border rounded-md w-fit py-1 px-3 border-stone-500 border-opacity-50 ">
+    <div className="w-fit rounded-md border border-stone-500 border-opacity-50 px-3 py-1 ">
       <pre>
-        <code className="font-mono tracking-tight flex items-center">
+        <code className="flex items-center font-mono tracking-tight">
           $ {children}{" "}
           <button
             className="transition-opacity duration-200"

@@ -15,7 +15,7 @@ const Table = forwardRef<HTMLTableElement, TableProps>(
         {...props}
       />
     </div>
-  )
+  ),
 );
 Table.displayName = "Table";
 
@@ -26,7 +26,7 @@ type TableHeaderProps = {
 const TableHeader = forwardRef<HTMLTableSectionElement, TableHeaderProps>(
   ({ className, ...props }, ref) => (
     <thead className={cn("[&_tr]:border-b", className)} ref={ref} {...props} />
-  )
+  ),
 );
 TableHeader.displayName = "TableHeader";
 
@@ -41,7 +41,7 @@ const TableBody = forwardRef<HTMLTableSectionElement, TableBodyProps>(
       ref={ref}
       {...props}
     />
-  )
+  ),
 );
 TableBody.displayName = "TableBody";
 
@@ -54,12 +54,12 @@ const TableFooter = forwardRef<HTMLTableSectionElement, TableFooterProps>(
     <tfoot
       className={cn(
         "bg-primary font-medium text-primary-foreground",
-        className
+        className,
       )}
       ref={ref}
       {...props}
     />
-  )
+  ),
 );
 TableFooter.displayName = "TableFooter";
 
@@ -72,12 +72,12 @@ const TableRow = forwardRef<HTMLTableRowElement, TableRowProps>(
     <tr
       className={cn(
         "border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted",
-        className
+        className,
       )}
       ref={ref}
       {...props}
     />
-  )
+  ),
 );
 TableRow.displayName = "TableRow";
 
@@ -90,12 +90,12 @@ const TableHead = forwardRef<HTMLTableCellElement, TableHeadProps>(
     <th
       className={cn(
         "h-10 px-2 text-left align-middle font-medium text-muted-foreground [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]",
-        className
+        className,
       )}
       ref={ref}
       {...props}
     />
-  )
+  ),
 );
 TableHead.displayName = "TableHead";
 
@@ -108,12 +108,12 @@ const TableCell = forwardRef<HTMLTableCellElement, TableCellProps>(
     <td
       className={cn(
         "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]",
-        className
+        className,
       )}
       ref={ref}
       {...props}
     />
-  )
+  ),
 );
 TableCell.displayName = "TableCell";
 
@@ -128,7 +128,7 @@ const TableCaption = forwardRef<HTMLTableCaptionElement, TableCaptionProps>(
       ref={ref}
       {...props}
     />
-  )
+  ),
 );
 TableCaption.displayName = "TableCaption";
 
