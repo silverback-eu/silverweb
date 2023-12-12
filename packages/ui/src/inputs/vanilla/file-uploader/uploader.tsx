@@ -18,15 +18,19 @@ export function Uploader({
   status,
   dragHeading,
   heading,
+  disabled,
+  readOnly,
 }: UploaderProps): JSX.Element {
   return (
     <Card
       {...getRootProps({ className: "dropzone" })}
       className={cn(
-        "not-sr-only select-none overflow-hidden relative px-4 py-8 w-full text-center space-y-3 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring hover:ring-1 hover:ring-secondary transition-all",
+        "h-48 overflow-hidden relative px-4 py-8 w-full text-center space-y-3 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring hover:ring-1 hover:ring-secondary transition-all",
         (isDragActive || isFileDialogActive) && "ring-1 ring-ring",
         status === "success" && "!text-green-500",
-        status === "error" && "!text-red-500"
+        status === "error" && "!text-red-500",
+        disabled && "select-none cursor-not-allowed opacity-50",
+        readOnly && "select-none"
       )}
     >
       <input {...getInputProps()} />
@@ -39,7 +43,13 @@ export function Uploader({
             ? dragHeading || "Drop now the file to upload"
             : heading || "Click or drag file to this area to upload"}
         </p>
-        <p className="text-xs text-warm">
+        <p
+          className={cn(
+            "text-xs text-warm",
+            status === "success" && "!text-green-500 opacity-70",
+            status === "error" && "!text-red-500 opacity-70"
+          )}
+        >
           Support for single or bulk upload. Only *.pdf, *.png, *jpg, *.doc and
           *.docx file types are supported.
         </p>
@@ -70,12 +80,7 @@ export function AcceptedFile({
       break;
   }
   return (
-    <Card
-      className={cn(
-        status === "success" && "!text-green-500",
-        status === "error" && "!text-red-500"
-      )}
-    >
+    <Card>
       <CardContent className="p-2 flex gap-2 items-center">
         <div className="flex justify-center items-center bg-muted rounded-xl h-10 w-10">
           <Icon className="h-6 w-6" />
@@ -101,7 +106,11 @@ export function AcceptedFile({
   );
 }
 
-export function RejectedFile({ name, errors }: RejectedFileProps): JSX.Element {
+export function RejectedFile({
+  name,
+  errors,
+  delFunction,
+}: RejectedFileProps): JSX.Element {
   let Icon: LucideIcon = File;
   switch (name.split(".")[name.split(".").length - 1]) {
     case "jpeg":
@@ -139,7 +148,13 @@ export function RejectedFile({ name, errors }: RejectedFileProps): JSX.Element {
             {ErrorMessage}
           </p>
         </div>
-        <Button size="icon" variant="link">
+        <Button
+          onClick={() => {
+            delFunction(name);
+          }}
+          size="icon"
+          variant="link"
+        >
           <X className="w-5 h-5" />
         </Button>
       </CardContent>

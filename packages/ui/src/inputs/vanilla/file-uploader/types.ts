@@ -10,6 +10,7 @@ import type {
 export interface RejectedFileProps {
   name: string;
   errors: FileError[];
+  delFunction: (name: string) => void;
 }
 
 export interface AcceptedFileProps {
@@ -26,6 +27,8 @@ export interface UploaderProps {
   status?: "error" | "success";
   heading?: string;
   dragHeading?: string;
+  disabled?: boolean;
+  readOnly?: boolean;
 }
 
 export interface UseFileUploaderProps extends DropzoneOptions {

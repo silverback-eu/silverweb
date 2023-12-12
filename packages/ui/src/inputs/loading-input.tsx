@@ -28,8 +28,17 @@ function LoadingTextAreaInput(): JSX.Element {
 function LoadingFileInput(): JSX.Element {
   return (
     <div>
-      <Skeleton className="w-full rounded-xl flex items-center justify-center py-[120px]" />
-      <div className="grid gap-2 my-2">
+      <Card className="h-48 overflow-hidden relative px-4 py-8 w-full text-center space-y-3 transition-all">
+        <Skeleton className="flex justify-center items-center !mt-0 bg-muted mx-auto rounded-xl h-10 w-10" />
+        <Skeleton className="h-5 w-64 mx-auto" />
+        <p className="text-xs">
+          <span className="animate-pulse rounded-md bg-primary/10 text-transparent box-decoration-clone select-none">
+            Support for single or bulk upload. Only *.pdf, *.png, *jpg, *.doc
+            and *.docx file types are supported.
+          </span>
+        </p>
+      </Card>
+      <div className="grid gap-2 my-4">
         <Card>
           <CardContent className="p-2 pr-5 flex gap-2 items-center justify-between">
             <div className="flex gap-2 items-center">
