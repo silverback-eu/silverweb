@@ -47,46 +47,14 @@ export const ReadOnly: Story = {
 
 export const Success: Story = {
   args: {
-    className: "border-green-500 text-green-500",
+    status: "success",
   },
-  render: (args) => (
-    <VanillaRadioGroup className="grid gap-5 text-green-500">
-      <div className="flex gap-2">
-        <VanillaSwitch {...args} id="1" value="1" />
-        <Label htmlFor="1">Label Eins</Label>
-      </div>
-      <div className="flex gap-2">
-        <VanillaSwitch {...args} id="2" value="2" />
-        <Label htmlFor="2">Label Zwei</Label>
-      </div>
-      <div className="flex gap-2">
-        <VanillaSwitch {...args} id="3" value="3" />
-        <Label htmlFor="3">Label Drei</Label>
-      </div>
-    </VanillaRadioGroup>
-  ),
 };
 
 export const Error: Story = {
   args: {
-    className: "border-red-500 text-red-500",
+    status: "error",
   },
-  render: (args) => (
-    <VanillaRadioGroup className="grid gap-5 text-red-500">
-      <div className="flex gap-2">
-        <VanillaSwitch {...args} id="1" value="1" />
-        <Label htmlFor="1">Label Eins</Label>
-      </div>
-      <div className="flex gap-2">
-        <VanillaSwitch {...args} id="2" value="2" />
-        <Label htmlFor="2">Label Zwei</Label>
-      </div>
-      <div className="flex gap-2">
-        <VanillaSwitch {...args} id="3" value="3" />
-        <Label htmlFor="3">Label Drei</Label>
-      </div>
-    </VanillaRadioGroup>
-  ),
 };
 
 export const NormalBig: Story = {

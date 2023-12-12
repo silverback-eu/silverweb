@@ -13,117 +13,52 @@ const meta: Meta<typeof VanillaRadioInput> = {
       </div>
     ),
   ],
+  render: (args) => (
+    <VanillaRadioGroup className="grid gap-5">
+      <div className="flex gap-2">
+        <VanillaRadioInput {...args} id="1" value="1" />
+        <Label htmlFor="1">Label Eins</Label>
+      </div>
+      <div className="flex gap-2">
+        <VanillaRadioInput {...args} id="2" value="2" />
+        <Label htmlFor="2">Label Zwei</Label>
+      </div>
+      <div className="flex gap-2">
+        <VanillaRadioInput {...args} id="3" value="3" />
+        <Label htmlFor="3">Label Drei</Label>
+      </div>
+    </VanillaRadioGroup>
+  ),
 };
 
 export default meta;
 
 type Story = StoryObj<typeof VanillaRadioInput>;
 
-export const Normal: Story = {
-  render: (args) => (
-    <VanillaRadioGroup className="grid gap-5">
-      <div className="flex gap-2">
-        <VanillaRadioInput {...args} id="1" value="1" />
-        <Label htmlFor="1">Label Eins</Label>
-      </div>
-      <div className="flex gap-2">
-        <VanillaRadioInput {...args} id="2" value="2" />
-        <Label htmlFor="2">Label Zwei</Label>
-      </div>
-      <div className="flex gap-2">
-        <VanillaRadioInput {...args} id="3" value="3" />
-        <Label htmlFor="3">Label Drei</Label>
-      </div>
-    </VanillaRadioGroup>
-  ),
-};
+export const Normal: Story = {};
 
 export const Disabled: Story = {
   args: {
     disabled: true,
   },
-  render: (args) => (
-    <VanillaRadioGroup className="grid gap-5">
-      <div className="flex gap-2">
-        <VanillaRadioInput {...args} id="1" value="1" />
-        <Label htmlFor="1">Label Eins</Label>
-      </div>
-      <div className="flex gap-2">
-        <VanillaRadioInput {...args} id="2" value="2" />
-        <Label htmlFor="2">Label Zwei</Label>
-      </div>
-      <div className="flex gap-2">
-        <VanillaRadioInput {...args} id="3" value="3" />
-        <Label htmlFor="3">Label Drei</Label>
-      </div>
-    </VanillaRadioGroup>
-  ),
 };
 
 export const ReadOnly: Story = {
   args: {
     readOnly: true,
   },
-  render: (args) => (
-    <VanillaRadioGroup className="grid gap-5">
-      <div className="flex gap-2">
-        <VanillaRadioInput {...args} id="1" value="1" />
-        <Label htmlFor="1">Label Eins</Label>
-      </div>
-      <div className="flex gap-2">
-        <VanillaRadioInput {...args} id="2" value="2" />
-        <Label htmlFor="2">Label Zwei</Label>
-      </div>
-      <div className="flex gap-2">
-        <VanillaRadioInput {...args} id="3" value="3" />
-        <Label htmlFor="3">Label Drei</Label>
-      </div>
-    </VanillaRadioGroup>
-  ),
 };
 
 export const Success: Story = {
   args: {
-    className: "border-green-500 text-green-500",
+    status: "success",
   },
-  render: (args) => (
-    <VanillaRadioGroup className="grid gap-5 text-green-500">
-      <div className="flex gap-2">
-        <VanillaRadioInput {...args} id="1" value="1" />
-        <Label htmlFor="1">Label Eins</Label>
-      </div>
-      <div className="flex gap-2">
-        <VanillaRadioInput {...args} id="2" value="2" />
-        <Label htmlFor="2">Label Zwei</Label>
-      </div>
-      <div className="flex gap-2">
-        <VanillaRadioInput {...args} id="3" value="3" />
-        <Label htmlFor="3">Label Drei</Label>
-      </div>
-    </VanillaRadioGroup>
-  ),
 };
 
 export const Error: Story = {
   args: {
-    className: "border-red-500 text-red-500",
+    status: "error",
   },
-  render: (args) => (
-    <VanillaRadioGroup className="grid gap-5 text-red-500">
-      <div className="flex gap-2">
-        <VanillaRadioInput {...args} id="1" value="1" />
-        <Label htmlFor="1">Label Eins</Label>
-      </div>
-      <div className="flex gap-2">
-        <VanillaRadioInput {...args} id="2" value="2" />
-        <Label htmlFor="2">Label Zwei</Label>
-      </div>
-      <div className="flex gap-2">
-        <VanillaRadioInput {...args} id="3" value="3" />
-        <Label htmlFor="3">Label Drei</Label>
-      </div>
-    </VanillaRadioGroup>
-  ),
 };
 
 export const NormalBig: Story = {
@@ -196,8 +131,7 @@ export const ReadOnlyBig: Story = {
 
 export const SuccessBig: Story = {
   args: {
-    className:
-      "text-green-500 [&_>_div_>button]:border-green-500 [&_>_div_>_button_svg]:text-green-500",
+    status: "success",
     variant: "big",
     icon: <HardHat size={24} />,
     cardLabel: "Big Card Label",
@@ -220,8 +154,7 @@ export const SuccessBig: Story = {
 
 export const ErrorBig: Story = {
   args: {
-    className:
-      "text-red-500 [&_>_div_>button]:border-red-500 [&_>_div_>_button_svg]:text-red-500",
+    status: "error",
     variant: "big",
     icon: <HardHat className="fill-transparent" size={24} />,
     cardLabel: "Big Card Label",

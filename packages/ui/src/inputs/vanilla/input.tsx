@@ -19,7 +19,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       onFocus,
       onBlur,
       style,
-      ...props
+      ...rest
     },
     ref,
   ) => {
@@ -66,7 +66,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
               readOnly={readOnly}
               ref={ref}
               type={type}
-              {...props}
+              {...rest}
               style={{
                 paddingLeft: prefix && `${prefix.length * 8.5 + 12}px`,
                 ...style,
@@ -105,7 +105,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             readOnly={readOnly}
             ref={ref}
             type={type}
-            {...props}
+            {...rest}
             style={{
               paddingLeft: prefix && `${prefix.length * 8.5 + 12}px`,
               ...style,
