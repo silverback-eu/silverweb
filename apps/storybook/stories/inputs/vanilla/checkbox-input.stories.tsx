@@ -1,4 +1,4 @@
-import { Label, VanillaCheckboxInput } from "@silverweb/ui";
+import { Label, LoadingInput, VanillaCheckboxInput } from "@silverweb/ui";
 import type { Meta, StoryObj } from "@storybook/react";
 import { HardHat } from "lucide-react";
 
@@ -59,6 +59,10 @@ export const Error: Story = {
   args: {
     status: "error",
   },
+};
+
+export const Loading: Story = {
+  render: () => <LoadingInput variant="checkbox" />,
 };
 
 export const NormalBig: Story = {
@@ -173,4 +177,8 @@ export const ErrorBig: Story = {
       </div>
     </div>
   ),
+};
+
+export const LoadingBig: Story = {
+  render: () => <LoadingInput checkboxRadioBig variant="checkbox" />,
 };

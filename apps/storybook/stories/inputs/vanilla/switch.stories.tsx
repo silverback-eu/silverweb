@@ -1,4 +1,9 @@
-import { Label, VanillaRadioGroup, VanillaSwitch } from "@silverweb/ui";
+import {
+  Label,
+  LoadingInput,
+  VanillaRadioGroup,
+  VanillaSwitch,
+} from "@silverweb/ui";
 import type { Meta, StoryObj } from "@storybook/react";
 import { HardHat } from "lucide-react";
 
@@ -55,6 +60,10 @@ export const Error: Story = {
   args: {
     status: "error",
   },
+};
+
+export const Loading: Story = {
+  render: () => <LoadingInput variant="switch" />,
 };
 
 export const NormalBig: Story = {
@@ -171,4 +180,8 @@ export const ErrorBig: Story = {
       </div>
     </VanillaRadioGroup>
   ),
+};
+
+export const LoadingBig: Story = {
+  render: () => <LoadingInput checkboxRadioBig variant="switch" />,
 };

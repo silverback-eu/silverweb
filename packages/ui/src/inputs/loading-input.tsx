@@ -14,7 +14,8 @@ export interface LoadingInputProps {
     | "textarea"
     | "checkbox"
     | "radio"
-    | "slider";
+    | "slider"
+    | "switch";
   checkboxRadioBig?: boolean;
 }
 
@@ -94,7 +95,7 @@ function LoadingCheckboxInput({ big }: { big?: boolean }): JSX.Element {
   if (big) {
     return (
       <Card>
-        <CardContent className="flex items-center justify-between gap-2 p-2 pr-5">
+        <CardContent className="flex items-center justify-between gap-2 p-2">
           <div className="flex items-center gap-2">
             <Skeleton className="flex h-10 w-10 items-center justify-center rounded-xl bg-muted" />
             <div className="grid content-center gap-1">
@@ -102,7 +103,7 @@ function LoadingCheckboxInput({ big }: { big?: boolean }): JSX.Element {
               <Skeleton className="h-3 w-36" />
             </div>
           </div>
-          <Skeleton className="h-4 w-4 rounded-sm" />
+          <Skeleton className="mr-2 h-4 w-4 rounded-sm" />
         </CardContent>
       </Card>
     );
@@ -115,7 +116,7 @@ function LoadingRadioInput({ big }: { big?: boolean }): JSX.Element {
   if (big) {
     return (
       <Card>
-        <CardContent className="flex items-center justify-between gap-2 p-2 pr-5">
+        <CardContent className="flex items-center justify-between gap-2 p-2">
           <div className="flex items-center gap-2">
             <Skeleton className="flex h-10 w-10 items-center justify-center rounded-xl bg-muted" />
             <div className="grid content-center gap-1">
@@ -123,7 +124,7 @@ function LoadingRadioInput({ big }: { big?: boolean }): JSX.Element {
               <Skeleton className="h-3 w-36" />
             </div>
           </div>
-          <Skeleton className="h-4 w-4 rounded-full" />
+          <Skeleton className="mr-2 h-4 w-4 rounded-full" />
         </CardContent>
       </Card>
     );
@@ -143,9 +144,29 @@ function LoadingSlider(): JSX.Element {
   );
 }
 
+function LoadingSwitch({ big }: { big?: boolean }): JSX.Element {
+  if (big) {
+    return (
+      <Card>
+        <CardContent className="flex items-center justify-between gap-2 p-2">
+          <div className="flex items-center gap-2">
+            <Skeleton className="flex h-10 w-10 items-center justify-center rounded-xl bg-muted" />
+            <div className="grid content-center gap-1">
+              <Skeleton className="h-4 w-20" />
+              <Skeleton className="h-3 w-36" />
+            </div>
+          </div>
+          <Skeleton className="mr-2 h-5 w-10 rounded-full" />
+        </CardContent>
+      </Card>
+    );
+  }
+  return <Skeleton className="h-5 w-10 rounded-full" />;
+}
+
 export function LoadingInput({
   variant,
-  ...rest
+  checkboxRadioBig,
 }: LoadingInputProps): JSX.Element {
   if (
     variant === "combo" ||
@@ -166,15 +187,19 @@ export function LoadingInput({
     return <LoadingFileInput />;
   }
   if (variant === "radio") {
-    return <LoadingRadioInput big={rest.checkboxRadioBig} />;
+    return <LoadingRadioInput big={checkboxRadioBig} />;
   }
 
   if (variant === "checkbox") {
-    return <LoadingCheckboxInput big={rest.checkboxRadioBig} />;
+    return <LoadingCheckboxInput big={checkboxRadioBig} />;
   }
 
   if (variant === "slider") {
     return <LoadingSlider />;
+  }
+
+  if (variant === "switch") {
+    return <LoadingSwitch big={checkboxRadioBig} />;
   }
 
   return <div>Loading</div>;
