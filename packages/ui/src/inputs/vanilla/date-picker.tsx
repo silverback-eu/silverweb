@@ -17,6 +17,7 @@ export interface DatePickerProps
   readOnly?: boolean;
   valueCalendar?: Date;
   defaultDateValue?: Date;
+  placeholder?: string;
   onChangeCalendar?: (date: Date | undefined) => void;
 }
 

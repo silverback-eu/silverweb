@@ -41,5 +41,6 @@ module.exports = {
   rules: {
     "import/no-default-export": "off",
     "react/jsx-fragments": ["error", "element"],
+    "no-console": ["error", { allow: ["warn", "error"] }],
   },
 };

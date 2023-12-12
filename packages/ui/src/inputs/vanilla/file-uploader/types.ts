@@ -1,12 +1,36 @@
 import type { RefObject } from "react";
-import type { DropzoneOptions, FileError, FileRejection } from "react-dropzone";
+import type {
+  DropzoneInputProps,
+  DropzoneOptions,
+  DropzoneRootProps,
+  FileError,
+  FileRejection,
+} from "react-dropzone";
 
-export interface FileUploaderProps extends DropzoneOptions {
-  status?: "success" | "error";
-  readonly: boolean;
-  disabled: boolean;
-  heading: string;
-  dragHeading: string;
+export interface RejectedFileProps {
+  name: string;
+  errors: FileError[];
+}
+
+export interface AcceptedFileProps {
+  name: string;
+  size: number;
+  delFunction: (name: string) => void;
+}
+
+export interface UploaderProps {
+  getRootProps: <T extends DropzoneRootProps>(props?: T | undefined) => T;
+  getInputProps: <T extends DropzoneInputProps>(props?: T | undefined) => T;
+  isDragActive: boolean;
+  isFileDialogActive: boolean;
+  status?: "error" | "success";
+  heading?: string;
+  dragHeading?: string;
+}
+
+export interface UseFileUploaderProps extends DropzoneOptions {
+  readonly?: boolean;
+  disabled?: boolean;
   accept?: Record<
     | "x-world/x-3dmf"
     | "application/octet-stream"
@@ -426,13 +450,6 @@ export interface FileUploaderProps extends DropzoneOptions {
 }
 
 export interface UseFileUploader {
-  Uploader: () => JSX.Element;
-  AcceptedFile: (
-    name: string,
-    size: number,
-    delFunction: (name: string) => void
-  ) => JSX.Element;
-  RejectedFile: (name: string, errors: FileError[]) => JSX.Element;
   acceptedFiles: File[];
   fileRejections: FileRejection[];
   isDragActive: boolean;
@@ -443,4 +460,6 @@ export interface UseFileUploader {
   isFocused: boolean;
   open: () => void;
   rootRef: RefObject<HTMLElement>;
+  getRootProps: <T extends DropzoneRootProps>(props?: T | undefined) => T;
+  getInputProps: <T extends DropzoneInputProps>(props?: T | undefined) => T;
 }

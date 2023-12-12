@@ -1,6 +1,12 @@
 export {
-  type FileUploaderProps,
+  AcceptedFile,
+  type AcceptedFileProps,
+  RejectedFile,
+  type RejectedFileProps,
+  Uploader,
+  type UploaderProps,
   type UseFileUploader,
+  type UseFileUploaderProps,
   useFileUploader,
 } from "./file-uploader";
 export {

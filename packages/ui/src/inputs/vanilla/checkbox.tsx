@@ -83,7 +83,6 @@ const CheckboxInput = forwardRef<
           } else if (CheckboxRef.current) {
             CheckboxRef.current.click();
           } else {
-            // eslint-disable-next-line no-console -- to display ref error for console
             console.error("CheckboxRef not found");
           }
         }}
@@ -111,7 +110,6 @@ const CheckboxInput = forwardRef<
               } else if (CheckboxRef.current) {
                 CheckboxRef.current.click();
               } else {
-                // eslint-disable-next-line no-console -- to display ref error for console
                 console.error("CheckboxRef not found");
               }
               if (onClick) onClick(ev);

@@ -17,6 +17,7 @@ export interface DateRangePickerProps
   status?: "success" | "error" | "default";
   valueCalendar?: DateRange;
   defaultDateValue?: DateRange;
+  placeholder?: string;
   readOnly?: boolean;
   onChangeCalendar?: (date: DateRange | undefined) => void;
 }

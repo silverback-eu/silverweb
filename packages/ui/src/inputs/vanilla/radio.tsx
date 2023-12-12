@@ -49,7 +49,6 @@ const RadioInput = forwardRef<ElementRef<typeof Item>, RadioInputProps>(
             } else if (CheckboxRef.current) {
               CheckboxRef.current.click();
             } else {
-              // eslint-disable-next-line no-console -- to display error for console
               console.error("CheckboxRef not found");
             }
           }}
@@ -79,7 +78,6 @@ const RadioInput = forwardRef<ElementRef<typeof Item>, RadioInputProps>(
                 } else if (CheckboxRef.current) {
                   CheckboxRef.current.click();
                 } else {
-                  // eslint-disable-next-line no-console -- to display error for console
                   console.error("CheckboxRef not found");
                 }
                 if (onClick) onClick(ev);

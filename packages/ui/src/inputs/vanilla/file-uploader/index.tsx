@@ -1,2 +1,9 @@
-export type { FileUploaderProps, UseFileUploader } from "./types";
-export { useFileUploader } from "./uploader";
+export type {
+  AcceptedFileProps,
+  RejectedFileProps,
+  UploaderProps,
+  UseFileUploaderProps,
+  UseFileUploader,
+} from "./types";
+export { AcceptedFile, RejectedFile, Uploader } from "./uploader";
+export { useFileUploader } from "./use-file-uploader";
