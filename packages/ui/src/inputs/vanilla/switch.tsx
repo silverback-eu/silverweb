@@ -43,10 +43,8 @@ const Switch = forwardRef<ElementRef<typeof Root>, SwitchProps>(
             "w-full",
             disabled && "cursor-not-allowed opacity-50",
             readOnly && "pointer-events-none select-none",
-            status === "error" &&
-              "text-red-500 [&_>_div_>_button_svg]:text-red-500 [&_>_div_>button]:border-red-500",
-            status === "success" &&
-              "text-green-500 [&_>_div_>_button_svg]:text-green-500 [&_>_div_>button]:border-green-500",
+            status === "error" && "text-red-500",
+            status === "success" && "text-green-500",
             className,
           )}
           onClick={() => {
@@ -89,6 +87,7 @@ const Switch = forwardRef<ElementRef<typeof Root>, SwitchProps>(
                 if (onClick) onClick(ev);
               }}
               ref={ref || SwitchRef}
+              status={status}
               {...rest}
             />
           </CardContent>

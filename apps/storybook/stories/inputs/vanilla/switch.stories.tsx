@@ -136,8 +136,7 @@ export const ReadOnlyBig: Story = {
 
 export const SuccessBig: Story = {
   args: {
-    className:
-      "text-green-500 [&_>_div_>button]:border-green-500 [&_>_div_>_button_svg]:text-green-500",
+    status: "success",
     variant: "big",
     icon: <HardHat size={24} />,
     cardLabel: "Big Card Label",
@@ -160,8 +159,7 @@ export const SuccessBig: Story = {
 
 export const ErrorBig: Story = {
   args: {
-    className:
-      "text-red-500 [&_>_div_>button]:border-red-500 [&_>_div_>_button_svg]:text-red-500",
+    status: "error",
     variant: "big",
     icon: <HardHat className="fill-transparent" size={24} />,
     cardLabel: "Big Card Label",
