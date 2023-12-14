@@ -197,7 +197,7 @@ const MenubarLabel = forwardRef<
 >(({ className, inset, ...props }, ref) => (
   <Label
     className={cn(
-      "px-2 py-1.5 text-sm font-semibold",
+      "px-2 py-1.5 text-xs font-semibold",
       inset && "pl-8",
       className,
     )}
