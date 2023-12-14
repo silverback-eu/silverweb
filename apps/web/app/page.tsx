@@ -6,7 +6,7 @@ export default function Home(): JSX.Element {
     <div className="min-h-screen text-black dark:text-white">
       <div className="relative z-50 mx-auto flex max-w-6xl justify-between pt-20">
         <div className="rounded-xl border border-stone-500 border-opacity-50 px-4 py-2 font-mono text-sm">
-          @silverweb/<b>web</b>
+          @silverweb/<b>webs</b>
         </div>
         <div className="flex gap-1 text-sm">
           By{" "}

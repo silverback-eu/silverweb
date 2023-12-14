@@ -9,7 +9,7 @@
     ".": "./dist",
     "./dist/index.css": "./dist/index.css"
   },
-  "license": "MIT",
+  "license": "AGPL",
   "scripts": {
     "build": "tsup",
     "lint": "eslint src/",

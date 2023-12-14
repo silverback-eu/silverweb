@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-custom",
-  "license": "MIT",
+  "license": "AGPL",
   "version": "0.0.0",
   "private": true,
   "devDependencies": {

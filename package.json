@@ -1,6 +1,6 @@
 {
   "private": true,
-  "license": "MIT",
+  "license": "AGPL",
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev",
@@ -15,7 +15,7 @@
     "tsconfig": "*",
     "turbo": "latest"
   },
-  "packageManager": "bun@1.0.7",
+  "packageManager": "bun@1.0.18",
   "workspaces": [
     "apps/*",
     "packages/*"
