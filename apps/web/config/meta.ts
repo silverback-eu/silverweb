@@ -18,7 +18,7 @@ export const meta: Metadata = {
         ? process.env.NEXT_PUBLIC_HOST_DOMAIN
         : "http://localhost:3000",
     images: {
-      url: "/opengraph/opengraph-image-silverback.jpg",
+      url: "https://silverweb-web-git-grimm-integration-template-silverback.vercel.app/api/og",
     },
   },
   icons: {
