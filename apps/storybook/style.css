@@ -159,3 +159,7 @@
   --graphik-webfont: "Graphik sans-serif";
   --primary-grey: 27, 5%, 65%, 1;
 }
+
+button {
+  background-color: inherit;
+}

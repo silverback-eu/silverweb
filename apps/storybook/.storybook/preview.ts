@@ -1,7 +1,7 @@
 import type { Preview } from "@storybook/react";
 import { themes } from "@storybook/theming";
-import "@silverweb/ui/dist/index.css";
 import "../style.css";
+import "@silverweb/ui/dist/index.css";
 
 const preview: Preview = {
   parameters: {

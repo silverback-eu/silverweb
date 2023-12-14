@@ -22,7 +22,7 @@ import type {
   HTMLAttributes,
 } from "react";
 import { forwardRef } from "react";
-import { cn } from "../lib/utils";
+import { cn } from "../../lib/utils";
 
 const ContextMenu = Root;
 
@@ -160,7 +160,7 @@ const ContextMenuLabel = forwardRef<
 >(({ className, inset, ...props }, ref) => (
   <Label
     className={cn(
-      "px-2 py-1.5 text-sm font-semibold text-foreground",
+      "px-2 py-1.5 text-xs font-semibold text-foreground",
       inset && "pl-8",
       className,
     )}
@@ -189,7 +189,7 @@ function ContextMenuShortcut({
   return (
     <span
       className={cn(
-        "ml-auto text-xs tracking-widest text-muted-foreground",
+        "ml-auto inline-block text-xs tracking-widest text-muted-foreground",
         className,
       )}
       {...props}
