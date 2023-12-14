@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import "@silverweb/ui/dist/index.css";
+import { Provider } from "@silverweb/ui";
 import { meta } from "../config/meta";
-
-const inter = Inter({ subsets: ["latin"] });
+import { fontGraphik } from "../config/font";
 
 export const metadata: Metadata = meta;
 
@@ -14,8 +13,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }): JSX.Element {
   return (
-    <html className="dark bg-white dark:bg-black" lang="en">
-      <body className={inter.className}>{children}</body>
+    <html className="dark" lang="en">
+      <body
+        className={`${fontGraphik.variable} dark min-h-screen bg-background font-graphik antialiased selection:bg-gray-500 selection:bg-opacity-30 selection:text-opacity-75`}
+      >
+        <Provider>{children}</Provider>
+      </body>
     </html>
   );
 }
