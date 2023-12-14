@@ -11,9 +11,9 @@
   },
   "dependencies": {
     "@silverweb/ui": "*",
+    "next": "latest",
     "react": "^18",
-    "react-dom": "^18",
-    "next": "latest"
+    "react-dom": "^18"
   },
   "devDependencies": {
     "typescript": "^5",
