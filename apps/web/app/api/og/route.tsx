@@ -20,7 +20,8 @@ export async function GET(request: Request) {
           background: "black",
           width: "100%",
           height: "100%",
-          padding: 32,
+          padding: 180,
+          paddingTop: 220,
           textAlign: "center",
           justifyContent: "center",
           alignItems: "center",
@@ -321,7 +322,7 @@ export async function GET(request: Request) {
         >
           {searchParams.has("text")
             ? searchParams.get("text")
-            : "Powering mission-critical construction throughout Europe."}
+            : "Brining the future to the present, now."}
         </div>
       </div>
     ),
