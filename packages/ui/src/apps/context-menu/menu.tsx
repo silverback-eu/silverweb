@@ -1,5 +1,6 @@
 import { ContextMenuSub } from "@radix-ui/react-context-menu";
-import { useState } from "react";
+import type { ReactNode } from "react";
+import { useEffect, useState } from "react";
 import {
   ContextMenuContent,
   ContextMenuGroup,
@@ -95,22 +96,21 @@ export function ContextMenu({
   items,
   selected,
 }: ContextMenuProps): JSX.Element {
+  const [cmdKey, setCmdKey] = useState<ReactNode>("⌘");
+  useEffect(() => {
+    if (!window.navigator.userAgent.includes("Mac")) {
+      setCmdKey(<span className="pr-1 tracking-tighter">CTRL</span>);
+    }
+  }, []);
   return (
-    <ContextMenuContent className="min-w-[200px]">
+    <ContextMenuContent className="min-w-[200px] max-w-[300px]">
       <ContextMenuItem
         onSelect={() => {
           history.back();
         }}
       >
         Back
-        <ContextMenuShortcut>
-          {window.navigator.userAgent.includes("Mac") ? (
-            "⌘"
-          ) : (
-            <span className="pr-1 tracking-tighter">CTRL</span>
-          )}
-          [
-        </ContextMenuShortcut>
+        <ContextMenuShortcut>{cmdKey}[</ContextMenuShortcut>
       </ContextMenuItem>
       <ContextMenuItem
         onSelect={() => {
@@ -118,14 +118,7 @@ export function ContextMenu({
         }}
       >
         Forward
-        <ContextMenuShortcut>
-          {window.navigator.userAgent.includes("Mac") ? (
-            "⌘"
-          ) : (
-            <span className="pr-1 tracking-tighter">CTRL</span>
-          )}
-          ]
-        </ContextMenuShortcut>
+        <ContextMenuShortcut>{cmdKey}]</ContextMenuShortcut>
       </ContextMenuItem>
       <ContextMenuItem
         onSelect={() => {
@@ -133,14 +126,7 @@ export function ContextMenu({
         }}
       >
         Reload
-        <ContextMenuShortcut>
-          {window.navigator.userAgent.includes("Mac") ? (
-            "⌘"
-          ) : (
-            <span className="pr-1 tracking-tighter">CTRL</span>
-          )}
-          R
-        </ContextMenuShortcut>
+        <ContextMenuShortcut>{cmdKey}R</ContextMenuShortcut>
       </ContextMenuItem>
       <ContextMenuSeparator />
       <ContextMenuItem
@@ -149,7 +135,9 @@ export function ContextMenu({
           window.open(`https://www.google.com/search?q=${selected}`);
         }}
       >
-        Search Google for &quot;{selected ? selected : "..."}&quot;
+        <p className="max-w-[274px] truncate">
+          Search Google for &quot;{selected ? selected : "..."}&quot;
+        </p>
       </ContextMenuItem>
       <ContextMenuItem
         disabled={!selected}
@@ -161,14 +149,7 @@ export function ContextMenu({
         }}
       >
         Copy
-        <ContextMenuShortcut>
-          {window.navigator.userAgent.includes("Mac") ? (
-            "⌘"
-          ) : (
-            <span className="pr-1 tracking-tighter">CTRL</span>
-          )}
-          C
-        </ContextMenuShortcut>
+        <ContextMenuShortcut>{cmdKey}C</ContextMenuShortcut>
       </ContextMenuItem>
       <ContextMenuSeparator />
       <ContextMenuItem
@@ -180,14 +161,7 @@ export function ContextMenu({
         }}
       >
         Save Page
-        <ContextMenuShortcut>
-          {window.navigator.userAgent.includes("Mac") ? (
-            "⌘"
-          ) : (
-            <span className="pr-1 tracking-tighter">CTRL</span>
-          )}
-          S
-        </ContextMenuShortcut>
+        <ContextMenuShortcut>{cmdKey}S</ContextMenuShortcut>
       </ContextMenuItem>
       <ContextMenuItem
         onSelect={() => {
@@ -195,14 +169,7 @@ export function ContextMenu({
         }}
       >
         Print...
-        <ContextMenuShortcut>
-          {window.navigator.userAgent.includes("Mac") ? (
-            "⌘"
-          ) : (
-            <span className="pr-1 tracking-tighter">CTRL</span>
-          )}
-          P
-        </ContextMenuShortcut>
+        <ContextMenuShortcut>{cmdKey}P</ContextMenuShortcut>
       </ContextMenuItem>
       {items && items.length > 0 ? <ContextMenuSeparator /> : null}
       {items?.map(DisplayItems)}

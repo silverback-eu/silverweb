@@ -1,4 +1,6 @@
 import type { ReactNode } from "react";
+import { ContextProvider, Toaster } from "../apps";
+import { TooltipProvider } from "../shared";
 import { ThemeProvider } from "./theme-provider";
 
 export function Provider({ children }: { children: ReactNode }): JSX.Element {
@@ -9,7 +11,12 @@ export function Provider({ children }: { children: ReactNode }): JSX.Element {
       disableTransitionOnChange
       enableSystem
     >
-      <div className="h-screen">{children}</div>
+      <ContextProvider>
+        <TooltipProvider>
+          <Toaster />
+          <div className="h-screen">{children}</div>
+        </TooltipProvider>
+      </ContextProvider>
     </ThemeProvider>
   );
 }
