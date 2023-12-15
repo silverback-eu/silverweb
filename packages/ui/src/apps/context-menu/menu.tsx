@@ -39,10 +39,10 @@ export function ContextProvider({
   );
 }
 
-function DisplayItems(item: ContextMenuItemType): JSX.Element {
+function DisplayItems(item: ContextMenuItemType, idx: number): JSX.Element {
   if (item.type === "item") {
     return (
-      <ContextMenuItem onSelect={item.onClick}>
+      <ContextMenuItem key={idx} onSelect={item.onClick}>
         {item.label}
         {item.shortcut ? (
           <ContextMenuShortcut>{item.shortcut}</ContextMenuShortcut>
@@ -51,27 +51,27 @@ function DisplayItems(item: ContextMenuItemType): JSX.Element {
     );
   }
   if (item.type === "separator") {
-    return <ContextMenuSeparator />;
+    return <ContextMenuSeparator key={idx} />;
   }
   if (item.type === "submenu") {
     return (
-      <ContextMenuSub>
+      <ContextMenuSub key={idx}>
         <ContextMenuSubTrigger>{item.label}</ContextMenuSubTrigger>
         <ContextMenuSubContent className="w-48">
-          {item.items.map((subitems) => DisplayItems(subitems))}
+          {item.items.map(DisplayItems)}
         </ContextMenuSubContent>
       </ContextMenuSub>
     );
   }
   if ((item.type as string) === "group") {
     return (
-      <ContextMenuGroup>
+      <ContextMenuGroup key={idx}>
         <ContextMenuLabel>{item.label}</ContextMenuLabel>
-        {item.items.map((subitems) => DisplayItems(subitems))}
+        {item.items.map(DisplayItems)}
       </ContextMenuGroup>
     );
   }
-  return <div>Unknown item type</div>;
+  return <div key={idx}>Unknown item type</div>;
 }
 
 function downloadPage(url: string, fileName: string): void {

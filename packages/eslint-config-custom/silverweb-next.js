@@ -43,5 +43,8 @@ module.exports = {
     "import/no-default-export": "off",
     "react/jsx-fragments": ["error", "element"],
     "no-console": ["error", { allow: ["warn", "error"] }],
+    "no-console": ["error", { allow: ["warn", "error"] }],
+    "react/jsx-pascal-case": ["error", { allowNamespace: true }],
+    camelcase: "off",
   },
 };

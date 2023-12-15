@@ -11,9 +11,12 @@
   },
   "dependencies": {
     "@silverweb/ui": "*",
+    "lucide-react": "^0.295.0",
     "next": "latest",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-intersection-observer": "^9.5.3",
+    "typewriter-effect": "^2.21.0"
   },
   "devDependencies": {
     "typescript": "^5",

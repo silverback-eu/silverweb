@@ -209,25 +209,24 @@ const jobs: { title: string; href: string; description: string }[] = [
 type ListItemProps = {
   className?: string;
   title?: string;
+  onSelect?: (event: Event) => void;
 } & ComponentPropsWithoutRef<"a">;
 
 const ListItem = forwardRef<ElementRef<"a">, ListItemProps>(
   ({ className, title, children, ...props }, ref) => (
     <li>
-      <NavigationMenuLink asChild>
-        <a
-          className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-            className,
-          )}
-          ref={ref}
-          {...props}
-        >
-          <div className="text-sm font-medium leading-none">{title}</div>
-          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-            {children}
-          </p>
-        </a>
+      <NavigationMenuLink
+        className={cn(
+          "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+          className,
+        )}
+        ref={ref}
+        {...props}
+      >
+        <div className="text-sm font-medium leading-none">{title}</div>
+        <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+          {children}
+        </p>
       </NavigationMenuLink>
     </li>
   ),
@@ -337,19 +336,20 @@ export function Navbar({
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem className="hidden md:block">
-                <a href="/">
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                    <div
-                      className={cn(
-                        "",
-                        pathname === "/" &&
-                          "font-bold drop-shadow-[0_1px_4px_rgba(255,255,255,0.4)]",
-                      )}
-                    >
-                      Home
-                    </div>
-                  </NavigationMenuLink>
-                </a>
+                <NavigationMenuLink
+                  className={navigationMenuTriggerStyle()}
+                  href="/"
+                >
+                  <div
+                    className={cn(
+                      "",
+                      pathname === "/" &&
+                        "font-bold drop-shadow-[0_1px_4px_rgba(255,255,255,0.4)]",
+                    )}
+                  >
+                    Home
+                  </div>
+                </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem className="hidden md:block">
                 <NavigationMenuTrigger>
@@ -429,34 +429,36 @@ export function Navbar({
                 </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem className="hidden md:block">
-                <a href="/connect">
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                    <div
-                      className={cn(
-                        "",
-                        pathname === "/connect" &&
-                          "font-bold drop-shadow-[0_1px_4px_rgba(255,255,255,0.4)]",
-                      )}
-                    >
-                      Connect
-                    </div>
-                  </NavigationMenuLink>
-                </a>
+                <NavigationMenuLink
+                  className={navigationMenuTriggerStyle()}
+                  href="/connect"
+                >
+                  <div
+                    className={cn(
+                      "",
+                      pathname === "/connect" &&
+                        "font-bold drop-shadow-[0_1px_4px_rgba(255,255,255,0.4)]",
+                    )}
+                  >
+                    Connect
+                  </div>
+                </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem className="hidden md:block">
-                <a href="/industry-insights">
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                    <div
-                      className={cn(
-                        "",
-                        pathname === "/industry-insights" &&
-                          "font-bold drop-shadow-[0_1px_4px_rgba(255,255,255,0.4)]",
-                      )}
-                    >
-                      Industry insights
-                    </div>
-                  </NavigationMenuLink>
-                </a>
+                <NavigationMenuLink
+                  className={navigationMenuTriggerStyle()}
+                  href="/industry-insights"
+                >
+                  <div
+                    className={cn(
+                      "",
+                      pathname === "/industry-insights" &&
+                        "font-bold drop-shadow-[0_1px_4px_rgba(255,255,255,0.4)]",
+                    )}
+                  >
+                    Industry insights
+                  </div>
+                </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 {loginUser ? (
@@ -467,13 +469,12 @@ export function Navbar({
                     type={loginUser.type}
                   />
                 ) : (
-                  <a href="#login">
-                    <NavigationMenuLink
-                      className={navigationMenuTriggerStyle()}
-                    >
-                      Login
-                    </NavigationMenuLink>
-                  </a>
+                  <NavigationMenuLink
+                    className={navigationMenuTriggerStyle()}
+                    href="#login"
+                  >
+                    Login
+                  </NavigationMenuLink>
                 )}
               </NavigationMenuItem>
             </NavigationMenuList>
