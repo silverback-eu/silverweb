@@ -1,7 +1,7 @@
 import type { Column } from "@tanstack/react-table";
 import { ChevronDown, ChevronUp, ChevronsUpDown, EyeOff } from "lucide-react";
 import type { HTMLAttributes } from "react";
-import { cn } from "../../lib/utils";
+import { uicn } from "../../lib";
 import {
   Button,
   DropdownMenu,
@@ -23,30 +23,30 @@ export function TableHeader<TData, TValue>({
   className,
 }: TableHeaderProps<TData, TValue>): JSX.Element {
   if (!column.getCanSort()) {
-    return <div className={cn(className)}>{title}</div>;
+    return <div className={uicn(className)}>{title}</div>;
   }
 
   return (
-    <div className={cn("flex items-center space-x-2", className)}>
+    <div className={uicn("ui-flex ui-items-center ui-space-x-2", className)}>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button
-            className="-ml-3 h-8 data-[state=open]:bg-accent"
+            className="-ui-ml-3 ui-h-8 data-[state=open]:ui-bg-accent"
             size="sm"
             variant="ghost"
           >
             <span>{title}</span>
             {column.getIsSorted() === "desc" &&
               column.getIsSorted() !== "asc" && (
-                <ChevronDown className="ml-2 h-4 w-4" />
+                <ChevronDown className="ui-ml-2 ui-h-4 ui-w-4" />
               )}
             {column.getIsSorted() === "asc" &&
               column.getIsSorted() !== "desc" && (
-                <ChevronUp className="ml-2 h-4 w-4" />
+                <ChevronUp className="ui-ml-2 ui-h-4 ui-w-4" />
               )}
             {column.getIsSorted() !== "asc" &&
               column.getIsSorted() !== "desc" && (
-                <ChevronsUpDown className="ml-2 h-4 w-4" />
+                <ChevronsUpDown className="ui-ml-2 ui-h-4 ui-w-4" />
               )}
           </Button>
         </DropdownMenuTrigger>
@@ -56,7 +56,7 @@ export function TableHeader<TData, TValue>({
               column.toggleSorting(false);
             }}
           >
-            <ChevronUp className="mr-2 h-3.5 w-3.5 text-muted-foreground/70" />
+            <ChevronUp className="ui-mr-2 ui-h-3.5 ui-w-3.5 ui-text-muted-foreground/70" />
             Asc
           </DropdownMenuItem>
           <DropdownMenuItem
@@ -64,7 +64,7 @@ export function TableHeader<TData, TValue>({
               column.toggleSorting(true);
             }}
           >
-            <ChevronDown className="mr-2 h-3.5 w-3.5 text-muted-foreground/70" />
+            <ChevronDown className="ui-mr-2 ui-h-3.5 ui-w-3.5 ui-text-muted-foreground/70" />
             Desc
           </DropdownMenuItem>
           <DropdownMenuSeparator />
@@ -73,7 +73,7 @@ export function TableHeader<TData, TValue>({
               column.toggleVisibility(false);
             }}
           >
-            <EyeOff className="mr-2 h-3.5 w-3.5 text-muted-foreground/70" />
+            <EyeOff className="ui-mr-2 ui-h-3.5 ui-w-3.5 ui-text-muted-foreground/70" />
             Hide
           </DropdownMenuItem>
         </DropdownMenuContent>

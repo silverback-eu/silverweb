@@ -37,11 +37,11 @@ export function Toolbar<TData>({
   const isFiltered = table.getState().columnFilters.length > 0;
 
   return (
-    <div className="flex items-center justify-between">
-      <div className="flex flex-1 items-center space-x-2">
+    <div className="ui-flex ui-items-center ui-justify-between">
+      <div className="ui-flex ui-flex-1 ui-items-center ui-space-x-2">
         {search ? (
           <VanillaInput
-            className="h-8 w-[150px] lg:w-[250px]"
+            className="ui-h-8 ui-w-[150px] lg:ui-w-[250px]"
             onChange={(event) =>
               table.getColumn(search.name)?.setFilterValue(event.target.value)
             }
@@ -70,14 +70,14 @@ export function Toolbar<TData>({
         ) : null}
         {resetFilter && isFiltered ? (
           <Button
-            className="flex h-8 items-center px-2 lg:px-3"
+            className="ui-flex ui-h-8 ui-items-center ui-px-2 lg:ui-px-3"
             onClick={() => {
               table.resetColumnFilters();
             }}
             variant="ghost"
           >
             Reset
-            <X className="ml-2 h-3 w-3" />
+            <X className="ui-ml-2 ui-h-3 ui-w-3" />
           </Button>
         ) : null}
       </div>

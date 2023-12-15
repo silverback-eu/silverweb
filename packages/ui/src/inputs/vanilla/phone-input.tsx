@@ -13,7 +13,7 @@ import {
   PopoverTrigger,
   ScrollArea,
 } from "../../shared";
-import { cn } from "../../lib/utils";
+import { uicn } from "../../lib";
 import { Input } from "./input";
 
 const phonePrefix = [
@@ -1502,23 +1502,23 @@ const PhoneInput = forwardRef<HTMLInputElement, PhoneInputProps>(
     }
     return (
       <div
-        className={cn(
-          "flex h-9 items-center rounded-md border border-input transition-all hover:ring-1 hover:ring-accent disabled:cursor-not-allowed disabled:opacity-50",
+        className={uicn(
+          "ui-flex ui-h-9 ui-items-center ui-rounded-md ui-border ui-border-input ui-transition-all hover:ui-ring-1 hover:ui-ring-accent disabled:ui-cursor-not-allowed disabled:ui-opacity-50",
           status === "success" &&
-            "hover:ring-lime-600 focus-visible:ring-1 focus-visible:ring-lime-500",
+            "hover:ui-ring-lime-600 focus-visible:ui-ring-1 focus-visible:ui-ring-lime-500",
           status === "error" &&
-            "hover:ring-red-600 focus-visible:ring-1 focus-visible:ring-red-500",
+            "hover:ui-ring-red-600 focus-visible:ui-ring-1 focus-visible:ui-ring-red-500",
           readOnly && "",
         )}
         ref={ContainerRef}
       >
-        <div className="">
+        <div>
           <Popover onOpenChange={setOpen} open={open}>
             <PopoverTrigger asChild>
               <Button
                 aria-expanded={open}
                 aria-label="Select phone prefix"
-                className="flex w-10 items-center justify-center p-0 text-lg"
+                className="ui-flex ui-w-10 ui-items-center ui-justify-center ui-p-0 ui-text-lg"
                 role="combobox"
                 variant="ghost"
               >
@@ -1527,11 +1527,14 @@ const PhoneInput = forwardRef<HTMLInputElement, PhoneInputProps>(
             </PopoverTrigger>
             <PopoverContent
               align="start"
-              className={cn("w-[300px] p-0", popoverClassName)}
+              className={uicn("ui-w-[300px] ui-p-0", popoverClassName)}
             >
               <Command>
-                <CommandInput className="h-9" placeholder="Search prefix..." />
-                <ScrollArea className="h-[300px]">
+                <CommandInput
+                  className="ui-h-9"
+                  placeholder="Search prefix..."
+                />
+                <ScrollArea className="ui-h-[300px]">
                   <CommandEmpty>No phone prefix found.</CommandEmpty>
                   {suggestions.length > 0 ? (
                     <CommandGroup heading="Suggested">
@@ -1542,7 +1545,7 @@ const PhoneInput = forwardRef<HTMLInputElement, PhoneInputProps>(
                               prefixObject.country === suggestion,
                           ) && (
                             <CommandItem
-                              className="gap-2"
+                              className="ui-gap-2"
                               key={
                                 phonePrefix.find(
                                   (prefixObject) =>
@@ -1592,15 +1595,15 @@ const PhoneInput = forwardRef<HTMLInputElement, PhoneInputProps>(
                                 )?.name
                               }
                               <Check
-                                className={cn(
-                                  "ml-auto h-4 w-4",
+                                className={uicn(
+                                  "ui-ml-auto ui-h-4 ui-w-4",
                                   selectedPrefix ===
                                     phonePrefix.find(
                                       (prefixObject) =>
                                         prefixObject.country === suggestion,
                                     )
-                                    ? "opacity-100"
-                                    : "opacity-0",
+                                    ? "ui-opacity-100"
+                                    : "ui-opacity-0",
                                 )}
                               />
                             </CommandItem>
@@ -1614,7 +1617,7 @@ const PhoneInput = forwardRef<HTMLInputElement, PhoneInputProps>(
                       .sort((a, b) => a.name.localeCompare(b.name))
                       .map((prefixInMap) => (
                         <CommandItem
-                          className="gap-2"
+                          className="ui-gap-2"
                           key={prefixInMap.prefix}
                           onSelect={() => {
                             setInputValue(
@@ -1632,11 +1635,11 @@ const PhoneInput = forwardRef<HTMLInputElement, PhoneInputProps>(
                           <span>{prefixInMap.flag}</span>
                           {prefixInMap.name}
                           <Check
-                            className={cn(
-                              "ml-auto h-4 w-4",
+                            className={uicn(
+                              "ui-ml-auto ui-h-4 ui-w-4",
                               selectedPrefix === prefixInMap
-                                ? "opacity-100"
-                                : "opacity-0",
+                                ? "ui-opacity-100"
+                                : "ui-opacity-0",
                             )}
                           />
                         </CommandItem>
@@ -1648,12 +1651,12 @@ const PhoneInput = forwardRef<HTMLInputElement, PhoneInputProps>(
           </Popover>
         </div>
         <Input
-          className={cn(
-            "flex h-9 w-full rounded-md border-0 bg-transparent px-3 py-1 text-sm shadow-none transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-0 disabled:cursor-not-allowed disabled:opacity-50",
+          className={uicn(
+            "ui-flex ui-h-9 ui-w-full ui-rounded-md ui-border-0 ui-bg-transparent ui-px-3 ui-py-1 ui-text-sm ui-shadow-none ui-transition-colors placeholder:ui-text-muted-foreground focus-visible:ui-outline-none focus-visible:ui-ring-0 disabled:ui-cursor-not-allowed disabled:ui-opacity-50",
             status === "success" &&
-              "text-lime-600 placeholder:text-lime-600 placeholder:opacity-80",
+              "ui-text-lime-600 placeholder:ui-text-lime-600 placeholder:ui-opacity-80",
             status === "error" &&
-              "text-red-500 placeholder:text-red-500 placeholder:opacity-80",
+              "ui-text-red-500 placeholder:ui-text-red-500 placeholder:ui-opacity-80",
             className,
           )}
           disabled={disabled}

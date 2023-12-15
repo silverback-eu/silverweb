@@ -7,7 +7,9 @@ export function Toaster(props: ToasterProps): JSX.Element {
     <PToaster
       closeButton
       duration={500000}
-      loadingIcon={<Loader2 className="mr-2 h-5 w-5 animate-spin" />}
+      loadingIcon={
+        <Loader2 className="ui-mr-2 ui-h-5 ui-w-5 ui-animate-spin" />
+      }
       toastOptions={{
         style: {
           borderRadius: "0.75rem",

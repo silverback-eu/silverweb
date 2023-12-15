@@ -2,7 +2,7 @@ import { Root, Item, Indicator } from "@radix-ui/react-radio-group";
 import { Circle } from "lucide-react";
 import type { ComponentPropsWithoutRef, ElementRef } from "react";
 import { forwardRef } from "react";
-import { cn } from "../../lib/utils";
+import { uicn } from "../../lib";
 
 type RadioGroupProps = {
   className?: string;
@@ -10,7 +10,11 @@ type RadioGroupProps = {
 
 const RadioGroup = forwardRef<ElementRef<typeof Root>, RadioGroupProps>(
   ({ className, ...props }, ref) => (
-    <Root className={cn("grid gap-2", className)} {...props} ref={ref} />
+    <Root
+      className={uicn("ui-grid ui-gap-2", className)}
+      {...props}
+      ref={ref}
+    />
   ),
 );
 RadioGroup.displayName = Root.displayName;
@@ -22,15 +26,15 @@ type RadioGroupItemProps = {
 const RadioGroupItem = forwardRef<ElementRef<typeof Item>, RadioGroupItemProps>(
   ({ className, ...props }, ref) => (
     <Item
-      className={cn(
-        "aspect-square h-4 w-4 rounded-full border border-primary text-primary shadow focus:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50",
+      className={uicn(
+        "ui-aspect-square ui-h-4 ui-w-4 ui-rounded-full ui-border ui-border-primary ui-text-primary ui-shadow focus:ui-outline-none focus-visible:ui-ring-1 focus-visible:ui-ring-ring disabled:ui-cursor-not-allowed disabled:ui-opacity-50",
         className,
       )}
       ref={ref}
       {...props}
     >
-      <Indicator className="flex items-center justify-center">
-        <Circle className="h-2.5 w-2.5 fill-current text-current" />
+      <Indicator className="ui-flex ui-items-center ui-justify-center">
+        <Circle className="ui-h-2.5 ui-w-2.5 ui-fill-current ui-text-current" />
       </Indicator>
     </Item>
   ),

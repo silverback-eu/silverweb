@@ -12,7 +12,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "../../shared";
-import { cn } from "../../lib/utils";
+import { uicn } from "../../lib";
 
 export type ComboBoxProps =
   | (ButtonHTMLAttributes<HTMLButtonElement> & {
@@ -63,7 +63,7 @@ const ComboBox = forwardRef<HTMLButtonElement, ComboBoxProps>((props, ref) => {
       }
       return items.find((item) => item.value === value)?.label;
     }
-    return <span className="opacity-50">{placeholder}</span>;
+    return <span className="ui-opacity-50">{placeholder}</span>;
   }
 
   return (
@@ -71,23 +71,23 @@ const ComboBox = forwardRef<HTMLButtonElement, ComboBoxProps>((props, ref) => {
       <PopoverTrigger asChild>
         {readOnly ? (
           <div
-            className={cn(
-              "inline-flex h-9 w-full items-center justify-between rounded-md border border-input bg-transparent px-4 py-2 text-sm font-medium shadow-sm transition-colors",
+            className={uicn(
+              "ui-inline-flex ui-h-9 ui-w-full ui-items-center ui-justify-between ui-rounded-md ui-border ui-border-input ui-bg-transparent ui-px-4 ui-py-2 ui-text-sm ui-font-medium ui-shadow-sm ui-transition-colors",
               className,
             )}
           >
             {getLabel()}
-            <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+            <ChevronsUpDown className="ui-ml-2 ui-h-4 ui-w-4 ui-shrink-0 ui-opacity-50" />
           </div>
         ) : (
           <Button
             aria-expanded={open}
-            className={cn(
-              "w-full justify-between",
+            className={uicn(
+              "ui-w-full ui-justify-between",
               status === "success" &&
-                "border-lime-600 text-lime-600 hover:text-lime-600",
+                "ui-border-lime-600 ui-text-lime-600 hover:ui-text-lime-600",
               status === "error" &&
-                "border-red-500 text-red-500 hover:text-red-500",
+                "ui-border-red-500 ui-text-red-500 hover:ui-text-red-500",
               className,
             )}
             ref={ref}
@@ -96,13 +96,13 @@ const ComboBox = forwardRef<HTMLButtonElement, ComboBoxProps>((props, ref) => {
             {...rest}
           >
             {getLabel()}
-            <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+            <ChevronsUpDown className="ui-ml-2 ui-h-4 ui-w-4 ui-shrink-0 ui-opacity-50" />
           </Button>
         )}
       </PopoverTrigger>
-      <PopoverContent className={cn("w-[200px] p-0", popoverClassName)}>
+      <PopoverContent className={uicn("ui-w-[200px] ui-p-0", popoverClassName)}>
         <Command>
-          <CommandInput className="h-9" placeholder={placeholder} />
+          <CommandInput className="ui-h-9" placeholder={placeholder} />
           <CommandEmpty>No framework found.</CommandEmpty>
           {grouped === true ? (
             <Fragment>
@@ -121,9 +121,11 @@ const ComboBox = forwardRef<HTMLButtonElement, ComboBoxProps>((props, ref) => {
                     >
                       {item.label}
                       <Check
-                        className={cn(
-                          "ml-auto h-4 w-4",
-                          value === item.value ? "opacity-100" : "opacity-0",
+                        className={uicn(
+                          "ui-ml-auto ui-h-4 ui-w-4",
+                          value === item.value
+                            ? "ui-opacity-100"
+                            : "ui-opacity-0",
                         )}
                       />
                     </CommandItem>
@@ -146,9 +148,9 @@ const ComboBox = forwardRef<HTMLButtonElement, ComboBoxProps>((props, ref) => {
                 >
                   {item.label}
                   <Check
-                    className={cn(
-                      "ml-auto h-4 w-4",
-                      value === item.value ? "opacity-100" : "opacity-0",
+                    className={uicn(
+                      "ui-ml-auto ui-h-4 ui-w-4",
+                      value === item.value ? "ui-opacity-100" : "ui-opacity-0",
                     )}
                   />
                 </CommandItem>

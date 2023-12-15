@@ -1,7 +1,7 @@
 import { List, Root, Trigger, Content } from "@radix-ui/react-tabs";
 import type { ComponentPropsWithoutRef, ElementRef } from "react";
 import { forwardRef } from "react";
-import { cn } from "../lib/utils";
+import { uicn } from "../lib";
 
 const Tabs = Root;
 
@@ -10,8 +10,8 @@ const TabsList = forwardRef<
   ComponentPropsWithoutRef<typeof List>
 >(({ className, ...props }, ref) => (
   <List
-    className={cn(
-      "inline-flex h-9 items-center justify-center rounded-lg bg-muted p-1 text-muted-foreground",
+    className={uicn(
+      "ui-inline-flex ui-h-9 ui-items-center ui-justify-center ui-rounded-lg ui-bg-muted ui-p-1 ui-text-muted-foreground",
       className,
     )}
     ref={ref}
@@ -25,8 +25,8 @@ const TabsTrigger = forwardRef<
   ComponentPropsWithoutRef<typeof Trigger>
 >(({ className, ...props }, ref) => (
   <Trigger
-    className={cn(
-      "inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow",
+    className={uicn(
+      "ui-inline-flex ui-items-center ui-justify-center ui-whitespace-nowrap ui-rounded-md ui-px-3 ui-py-1 ui-text-sm ui-font-medium ui-ring-offset-background ui-transition-all focus-visible:ui-outline-none focus-visible:ui-ring-2 focus-visible:ui-ring-ring focus-visible:ui-ring-offset-2 disabled:ui-pointer-events-none disabled:ui-opacity-50 data-[state=active]:ui-bg-background data-[state=active]:ui-text-foreground data-[state=active]:ui-shadow",
       className,
     )}
     ref={ref}
@@ -40,8 +40,8 @@ const TabsContent = forwardRef<
   ComponentPropsWithoutRef<typeof Content>
 >(({ className, ...props }, ref) => (
   <Content
-    className={cn(
-      "mt-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+    className={uicn(
+      "ui-mt-2 ui-ring-offset-background focus-visible:ui-outline-none focus-visible:ui-ring-2 focus-visible:ui-ring-ring focus-visible:ui-ring-offset-2",
       className,
     )}
     ref={ref}

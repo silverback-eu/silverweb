@@ -1,7 +1,7 @@
 import { Root, Image, Fallback } from "@radix-ui/react-avatar";
 import type { ComponentPropsWithoutRef, ElementRef } from "react";
 import { forwardRef } from "react";
-import { cn } from "../lib/utils";
+import { uicn } from "../lib";
 
 type AvatarProps = {
   className?: string;
@@ -10,8 +10,8 @@ type AvatarProps = {
 const Avatar = forwardRef<ElementRef<typeof Root>, AvatarProps>(
   ({ className, ...props }, ref) => (
     <Root
-      className={cn(
-        "relative flex h-8 w-8 shrink-0 overflow-hidden rounded-full",
+      className={uicn(
+        "ui-relative ui-flex ui-h-8 ui-w-8 ui-shrink-0 ui-overflow-hidden ui-rounded-full",
         className,
       )}
       ref={ref}
@@ -28,7 +28,7 @@ type AvatarImageProps = {
 const AvatarImage = forwardRef<ElementRef<typeof Image>, AvatarImageProps>(
   ({ className, ...props }, ref) => (
     <Image
-      className={cn("aspect-square h-full w-full", className)}
+      className={uicn("ui-aspect-square ui-h-full ui-w-full", className)}
       ref={ref}
       {...props}
     />
@@ -45,8 +45,8 @@ const AvatarFallback = forwardRef<
   AvatarFallbackProps
 >(({ className, ...props }, ref) => (
   <Fallback
-    className={cn(
-      "flex h-full w-full items-center justify-center rounded-full bg-muted",
+    className={uicn(
+      "ui-flex ui-h-full ui-w-full ui-items-center ui-justify-center ui-rounded-full ui-bg-muted",
       className,
     )}
     ref={ref}

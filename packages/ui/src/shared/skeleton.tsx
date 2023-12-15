@@ -1,5 +1,5 @@
 import type { HTMLAttributes } from "react";
-import { cn } from "../lib/utils";
+import { uicn } from "../lib";
 
 function Skeleton({
   className,
@@ -7,7 +7,10 @@ function Skeleton({
 }: HTMLAttributes<HTMLDivElement>): JSX.Element {
   return (
     <div
-      className={cn("animate-pulse rounded-md bg-primary/10", className)}
+      className={uicn(
+        "ui-animate-pulse ui-rounded-md ui-bg-primary/10",
+        className,
+      )}
       {...props}
     />
   );

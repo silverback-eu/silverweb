@@ -20,70 +20,70 @@ export interface LoadingInputProps {
 }
 
 function LoadingTextInput(): JSX.Element {
-  return <Skeleton className="h-9 w-full rounded-md" />;
+  return <Skeleton className="ui-h-9 ui-w-full ui-rounded-md" />;
 }
 
 function LoadingTextAreaInput(): JSX.Element {
-  return <Skeleton className="h-[60px]  w-full rounded-md" />;
+  return <Skeleton className="ui-h-[60px] ui- ui-w-full ui-rounded-md" />;
 }
 
 function LoadingFileInput(): JSX.Element {
   return (
     <div>
-      <Card className="relative h-48 w-full space-y-3 overflow-hidden px-4 py-8 text-center transition-all">
-        <Skeleton className="mx-auto !mt-0 flex h-10 w-10 items-center justify-center rounded-xl bg-muted" />
-        <Skeleton className="mx-auto h-5 w-64" />
-        <p className="text-xs">
-          <span className="animate-pulse select-none rounded-md bg-primary/10 box-decoration-clone text-transparent">
+      <Card className="ui-relative ui-h-48 ui-w-full ui-space-y-3 ui-overflow-hidden ui-px-4 ui-py-8 ui-text-center ui-transition-all">
+        <Skeleton className="ui-mx-auto !ui-mt-0 ui-flex ui-h-10 ui-w-10 ui-items-center ui-justify-center ui-rounded-xl ui-bg-muted" />
+        <Skeleton className="ui-mx-auto ui-h-5 ui-w-64" />
+        <p className="ui-text-xs">
+          <span className="ui-animate-pulse ui-select-none ui-rounded-md ui-bg-primary/10 ui-box-decoration-clone ui-text-transparent">
             Support for single or bulk upload. Only *.pdf, *.png, *jpg, *.doc
             and *.docx file types are supported.
           </span>
         </p>
       </Card>
-      <div className="my-4 grid gap-2">
+      <div className="ui-my-4 ui-grid ui-gap-2">
         <Card>
-          <CardContent className="flex items-center justify-between gap-2 p-2 pr-5">
-            <div className="flex items-center gap-2">
-              <Skeleton className="flex h-8 w-8 items-center justify-center rounded-xl bg-muted" />
-              <div className="grid content-center gap-[7px]">
-                <Skeleton className="h-4 w-28" />
-                <div className="flex gap-2">
-                  <Skeleton className="h-3 w-20" />{" "}
-                  <Skeleton className="h-3 w-12" />
+          <CardContent className="ui-flex ui-items-center ui-justify-between ui-gap-2 ui-p-2 ui-pr-5">
+            <div className="ui-flex ui-items-center ui-gap-2">
+              <Skeleton className="ui-flex ui-h-8 ui-w-8 ui-items-center ui-justify-center ui-rounded-xl ui-bg-muted" />
+              <div className="ui-grid ui-content-center ui-gap-[7px]">
+                <Skeleton className="ui-h-4 ui-w-28" />
+                <div className="ui-flex ui-gap-2">
+                  <Skeleton className="ui-h-3 ui-w-20" />{" "}
+                  <Skeleton className="ui-h-3 ui-w-12" />
                 </div>
               </div>
             </div>
-            <Skeleton className="h-4 w-4 rounded-sm" />
+            <Skeleton className="ui-h-4 ui-w-4 ui-rounded-sm" />
           </CardContent>
         </Card>
         <Card>
-          <CardContent className="flex items-center justify-between gap-2 p-2 pr-5">
-            <div className="flex items-center gap-2">
-              <Skeleton className="flex h-8 w-8 items-center justify-center rounded-xl bg-muted" />
-              <div className="grid content-center gap-[7px]">
-                <Skeleton className="h-4 w-28" />
-                <div className="flex gap-2">
-                  <Skeleton className="h-3 w-20" />{" "}
-                  <Skeleton className="h-3 w-12" />
+          <CardContent className="ui-flex ui-items-center ui-justify-between ui-gap-2 ui-p-2 ui-pr-5">
+            <div className="ui-flex ui-items-center ui-gap-2">
+              <Skeleton className="ui-flex ui-h-8 ui-w-8 ui-items-center ui-justify-center ui-rounded-xl ui-bg-muted" />
+              <div className="ui-grid ui-content-center ui-gap-[7px]">
+                <Skeleton className="ui-h-4 ui-w-28" />
+                <div className="ui-flex ui-gap-2">
+                  <Skeleton className="ui-h-3 ui-w-20" />{" "}
+                  <Skeleton className="ui-h-3 ui-w-12" />
                 </div>
               </div>
             </div>
-            <Skeleton className="h-4 w-4 rounded-sm" />
+            <Skeleton className="ui-h-4 ui-w-4 ui-rounded-sm" />
           </CardContent>
         </Card>
         <Card>
-          <CardContent className="flex items-center justify-between gap-2 p-2 pr-5">
-            <div className="flex items-center gap-2">
-              <Skeleton className="flex h-8 w-8 items-center justify-center rounded-xl bg-muted" />
-              <div className="grid content-center gap-[7px]">
-                <Skeleton className="h-4 w-28" />
-                <div className="flex gap-2">
-                  <Skeleton className="h-3 w-20" />{" "}
-                  <Skeleton className="h-3 w-12" />
+          <CardContent className="ui-flex ui-items-center ui-justify-between ui-gap-2 ui-p-2 ui-pr-5">
+            <div className="ui-flex ui-items-center ui-gap-2">
+              <Skeleton className="ui-flex ui-h-8 ui-w-8 ui-items-center ui-justify-center ui-rounded-xl ui-bg-muted" />
+              <div className="ui-grid ui-content-center ui-gap-[7px]">
+                <Skeleton className="ui-h-4 ui-w-28" />
+                <div className="ui-flex ui-gap-2">
+                  <Skeleton className="ui-h-3 ui-w-20" />{" "}
+                  <Skeleton className="ui-h-3 ui-w-12" />
                 </div>
               </div>
             </div>
-            <Skeleton className="h-4 w-4 rounded-sm" />
+            <Skeleton className="ui-h-4 ui-w-4 ui-rounded-sm" />
           </CardContent>
         </Card>
       </div>
@@ -95,50 +95,50 @@ function LoadingCheckboxInput({ big }: { big?: boolean }): JSX.Element {
   if (big) {
     return (
       <Card>
-        <CardContent className="flex items-center justify-between gap-2 p-2">
-          <div className="flex items-center gap-2">
-            <Skeleton className="flex h-10 w-10 items-center justify-center rounded-xl bg-muted" />
-            <div className="grid content-center gap-1">
-              <Skeleton className="h-4 w-20" />
-              <Skeleton className="h-3 w-36" />
+        <CardContent className="ui-flex ui-items-center ui-justify-between ui-gap-2 ui-p-2">
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <Skeleton className="ui-flex ui-h-10 ui-w-10 ui-items-center ui-justify-center ui-rounded-xl ui-bg-muted" />
+            <div className="ui-grid ui-content-center ui-gap-1">
+              <Skeleton className="ui-h-4 ui-w-20" />
+              <Skeleton className="ui-h-3 ui-w-36" />
             </div>
           </div>
-          <Skeleton className="mr-2 h-4 w-4 rounded-sm" />
+          <Skeleton className="ui-mr-2 ui-h-4 ui-w-4 ui-rounded-sm" />
         </CardContent>
       </Card>
     );
   }
 
-  return <Skeleton className="h-4 w-4 rounded-sm" />;
+  return <Skeleton className="ui-h-4 ui-w-4 ui-rounded-sm" />;
 }
 
 function LoadingRadioInput({ big }: { big?: boolean }): JSX.Element {
   if (big) {
     return (
       <Card>
-        <CardContent className="flex items-center justify-between gap-2 p-2">
-          <div className="flex items-center gap-2">
-            <Skeleton className="flex h-10 w-10 items-center justify-center rounded-xl bg-muted" />
-            <div className="grid content-center gap-1">
-              <Skeleton className="h-4 w-20" />
-              <Skeleton className="h-3 w-36" />
+        <CardContent className="ui-flex ui-items-center ui-justify-between ui-gap-2 ui-p-2">
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <Skeleton className="ui-flex ui-h-10 ui-w-10 ui-items-center ui-justify-center ui-rounded-xl ui-bg-muted" />
+            <div className="ui-grid ui-content-center ui-gap-1">
+              <Skeleton className="ui-h-4 ui-w-20" />
+              <Skeleton className="ui-h-3 ui-w-36" />
             </div>
           </div>
-          <Skeleton className="mr-2 h-4 w-4 rounded-full" />
+          <Skeleton className="ui-mr-2 ui-h-4 ui-w-4 ui-rounded-full" />
         </CardContent>
       </Card>
     );
   }
 
-  return <Skeleton className="h-4 w-4 rounded-full" />;
+  return <Skeleton className="ui-h-4 ui-w-4 ui-rounded-full" />;
 }
 
 function LoadingSlider(): JSX.Element {
   return (
-    <div className="relative flex items-center justify-center">
-      <Skeleton className="h-2 w-full rounded-full" />
-      <div className="absolute -translate-x-12 rounded-full bg-background">
-        <Skeleton className="h-5 w-5 rounded-full " />
+    <div className="ui-relative ui-flex ui-items-center ui-justify-center">
+      <Skeleton className="ui-h-2 ui-w-full ui-rounded-full" />
+      <div className="ui-absolute -ui-translate-x-12 ui-rounded-full ui-bg-background">
+        <Skeleton className="ui-h-5 ui-w-5 ui-rounded-full ui-" />
       </div>
     </div>
   );
@@ -148,20 +148,20 @@ function LoadingSwitch({ big }: { big?: boolean }): JSX.Element {
   if (big) {
     return (
       <Card>
-        <CardContent className="flex items-center justify-between gap-2 p-2">
-          <div className="flex items-center gap-2">
-            <Skeleton className="flex h-10 w-10 items-center justify-center rounded-xl bg-muted" />
-            <div className="grid content-center gap-1">
-              <Skeleton className="h-4 w-20" />
-              <Skeleton className="h-3 w-36" />
+        <CardContent className="ui-flex ui-items-center ui-justify-between ui-gap-2 ui-p-2">
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <Skeleton className="ui-flex ui-h-10 ui-w-10 ui-items-center ui-justify-center ui-rounded-xl ui-bg-muted" />
+            <div className="ui-grid ui-content-center ui-gap-1">
+              <Skeleton className="ui-h-4 ui-w-20" />
+              <Skeleton className="ui-h-3 ui-w-36" />
             </div>
           </div>
-          <Skeleton className="mr-2 h-5 w-10 rounded-full" />
+          <Skeleton className="ui-mr-2 ui-h-5 ui-w-10 ui-rounded-full" />
         </CardContent>
       </Card>
     );
   }
-  return <Skeleton className="h-5 w-10 rounded-full" />;
+  return <Skeleton className="ui-h-5 ui-w-10 ui-rounded-full" />;
 }
 
 export function LoadingInput({

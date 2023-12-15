@@ -21,15 +21,15 @@ export function ColumnFilter<TData>({
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button
-          className="ml-auto hidden h-8 lg:flex"
+          className="ui-ml-auto ui-hidden ui-h-8 lg:ui-flex"
           size="sm"
           variant="outline"
         >
-          <SlidersHorizontal className="mr-2 h-4 w-4" />
+          <SlidersHorizontal className="ui-mr-2 ui-h-4 ui-w-4" />
           View
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="w-[150px]">
+      <DropdownMenuContent align="end" className="ui-w-[150px]">
         <DropdownMenuLabel>Toggle columns</DropdownMenuLabel>
         <DropdownMenuSeparator />
         {table
@@ -41,7 +41,7 @@ export function ColumnFilter<TData>({
           .map((column) => (
             <DropdownMenuCheckboxItem
               checked={column.getIsVisible()}
-              className="capitalize"
+              className="ui-capitalize"
               key={column.id}
               onCheckedChange={(value) => {
                 column.toggleVisibility(Boolean(value));

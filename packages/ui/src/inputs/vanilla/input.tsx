@@ -1,6 +1,6 @@
 import type { InputHTMLAttributes } from "react";
 import { Fragment, forwardRef, useRef } from "react";
-import { cn } from "../../lib/utils";
+import { uicn } from "../../lib";
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   prefix?: string;
@@ -28,16 +28,16 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
     return (
       <Fragment>
         {prefix ? (
-          <div className="relative w-full">
+          <div className="ui-relative ui-w-full">
             <span
-              className="absolute inset-y-0 left-3 flex items-center text-sm font-medium transition-all"
+              className="ui-absolute ui-inset-y-0 ui-left-3 ui-flex ui-items-center ui-text-sm ui-font-medium ui-transition-all"
               ref={PrefixRef}
             >
               {prefix}
             </span>
             <input
-              className={cn(
-                "flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50",
+              className={uicn(
+                "ui-flex ui-h-9 ui-w-full ui-rounded-md ui-border ui-border-input ui-bg-transparent ui-px-3 ui-py-1 ui-text-sm ui-shadow-sm ui-transition-colors file:ui-border-0 file:ui-bg-transparent file:ui-text-sm file:ui-font-medium placeholder:ui-text-muted-foreground focus-visible:ui-outline-none focus-visible:ui-ring-1 focus-visible:ui-ring-ring disabled:ui-cursor-not-allowed disabled:ui-opacity-50",
                 className,
               )}
               disabled={disabled}
@@ -75,8 +75,8 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           </div>
         ) : (
           <input
-            className={cn(
-              "flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50",
+            className={uicn(
+              "ui-flex ui-h-9 ui-w-full ui-rounded-md ui-border ui-border-input ui-bg-transparent ui-px-3 ui-py-1 ui-text-sm ui-shadow-sm ui-transition-colors file:ui-border-0 file:ui-bg-transparent file:ui-text-sm file:ui-font-medium placeholder:ui-text-muted-foreground focus-visible:ui-outline-none focus-visible:ui-ring-1 focus-visible:ui-ring-ring disabled:ui-cursor-not-allowed disabled:ui-opacity-50",
               className,
             )}
             disabled={disabled}

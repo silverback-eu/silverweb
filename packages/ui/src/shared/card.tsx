@@ -1,6 +1,6 @@
 import type { HTMLAttributes } from "react";
 import { forwardRef } from "react";
-import { cn } from "../lib/utils";
+import { uicn } from "../lib";
 
 type CardProps = {
   className?: string;
@@ -9,8 +9,8 @@ type CardProps = {
 const Card = forwardRef<HTMLDivElement, CardProps>(
   ({ className, ...props }, ref) => (
     <div
-      className={cn(
-        "rounded-xl border bg-card text-card-foreground shadow",
+      className={uicn(
+        "ui-rounded-xl ui-border ui-bg-card ui-text-card-foreground ui-shadow",
         className,
       )}
       ref={ref}
@@ -27,7 +27,7 @@ type CardHeaderProps = {
 const CardHeader = forwardRef<HTMLDivElement, CardHeaderProps>(
   ({ className, ...props }, ref) => (
     <div
-      className={cn("flex flex-col space-y-1.5 p-6", className)}
+      className={uicn("ui-flex ui-flex-col ui-space-y-1.5 ui-p-6", className)}
       ref={ref}
       {...props}
     />
@@ -42,7 +42,10 @@ type CardTitleProps = {
 const CardTitle = forwardRef<HTMLParagraphElement, CardTitleProps>(
   ({ className, children, ...props }, ref) => (
     <h3
-      className={cn("font-semibold leading-none tracking-tight", className)}
+      className={uicn(
+        "ui-font-semibold ui-leading-none ui-tracking-tight",
+        className,
+      )}
       ref={ref}
       {...props}
     >
@@ -59,7 +62,7 @@ type CardDescriptionProps = {
 const CardDescription = forwardRef<HTMLParagraphElement, CardDescriptionProps>(
   ({ className, ...props }, ref) => (
     <p
-      className={cn("text-sm text-muted-foreground", className)}
+      className={uicn("ui-text-sm ui-text-muted-foreground", className)}
       ref={ref}
       {...props}
     />
@@ -73,7 +76,7 @@ type CardContentProps = {
 
 const CardContent = forwardRef<HTMLDivElement, CardContentProps>(
   ({ className, ...props }, ref) => (
-    <div className={cn("p-6 pt-0", className)} ref={ref} {...props} />
+    <div className={uicn("ui-p-6 ui-pt-0", className)} ref={ref} {...props} />
   ),
 );
 CardContent.displayName = "CardContent";
@@ -85,7 +88,7 @@ type CardFooterProps = {
 const CardFooter = forwardRef<HTMLDivElement, CardFooterProps>(
   ({ className, ...props }, ref) => (
     <div
-      className={cn("flex items-center p-6 pt-0", className)}
+      className={uicn("ui-flex ui-items-center ui-p-6 ui-pt-0", className)}
       ref={ref}
       {...props}
     />

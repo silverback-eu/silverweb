@@ -3,7 +3,7 @@ import { memo } from "react";
 import type { NodeProps } from "reactflow";
 import { Handle, Position } from "reactflow";
 import { Card } from "../../../shared";
-import { cn } from "../../../lib/utils";
+import { uicn } from "../../../lib";
 
 export interface CardNodeProps {
   content?: ReactNode;
@@ -16,7 +16,7 @@ function CardNodeWO({
   dragging,
 }: NodeProps<CardNodeProps>): JSX.Element {
   return (
-    <Card className={cn("", dragging && "cursor-grabbing", className)}>
+    <Card className={uicn("", dragging && "ui-cursor-grabbing", className)}>
       {content}
     </Card>
   );
@@ -30,23 +30,23 @@ function CardNodeDf({
   isConnectable,
 }: NodeProps<CardNodeProps>): JSX.Element {
   return (
-    <Card className={cn("", dragging && "cursor-grabbing", className)}>
+    <Card className={uicn("", dragging && "ui-cursor-grabbing", className)}>
       {content}
       <Handle
-        className={cn(
+        className={uicn(
           direction === "horizontal"
-            ? "!h-8 !w-0.5 !min-w-0 -translate-y-1/2 translate-x-0.5 !transform !rounded-l-sm !rounded-r-none !border-border !bg-muted"
-            : "!mt-0.5 !h-0.5 !min-h-0 !w-8 !rounded-b-none !rounded-t-sm !border-border !bg-muted",
+            ? "!ui-h-8 !ui-w-0.5 !ui-min-w-0 -ui-translate-y-1/2 ui-translate-x-0.5 !ui-transform !ui-rounded-l-sm !ui-rounded-r-none !ui-border-border !ui-bg-muted"
+            : "!ui-mt-0.5 !ui-h-0.5 !ui-min-h-0 !ui-w-8 !ui-rounded-b-none !ui-rounded-t-sm !ui-border-border !ui-bg-muted",
         )}
         isConnectable={isConnectable}
         position={direction === "horizontal" ? Position.Left : Position.Top}
         type="target"
       />
       <Handle
-        className={cn(
+        className={uicn(
           direction === "horizontal"
-            ? "!h-8 !w-0.5 !min-w-0 -translate-x-0.5 -translate-y-1/2 !transform  !rounded-l-none !rounded-r-sm !border-border !bg-muted"
-            : "!h-0.5 !min-h-0 !w-8 -translate-x-1/2 -translate-y-0.5 !transform  !rounded-b-sm !rounded-t-none !border-border !bg-muted",
+            ? "!ui-h-8 !ui-w-0.5 !ui-min-w-0 -ui-translate-x-0.5 -ui-translate-y-1/2 !ui-transform ui- !ui-rounded-l-none !ui-rounded-r-sm !ui-border-border !ui-bg-muted"
+            : "!ui-h-0.5 !ui-min-h-0 !ui-w-8 -ui-translate-x-1/2 -ui-translate-y-0.5 !ui-transform ui- !ui-rounded-b-sm !ui-rounded-t-none !ui-border-border !ui-bg-muted",
         )}
         isConnectable={isConnectable}
         position={direction === "horizontal" ? Position.Right : Position.Bottom}
@@ -64,13 +64,13 @@ function CardNodeIn({
   isConnectable,
 }: NodeProps<CardNodeProps>): JSX.Element {
   return (
-    <Card className={cn("", dragging && "cursor-grabbing", className)}>
+    <Card className={uicn("", dragging && "ui-cursor-grabbing", className)}>
       {content}
       <Handle
-        className={cn(
+        className={uicn(
           direction === "horizontal"
-            ? "!h-8 !w-0.5 !min-w-0 -translate-y-1/2 translate-x-0.5 !transform !rounded-l-sm !rounded-r-none !border-border !bg-muted"
-            : "!mt-0.5 !h-0.5 !min-h-0 !w-8 !rounded-b-none !rounded-t-sm !border-border !bg-muted",
+            ? "!ui-h-8 !ui-w-0.5 !ui-min-w-0 -ui-translate-y-1/2 ui-translate-x-0.5 !ui-transform !ui-rounded-l-sm !ui-rounded-r-none !ui-border-border !ui-bg-muted"
+            : "!ui-mt-0.5 !ui-h-0.5 !ui-min-h-0 !ui-w-8 !ui-rounded-b-none !ui-rounded-t-sm !ui-border-border !ui-bg-muted",
         )}
         isConnectable={isConnectable}
         position={direction === "horizontal" ? Position.Left : Position.Top}
@@ -88,13 +88,13 @@ function CardNodeOut({
   isConnectable,
 }: NodeProps<CardNodeProps>): JSX.Element {
   return (
-    <Card className={cn("", dragging && "cursor-grabbing", className)}>
+    <Card className={uicn("", dragging && "ui-cursor-grabbing", className)}>
       {content}
       <Handle
-        className={cn(
+        className={uicn(
           direction === "horizontal"
-            ? "!h-8 !w-0.5 !min-w-0 -translate-x-0.5 -translate-y-1/2 !transform  !rounded-l-none !rounded-r-sm !border-border !bg-muted"
-            : "!h-0.5 !min-h-0 !w-8 -translate-x-1/2 -translate-y-0.5 !transform  !rounded-b-sm !rounded-t-none !border-border !bg-muted",
+            ? "!ui-h-8 !ui-w-0.5 !ui-min-w-0 -ui-translate-x-0.5 -ui-translate-y-1/2 !ui-transform ui- !ui-rounded-l-none !ui-rounded-r-sm !ui-border-border !ui-bg-muted"
+            : "!ui-h-0.5 !ui-min-h-0 !ui-w-8 -ui-translate-x-1/2 -ui-translate-y-0.5 !ui-transform ui- !ui-rounded-b-sm !ui-rounded-t-none !ui-border-border !ui-bg-muted",
         )}
         isConnectable={isConnectable}
         position={direction === "horizontal" ? Position.Right : Position.Bottom}

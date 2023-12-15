@@ -1,6 +1,6 @@
 import type { InputHTMLAttributes } from "react";
 import { forwardRef } from "react";
-import { cn } from "../../lib/utils";
+import { uicn } from "../../lib";
 import { Input } from "./input";
 
 export interface TextInputProps extends InputHTMLAttributes<HTMLInputElement> {
@@ -12,14 +12,14 @@ const TextInput = forwardRef<HTMLInputElement, TextInputProps>((props, ref) => {
 
   return (
     <Input
-      className={cn(
+      className={uicn(
         rest.readOnly
-          ? "focus-visible:ring-1 focus-visible:ring-accent"
-          : "transition-all hover:ring-1 hover:ring-secondary focus:-translate-y-[1px]",
+          ? "focus-visible:ui-ring-1 focus-visible:ui-ring-accent"
+          : "ui-transition-all hover:ui-ring-1 hover:ui-ring-secondary focus:-ui-translate-y-[1px]",
         status === "success" &&
-          "text-lime-600 placeholder:text-lime-600 placeholder:opacity-80 hover:ring-1 hover:ring-lime-600 focus-visible:ring-1 focus-visible:ring-lime-500",
+          "ui-text-lime-600 placeholder:ui-text-lime-600 placeholder:ui-opacity-80 hover:ui-ring-1 hover:ui-ring-lime-600 focus-visible:ui-ring-1 focus-visible:ui-ring-lime-500",
         status === "error" &&
-          "text-red-500 placeholder:text-red-500 placeholder:opacity-80 hover:ring-1 hover:ring-red-600 focus-visible:ring-1 focus-visible:ring-red-500",
+          "ui-text-red-500 placeholder:ui-text-red-500 placeholder:ui-opacity-80 hover:ui-ring-1 hover:ui-ring-red-600 focus-visible:ui-ring-1 focus-visible:ui-ring-red-500",
         className,
       )}
       ref={ref}

@@ -1,7 +1,7 @@
 import type { InputHTMLAttributes, RefObject } from "react";
 import { forwardRef, useRef } from "react";
 import { Button } from "../../shared";
-import { cn } from "../../lib/utils";
+import { uicn } from "../../lib";
 import { Input } from "./input";
 
 export interface NumberInputProps
@@ -37,17 +37,17 @@ const NumberInput = forwardRef<HTMLInputElement, NumberInputProps>(
     }
 
     return (
-      <div className="relative w-full">
+      <div className="ui-relative ui-w-full">
         <Input
-          className={cn(
-            "pr-9",
+          className={uicn(
+            "ui-pr-9",
             readOnly
-              ? "focus-visible:ring-1 focus-visible:ring-accent"
-              : "transition-all hover:ring-1 hover:ring-secondary focus:-translate-y-[1px]",
+              ? "focus-visible:ui-ring-1 focus-visible:ui-ring-accent"
+              : "ui-transition-all hover:ui-ring-1 hover:ui-ring-secondary focus:-ui-translate-y-[1px]",
             status === "success" &&
-              "text-lime-600 placeholder:text-lime-600 placeholder:opacity-80 hover:ring-1 hover:ring-lime-600 focus-visible:ring-1 focus-visible:ring-lime-500",
+              "ui-text-lime-600 placeholder:ui-text-lime-600 placeholder:ui-opacity-80 hover:ui-ring-1 hover:ui-ring-lime-600 focus-visible:ui-ring-1 focus-visible:ui-ring-lime-500",
             status === "error" &&
-              "text-red-500 placeholder:text-red-500 placeholder:opacity-80 hover:ring-1 hover:ring-red-600 focus-visible:ring-1 focus-visible:ring-red-500",
+              "ui-text-red-500 placeholder:ui-text-red-500 placeholder:ui-opacity-80 hover:ui-ring-1 hover:ui-ring-red-600 focus-visible:ui-ring-1 focus-visible:ui-ring-red-500",
             className,
           )}
           disabled={disabled}
@@ -95,11 +95,11 @@ const NumberInput = forwardRef<HTMLInputElement, NumberInputProps>(
           {...rest}
         />
         <div
-          className="absolute inset-y-0 right-0 grid h-9 items-center text-muted-foreground transition-transform"
+          className="ui-absolute ui-inset-y-0 ui-right-0 ui-grid ui-h-9 ui-items-center ui-text-muted-foreground ui-transition-transform"
           ref={ButtonContainerRef}
         >
           <Button
-            className="flex h-[1.125rem] items-center justify-center rounded-none rounded-tr-md border-b-[0.5px] border-r-0 border-t-0 border-inherit px-2 pb-1 pt-1 align-middle text-xs leading-none"
+            className="ui-flex ui-h-[1.125rem] ui-items-center ui-justify-center ui-rounded-none ui-rounded-tr-md ui-border-b-[0.5px] ui-border-r-0 ui-border-t-0 ui-border-inherit ui-px-2 ui-pb-1 ui-pt-1 ui-align-middle ui-text-xs ui-leading-none"
             disabled={disabled || readOnly}
             onClick={() => {
               if (InputRef.current) {
@@ -118,7 +118,7 @@ const NumberInput = forwardRef<HTMLInputElement, NumberInputProps>(
             +
           </Button>
           <Button
-            className="flex h-[1.125rem] items-center justify-center rounded-none rounded-br-md border-b-0 border-r-0 border-t-[0.5px] border-inherit px-2 pb-1 pt-0 align-middle text-xs leading-none"
+            className="ui-flex ui-h-[1.125rem] ui-items-center ui-justify-center ui-rounded-none ui-rounded-br-md ui-border-b-0 ui-border-r-0 ui-border-t-[0.5px] ui-border-inherit ui-px-2 ui-pb-1 ui-pt-0 ui-align-middle ui-text-xs ui-leading-none"
             disabled={disabled || readOnly}
             onClick={() => {
               if (InputRef.current) {

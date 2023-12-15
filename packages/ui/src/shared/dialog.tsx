@@ -15,7 +15,7 @@ import type {
   HTMLAttributes,
 } from "react";
 import { forwardRef } from "react";
-import { cn } from "../lib/utils";
+import { uicn } from "../lib";
 
 const Dialog = Root;
 
@@ -32,8 +32,8 @@ const DialogOverlay = forwardRef<
   DialogOverlayProps
 >(({ className, ...props }, ref) => (
   <Overlay
-    className={cn(
-      "fixed inset-0 z-50 bg-background/80 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
+    className={uicn(
+      "ui-fixed ui-inset-0 ui-z-50 ui-bg-background/80 ui-backdrop-blur-sm data-[state=open]:ui-animate-in data-[state=closed]:ui-animate-out data-[state=closed]:ui-fade-out-0 data-[state=open]:ui-fade-in-0",
       className,
     )}
     ref={ref}
@@ -53,17 +53,17 @@ const DialogContent = forwardRef<
   <DialogPortal>
     <DialogOverlay />
     <Content
-      className={cn(
-        "fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border bg-background p-6 shadow-lg duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] sm:rounded-lg md:w-full",
+      className={uicn(
+        "ui-fixed ui-left-1/2 ui-top-1/2 ui-z-50 ui-grid ui-w-full ui-max-w-lg -ui-translate-x-1/2 -ui-translate-y-1/2 ui-gap-4 ui-border ui-bg-background ui-p-6 ui-shadow-lg ui-duration-200 data-[state=open]:ui-animate-in data-[state=closed]:ui-animate-out data-[state=closed]:ui-fade-out-0 data-[state=open]:ui-fade-in-0 data-[state=closed]:ui-zoom-out-95 data-[state=open]:ui-zoom-in-95 data-[state=closed]:ui-slide-out-to-left-1/2 data-[state=closed]:ui-slide-out-to-top-[48%] data-[state=open]:ui-slide-in-from-left-1/2 data-[state=open]:ui-slide-in-from-top-[48%] sm:ui-rounded-lg md:ui-w-full",
         className,
       )}
       ref={ref}
       {...props}
     >
       {children}
-      <Close className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground">
-        <X className="h-3 w-3" />
-        <span className="sr-only">Close</span>
+      <Close className="ui-absolute ui-right-4 ui-top-4 ui-rounded-sm ui-opacity-70 ui-ring-offset-background ui-transition-opacity hover:ui-opacity-100 focus:ui-outline-none focus:ui-ring-2 focus:ui-ring-ring focus:ui-ring-offset-2 disabled:ui-pointer-events-none data-[state=open]:ui-bg-accent data-[state=open]:ui-text-muted-foreground">
+        <X className="ui-h-3 ui-w-3" />
+        <span className="ui-sr-only">Close</span>
       </Close>
     </Content>
   </DialogPortal>
@@ -77,8 +77,8 @@ type DialogHeaderProps = {
 function DialogHeader({ className, ...props }: DialogHeaderProps): JSX.Element {
   return (
     <div
-      className={cn(
-        "flex flex-col space-y-1.5 text-center sm:text-left",
+      className={uicn(
+        "ui-flex ui-flex-col ui-space-y-1.5 ui-text-center sm:ui-text-left",
         className,
       )}
       {...props}
@@ -94,8 +94,8 @@ type DialogFooterProps = {
 function DialogFooter({ className, ...props }: DialogFooterProps): JSX.Element {
   return (
     <div
-      className={cn(
-        "flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2",
+      className={uicn(
+        "ui-flex ui-flex-col-reverse sm:ui-flex-row sm:ui-justify-end sm:ui-space-x-2",
         className,
       )}
       {...props}
@@ -111,8 +111,8 @@ type DialogTitleProps = {
 const DialogTitle = forwardRef<ElementRef<typeof Title>, DialogTitleProps>(
   ({ className, ...props }, ref) => (
     <Title
-      className={cn(
-        "text-lg font-semibold leading-none tracking-tight",
+      className={uicn(
+        "ui-text-lg ui-font-semibold ui-leading-none ui-tracking-tight",
         className,
       )}
       ref={ref}
@@ -131,7 +131,7 @@ const DialogDescription = forwardRef<
   DialogDescriptionProps
 >(({ className, ...props }, ref) => (
   <Description
-    className={cn("text-sm text-muted-foreground", className)}
+    className={uicn("ui-text-sm ui-text-muted-foreground", className)}
     ref={ref}
     {...props}
   />

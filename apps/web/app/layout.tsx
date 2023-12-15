@@ -1,6 +1,5 @@
+import "./css-sheets.scss";
 import type { Metadata } from "next";
-import "./globals.css";
-import "@silverweb/ui/dist/index.css";
 import { Provider } from "@silverweb/ui";
 import { meta } from "../config/meta";
 import { fontGraphik } from "../config/font";

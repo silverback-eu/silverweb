@@ -10,7 +10,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "../../shared";
-import { cn } from "../../lib/utils";
+import { uicn } from "../../lib";
 
 export interface DateRangePickerProps
   extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -66,10 +66,10 @@ const DateRangePicker = forwardRef<HTMLButtonElement, DateRangePickerProps>(
       }
       return (
         <span
-          className={cn(
+          className={uicn(
             "",
-            status === "error" && "text-red-500 opacity-80",
-            status === "success" && "text-lime-600 opacity-80",
+            status === "error" && "ui-text-red-500 ui-opacity-80",
+            status === "success" && "ui-text-lime-600 ui-opacity-80",
           )}
         >
           {placeholder || "Pick a date"}
@@ -78,18 +78,18 @@ const DateRangePicker = forwardRef<HTMLButtonElement, DateRangePickerProps>(
     }
 
     return (
-      <div className={cn("grid w-full gap-2", className)}>
+      <div className={uicn("ui-grid ui-w-full ui-gap-2", className)}>
         <Popover open={readOnly || disabled ? false : undefined}>
           <PopoverTrigger asChild>
             <Button
-              className={cn(
-                "w-full justify-start text-left font-normal",
-                (readOnly || disabled) && "hover:bg-transparent",
+              className={uicn(
+                "ui-w-full ui-justify-start ui-text-left ui-font-normal",
+                (readOnly || disabled) && "hover:ui-bg-transparent",
                 status === "success" &&
-                  "text-lime-600 placeholder:text-lime-600 placeholder:opacity-80 hover:ring-1 hover:ring-lime-600 focus-visible:ring-1 focus-visible:ring-lime-500",
+                  "ui-text-lime-600 placeholder:ui-text-lime-600 placeholder:ui-opacity-80 hover:ui-ring-1 hover:ui-ring-lime-600 focus-visible:ui-ring-1 focus-visible:ui-ring-lime-500",
                 status === "error" &&
-                  "text-red-500 placeholder:text-red-500 placeholder:opacity-80 hover:ring-1 hover:ring-red-600 focus-visible:ring-1 focus-visible:ring-red-500",
-                !valueCalendar && !dateDefault && "text-muted-foreground",
+                  "ui-text-red-500 placeholder:ui-text-red-500 placeholder:ui-opacity-80 hover:ui-ring-1 hover:ui-ring-red-600 focus-visible:ui-ring-1 focus-visible:ui-ring-red-500",
+                !valueCalendar && !dateDefault && "ui-text-muted-foreground",
               )}
               disabled={disabled || readOnly}
               id="date"
@@ -98,16 +98,16 @@ const DateRangePicker = forwardRef<HTMLButtonElement, DateRangePickerProps>(
               {...rest}
             >
               <CalendarIcon
-                className={cn(
-                  "mr-2 h-4 w-4",
-                  status === "error" && "text-red-500 opacity-80",
-                  status === "success" && "text-lime-600 opacity-80",
+                className={uicn(
+                  "ui-mr-2 ui-h-4 ui-w-4",
+                  status === "error" && "ui-text-red-500 ui-opacity-80",
+                  status === "success" && "ui-text-lime-600 ui-opacity-80",
                 )}
               />
               {getDatesDisplayed()}
             </Button>
           </PopoverTrigger>
-          <PopoverContent align="start" className="w-auto p-0">
+          <PopoverContent align="start" className="ui-w-auto ui-p-0">
             <Calendar
               defaultMonth={
                 valueCalendar?.from

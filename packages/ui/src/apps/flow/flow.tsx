@@ -71,7 +71,7 @@ export function Flow({
   );
 
   return (
-    <div className="h-full">
+    <div className="ui-h-full">
       <ReactFlowBox
         connectionLineType={ConnectionLineType.SmoothStep}
         defaultEdgeOptions={defaultEdgeOptions}

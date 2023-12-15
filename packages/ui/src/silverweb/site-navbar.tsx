@@ -20,7 +20,7 @@ import {
 import type { ReactNode } from "react";
 import { Fragment, useEffect, useRef, useState } from "react";
 import { Logo, Badge, Card, CardContent, Separator, Skeleton } from "../shared";
-import { cn } from "../lib/utils";
+import { uicn } from "../lib";
 import { AppIcon } from "./app-icon";
 
 function NavAppIcon(props: {
@@ -37,9 +37,9 @@ function NavAppIcon(props: {
   return (
     <div
       aria-label={name}
-      className={cn(
-        "flex items-center justify-center",
-        disabled && "cursor-not-allowed opacity-30",
+      className={uicn(
+        "ui-flex ui-items-center ui-justify-center",
+        disabled && "ui-cursor-not-allowed ui-opacity-30",
         disabled && className,
       )}
     >
@@ -47,22 +47,25 @@ function NavAppIcon(props: {
         <HoverCardTrigger asChild>
           <a
             aria-disabled={disabled}
-            className={cn("flex items-center justify-center", className)}
+            className={uicn(
+              "ui-flex ui-items-center ui-justify-center",
+              className,
+            )}
             href={link}
           >
-            <div className="relative">
+            <div className="ui-relative">
               <div
                 className={
                   open
-                    ? "absolute left-[-20px] top-1/2 h-10 w-1 -translate-y-1/2 rounded-r-sm bg-white opacity-70 "
+                    ? "ui-absolute ui-left-[-20px] ui-top-1/2 ui-h-10 ui-w-1 -ui-translate-y-1/2 ui-rounded-r-sm ui-bg-white ui-opacity-70"
                     : ""
                 }
               />
               <rest.icon
-                className={cn(
+                className={uicn(
                   "",
                   !disabled &&
-                    "opacity-70 transition-all hover:opacity-100 hover:drop-shadow-[0px_0px_3px_rgba(255,255,255,.4)]",
+                    "ui-opacity-70 ui-transition-all hover:ui-opacity-100 hover:ui-drop-shadow-[0px_0px_3px_rgba(255,255,255,.4)]",
                 )}
                 size={23}
                 strokeWidth={1.5}
@@ -71,12 +74,12 @@ function NavAppIcon(props: {
           </a>
         </HoverCardTrigger>
         <HoverCardContent
-          className="min-w-48 m-6 h-[calc(100vh-48px)]"
+          className="ui-min-w-48 ui-m-6 ui-h-[calc(100vh-48px)]"
           side="right"
           sideOffset={10}
         >
-          <Card className="h-full w-full">
-            <CardContent className="p-6">{content}</CardContent>
+          <Card className="ui-h-full ui-w-full">
+            <CardContent className="ui-p-6">{content}</CardContent>
           </Card>
         </HoverCardContent>
       </HoverCard>
@@ -97,9 +100,9 @@ function NavControlIcon(props: {
     <div
       aria-disabled={disabled}
       aria-label={name}
-      className={cn(
-        "flex cursor-pointer items-center justify-center",
-        disabled && "cursor-not-allowed opacity-30",
+      className={uicn(
+        "ui-flex ui-cursor-pointer ui-items-center ui-justify-center",
+        disabled && "ui-cursor-not-allowed ui-opacity-30",
         className,
       )}
       onClick={fuc}
@@ -108,10 +111,10 @@ function NavControlIcon(props: {
       tabIndex={0}
     >
       <rest.icon
-        className={cn(
+        className={uicn(
           "",
           !disabled &&
-            "opacity-70 transition-all hover:opacity-100 hover:drop-shadow-[0px_0px_3px_rgba(255,255,255,.4)]",
+            "ui-opacity-70 ui-transition-all hover:ui-opacity-100 hover:ui-drop-shadow-[0px_0px_3px_rgba(255,255,255,.4)]",
         )}
         size={23}
         strokeWidth={1.5}
@@ -133,11 +136,11 @@ function HomeInsidesCards({
 }): JSX.Element {
   return (
     <a href={link}>
-      <Card className="cursor-pointer transition-all hover:brightness-150">
-        <CardContent className="flex justify-between gap-2 px-3 py-2">
-          <div className="flex items-center gap-2">
-            <div className="flex items-center">{icon}</div>
-            <p className="text-sm font-bold">{name}</p>
+      <Card className="ui-cursor-pointer ui-transition-all hover:ui-brightness-150">
+        <CardContent className="ui-flex ui-justify-between ui-gap-2 ui-px-3 ui-py-2">
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-flex ui-items-center">{icon}</div>
+            <p className="ui-text-sm ui-font-bold">{name}</p>
           </div>
           <Badge variant="secondary">{number}</Badge>
         </CardContent>
@@ -167,37 +170,39 @@ export function SiteNavbar({
   }, [CardRef.current?.clientHeight]);
 
   return (
-    <div className="h-screen w-16 p-6">
-      <Card className="h-full w-16 ">
+    <div className="ui-h-screen ui-w-16 ui-p-6">
+      <Card className="ui-h-full ui-w-16 ui-">
         <CardContent
-          className="flex h-full flex-wrap content-between justify-center p-3 py-5"
+          className="ui-flex ui-h-full ui-flex-wrap ui-content-between ui-justify-center ui-p-3 ui-py-5"
           ref={CardRef}
         >
-          <div className="grid max-h-full justify-center gap-8">
-            <div className="flex items-center justify-center">
+          <div className="ui-grid ui-max-h-full ui-justify-center ui-gap-8">
+            <div className="ui-flex ui-items-center ui-justify-center">
               <Logo wh={30} />
             </div>
             <NavAppIcon
-              className="mt-9"
+              className="ui-mt-9"
               content={
-                <div className="grid gap-5">
-                  <div className="text-center text-lg font-bold">Hub</div>
+                <div className="ui-grid ui-gap-5">
+                  <div className="ui-text-center ui-text-lg ui-font-bold">
+                    Hub
+                  </div>
                   <div>
                     <Card>
-                      <CardContent className="px-5 py-3">
+                      <CardContent className="ui-px-5 ui-py-3">
                         <div>
-                          <p className="text-lg font-bold">28,123</p>
-                          <p className="text-xs">hours/month</p>
+                          <p className="ui-text-lg ui-font-bold">28,123</p>
+                          <p className="ui-text-xs">hours/month</p>
                         </div>
                       </CardContent>
                     </Card>
                   </div>
                   <div>
                     <Card>
-                      <CardContent className="px-5 py-3">
+                      <CardContent className="ui-px-5 ui-py-3">
                         <div>
-                          <p className="text-lg font-bold">38</p>
-                          <p className="text-xs">projects current</p>
+                          <p className="ui-text-lg ui-font-bold">38</p>
+                          <p className="ui-text-xs">projects current</p>
                         </div>
                       </CardContent>
                     </Card>
@@ -220,13 +225,13 @@ export function SiteNavbar({
                     }}
                   />
                   <Separator />
-                  <Card className="cursor-pointer opacity-50 transition-all hover:brightness-150">
-                    <CardContent className="flex justify-center gap-1 px-3 py-2">
-                      <div className="flex items-center">
+                  <Card className="ui-cursor-pointer ui-opacity-50 ui-transition-all hover:ui-brightness-150">
+                    <CardContent className="ui-flex ui-justify-center ui-gap-1 ui-px-3 ui-py-2">
+                      <div className="ui-flex ui-items-center">
                         <Settings size={18} />
                       </div>
-                      <div className="flex items-center">
-                        <p className="text-xs font-bold">Edit</p>
+                      <div className="ui-flex ui-items-center">
+                        <p className="ui-text-xs ui-font-bold">Edit</p>
                       </div>
                     </CardContent>
                   </Card>
@@ -247,20 +252,22 @@ export function SiteNavbar({
             />
             <NavAppIcon
               content={
-                <div className="grid gap-5">
-                  <div className="text-center text-lg font-bold">Apps</div>
-                  <div className="grid grid-cols-2 justify-center gap-8">
-                    <div className="flex justify-center">
+                <div className="ui-grid ui-gap-5">
+                  <div className="ui-text-center ui-text-lg ui-font-bold">
+                    Apps
+                  </div>
+                  <div className="ui-grid ui-grid-cols-2 ui-justify-center ui-gap-8">
+                    <div className="ui-flex ui-justify-center">
                       <AppIcon
-                        gradient="from-cyan-500 to-blue-500"
+                        gradient="ui-from-cyan-500 ui-to-blue-500"
                         icon={BringToFront}
                         link=""
                         name="Order"
                       />
                     </div>
-                    <div className="flex justify-center">
+                    <div className="ui-flex ui-justify-center">
                       <AppIcon
-                        gradient="from-violet-400 to-violet-700"
+                        gradient="ui-from-violet-400 ui-to-violet-700"
                         icon={Tags}
                         link=""
                         name="KanBan"
@@ -291,8 +298,8 @@ export function SiteNavbar({
               open={openApp === 4}
             />
             <Separator />
-            <div className="grid justify-center gap-3">
-              <div className="flex cursor-pointer justify-center rounded-md bg-muted bg-opacity-30 p-[0.33rem]">
+            <div className="ui-grid ui-justify-center ui-gap-3">
+              <div className="ui-flex ui-cursor-pointer ui-justify-center ui-rounded-md ui-bg-muted ui-bg-opacity-30 ui-p-[0.33rem]">
                 <PackagePlus size={20} />
               </div>
               {quickApps.map((app, index) => (
@@ -300,8 +307,8 @@ export function SiteNavbar({
                   {index + 1 < restNumberForAppsInCard && (
                     <a href={app.link}>
                       <div
-                        className={cn(
-                          "rounded-md bg-gradient-to-r p-1",
+                        className={uicn(
+                          "ui-rounded-md ui-bg-gradient-to-r ui-p-1",
                           app.gradient,
                         )}
                       >
@@ -313,7 +320,7 @@ export function SiteNavbar({
               ))}
             </div>
           </div>
-          <div className="mt-8 grid justify-center gap-8">
+          <div className="ui-mt-8 ui-grid ui-justify-center ui-gap-8">
             <Separator />
             <NavControlIcon
               disabled
@@ -322,7 +329,7 @@ export function SiteNavbar({
               name="Notifications"
             />
             <NavControlIcon
-              className="mb-2"
+              className="ui-mb-2"
               fuc={() => undefined}
               icon={DoorOpen}
               name="Logout"
@@ -345,13 +352,13 @@ function LoadingHomeInsidesCards({
 }): JSX.Element {
   return (
     <a href={link}>
-      <Card className="cursor-pointer transition-all hover:brightness-150">
-        <CardContent className="flex justify-between gap-2 px-3 py-2">
-          <div className="flex items-center gap-2">
-            <div className="flex items-center">{icon}</div>
-            <p className="text-sm font-bold">{name}</p>
+      <Card className="ui-cursor-pointer ui-transition-all hover:ui-brightness-150">
+        <CardContent className="ui-flex ui-justify-between ui-gap-2 ui-px-3 ui-py-2">
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-flex ui-items-center">{icon}</div>
+            <p className="ui-text-sm ui-font-bold">{name}</p>
           </div>
-          <Skeleton className="h-[22px] w-8" />
+          <Skeleton className="ui-h-[22px] ui-w-8" />
         </CardContent>
       </Card>
     </a>
@@ -377,37 +384,39 @@ export function LoadingSiteNavbar({
   }, [CardRef.current?.clientHeight]);
 
   return (
-    <div className="h-screen w-16 p-6">
-      <Card className="h-full w-16 ">
+    <div className="ui-h-screen ui-w-16 ui-p-6">
+      <Card className="ui-h-full ui-w-16">
         <CardContent
-          className="flex h-full flex-wrap content-between justify-center p-3 py-5"
+          className="ui-flex ui-h-full ui-flex-wrap ui-content-between ui-justify-center ui-p-3 ui-py-5"
           ref={CardRef}
         >
-          <div className="grid max-h-full justify-center gap-8">
-            <div className="flex items-center justify-center">
+          <div className="ui-grid ui-max-h-full ui-justify-center ui-gap-8">
+            <div className="ui-flex ui-items-center ui-justify-center">
               <Logo wh={30} />
             </div>
             <NavAppIcon
-              className="mt-9"
+              className="ui-mt-9"
               content={
-                <div className="grid gap-5">
-                  <div className="text-center text-lg font-bold">Hub</div>
+                <div className="ui-grid ui-gap-5">
+                  <div className="ui-text-center ui-text-lg ui-font-bold">
+                    Hub
+                  </div>
                   <div>
                     <Card>
-                      <CardContent className="px-5 py-3">
-                        <div className="grid gap-1">
-                          <Skeleton className=" h-[26px] w-[80px] -translate-x-1" />
-                          <Skeleton className=" h-[15px] w-[100px] -translate-x-1" />
+                      <CardContent className="ui-px-5 ui-py-3">
+                        <div className="ui-grid ui-gap-1">
+                          <Skeleton className="ui-h-[26px] ui-w-[80px] -ui-translate-x-1" />
+                          <Skeleton className="ui-h-[15px] ui-w-[100px] -ui-translate-x-1" />
                         </div>
                       </CardContent>
                     </Card>
                   </div>
                   <div>
                     <Card>
-                      <CardContent className="px-5 py-3">
-                        <div className="grid gap-1">
-                          <Skeleton className=" h-[26px] w-[80px] -translate-x-1" />
-                          <Skeleton className=" h-[15px] w-[100px] -translate-x-1" />
+                      <CardContent className="ui-px-5 ui-py-3">
+                        <div className="ui-grid ui-gap-1">
+                          <Skeleton className="ui-h-[26px] ui-w-[80px] -ui-translate-x-1" />
+                          <Skeleton className="ui-h-[15px] ui-w-[100px] -ui-translate-x-1" />
                         </div>
                       </CardContent>
                     </Card>
@@ -428,13 +437,13 @@ export function LoadingSiteNavbar({
                     }}
                   />
                   <Separator />
-                  <Card className="cursor-pointer opacity-50 transition-all hover:brightness-150">
-                    <CardContent className="flex justify-center gap-1 px-3 py-2">
-                      <div className="flex items-center">
+                  <Card className="ui-cursor-pointer ui-opacity-50 ui-transition-all hover:ui-brightness-150">
+                    <CardContent className="ui-flex ui-justify-center ui-gap-1 ui-px-3 ui-py-2">
+                      <div className="ui-flex ui-items-center">
                         <Settings size={18} />
                       </div>
-                      <div className="flex items-center">
-                        <p className="text-xs font-bold">Edit</p>
+                      <div className="ui-flex ui-items-center">
+                        <p className="ui-text-xs ui-font-bold">Edit</p>
                       </div>
                     </CardContent>
                   </Card>
@@ -446,14 +455,14 @@ export function LoadingSiteNavbar({
                         {index + 1 <
                           (window.innerHeight - 48 - 40 - 446) / 50 && (
                           <Card>
-                            <CardContent className="flex justify-between gap-2 px-3 py-2">
-                              <div className="flex items-center gap-2">
-                                <div className="flex items-center">
-                                  <Skeleton className="h-[20px] w-[20px] rounded-full" />
+                            <CardContent className="ui-flex ui-justify-between ui-gap-2 ui-px-3 ui-py-2">
+                              <div className="ui-flex ui-items-center ui-gap-2">
+                                <div className="ui-flex ui-items-center">
+                                  <Skeleton className="ui-h-[20px] ui-w-[20px] ui-rounded-full" />
                                 </div>
-                                <Skeleton className="h-4 w-24" />
+                                <Skeleton className="ui-h-4 ui-w-24" />
                               </div>
-                              <Skeleton className="h-[22px] w-8" />
+                              <Skeleton className="ui-h-[22px] ui-w-8" />
                             </CardContent>
                           </Card>
                         )}
@@ -469,20 +478,22 @@ export function LoadingSiteNavbar({
             />
             <NavAppIcon
               content={
-                <div className="grid gap-5">
-                  <div className="text-center text-lg font-bold">Apps</div>
-                  <div className="grid grid-cols-2 justify-center gap-8">
-                    <div className="flex justify-center">
+                <div className="ui-grid ui-gap-5">
+                  <div className="ui-text-center ui-text-lg ui-font-bold">
+                    Apps
+                  </div>
+                  <div className="ui-grid ui-grid-cols-2 ui-justify-center ui-gap-8">
+                    <div className="ui-flex ui-justify-center">
                       <AppIcon
-                        gradient="from-cyan-500 to-blue-500"
+                        gradient="ui-from-cyan-500 ui-to-blue-500"
                         icon={BringToFront}
                         link=""
                         name="Order"
                       />
                     </div>
-                    <div className="flex justify-center">
+                    <div className="ui-flex ui-justify-center">
                       <AppIcon
-                        gradient="from-violet-400 to-violet-700"
+                        gradient="ui-from-violet-400 ui-to-violet-700"
                         icon={Tags}
                         link=""
                         name="KanBan"
@@ -513,20 +524,20 @@ export function LoadingSiteNavbar({
               open={openApp === 4}
             />
             <Separator />
-            <div className="grid justify-center gap-3">
-              <div className="flex cursor-pointer justify-center rounded-md bg-muted bg-opacity-30 p-[0.33rem]">
+            <div className="ui-grid ui-justify-center ui-gap-3">
+              <div className="ui-flex ui-cursor-pointer ui-justify-center ui-rounded-md ui-bg-muted ui-bg-opacity-30 ui-p-[0.33rem]">
                 <PackagePlus size={20} />
               </div>
               {Array.from("BigAssLongStringForArray").map((app, index) => (
                 <Fragment key={app + Math.random()}>
                   {index + 1 < restNumberForAppsInCard && (
-                    <Skeleton className="h-[31px] w-[31px] rounded-md" />
+                    <Skeleton className="ui-h-[31px] ui-w-[31px] ui-rounded-md" />
                   )}
                 </Fragment>
               ))}
             </div>
           </div>
-          <div className="mt-8 grid justify-center gap-8">
+          <div className="ui-mt-8 ui-grid ui-justify-center ui-gap-8">
             <Separator />
             <NavControlIcon
               disabled
@@ -535,7 +546,7 @@ export function LoadingSiteNavbar({
               name="Notifications"
             />
             <NavControlIcon
-              className="mb-2"
+              className="ui-mb-2"
               fuc={() => undefined}
               icon={DoorOpen}
               name="Logout"

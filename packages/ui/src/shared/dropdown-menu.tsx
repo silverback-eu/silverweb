@@ -23,7 +23,7 @@ import type {
   HTMLAttributes,
 } from "react";
 import { forwardRef } from "react";
-import { cn } from "../lib/utils";
+import { uicn } from "../lib";
 
 const DropdownMenu = Root;
 
@@ -47,16 +47,16 @@ const DropdownMenuSubTrigger = forwardRef<
   DropdownMenuSubTriggerProps
 >(({ className, inset, children, ...props }, ref) => (
   <SubTrigger
-    className={cn(
-      "flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none focus:bg-accent data-[state=open]:bg-accent",
-      inset && "pl-8",
+    className={uicn(
+      "ui-flex ui-cursor-default ui-select-none ui-items-center ui-rounded-sm ui-px-2 ui-py-1.5 ui-text-sm ui-outline-none focus:ui-bg-accent data-[state=open]:ui-bg-accent",
+      inset && "ui-pl-8",
       className,
     )}
     ref={ref}
     {...props}
   >
     {children}
-    <ChevronRight className="ml-auto h-4 w-4" />
+    <ChevronRight className="ui-ml-auto ui-h-4 ui-w-4" />
   </SubTrigger>
 ));
 DropdownMenuSubTrigger.displayName = SubTrigger.displayName;
@@ -70,8 +70,8 @@ const DropdownMenuSubContent = forwardRef<
   DropdownMenuSubContentProps
 >(({ className, ...props }, ref) => (
   <SubContent
-    className={cn(
-      "z-50 min-w-[8rem] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-lg data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
+    className={uicn(
+      "ui-z-50 ui-min-w-[8rem] ui-overflow-hidden ui-rounded-md ui-border ui-bg-popover ui-p-1 ui-text-popover-foreground ui-shadow-lg data-[state=open]:ui-animate-in data-[state=closed]:ui-animate-out data-[state=closed]:ui-fade-out-0 data-[state=open]:ui-fade-in-0 data-[state=closed]:ui-zoom-out-95 data-[state=open]:ui-zoom-in-95 data-[side=bottom]:ui-slide-in-from-top-2 data-[side=left]:ui-slide-in-from-right-2 data-[side=right]:ui-slide-in-from-left-2 data-[side=top]:ui-slide-in-from-bottom-2",
       className,
     )}
     ref={ref}
@@ -91,9 +91,9 @@ const DropdownMenuContent = forwardRef<
 >(({ className, sideOffset = 4, ...props }, ref) => (
   <Portal>
     <Content
-      className={cn(
-        "z-50 min-w-[8rem] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md",
-        "data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
+      className={uicn(
+        "ui-z-50 ui-min-w-[8rem] ui-overflow-hidden ui-rounded-md ui-border ui-bg-popover ui-p-1 ui-text-popover-foreground ui-shadow-md",
+        "data-[state=open]:ui-animate-in data-[state=closed]:ui-animate-out data-[state=closed]:ui-fade-out-0 data-[state=open]:ui-fade-in-0 data-[state=closed]:ui-zoom-out-95 data-[state=open]:ui-zoom-in-95 data-[side=bottom]:ui-slide-in-from-top-2 data-[side=left]:ui-slide-in-from-right-2 data-[side=right]:ui-slide-in-from-left-2 data-[side=top]:ui-slide-in-from-bottom-2",
         className,
       )}
       ref={ref}
@@ -114,9 +114,9 @@ const DropdownMenuItem = forwardRef<
   DropdownMenuItemProps
 >(({ className, inset, ...props }, ref) => (
   <Item
-    className={cn(
-      "relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
-      inset && "pl-8",
+    className={uicn(
+      "ui-relative ui-flex ui-cursor-default ui-select-none ui-items-center ui-rounded-sm ui-px-2 ui-py-1.5 ui-text-sm ui-outline-none ui-transition-colors focus:ui-bg-accent focus:ui-text-accent-foreground data-[disabled]:ui-pointer-events-none data-[disabled]:ui-opacity-50",
+      inset && "ui-pl-8",
       className,
     )}
     ref={ref}
@@ -136,16 +136,16 @@ const DropdownMenuCheckboxItem = forwardRef<
 >(({ className, children, checked, ...props }, ref) => (
   <CheckboxItem
     checked={checked}
-    className={cn(
-      "relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+    className={uicn(
+      "ui-relative ui-flex ui-cursor-default ui-select-none ui-items-center ui-rounded-sm ui-py-1.5 ui-pl-8 ui-pr-2 ui-text-sm ui-outline-none ui-transition-colors focus:ui-bg-accent focus:ui-text-accent-foreground data-[disabled]:ui-pointer-events-none data-[disabled]:ui-opacity-50",
       className,
     )}
     ref={ref}
     {...props}
   >
-    <span className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
+    <span className="ui-absolute ui-left-2 ui-flex ui-h-3.5 ui-w-3.5 ui-items-center ui-justify-center">
       <ItemIndicator>
-        <Check className="h-4 w-4" />
+        <Check className="ui-h-4 ui-w-4" />
       </ItemIndicator>
     </span>
     {children}
@@ -162,16 +162,16 @@ const DropdownMenuRadioItem = forwardRef<
   DropdownMenuRadioItemProps
 >(({ className, children, ...props }, ref) => (
   <RadioItem
-    className={cn(
-      "relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+    className={uicn(
+      "ui-relative ui-flex ui-cursor-default ui-select-none ui-items-center ui-rounded-sm ui-py-1.5 ui-pl-8 ui-pr-2 ui-text-sm ui-outline-none ui-transition-colors focus:ui-bg-accent focus:ui-text-accent-foreground data-[disabled]:ui-pointer-events-none data-[disabled]:ui-opacity-50",
       className,
     )}
     ref={ref}
     {...props}
   >
-    <span className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
+    <span className="ui-absolute ui-left-2 ui-flex ui-h-3.5 ui-w-3.5 ui-items-center ui-justify-center">
       <ItemIndicator>
-        <Dot className="h-4 w-4 fill-current" />
+        <Dot className="ui-h-4 ui-w-4 ui-fill-current" />
       </ItemIndicator>
     </span>
     {children}
@@ -189,9 +189,9 @@ const DropdownMenuLabel = forwardRef<
   DropdownMenuLabelProps
 >(({ className, inset, ...props }, ref) => (
   <Label
-    className={cn(
-      "px-2 py-1.5 text-sm font-semibold",
-      inset && "pl-8",
+    className={uicn(
+      "ui-px-2 ui-py-1.5 ui-text-sm ui-font-semibold",
+      inset && "ui-pl-8",
       className,
     )}
     ref={ref}
@@ -209,7 +209,7 @@ const DropdownMenuSeparator = forwardRef<
   DropdownMenuSeparatorProps
 >(({ className, ...props }, ref) => (
   <Separator
-    className={cn("-mx-1 my-1 h-px bg-muted", className)}
+    className={uicn("-ui-mx-1 ui-my-1 ui-h-px ui-bg-muted", className)}
     ref={ref}
     {...props}
   />
@@ -226,7 +226,10 @@ function DropdownMenuShortcut({
 }: DropdownMenuShortcutProps): JSX.Element {
   return (
     <span
-      className={cn("ml-auto text-xs tracking-widest opacity-60", className)}
+      className={uicn(
+        "ui-ml-auto ui-text-xs ui-tracking-widest ui-opacity-60",
+        className,
+      )}
       {...props}
     />
   );

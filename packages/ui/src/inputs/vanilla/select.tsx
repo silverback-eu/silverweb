@@ -18,7 +18,7 @@ import {
 import { Check, ChevronDown, ChevronUp } from "lucide-react";
 import type { ComponentPropsWithoutRef, ElementRef } from "react";
 import { forwardRef } from "react";
-import { cn } from "../../lib/utils";
+import { uicn } from "../../lib";
 
 interface SelectProps extends ComponentPropsWithoutRef<typeof Root> {
   className?: string;
@@ -43,8 +43,8 @@ const SelectTrigger = forwardRef<
   ComponentPropsWithoutRef<typeof Trigger>
 >(({ className, children, ...props }, ref) => (
   <Trigger
-    className={cn(
-      "flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1",
+    className={uicn(
+      "ui-flex ui-h-10 ui-w-full ui-items-center ui-justify-between ui-rounded-md ui-border ui-border-input ui-bg-background ui-px-3 ui-py-2 ui-text-sm ui-ring-offset-background placeholder:ui-text-muted-foreground focus:ui-outline-none focus:ui-ring-2 focus:ui-ring-ring focus:ui-ring-offset-2 disabled:ui-cursor-not-allowed disabled:ui-opacity-50 [&>span]:ui-line-clamp-1",
       className,
     )}
     ref={ref}
@@ -52,7 +52,7 @@ const SelectTrigger = forwardRef<
   >
     {children}
     <Icon asChild>
-      <ChevronDown className="h-4 w-4 opacity-50" />
+      <ChevronDown className="ui-h-4 ui-w-4 ui-opacity-50" />
     </Icon>
   </Trigger>
 ));
@@ -63,14 +63,14 @@ const SelectScrollUpButton = forwardRef<
   ComponentPropsWithoutRef<typeof ScrollUpButton>
 >(({ className, ...props }, ref) => (
   <ScrollUpButton
-    className={cn(
-      "flex cursor-default items-center justify-center py-1",
+    className={uicn(
+      "ui-flex ui-cursor-default ui-items-center ui-justify-center ui-py-1",
       className,
     )}
     ref={ref}
     {...props}
   >
-    <ChevronUp className="h-4 w-4" />
+    <ChevronUp className="ui-h-4 ui-w-4" />
   </ScrollUpButton>
 ));
 SelectScrollUpButton.displayName = ScrollUpButton.displayName;
@@ -80,14 +80,14 @@ const SelectScrollDownButton = forwardRef<
   ComponentPropsWithoutRef<typeof ScrollDownButton>
 >(({ className, ...props }, ref) => (
   <ScrollDownButton
-    className={cn(
-      "flex cursor-default items-center justify-center py-1",
+    className={uicn(
+      "ui-flex ui-items-center ui-justify-center ui-py-1 ui-cursor-default",
       className,
     )}
     ref={ref}
     {...props}
   >
-    <ChevronDown className="h-4 w-4" />
+    <ChevronDown className="ui-h-4 ui-w-4" />
   </ScrollDownButton>
 ));
 SelectScrollDownButton.displayName = ScrollDownButton.displayName;
@@ -98,10 +98,10 @@ const SelectContent = forwardRef<
 >(({ className, children, position = "popper", ...props }, ref) => (
   <Portal>
     <Content
-      className={cn(
-        "relative z-50 max-h-96 min-w-[8rem] overflow-hidden rounded-md border bg-popover text-popover-foreground shadow-md data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
+      className={uicn(
+        "ui-relative ui-z-50 ui-max-h-96 ui-min-w-[8rem] ui-overflow-hidden ui-rounded-md ui-border ui-bg-popover ui-text-popover-foreground ui-shadow-md data-[state=open]:ui-animate-in data-[state=closed]:ui-animate-out data-[state=closed]:ui-fade-out-0 data-[state=open]:ui-fade-in-0 data-[state=closed]:ui-zoom-out-95 data-[state=open]:ui-zoom-in-95 data-[side=bottom]:ui-slide-in-from-top-2 data-[side=left]:ui-slide-in-from-right-2 data-[side=right]:ui-slide-in-from-left-2 data-[side=top]:ui-slide-in-from-bottom-2",
         position === "popper" &&
-          "data-[side=bottom]:translate-y-1 data-[side=left]:-translate-x-1 data-[side=right]:translate-x-1 data-[side=top]:-translate-y-1",
+          "data-[side=bottom]:ui-translate-y-1 data-[side=left]:-ui-translate-x-1 data-[side=right]:ui-translate-x-1 data-[side=top]:-ui-translate-y-1",
         className,
       )}
       position={position}
@@ -110,10 +110,10 @@ const SelectContent = forwardRef<
     >
       <SelectScrollUpButton />
       <Viewport
-        className={cn(
-          "p-1",
+        className={uicn(
+          "ui-p-1",
           position === "popper" &&
-            "h-[var(--radix-select-trigger-height)] w-full min-w-[var(--radix-select-trigger-width)]",
+            "ui-h-[var(--radix-select-trigger-height)] ui-w-full ui-min-w-[var(--radix-select-trigger-width)]",
         )}
       >
         {children}
@@ -129,7 +129,10 @@ const SelectLabel = forwardRef<
   ComponentPropsWithoutRef<typeof Label>
 >(({ className, ...props }, ref) => (
   <Label
-    className={cn("py-1.5 pl-8 pr-2 text-sm font-semibold", className)}
+    className={uicn(
+      "ui-py-1.5 ui-pl-8 ui-pr-2 ui-text-sm ui-font-semibold",
+      className,
+    )}
     ref={ref}
     {...props}
   />
@@ -141,16 +144,16 @@ const SelectItem = forwardRef<
   ComponentPropsWithoutRef<typeof Item>
 >(({ className, children, ...props }, ref) => (
   <Item
-    className={cn(
-      "relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+    className={uicn(
+      "ui-relative ui-flex ui-w-full ui-cursor-default ui-select-none ui-items-center ui-rounded-sm ui-py-1.5 ui-pl-8 ui-pr-2 ui-text-sm ui-outline-none focus:ui-bg-accent focus:ui-text-accent-foreground data-[disabled]:ui-pointer-events-none data-[disabled]:ui-opacity-50",
       className,
     )}
     ref={ref}
     {...props}
   >
-    <span className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
+    <span className="ui-absolute ui-left-2 ui-flex ui-h-3.5 ui-w-3.5 ui-items-center ui-justify-center">
       <ItemIndicator>
-        <Check className="h-4 w-4" />
+        <Check className="ui-h-4 ui-w-4" />
       </ItemIndicator>
     </span>
 
@@ -164,7 +167,7 @@ const SelectSeparator = forwardRef<
   ComponentPropsWithoutRef<typeof Separator>
 >(({ className, ...props }, ref) => (
   <Separator
-    className={cn("-mx-1 my-1 h-px bg-muted", className)}
+    className={uicn("-ui-mx-1 ui-my-1 ui-h-px ui-bg-muted", className)}
     ref={ref}
     {...props}
   />

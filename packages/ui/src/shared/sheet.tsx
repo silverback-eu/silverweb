@@ -17,7 +17,7 @@ import type {
   HTMLAttributes,
 } from "react";
 import { forwardRef } from "react";
-import { cn } from "../lib/utils";
+import { uicn } from "../lib";
 
 const Sheet = Root;
 
@@ -37,8 +37,8 @@ type SheetOverlayProps = {
 const SheetOverlay = forwardRef<ElementRef<typeof Overlay>, SheetOverlayProps>(
   ({ className, ...props }, ref) => (
     <Overlay
-      className={cn(
-        "fixed inset-0 z-50 bg-background/20 backdrop-blur-[2px] data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
+      className={uicn(
+        "ui-fixed ui-inset-0 ui-z-50 ui-bg-background/20 ui-backdrop-blur-[2px] data-[state=open]:ui-animate-in data-[state=closed]:ui-animate-out data-[state=closed]:ui-fade-out-0 data-[state=open]:ui-fade-in-0",
         className,
       )}
       {...props}
@@ -49,16 +49,16 @@ const SheetOverlay = forwardRef<ElementRef<typeof Overlay>, SheetOverlayProps>(
 SheetOverlay.displayName = Overlay.displayName;
 
 const sheetVariants = cva(
-  "fixed z-50 gap-4 bg-background p-6 shadow-lg transition ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:duration-500",
+  "ui-fixed ui-z-50 ui-gap-4 ui-bg-background ui-p-6 ui-shadow-lg ui-transition ui-ease-in-out data-[state=open]:ui-animate-in data-[state=closed]:ui-animate-out data-[state=closed]:ui-duration-300 data-[state=open]:ui-duration-500",
   {
     variants: {
       side: {
-        top: "inset-x-0 top-0 border-b data-[state=closed]:slide-out-to-top data-[state=open]:slide-in-from-top",
+        top: "ui-inset-x-0 ui-top-0 ui-border-b data-[state=closed]:ui-slide-out-to-top data-[state=open]:ui-slide-in-from-top",
         bottom:
-          "inset-x-0 bottom-0 border-t data-[state=closed]:slide-out-to-bottom data-[state=open]:slide-in-from-bottom",
-        left: "inset-y-0 left-0 h-full w-3/4 border-r data-[state=closed]:slide-out-to-left data-[state=open]:slide-in-from-left sm:max-w-sm",
+          "ui-inset-x-0 ui-bottom-0 ui-border-t data-[state=closed]:ui-slide-out-to-bottom data-[state=open]:ui-slide-in-from-bottom",
+        left: "ui-inset-y-0 ui-left-0 ui-h-full ui-w-3/4 ui-border-r data-[state=closed]:ui-slide-out-to-left data-[state=open]:ui-slide-in-from-left sm:ui-max-w-sm",
         right:
-          "inset-y-0 right-0 h-full w-3/4 border-l data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right sm:max-w-sm",
+          "ui-inset-y-0 ui-right-0 ui-h-full ui-w-3/4 ui-border-l data-[state=closed]:ui-slide-out-to-right data-[state=open]:ui-slide-in-from-right sm:ui-max-w-sm",
       },
     },
     defaultVariants: {
@@ -76,14 +76,14 @@ const SheetContent = forwardRef<ElementRef<typeof Content>, SheetContentProps>(
     <SheetPortal>
       <SheetOverlay />
       <Content
-        className={cn(sheetVariants({ side }), className)}
+        className={uicn(sheetVariants({ side }), className)}
         ref={ref}
         {...props}
       >
         {children}
-        <Close className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-secondary">
-          <X className="h-3 w-3" />
-          <span className="sr-only">Close</span>
+        <Close className="ui-absolute ui-right-4 ui-top-4 ui-rounded-sm ui-opacity-70 ui-ring-offset-background ui-transition-opacity hover:ui-opacity-100 focus:ui-outline-none focus:ui-ring-2 focus:ui-ring-ring focus:ui-ring-offset-2 disabled:ui-pointer-events-none data-[state=open]:ui-bg-secondary">
+          <X className="ui-h-3 ui-w-3" />
+          <span className="ui-sr-only">Close</span>
         </Close>
       </Content>
     </SheetPortal>
@@ -98,8 +98,8 @@ type SheetHeaderProps = {
 function SheetHeader({ className, ...props }: SheetHeaderProps): JSX.Element {
   return (
     <div
-      className={cn(
-        "flex flex-col space-y-2 text-center sm:text-left",
+      className={uicn(
+        "ui-flex ui-flex-col ui-space-y-2 ui-text-center sm:ui-text-left",
         className,
       )}
       {...props}
@@ -115,8 +115,8 @@ type SheetFooterProps = {
 function SheetFooter({ className, ...props }: SheetFooterProps): JSX.Element {
   return (
     <div
-      className={cn(
-        "flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2",
+      className={uicn(
+        "ui-flex ui-flex-col-reverse sm:ui-flex-row sm:ui-justify-end sm:ui-space-x-2",
         className,
       )}
       {...props}
@@ -132,7 +132,10 @@ type SheetTitleProps = {
 const SheetTitle = forwardRef<ElementRef<typeof Title>, SheetTitleProps>(
   ({ className, ...props }, ref) => (
     <Title
-      className={cn("text-lg font-semibold text-foreground", className)}
+      className={uicn(
+        "ui-text-lg ui-font-semibold ui-text-foreground",
+        className,
+      )}
       ref={ref}
       {...props}
     />
@@ -149,7 +152,7 @@ const SheetDescription = forwardRef<
   SheetDescriptionProps
 >(({ className, ...props }, ref) => (
   <Description
-    className={cn("text-sm text-muted-foreground", className)}
+    className={uicn("ui-text-sm ui-text-muted-foreground", className)}
     ref={ref}
     {...props}
   />

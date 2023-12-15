@@ -8,7 +8,7 @@ import {
 } from "@radix-ui/react-accordion";
 import type { ComponentPropsWithoutRef, ElementRef } from "react";
 import { forwardRef } from "react";
-import { cn } from "../lib/utils";
+import { uicn } from "../lib";
 
 const Accordion = Root;
 
@@ -16,7 +16,7 @@ const AccordionItem = forwardRef<
   ElementRef<typeof Item>,
   ComponentPropsWithoutRef<typeof Item>
 >(({ className, ...props }, ref) => (
-  <Item className={cn("border-b", className)} ref={ref} {...props} />
+  <Item className={uicn("ui-border-b", className)} ref={ref} {...props} />
 ));
 AccordionItem.displayName = "AccordionItem";
 
@@ -24,17 +24,17 @@ const AccordionTrigger = forwardRef<
   ElementRef<typeof Trigger>,
   ComponentPropsWithoutRef<typeof Trigger>
 >(({ className, children, ...props }, ref) => (
-  <Header className="flex">
+  <Header className="ui-flex">
     <Trigger
-      className={cn(
-        "flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline [&[data-state=open]>svg]:rotate-180",
+      className={uicn(
+        "ui-flex ui-flex-1 ui-items-center ui-justify-between ui-py-4 ui-font-medium ui-transition-all hover:ui-underline [&[data-state=open]>svg]:ui-rotate-180",
         className,
       )}
       ref={ref}
       {...props}
     >
       {children}
-      <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200" />
+      <ChevronDown className="ui-h-4 ui-w-4 ui-shrink-0 ui-transition-transform ui-duration-200" />
     </Trigger>
   </Header>
 ));
@@ -45,11 +45,11 @@ const AccordionContent = forwardRef<
   ComponentPropsWithoutRef<typeof Content>
 >(({ className, children, ...props }, ref) => (
   <Content
-    className="overflow-hidden text-sm transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
+    className="ui-overflow-hidden ui-text-sm ui-transition-all data-[state=closed]:ui-animate-accordion-up data-[state=open]:ui-animate-accordion-down"
     ref={ref}
     {...props}
   >
-    <div className={cn("pb-4 pt-0", className)}>{children}</div>
+    <div className={uicn("ui-pb-4 ui-pt-0", className)}>{children}</div>
   </Content>
 ));
 

@@ -3,7 +3,7 @@ import { ListTodo } from "lucide-react";
 import type { ComponentPropsWithoutRef, ElementRef, RefObject } from "react";
 import { forwardRef, useRef } from "react";
 import { Card, CardContent } from "../../shared";
-import { cn } from "../../lib/utils";
+import { uicn } from "../../lib";
 import { RadioGroupItem } from "./radio-group";
 
 export interface RadioInputProps extends ComponentPropsWithoutRef<typeof Item> {
@@ -37,14 +37,14 @@ const RadioInput = forwardRef<ElementRef<typeof Item>, RadioInputProps>(
     if (variant === "big") {
       return (
         <Card
-          className={cn(
-            "w-full",
-            disabled && "cursor-not-allowed opacity-50",
-            readOnly && "pointer-events-none select-none",
+          className={uicn(
+            "ui-w-full",
+            disabled && "ui-cursor-not-allowed ui-opacity-50",
+            readOnly && "ui-pointer-events-none ui-select-none",
             status === "error" &&
-              "text-red-500 [&_>_div_>_button_svg]:text-red-500 [&_>_div_>button]:border-red-500",
+              "ui-text-red-500 [&_>_div_>_button_svg]:ui-text-red-500 [&_>_div_>button]:ui-border-red-500",
             status === "success" &&
-              "text-green-500 [&_>_div_>_button_svg]:text-green-500 [&_>_div_>button]:border-green-500",
+              "ui-text-green-500 [&_>_div_>_button_svg]:ui-text-green-500 [&_>_div_>button]:ui-border-green-500",
             className,
           )}
           onClick={() => {
@@ -58,23 +58,23 @@ const RadioInput = forwardRef<ElementRef<typeof Item>, RadioInputProps>(
             }
           }}
         >
-          <CardContent className="flex items-center justify-between gap-2 p-2">
-            <div className="flex items-center gap-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-muted">
+          <CardContent className="ui-flex ui-items-center ui-justify-between ui-gap-2 ui-p-2">
+            <div className="ui-flex ui-items-center ui-gap-2">
+              <div className="ui-flex ui-h-10 ui-w-10 ui-items-center ui-justify-center ui-rounded-xl ui-bg-muted">
                 {props.icon || <ListTodo size={24} />}
               </div>
-              <div className="grid content-center">
-                <p className="select-none text-start text-sm font-semibold">
+              <div className="ui-grid ui-content-center">
+                <p className="ui-select-none ui-text-start ui-text-sm ui-font-semibold">
                   {cardLabel || "Label"}
                 </p>
-                <p className="select-none text-start text-xs opacity-50">
+                <p className="ui-select-none ui-text-start ui-text-xs ui-opacity-50">
                   {cardDescription || "Description"}
                 </p>
               </div>
             </div>
             <RadioGroupItem
               aria-label={id}
-              className="mr-2"
+              className="ui-mr-2"
               disabled={readOnly || disabled}
               id={id}
               onClick={(ev) => {
@@ -102,11 +102,11 @@ const RadioInput = forwardRef<ElementRef<typeof Item>, RadioInputProps>(
         aria-details={status}
         aria-label={id}
         aria-readonly={readOnly}
-        className={cn(
-          "peer",
-          readOnly && "pointer-events-none select-none",
-          status === "error" && "border-red-500 text-red-500",
-          status === "success" && "border-green-500 text-green-500",
+        className={uicn(
+          "ui-peer",
+          readOnly && "ui-pointer-events-none ui-select-none",
+          status === "error" && "ui-border-red-500 ui-text-red-500",
+          status === "success" && "ui-border-green-500 ui-text-green-500",
           className,
         )}
         disabled={disabled}

@@ -1,466 +1,466 @@
 export function Colors(): JSX.Element {
   return (
-    <div className="grid grid-cols-2 gap-6">
-      <div className="light rounded-xl border border-border bg-stone-300 p-8 text-primary">
-        <div className="p-4 text-3xl font-bold tracking-tighter ">
+    <div className="ui-grid ui-grid-cols-2 ui-gap-6">
+      <div className="ui-light ui-rounded-xl ui-border ui-border-border ui-bg-stone-300 ui-p-8 ui-text-primary">
+        <div className="ui-p-4 ui-text-3xl ui-font-bold ui-tracking-tighter ui-">
           Light Mode:
         </div>
-        <div className="bg-stone-300">
-          <div className="p-4 text-xl font-bold tracking-tighter">
+        <div className="ui-bg-stone-300">
+          <div className="ui-p-4 ui-text-xl ui-font-bold ui-tracking-tighter">
             Main Colors:
           </div>
-          <div className="mb-8 mt-2 grid grid-cols-2 gap-4 p-4">
-            <div className="flex items-center gap-2">
-              <div className="h-5 w-5 rounded-sm bg-warm" />
+          <div className="ui-mb-8 ui-mt-2 ui-grid ui-grid-cols-2 ui-gap-4 ui-p-4">
+            <div className="ui-flex ui-items-center ui-gap-2">
+              <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-warm" />
               Warm
             </div>
-            <div className="flex items-center gap-2">
-              <div className="h-5 w-5 rounded-sm bg-background" />
+            <div className="ui-flex ui-items-center ui-gap-2">
+              <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-background" />
               Background
             </div>
 
-            <div className="flex items-center gap-2">
-              <div className="h-5 w-5 rounded-sm bg-foreground" />
+            <div className="ui-flex ui-items-center ui-gap-2">
+              <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-foreground" />
               Foreground
             </div>
 
-            <div className="flex items-center gap-2">
-              <div className="h-5 w-5 rounded-sm bg-primary-foreground" />
+            <div className="ui-flex ui-items-center ui-gap-2">
+              <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-primary-foreground" />
               Primary Foreground
             </div>
 
-            <div className="flex items-center gap-2">
-              <div className="h-5 w-5 rounded-sm bg-primary" />
+            <div className="ui-flex ui-items-center ui-gap-2">
+              <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-primary" />
               Primary
             </div>
 
-            <div className="flex items-center gap-2">
-              <div className="h-5 w-5 rounded-sm bg-secondary" />
+            <div className="ui-flex ui-items-center ui-gap-2">
+              <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-secondary" />
               Secondary
             </div>
 
-            <div className="flex items-center gap-2">
-              <div className="h-5 w-5 rounded-sm bg-accent" />
+            <div className="ui-flex ui-items-center ui-gap-2">
+              <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-accent" />
               Accent
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-2 gap-4 bg-stone-300 p-4">
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-primary" />
+        <div className="ui-grid ui-grid-cols-2 ui-gap-4 ui-bg-stone-300 ui-p-4">
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-primary" />
             Primary
           </div>
 
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-primary-foreground" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-primary-foreground" />
             Primary Foreground
           </div>
 
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-secondary" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-secondary" />
             Secondary
           </div>
 
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-secondary-foreground" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-secondary-foreground" />
             Secondary Foreground
           </div>
 
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-accent" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-accent" />
             Accent
           </div>
 
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-accent-foreground" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-accent-foreground" />
             Accent Foreground
           </div>
 
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-warm" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-warm" />
             Warm
           </div>
 
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-warm-foreground" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-warm-foreground" />
             Warm Foreground
           </div>
 
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-destructive" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-destructive" />
             Destructive
           </div>
 
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-destructive-foreground" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-destructive-foreground" />
             Destructive Foreground
           </div>
 
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-muted" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-muted" />
             Muted
           </div>
 
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-muted-foreground" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-muted-foreground" />
             Muted Foreground
           </div>
 
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-popover" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-popover" />
             Popover
           </div>
 
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-popover-foreground" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-popover-foreground" />
             Popover Foreground
           </div>
 
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-card" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-card" />
             Card
           </div>
 
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-card-foreground" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-card-foreground" />
             Card Foreground
           </div>
 
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-border" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-border" />
             Border
           </div>
 
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-input" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-input" />
             Input
           </div>
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-ring" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-ring" />
             Ring
           </div>
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-background" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-background" />
             Background
           </div>
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-foreground" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-foreground" />
             Foreground
           </div>
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-green-500" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-green-500" />
             Success
           </div>
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-red-500" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-red-500" />
             Error
           </div>
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-yellow-500" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-yellow-500" />
             Warning
           </div>
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-blue-500" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-blue-500" />
             Info
           </div>
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-gray-500" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-gray-500" />
             Gray
           </div>
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-slate-500" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-slate-500" />
             Slate
           </div>
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-zinc-500" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-zinc-500" />
             Zinc
           </div>
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-neutral-500" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-neutral-500" />
             Neutral
           </div>
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-stone-500" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-stone-500" />
             Stone
           </div>
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-orange-500" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-orange-500" />
             Orange
           </div>
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-amber-500" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-amber-500" />
             Amber
           </div>
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-lime-500" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-lime-500" />
             Lime
           </div>
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-emerald-500" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-emerald-500" />
             Emerald
           </div>
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-teal-500" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-teal-500" />
             Teal
           </div>
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-cyan-500" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-cyan-500" />
             Cyan
           </div>
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-sky-500" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-sky-500" />
             Sky
           </div>
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-indigo-500" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-indigo-500" />
             Indigo
           </div>
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-violet-500" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-violet-500" />
             Violet
           </div>
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-fuchsia-500" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-fuchsia-500" />
             Purple
           </div>
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-pink-500" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-pink-500" />
             Pink
           </div>
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-rose-500" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-rose-500" />
             Rose
           </div>
         </div>
       </div>
-      <div className="dark rounded-xl border border-border bg-stone-700 p-8">
-        <div className="p-4 text-3xl font-bold tracking-tighter">
+      <div className="ui-dark ui-rounded-xl ui-border ui-border-border ui-bg-stone-700 ui-p-8">
+        <div className="ui-p-4 ui-text-3xl ui-font-bold ui-tracking-tighter">
           Dark Mode:
         </div>
-        <div className="bg-stone-700">
-          <div className="p-4 text-xl font-bold tracking-tighter">
+        <div className="ui-bg-stone-700">
+          <div className="ui-p-4 ui-text-xl ui-font-bold ui-tracking-tighter">
             Main Colors:
           </div>
-          <div className="mb-8 mt-2 grid grid-cols-2 gap-4 p-4">
-            <div className="flex items-center gap-2">
-              <div className="h-5 w-5 rounded-sm bg-warm" />
+          <div className="ui-mb-8 ui-mt-2 ui-grid ui-grid-cols-2 ui-gap-4 ui-p-4">
+            <div className="ui-flex ui-items-center ui-gap-2">
+              <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-warm" />
               Warm
             </div>
-            <div className="flex items-center gap-2">
-              <div className="h-5 w-5 rounded-sm bg-background" />
+            <div className="ui-flex ui-items-center ui-gap-2">
+              <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-background" />
               Background
             </div>
 
-            <div className="flex items-center gap-2">
-              <div className="h-5 w-5 rounded-sm bg-foreground" />
+            <div className="ui-flex ui-items-center ui-gap-2">
+              <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-foreground" />
               Foreground
             </div>
 
-            <div className="flex items-center gap-2">
-              <div className="h-5 w-5 rounded-sm bg-primary-foreground" />
+            <div className="ui-flex ui-items-center ui-gap-2">
+              <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-primary-foreground" />
               Primary Foreground
             </div>
 
-            <div className="flex items-center gap-2">
-              <div className="h-5 w-5 rounded-sm bg-primary" />
+            <div className="ui-flex ui-items-center ui-gap-2">
+              <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-primary" />
               Primary
             </div>
 
-            <div className="flex items-center gap-2">
-              <div className="h-5 w-5 rounded-sm bg-secondary" />
+            <div className="ui-flex ui-items-center ui-gap-2">
+              <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-secondary" />
               Secondary
             </div>
 
-            <div className="flex items-center gap-2">
-              <div className="h-5 w-5 rounded-sm bg-accent" />
+            <div className="ui-flex ui-items-center ui-gap-2">
+              <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-accent" />
               Accent
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-2 gap-4 bg-stone-700 p-4">
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-primary" />
+        <div className="ui-grid ui-grid-cols-2 ui-gap-4 ui-bg-stone-700 ui-p-4">
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-primary" />
             Primary
           </div>
 
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-primary-foreground" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-primary-foreground" />
             Primary Foreground
           </div>
 
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-secondary" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-secondary" />
             Secondary
           </div>
 
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-secondary-foreground" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-secondary-foreground" />
             Secondary Foreground
           </div>
 
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-accent" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-accent" />
             Accent
           </div>
 
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-accent-foreground" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-accent-foreground" />
             Accent Foreground
           </div>
 
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-warm" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-warm" />
             Warm
           </div>
 
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-warm-foreground" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-warm-foreground" />
             Warm Foreground
           </div>
 
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-destructive" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-destructive" />
             Destructive
           </div>
 
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-destructive-foreground" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-destructive-foreground" />
             Destructive Foreground
           </div>
 
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-muted" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-muted" />
             Muted
           </div>
 
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-muted-foreground" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-muted-foreground" />
             Muted Foreground
           </div>
 
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-popover" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-popover" />
             Popover
           </div>
 
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-popover-foreground" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-popover-foreground" />
             Popover Foreground
           </div>
 
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-card" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-card" />
             Card
           </div>
 
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-card-foreground" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-card-foreground" />
             Card Foreground
           </div>
 
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-border" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-border" />
             Border
           </div>
 
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-input" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-input" />
             Input
           </div>
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-ring" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-ring" />
             Ring
           </div>
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-background" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-background" />
             Background
           </div>
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-foreground" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-foreground" />
             Foreground
           </div>
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-green-500" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-green-500" />
             Success
           </div>
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-red-500" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-red-500" />
             Error
           </div>
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-yellow-500" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-yellow-500" />
             Warning
           </div>
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-blue-500" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-blue-500" />
             Info
           </div>
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-gray-500" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-gray-500" />
             Gray
           </div>
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-slate-500" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-slate-500" />
             Slate
           </div>
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-zinc-500" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-zinc-500" />
             Zinc
           </div>
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-neutral-500" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-neutral-500" />
             Neutral
           </div>
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-stone-500" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-stone-500" />
             Stone
           </div>
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-orange-500" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-orange-500" />
             Orange
           </div>
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-amber-500" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-amber-500" />
             Amber
           </div>
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-lime-500" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-lime-500" />
             Lime
           </div>
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-emerald-500" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-emerald-500" />
             Emerald
           </div>
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-teal-500" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-teal-500" />
             Teal
           </div>
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-cyan-500" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-cyan-500" />
             Cyan
           </div>
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-sky-500" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-sky-500" />
             Sky
           </div>
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-indigo-500" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-indigo-500" />
             Indigo
           </div>
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-violet-500" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-violet-500" />
             Violet
           </div>
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-fuchsia-500" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-fuchsia-500" />
             Purple
           </div>
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-pink-500" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-pink-500" />
             Pink
           </div>
-          <div className="flex items-center gap-2">
-            <div className="h-5 w-5 rounded-sm bg-rose-500" />
+          <div className="ui-flex ui-items-center ui-gap-2">
+            <div className="ui-h-5 ui-w-5 ui-rounded-sm ui-bg-rose-500" />
             Rose
           </div>
         </div>

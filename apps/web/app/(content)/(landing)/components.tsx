@@ -604,7 +604,7 @@ export function ProjectCard({
             />
           </div>
           <div className="mt-3 line-clamp-1 text-lg font-bold">{title}</div>
-          <Button className="h-auto text-ellipsis p-0" variant="link">
+          <Button className="h-auto text-ellipsis !p-0" variant="link">
             {category}
           </Button>
           <div className="line-clamp-1 text-sm font-bold text-warm">

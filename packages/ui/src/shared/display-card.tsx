@@ -1,6 +1,6 @@
 import type { HTMLAttributes, ReactElement, ReactNode } from "react";
 import { forwardRef } from "react";
-import { cn } from "../lib/utils";
+import { uicn } from "../lib";
 import { Card, CardContent } from "./card";
 import { Skeleton } from "./skeleton";
 
@@ -28,21 +28,25 @@ const DisplayCard = forwardRef<HTMLDivElement, DisplayCardProps>(
       } = props;
       return (
         <Card ref={ref} {...rest}>
-          <CardContent className={cn("flex gap-2 p-2", cardContentClassName)}>
+          <CardContent
+            className={uicn("ui-flex ui-gap-2 ui-p-2", cardContentClassName)}
+          >
             <Skeleton
-              className={cn(
-                "flex h-10 w-10 items-center justify-center rounded-xl bg-muted",
+              className={uicn(
+                "ui-flex ui-h-10 ui-w-10 ui-items-center ui-justify-center ui-rounded-xl ui-bg-muted",
                 iconContainerClassName,
               )}
             />
             <div
-              className={cn(
-                "grid content-center gap-1",
+              className={uicn(
+                "ui-grid ui-content-center ui-gap-1",
                 textContainerClassName,
               )}
             >
-              <Skeleton className={cn("h-4 w-20", headerClassName)} />
-              <Skeleton className={cn("h-3 w-36", descriptionClassName)} />
+              <Skeleton className={uicn("ui-h-4 ui-w-20", headerClassName)} />
+              <Skeleton
+                className={uicn("ui-h-3 ui-w-36", descriptionClassName)}
+              />
             </div>
           </CardContent>
         </Card>
@@ -63,33 +67,38 @@ const DisplayCard = forwardRef<HTMLDivElement, DisplayCardProps>(
     return (
       <Card className={className} ref={ref} {...rest}>
         <CardContent
-          className={cn("flex items-center gap-2 p-2", cardContentClassName)}
+          className={uicn(
+            "ui-flex ui-items-center ui-gap-2 ui-p-2",
+            cardContentClassName,
+          )}
         >
           <div
-            className={cn(
-              "flex h-10 w-10 items-center justify-center rounded-xl bg-muted",
+            className={uicn(
+              "ui-flex ui-h-10 ui-w-10 ui-items-center ui-justify-center ui-rounded-xl ui-bg-muted",
               iconContainerClassName,
             )}
           >
-            {Icon ? <Icon.type {...Icon.props} className="h-6 w-6" /> : null}
+            {Icon ? (
+              <Icon.type {...Icon.props} className="ui-h-6 ui-w-6" />
+            ) : null}
           </div>
           <div
-            className={cn(
-              "grid w-[calc(100%-48px)] content-center",
+            className={uicn(
+              "ui-grid ui-w-[calc(100%-48px)] ui-content-center",
               textContainerClassName,
             )}
           >
             <p
-              className={cn(
-                "truncate text-start text-sm font-semibold",
+              className={uicn(
+                "ui-truncate ui-text-start ui-text-sm ui-font-semibold",
                 headerClassName,
               )}
             >
               {header}
             </p>
             <p
-              className={cn(
-                "truncate text-start text-xs opacity-50",
+              className={uicn(
+                "ui-truncate ui-text-start ui-text-xs ui-opacity-50",
                 descriptionClassName,
               )}
             >

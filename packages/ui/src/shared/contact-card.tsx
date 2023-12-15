@@ -30,7 +30,7 @@ const ContactCard = forwardRef<HTMLDivElement, ContactCardProps>(
     const { info, comments, ...rest } = props;
     return (
       <Popover>
-        <PopoverTrigger className="w-full">
+        <PopoverTrigger className="ui-w-full">
           <DisplayCard
             Icon={<Building />}
             className={className}
@@ -40,13 +40,13 @@ const ContactCard = forwardRef<HTMLDivElement, ContactCardProps>(
             {...rest}
           />
         </PopoverTrigger>
-        <PopoverContent className="grid max-h-[calc(var(--radix-popover-content-available-height)-10px)] w-[360px] gap-3">
-          <div className="flex justify-between px-6">
-            <div className="grid content-center">
-              <p className="truncate text-start text-sm font-semibold">
+        <PopoverContent className="ui-grid ui-max-h-[calc(var(--radix-popover-content-available-height)-10px)] ui-w-[360px] ui-gap-3">
+          <div className="ui-flex ui-justify-between ui-px-6">
+            <div className="ui-grid ui-content-center">
+              <p className="ui-truncate ui-text-start ui-text-sm ui-font-semibold">
                 {info.name}
               </p>
-              <p className="truncate text-start text-xs opacity-50">
+              <p className="ui-truncate ui-text-start ui-text-xs ui-opacity-50">
                 {info.job}
               </p>
             </div>

@@ -101,9 +101,9 @@ export function CustomTable<TData, TValue>({
   });
 
   return (
-    <div className="space-y-4">
+    <div className="ui-space-y-4">
       {toolbar ? <Toolbar table={table} {...toolbar} /> : null}
-      <div className="">
+      <div>
         <TableContainer.type {...TableContainer.props}>
           {TableHeader ? (
             <TableHeader.type {...TableHeader.props}>

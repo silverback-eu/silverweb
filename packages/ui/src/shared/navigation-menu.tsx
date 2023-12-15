@@ -12,7 +12,7 @@ import {
 import { cva } from "class-variance-authority";
 import type { ComponentPropsWithoutRef, ElementRef } from "react";
 import { forwardRef } from "react";
-import { cn } from "../lib/utils";
+import { uicn } from "../lib";
 
 const NavigationMenuLink = Link;
 
@@ -24,10 +24,10 @@ const NavigationMenuViewport = forwardRef<
   ElementRef<typeof Viewport>,
   NavigationMenuViewportProps
 >(({ className, ...props }, ref) => (
-  <div className={cn("absolute left-0 top-full flex justify-center", "mt-2")}>
+  <div className="ui-absolute ui-left-0 ui-top-full ui-flex ui-justify-center ui-mt-2">
     <Viewport
-      className={cn(
-        "origin-top-center relative mt-1.5 h-[var(--radix-navigation-menu-viewport-height)] w-full overflow-hidden rounded-md border bg-popover text-popover-foreground shadow data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-90 md:w-[var(--radix-navigation-menu-viewport-width)]",
+      className={uicn(
+        "ui-origin-top-center ui-relative ui-mt-1.5 ui-h-[var(--radix-navigation-menu-viewport-height)] ui-w-full ui-overflow-hidden ui-rounded-md ui-border ui-bg-popover ui-text-popover-foreground ui-shadow data-[state=open]:ui-animate-in data-[state=closed]:ui-animate-out data-[state=closed]:ui-zoom-out-95 data-[state=open]:ui-zoom-in-90 md:ui-w-[var(--radix-navigation-menu-viewport-width)]",
         className,
       )}
       ref={ref}
@@ -44,8 +44,8 @@ type NavigationMenuProps = {
 const NavigationMenu = forwardRef<ElementRef<typeof Root>, NavigationMenuProps>(
   ({ className, children, ...props }, ref) => (
     <Root
-      className={cn(
-        "relative z-10 flex max-w-max flex-1 items-center justify-center",
+      className={uicn(
+        "ui-relative ui-z-10 ui-flex ui-max-w-max ui-flex-1 ui-items-center ui-justify-center",
         className,
       )}
       ref={ref}
@@ -67,8 +67,8 @@ const NavigationMenuList = forwardRef<
   NavigationMenuListProps
 >(({ className, ...props }, ref) => (
   <List
-    className={cn(
-      "group flex flex-1 list-none items-center justify-center space-x-1",
+    className={uicn(
+      "ui-group ui-flex ui-flex-1 ui-list-none ui-items-center ui-justify-center ui-space-x-1",
       className,
     )}
     ref={ref}
@@ -80,7 +80,7 @@ NavigationMenuList.displayName = List.displayName;
 const NavigationMenuItem = Item;
 
 const navigationMenuTriggerStyle = cva(
-  "text-primary group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50",
+  "ui-text-primary ui-group ui-inline-flex ui-h-9 ui-w-max ui-items-center ui-justify-center ui-rounded-md ui-px-4 ui-py-2 ui-text-sm ui-font-medium ui-transition-colors hover:ui-bg-accent hover:ui-text-accent-foreground focus:ui-bg-accent focus:ui-text-accent-foreground focus:ui-outline-none disabled:ui-pointer-events-none disabled:ui-opacity-50 data-[active]:ui-bg-accent/50 data-[state=open]:ui-bg-accent/50",
 );
 
 type NavigationMenuTriggerProps = {
@@ -92,14 +92,14 @@ const NavigationMenuTrigger = forwardRef<
   NavigationMenuTriggerProps
 >(({ className, children, ...props }, ref) => (
   <Trigger
-    className={cn(navigationMenuTriggerStyle(), "group", className)}
+    className={uicn(navigationMenuTriggerStyle(), "ui-group", className)}
     ref={ref}
     {...props}
   >
     {children}{" "}
     <ChevronDown
       aria-hidden="true"
-      className="relative top-[1px] ml-1 h-3 w-3 transition duration-300 group-data-[state=open]:rotate-180"
+      className="ui-relative ui-top-[1px] ui-ml-1 ui-h-3 ui-w-3 ui-transition ui-duration-300 group-data-[state=open]:ui-rotate-180"
     />
   </Trigger>
 ));
@@ -114,8 +114,8 @@ const NavigationMenuContent = forwardRef<
   NavigationMenuContentProps
 >(({ className, ...props }, ref) => (
   <Content
-    className={cn(
-      "left-0 top-0 w-full data-[motion^=from-]:animate-in data-[motion^=to-]:animate-out data-[motion^=from-]:fade-in data-[motion^=to-]:fade-out data-[motion=from-end]:slide-in-from-right-52 data-[motion=from-start]:slide-in-from-left-52 data-[motion=to-end]:slide-out-to-right-52 data-[motion=to-start]:slide-out-to-left-52 md:absolute md:w-auto ",
+    className={uicn(
+      "ui-left-0 ui-top-0 ui-w-full data-[motion^=from-]:ui-animate-in data-[motion^=to-]:ui-animate-out data-[motion^=from-]:ui-fade-in data-[motion^=to-]:ui-fade-out data-[motion=from-end]:ui-slide-in-from-right-52 data-[motion=from-start]:ui-slide-in-from-left-52 data-[motion=to-end]:ui-slide-out-to-right-52 data-[motion=to-start]:ui-slide-out-to-left-52 md:ui-absolute md:ui-w-auto ui-",
       className,
     )}
     ref={ref}
@@ -133,14 +133,14 @@ const NavigationMenuIndicator = forwardRef<
   NavigationMenuIndicatorProps
 >(({ className, ...props }, ref) => (
   <Indicator
-    className={cn(
-      "top-full z-[1] flex h-1.5 items-end justify-center overflow-hidden data-[state=visible]:animate-in data-[state=hidden]:animate-out data-[state=hidden]:fade-out data-[state=visible]:fade-in",
+    className={uicn(
+      "ui-top-full ui-z-[1] ui-flex ui-h-1.5 ui-items-end ui-justify-center ui-overflow-hidden data-[state=visible]:ui-animate-in data-[state=hidden]:ui-animate-out data-[state=hidden]:ui-fade-out data-[state=visible]:ui-fade-in",
       className,
     )}
     ref={ref}
     {...props}
   >
-    <div className="relative top-[60%] h-2 w-2 rotate-45 rounded-tl-sm bg-border shadow-md" />
+    <div className="ui-relative ui-top-[60%] ui-h-2 ui-w-2 ui-rotate-45 ui-rounded-tl-sm ui-bg-border ui-shadow-md" />
   </Indicator>
 ));
 NavigationMenuIndicator.displayName = Indicator.displayName;

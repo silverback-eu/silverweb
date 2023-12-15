@@ -2,29 +2,29 @@ import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
 import type { ButtonHTMLAttributes } from "react";
 import { forwardRef } from "react";
-import { cn } from "../lib/utils";
+import { uicn } from "../lib";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
+  "ui-inline-flex ui-items-center ui-justify-center ui-rounded-md ui-text-sm ui-font-medium ui-transition-colors focus-visible:ui-outline-none focus-visible:ui-ring-1 focus-visible:ui-ring-ring disabled:ui-pointer-events-none disabled:ui-opacity-50",
   {
     variants: {
       variant: {
         default:
-          "bg-primary text-primary-foreground shadow hover:bg-primary/90",
+          "ui-bg-primary ui-text-primary-foreground ui-shadow hover:ui-bg-primary/90",
         destructive:
-          "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90",
+          "ui-bg-destructive ui-text-destructive-foreground ui-shadow-sm hover:ui-bg-destructive/90",
         outline:
-          "border border-input bg-transparent shadow-sm hover:bg-accent hover:text-accent-foreground",
+          "ui-border ui-border-input ui-bg-transparent ui-shadow-sm hover:ui-bg-accent hover:ui-text-accent-foreground",
         secondary:
-          "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
-        link: "text-primary underline-offset-4 hover:underline",
+          "ui-bg-secondary ui-text-secondary-foreground ui-shadow-sm hover:ui-bg-secondary/80",
+        ghost: "hover:ui-bg-accent hover:ui-text-accent-foreground",
+        link: "ui-text-primary ui-underline-offset-4 hover:ui-underline",
       },
       size: {
-        default: "h-9 px-4 py-2",
-        sm: "h-8 rounded-md px-3 text-xs",
-        lg: "h-10 rounded-md px-8",
-        icon: "h-9 w-9",
+        default: "ui-h-9 ui-px-4 ui-py-2",
+        sm: "ui-h-8 ui-rounded-md ui-px-3 ui-text-xs",
+        lg: "ui-h-10 ui-rounded-md ui-px-8",
+        icon: "ui-h-9 ui-w-9",
       },
     },
     defaultVariants: {
@@ -46,7 +46,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
     return (
       <Comp
-        className={cn(buttonVariants({ variant, size, className }))}
+        className={uicn(buttonVariants({ variant, size, className }))}
         ref={ref}
         {...props}
       />

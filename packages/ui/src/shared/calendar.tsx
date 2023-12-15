@@ -1,7 +1,7 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import type { CSSProperties, ComponentProps } from "react";
 import { DayPicker } from "react-day-picker";
-import { cn } from "../lib/utils";
+import { uicn } from "../lib";
 import { buttonVariants } from "./button";
 
 export type { DateRange } from "react-day-picker";
@@ -11,11 +11,11 @@ interface IconProps {
   style?: CSSProperties | undefined;
 }
 function IconLeft(props: IconProps): JSX.Element {
-  return <ChevronLeft {...props} className="h-4 w-4" />;
+  return <ChevronLeft {...props} className="ui-h-4 ui-w-4" />;
 }
 
 function IconRight(props: IconProps): JSX.Element {
-  return <ChevronRight {...props} className="h-4 w-4" />;
+  return <ChevronRight {...props} className="ui-h-4 ui-w-4" />;
 }
 
 export type CalendarProps = {
@@ -34,43 +34,45 @@ function Calendar({
 }: CalendarProps): JSX.Element {
   return (
     <DayPicker
-      className={cn("p-3", className)}
+      className={uicn("ui-p-3", className)}
       classNames={{
-        months: "flex flex-col sm:flex-row space-y-4 sm:space-x-4 sm:space-y-0",
-        month: "space-y-4",
-        caption: "flex justify-center pt-1 relative items-center",
-        caption_label: "text-sm font-medium",
-        nav: "space-x-1 flex items-center",
-        nav_button: cn(
+        months:
+          "ui-flex ui-flex-col sm:ui-flex-row ui-space-y-4 sm:ui-space-x-4 sm:ui-space-y-0",
+        month: "ui-space-y-4",
+        caption:
+          "ui-flex ui-justify-center ui-pt-1 ui-relative ui-items-center",
+        caption_label: "ui-text-sm ui-font-medium",
+        nav: "ui-space-x-1 ui-flex ui-items-center",
+        nav_button: uicn(
           buttonVariants({ variant: "outline" }),
-          "h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100",
+          "ui-h-7 ui-w-7 ui-bg-transparent ui-p-0 ui-opacity-50 hover:ui-opacity-100",
         ),
-        nav_button_previous: "absolute left-1",
-        nav_button_next: "absolute right-1",
-        table: "w-full border-collapse space-y-1",
-        head_row: "flex",
+        nav_button_previous: "ui-absolute ui-left-1",
+        nav_button_next: "ui-absolute ui-right-1",
+        table: "ui-w-full ui-border-collapse ui-space-y-1",
+        head_row: "ui-flex",
         head_cell:
-          "text-muted-foreground rounded-md w-8 font-normal text-[0.8rem]",
-        row: "flex w-full mt-2",
-        cell: cn(
-          "relative p-0 text-center text-sm focus-within:relative focus-within:z-20 [&:has([aria-selected])]:bg-accent",
+          "ui-text-muted-foreground ui-rounded-md ui-w-8 ui-font-normal ui-text-[0.8rem]",
+        row: "ui-flex ui-w-full ui-mt-2",
+        cell: uicn(
+          "ui-relative ui-p-0 ui-text-center ui-text-sm focus-within:ui-relative focus-within:ui-z-20 [&:ui-has([aria-selected])]:ui-bg-accent",
           mode === "range"
-            ? "[&:has(>.day-range-end)]:rounded-r-md [&:has(>.day-range-start)]:rounded-l-md first:[&:has([aria-selected])]:rounded-l-md last:[&:has([aria-selected])]:rounded-r-md"
-            : "[&:has([aria-selected])]:rounded-md",
+            ? "[&:has(>.day-range-end)]:ui-rounded-r-md [&:has(>.day-range-start)]:ui-rounded-l-md first:[&:has([aria-selected])]:ui-rounded-l-md last:[&:has([aria-selected])]:ui-rounded-r-md"
+            : "[&:has([aria-selected])]:ui-rounded-md",
         ),
-        day: cn(
+        day: uicn(
           buttonVariants({ variant: "ghost" }),
-          "h-8 w-8 p-0 font-normal aria-selected:opacity-100",
+          "ui-h-8 ui-w-8 ui-p-0 ui-font-normal aria-selected:ui-opacity-100",
         ),
         day_range_start: "day-range-start",
         day_range_end: "day-range-end",
         day_selected:
-          "bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground focus:bg-primary focus:text-primary-foreground",
-        day_today: "bg-accent text-accent-foreground",
-        day_outside: "text-muted-foreground opacity-50",
-        day_disabled: "text-muted-foreground opacity-50",
+          "ui-bg-primary ui-text-primary-foreground hover:ui-bg-primary hover:ui-text-primary-foreground focus:ui-bg-primary focus:ui-text-primary-foreground",
+        day_today: "ui-bg-accent ui-text-accent-foreground",
+        day_outside: "ui-text-muted-foreground ui-opacity-50",
+        day_disabled: "ui-text-muted-foreground ui-opacity-50",
         day_range_middle:
-          "aria-selected:bg-accent aria-selected:text-accent-foreground",
+          "aria-selected:ui-bg-accent aria-selected:ui-text-accent-foreground",
         day_hidden: "invisible",
         ...classNames,
       }}

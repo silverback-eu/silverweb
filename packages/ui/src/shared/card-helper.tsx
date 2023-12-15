@@ -11,12 +11,12 @@ export function CardPopoverItem({
   name: string;
 }): JSX.Element {
   return (
-    <div className="grid grid-cols-[0.5fr_1fr] px-3">
-      <div className="flex items-center gap-2 opacity-50">
+    <div className="ui-grid ui-grid-cols-[0.5fr_1fr] ui-px-3">
+      <div className="ui-flex ui-items-center ui-gap-2 ui-opacity-50">
         {icon}
-        <p className="text-sm font-medium">{label}</p>
+        <p className="ui-text-sm ui-font-medium">{label}</p>
       </div>
-      <p className="text-sm">{name}</p>
+      <p className="ui-text-sm">{name}</p>
     </div>
   );
 }
@@ -27,19 +27,19 @@ function CardComment({
   comment: { author: string; text: string; createdAt: string };
 }): JSX.Element {
   return (
-    <div className="grid grid-cols-[36px_1fr] gap-2 px-3">
-      <div className="relative flex h-9 w-9 shrink-0 items-center justify-center overflow-hidden rounded-full bg-purple-900">
+    <div className="ui-grid ui-grid-cols-[36px_1fr] ui-gap-2 ui-px-3">
+      <div className="ui-relative ui-flex ui-h-9 ui-w-9 ui-shrink-0 ui-items-center ui-justify-center ui-overflow-hidden ui-rounded-full ui-bg-purple-900">
         <Avatar>
           <AvatarImage alt="@shadcn" src="https://github.com/shadcn.png" />
           <AvatarFallback>CN</AvatarFallback>
         </Avatar>
       </div>
       <div>
-        <div className="flex justify-between">
-          <p className="text-sm font-semibold">{comment.author}</p>
-          <p className="text-xs opacity-50">{comment.createdAt}</p>
+        <div className="ui-flex ui-justify-between">
+          <p className="ui-text-sm ui-font-semibold">{comment.author}</p>
+          <p className="ui-text-xs ui-opacity-50">{comment.createdAt}</p>
         </div>
-        <p className="text-sm">{comment.text}</p>
+        <p className="ui-text-sm">{comment.text}</p>
       </div>
     </div>
   );
@@ -51,13 +51,15 @@ export function CompanyCardCommentSection({
   comments: { author: string; text: string; createdAt: string }[];
 }): JSX.Element {
   return (
-    <div className="grid gap-5 px-3">
-      <div className="flex gap-2">
-        <p className="text-[0.66rem] opacity-50">Comments</p>
-        <p className="text-[0.66rem] font-bold opacity-50">{comments.length}</p>
+    <div className="ui-grid ui-gap-5 ui-px-3">
+      <div className="ui-flex ui-gap-2">
+        <p className="ui-text-[0.66rem] ui-opacity-50">Comments</p>
+        <p className="ui-text-[0.66rem] ui-font-bold ui-opacity-50">
+          {comments.length}
+        </p>
       </div>
-      <ScrollArea className="h-[calc(var(--radix-popover-content-available-height)-10px-350px)]">
-        <div className="grid gap-4">
+      <ScrollArea className="ui-h-[calc(var(--radix-popover-content-available-height)-10px-350px)]">
+        <div className="ui-grid ui-gap-4">
           {comments.map((comment) => (
             <CardComment comment={comment} key={comment.createdAt} />
           ))}
@@ -73,13 +75,15 @@ export function ContactCardCommentSection({
   comments: { author: string; text: string; createdAt: string }[];
 }): JSX.Element {
   return (
-    <div className="grid gap-5 px-3">
-      <div className="flex gap-2">
-        <p className="text-[0.66rem] opacity-50">Comments</p>
-        <p className="text-[0.66rem] font-bold opacity-50">{comments.length}</p>
+    <div className="ui-grid ui-gap-5 ui-px-3">
+      <div className="ui-flex ui-gap-2">
+        <p className="ui-text-[0.66rem] ui-opacity-50">Comments</p>
+        <p className="ui-text-[0.66rem] ui-font-bold ui-opacity-50">
+          {comments.length}
+        </p>
       </div>
-      <ScrollArea className="h-[calc(var(--radix-popover-content-available-height)-10px-250px)]">
-        <div className="grid gap-4">
+      <ScrollArea className="ui-h-[calc(var(--radix-popover-content-available-height)-10px-250px)]">
+        <div className="ui-grid ui-gap-4">
           {comments.map((comment) => (
             <CardComment comment={comment} key={comment.createdAt} />
           ))}

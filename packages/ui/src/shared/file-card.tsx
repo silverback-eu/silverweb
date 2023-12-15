@@ -87,7 +87,7 @@ const FileCard = forwardRef<HTMLDivElement, FileCardProps>((props, ref) => {
   }
   return (
     <Popover>
-      <PopoverTrigger className="w-full">
+      <PopoverTrigger className="ui-w-full">
         <DisplayCard
           ref={ref}
           {...rest}
@@ -97,13 +97,13 @@ const FileCard = forwardRef<HTMLDivElement, FileCardProps>((props, ref) => {
           header={info.name}
         />
       </PopoverTrigger>
-      <PopoverContent className="grid w-[280px] gap-3">
-        <div className="flex justify-between px-3">
-          <div className="grid content-center">
-            <p className="truncate text-start text-sm font-semibold">
+      <PopoverContent className="ui-grid ui-w-[280px] ui-gap-3">
+        <div className="ui-flex ui-justify-between ui-px-3">
+          <div className="ui-grid ui-content-center">
+            <p className="ui-truncate ui-text-start ui-text-sm ui-font-semibold">
               {info.name}
             </p>
-            <p className="truncate text-start text-xs opacity-50">
+            <p className="ui-truncate ui-text-start ui-text-xs ui-opacity-50">
               {info.type}
             </p>
           </div>

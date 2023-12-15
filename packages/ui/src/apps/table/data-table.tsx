@@ -85,9 +85,9 @@ export function DataTable<TData, TValue>({
   });
 
   return (
-    <div className="space-y-4">
+    <div className="ui-space-y-4">
       {toolbar ? <Toolbar table={table} {...toolbar} /> : null}
-      <div className="rounded-md border">
+      <div className="ui-rounded-md ui-border">
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
@@ -125,7 +125,7 @@ export function DataTable<TData, TValue>({
             ) : (
               <TableRow>
                 <TableCell
-                  className="h-24 text-center"
+                  className="ui-h-24 ui-text-center"
                   colSpan={columns.length}
                 >
                   No results.

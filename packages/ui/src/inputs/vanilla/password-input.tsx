@@ -1,7 +1,7 @@
 import { Eye, EyeOff } from "lucide-react";
 import type { InputHTMLAttributes } from "react";
 import { forwardRef, useState, useRef } from "react";
-import { cn } from "../../lib/utils";
+import { uicn } from "../../lib";
 import { Input } from "./input";
 
 export interface PasswordInputProps
@@ -24,16 +24,16 @@ const PasswordInput = forwardRef<HTMLInputElement, PasswordInputProps>(
     }
 
     return (
-      <div className="relative">
+      <div className="ui-relative">
         <Input
-          className={cn(
+          className={uicn(
             readOnly
-              ? "focus-visible:ring-1 focus-visible:ring-accent"
-              : "transition-all hover:ring-1 hover:ring-secondary focus:-translate-y-[1px]",
+              ? "focus-visible:ui-ring-1 focus-visible:ui-ring-accent"
+              : "ui-transition-all hover:ui-ring-1 hover:ui-ring-secondary focus:-ui-translate-y-[1px]",
             status === "success" &&
-              "text-lime-600 placeholder:text-lime-600 placeholder:opacity-80 hover:ring-1 hover:ring-lime-600 focus-visible:ring-1 focus-visible:ring-lime-500",
+              "ui-text-lime-600 placeholder:ui-text-lime-600 placeholder:ui-opacity-80 hover:ui-ring-1 hover:ui-ring-lime-600 focus-visible:ui-ring-1 focus-visible:ui-ring-lime-500",
             status === "error" &&
-              "text-red-500 placeholder:text-red-500 placeholder:opacity-80 hover:ring-1 hover:ring-red-600 focus-visible:ring-1 focus-visible:ring-red-500",
+              "ui-text-red-500 placeholder:ui-text-red-500 placeholder:ui-opacity-80 hover:ui-ring-1 hover:ui-ring-red-600 focus-visible:ui-ring-1 focus-visible:ui-ring-red-500",
             className,
           )}
           disabled={disabled}
@@ -55,7 +55,7 @@ const PasswordInput = forwardRef<HTMLInputElement, PasswordInputProps>(
           {...rest}
         />
         <div
-          className="absolute inset-y-0 right-3 flex cursor-pointer items-center text-muted-foreground transition-all"
+          className="ui-absolute ui-inset-y-0 ui-right-3 ui-flex ui-cursor-pointer ui-items-center ui-text-muted-foreground ui-transition-all"
           onClick={() => {
             setShowPassword(!showPassword);
           }}

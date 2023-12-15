@@ -2,7 +2,7 @@ import type { LucideIcon } from "lucide-react";
 import { memo } from "react";
 import type { NodeProps } from "reactflow";
 import { Handle, Position } from "reactflow";
-import { cn } from "../../../lib/utils";
+import { uicn } from "../../../lib";
 import { CardContent, Card } from "../../../shared";
 
 export interface DisplayNodeProps {
@@ -18,19 +18,17 @@ function DisplayNodeWO({
   dragging,
 }: NodeProps<DisplayNodeProps>): JSX.Element {
   return (
-    <Card
-      className={cn("min-w-[200px]", dragging && "cursor-grabbing", className)}
-    >
-      <CardContent className="flex items-center justify-between gap-2 p-2 pr-5">
-        <div className="flex items-center gap-2">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-muted">
+    <Card className={uicn("", dragging && "ui-cursor-grabbing", className)}>
+      <CardContent className="ui-flex ui-items-center ui-justify-between ui-gap-2 ui-p-2 ui-pr-5">
+        <div className="ui-flex ui-items-center ui-gap-2">
+          <div className="ui-flex ui-h-10 ui-w-10 ui-items-center ui-justify-center ui-rounded-xl ui-bg-muted">
             <Icon size={24} />
           </div>
-          <div className="grid content-center">
-            <p className="select-none text-start text-sm font-semibold">
+          <div className="ui-grid ui-content-center">
+            <p className="ui-select-none ui-text-start ui-text-sm ui-font-semibold">
               {label}
             </p>
-            <p className="select-none text-start text-xs opacity-50">
+            <p className="ui-select-none ui-text-start ui-text-xs ui-opacity-50">
               {description}
             </p>
           </div>
@@ -48,39 +46,37 @@ function DisplayNodeDf({
   isConnectable,
 }: NodeProps<DisplayNodeProps>): JSX.Element {
   return (
-    <Card
-      className={cn("min-w-[200px]", dragging && "cursor-grabbing", className)}
-    >
-      <CardContent className="flex items-center justify-between gap-2 p-2 pr-5">
-        <div className="flex items-center gap-2">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-muted">
+    <Card className={uicn("", dragging && "ui-cursor-grabbing", className)}>
+      <CardContent className="ui-flex ui-items-center ui-justify-between ui-gap-2 ui-p-2 ui-pr-5">
+        <div className="ui-flex ui-items-center ui-gap-2">
+          <div className="ui-flex ui-h-10 ui-w-10 ui-items-center ui-justify-center ui-rounded-xl ui-bg-muted">
             <Icon size={24} />
           </div>
-          <div className="grid content-center">
-            <p className="select-none text-start text-sm font-semibold">
+          <div className="ui-grid ui-content-center">
+            <p className="ui-select-none ui-text-start ui-text-sm ui-font-semibold">
               {label}
             </p>
-            <p className="select-none text-start text-xs opacity-50">
+            <p className="ui-select-none ui-text-start ui-text-xs ui-opacity-50">
               {description}
             </p>
           </div>
         </div>
       </CardContent>
       <Handle
-        className={cn(
+        className={uicn(
           direction === "horizontal"
-            ? "!h-8 !w-0.5 !min-w-0 -translate-y-1/2 translate-x-0.5 !transform !rounded-l-sm !rounded-r-none !border-border !bg-muted"
-            : "!mt-0.5 !h-0.5 !min-h-0 !w-8 !rounded-b-none !rounded-t-sm !border-border !bg-muted",
+            ? "!ui-h-8 !ui-w-0.5 !ui-min-w-0 -ui-translate-y-1/2 ui-translate-x-0.5 !ui-transform !ui-rounded-l-sm !ui-rounded-r-none !ui-border-border !ui-bg-muted"
+            : "!ui-mt-0.5 !ui-h-0.5 !ui-min-h-0 !ui-w-8 !ui-rounded-b-none !ui-rounded-t-sm !ui-border-border !ui-bg-muted",
         )}
         isConnectable={isConnectable}
         position={direction === "horizontal" ? Position.Left : Position.Top}
         type="target"
       />
       <Handle
-        className={cn(
+        className={uicn(
           direction === "horizontal"
-            ? "!h-8 !w-0.5 !min-w-0 -translate-x-0.5 -translate-y-1/2 !transform  !rounded-l-none !rounded-r-sm !border-border !bg-muted"
-            : "!h-0.5 !min-h-0 !w-8 -translate-x-1/2 -translate-y-0.5 !transform  !rounded-b-sm !rounded-t-none !border-border !bg-muted",
+            ? "!ui-h-8 !ui-w-0.5 !ui-min-w-0 -ui-translate-x-0.5 -ui-translate-y-1/2 !ui-transform ui- !ui-rounded-l-none !ui-rounded-r-sm !ui-border-border !ui-bg-muted"
+            : "!ui-h-0.5 !ui-min-h-0 !ui-w-8 -ui-translate-x-1/2 -ui-translate-y-0.5 !ui-transform ui- !ui-rounded-b-sm !ui-rounded-t-none !ui-border-border !ui-bg-muted",
         )}
         isConnectable={isConnectable}
         position={direction === "horizontal" ? Position.Right : Position.Bottom}
@@ -98,29 +94,27 @@ function DisplayNodeIn({
   isConnectable,
 }: NodeProps<DisplayNodeProps>): JSX.Element {
   return (
-    <Card
-      className={cn("min-w-[200px]", dragging && "cursor-grabbing", className)}
-    >
-      <CardContent className="flex items-center justify-between gap-2 p-2 pr-5">
-        <div className="flex items-center gap-2">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-muted">
+    <Card className={uicn("ui-", dragging && "ui-cursor-grabbing", className)}>
+      <CardContent className="ui-flex ui-items-center ui-justify-between ui-gap-2 ui-p-2 ui-pr-5">
+        <div className="ui-flex ui-items-center ui-gap-2">
+          <div className="ui-flex ui-h-10 ui-w-10 ui-items-center ui-justify-center ui-rounded-xl ui-bg-muted">
             <Icon size={24} />
           </div>
-          <div className="grid content-center">
-            <p className="select-none text-start text-sm font-semibold">
+          <div className="ui-grid ui-content-center">
+            <p className="ui-select-none ui-text-start ui-text-sm ui-font-semibold">
               {label}
             </p>
-            <p className="select-none text-start text-xs opacity-50">
+            <p className="ui-select-none ui-text-start ui-text-xs ui-opacity-50">
               {description}
             </p>
           </div>
         </div>
       </CardContent>
       <Handle
-        className={cn(
+        className={uicn(
           direction === "horizontal"
-            ? "!h-8 !w-0.5 !min-w-0 -translate-y-1/2 translate-x-0.5 !transform !rounded-l-sm !rounded-r-none !border-border !bg-muted"
-            : "!mt-0.5 !h-0.5 !min-h-0 !w-8 !rounded-b-none !rounded-t-sm !border-border !bg-muted",
+            ? "!ui-h-8 !ui-w-0.5 !ui-min-w-0 -ui-translate-y-1/2 ui-translate-x-0.5 !ui-transform !ui-rounded-l-sm !ui-rounded-r-none !ui-border-border !ui-bg-muted"
+            : "!ui-mt-0.5 !ui-h-0.5 !ui-min-h-0 !ui-w-8 !ui-rounded-b-none !ui-rounded-t-sm !ui-border-border !ui-bg-muted",
         )}
         isConnectable={isConnectable}
         position={direction === "horizontal" ? Position.Left : Position.Top}
@@ -139,27 +133,31 @@ function DisplayNodeOut({
 }: NodeProps<DisplayNodeProps>): JSX.Element {
   return (
     <Card
-      className={cn("min-w-[200px]", dragging && "cursor-grabbing", className)}
+      className={uicn(
+        "ui-min-w-[200px]",
+        dragging && "ui-cursor-grabbing",
+        className,
+      )}
     >
-      <CardContent className="flex items-center justify-between gap-2 p-2 pr-5">
-        <div className="flex items-center gap-2">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-muted">
+      <CardContent className="ui-flex ui-items-center ui-justify-between ui-gap-2 ui-p-2 ui-pr-5">
+        <div className="ui-flex ui-items-center ui-gap-2">
+          <div className="ui-flex ui-h-10 ui-w-10 ui-items-center ui-justify-center ui-rounded-xl ui-bg-muted">
             <Icon size={24} />
           </div>
-          <div className="grid content-center">
-            <p className="select-none text-start text-sm font-semibold">
+          <div className="ui-grid ui-content-center">
+            <p className="ui-select-none ui-text-start ui-text-sm ui-font-semibold">
               {label}
             </p>
-            <p className="select-none text-start text-xs opacity-50">
+            <p className="ui-select-none ui-text-start ui-text-xs ui-opacity-50">
               {description}
             </p>
           </div>
         </div>
       </CardContent>
       <Handle
-        className={cn(
+        className={uicn(
           direction === "horizontal"
-            ? "!h-8 !w-0.5 !min-w-0 -translate-x-0.5 -translate-y-1/2 !transform  !rounded-l-none !rounded-r-sm !border-border !bg-muted"
+            ? "!ui-h-8 !ui-w-0.5 !ui-min-w-0 -ui-translate-x-0.5 -ui-translate-y-1/2 !ui-transform ui- !ui-rounded-l-none !ui-rounded-r-sm !ui-border-border !ui-bg-muted"
             : "!h-0.5 !min-h-0 !w-8 -translate-x-1/2 -translate-y-0.5 !transform  !rounded-b-sm !rounded-t-none !border-border !bg-muted",
         )}
         isConnectable={isConnectable}

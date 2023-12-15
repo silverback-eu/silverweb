@@ -3,7 +3,7 @@ import type { LucideIcon } from "lucide-react";
 import { File, FileImage, FileText, UploadCloud, X } from "lucide-react";
 import { ErrorCode } from "react-dropzone";
 import { Button, Card, CardContent } from "../../../shared";
-import { cn } from "../../../lib";
+import { uicn } from "../../../lib";
 import type {
   AcceptedFileProps,
   RejectedFileProps,
@@ -24,30 +24,30 @@ export function Uploader({
   return (
     <Card
       {...getRootProps({ className: "dropzone" })}
-      className={cn(
-        "relative h-48 w-full space-y-3 overflow-hidden px-4 py-8 text-center transition-all hover:ring-1 hover:ring-secondary focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring",
-        (isDragActive || isFileDialogActive) && "ring-1 ring-ring",
-        status === "success" && "!text-green-500",
-        status === "error" && "!text-red-500",
-        disabled && "cursor-not-allowed select-none opacity-50",
-        readOnly && "select-none",
+      className={uicn(
+        "ui-relative ui-h-48 ui-w-full ui-space-y-3 ui-overflow-hidden ui-px-4 ui-py-8 ui-text-center ui-transition-all hover:ui-ring-1 hover:ui-ring-secondary focus-visible:ui-outline-none focus-visible:ui-ring-1 focus-visible:ui-ring-ring",
+        (isDragActive || isFileDialogActive) && "ui-ring-1 ui-ring-ring",
+        status === "success" && "!ui-text-green-500",
+        status === "error" && "!ui-text-red-500",
+        disabled && "ui-cursor-not-allowed ui-select-none ui-opacity-50",
+        readOnly && "ui-select-none",
       )}
     >
       <input {...getInputProps()} />
       <Fragment>
-        <div className="mx-auto !mt-0 flex h-10 w-10 items-center justify-center rounded-xl bg-muted">
-          <UploadCloud className="h-6 w-6" />
+        <div className="ui-mx-auto !ui-mt-0 ui-flex ui-h-10 ui-w-10 ui-items-center ui-justify-center ui-rounded-xl ui-bg-muted">
+          <UploadCloud className="ui-h-6 ui-w-6" />
         </div>
-        <p className="text-sm font-bold tracking-tight">
+        <p className="ui-text-sm ui-font-bold ui-tracking-tight">
           {isDragActive
             ? dragHeading || "Drop now the file to upload"
             : heading || "Click or drag file to this area to upload"}
         </p>
         <p
-          className={cn(
-            "text-xs text-warm",
-            status === "success" && "!text-green-500 opacity-70",
-            status === "error" && "!text-red-500 opacity-70",
+          className={uicn(
+            "ui-text-xs ui-text-warm",
+            status === "success" && "!ui-text-green-500 ui-opacity-70",
+            status === "error" && "!ui-text-red-500 ui-opacity-70",
           )}
         >
           Support for single or bulk upload. Only *.pdf, *.png, *jpg, *.doc and
@@ -81,13 +81,15 @@ export function AcceptedFile({
   }
   return (
     <Card>
-      <CardContent className="flex items-center gap-2 p-2">
-        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-muted">
-          <Icon className="h-6 w-6" />
+      <CardContent className="ui-flex ui-items-center ui-gap-2 ui-p-2">
+        <div className="ui-flex ui-h-10 ui-w-10 ui-items-center ui-justify-center ui-rounded-xl ui-bg-muted">
+          <Icon className="ui-h-6 ui-w-6" />
         </div>
-        <div className="grid w-[calc(100%-92px)] content-center">
-          <p className="truncate text-start text-sm font-semibold">{name}</p>
-          <p className="truncate text-start text-xs opacity-50">
+        <div className="ui-grid ui-w-[calc(100%-92px)] ui-content-center">
+          <p className="ui-truncate ui-text-start ui-text-sm ui-font-semibold">
+            {name}
+          </p>
+          <p className="ui-truncate ui-text-start ui-text-xs ui-opacity-50">
             {typeGroup}/{name.split(".")[name.split(".").length - 1]}{" "}
             {Math.round(size * 0.001 * 100) / 100} KB
           </p>
@@ -99,7 +101,7 @@ export function AcceptedFile({
           size="icon"
           variant="link"
         >
-          <X className="h-5 w-5" />
+          <X className="ui-h-5 ui-w-5" />
         </Button>
       </CardContent>
     </Card>
@@ -137,14 +139,16 @@ export function RejectedFile({
     }
   });
   return (
-    <Card className="text-red-500">
-      <CardContent className="flex items-center gap-2 p-2">
-        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-muted">
-          <Icon className="h-6 w-6" />
+    <Card className="ui-text-red-500">
+      <CardContent className="ui-flex ui-items-center ui-gap-2 ui-p-2">
+        <div className="ui-flex ui-h-10 ui-w-10 ui-items-center ui-justify-center ui-rounded-xl ui-bg-muted">
+          <Icon className="ui-h-6 ui-w-6" />
         </div>
-        <div className="grid w-[calc(100%-92px)] content-center">
-          <p className="truncate text-start text-sm font-semibold">{name}</p>
-          <p className="truncate text-start text-xs opacity-50">
+        <div className="ui-grid ui-w-[calc(100%-92px)] ui-content-center">
+          <p className="ui-truncate ui-text-start ui-text-sm ui-font-semibold">
+            {name}
+          </p>
+          <p className="ui-truncate ui-text-start ui-text-xs ui-opacity-50">
             {ErrorMessage}
           </p>
         </div>
@@ -155,7 +159,7 @@ export function RejectedFile({
           size="icon"
           variant="link"
         >
-          <X className="h-5 w-5" />
+          <X className="ui-h-5 ui-w-5" />
         </Button>
       </CardContent>
     </Card>

@@ -83,10 +83,10 @@
 
 @layer base {
   * {
-    @apply border-border;
+    @apply ui-border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply ui-bg-background ui-text-foreground;
   }
 }
 

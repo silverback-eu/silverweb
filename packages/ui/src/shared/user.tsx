@@ -14,7 +14,7 @@ import {
 } from "lucide-react";
 import type { ReactElement } from "react";
 import { Fragment } from "react";
-import { cn } from "../lib/utils";
+import { uicn } from "../lib";
 import { Avatar, AvatarFallback, AvatarImage } from "./avatar";
 import {
   DropdownMenu,
@@ -202,8 +202,8 @@ export function User({
 
   return (
     <div
-      className={cn(
-        "relative flex h-9 w-9 shrink-0 items-center justify-center overflow-hidden rounded-full",
+      className={uicn(
+        "ui-relative ui-flex ui-h-9 ui-w-9 ui-shrink-0 ui-items-center ui-justify-center ui-overflow-hidden ui-rounded-full",
         BorderColor,
       )}
     >
@@ -222,10 +222,13 @@ export function User({
               <DropdownMenuGroup>
                 {list.map((item) => (
                   <DropdownMenuItem key={item.href + Math.random()}>
-                    <a className="flex w-full items-center" href={item.href}>
+                    <a
+                      className="ui-flex ui-w-full ui-items-center"
+                      href={item.href}
+                    >
                       <item.Icon.type
                         {...item.Icon.props}
-                        className="mr-2 h-4 w-4"
+                        className="ui-mr-2 ui-h-4 ui-w-4"
                       />
                       <span>{item.label}</span>
                     </a>

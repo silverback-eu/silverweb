@@ -2,24 +2,24 @@ import { Separator, Logo } from "../shared";
 
 export function Footer(): JSX.Element {
   return (
-    <footer className="mx-auto mt-[300px] overflow-visible">
+    <footer className="ui-mx-auto ui-mt-[300px] ui-overflow-visible">
       <Separator />
-      <div className="bg-zinc-700 bg-opacity-10">
-        <div className="relative mx-auto h-[500px] w-full max-w-[1400px] p-4 sm:h-[600px] lg:h-[350px]">
-          <div className="absolute bottom-16 grid w-[calc(100%-32px)] lg:grid-cols-2">
+      <div className="ui-bg-zinc-700 ui-bg-opacity-10">
+        <div className="ui-relative ui-mx-auto ui-h-[500px] ui-w-full ui-max-w-[1400px] ui-p-4 sm:ui-h-[600px] lg:ui-h-[350px]">
+          <div className="ui-absolute ui-bottom-16 ui-grid ui-w-[calc(100%-32px)] lg:ui-grid-cols-2">
             <div>
-              <div className="hidden sm:block">
-                <p className="ml-7 content-center text-3xl font-bold  tracking-[-0.05em]">
+              <div className="ui-hidden sm:ui-block">
+                <p className="ui-ml-7 ui-content-center ui-text-3xl ui-font-bold ui-tracking-[-0.05em]">
                   Powering mission-critical <br /> construction throughout
                   Europe.
                 </p>
-                <p className="mb-2 mt-2 px-7 text-sm ">
+                <p className="ui-mb-2 ui-mt-2 ui-px-7 ui-text-sm">
                   SilverBack HQ ⌁ Station Mews, Lindsay Grove, Dublin 9, D09
                   CC92, Ireland <br />
                   <a href="tel:+353 1 441 0102">+353 1 441 0102</a> |{" "}
                   <a href="mailto:work@silverback.ie">work@silverback.ie</a>
                 </p>
-                <div className="mb-10 flex gap-3 px-7">
+                <div className="ui-mb-10 ui-flex ui-gap-3 ui-px-7">
                   <a
                     href="https://www.facebook.com/SilverBackStaffing"
                     rel="noopener noreferrer"
@@ -73,23 +73,23 @@ export function Footer(): JSX.Element {
                   </a>
                 </div>
               </div>
-              <div className="flex">
-                <div className="flex">
+              <div className="ui-flex">
+                <div className="ui-flex">
                   <Logo wh={40} />
-                  <p className="select-none content-center text-3xl font-bold tracking-[-0.05em]">
-                    SilverBack <b className="text-warm">group</b>
+                  <p className="ui-select-none ui-content-center ui-text-3xl ui-font-bold ui-tracking-[-0.05em]">
+                    SilverBack <b className="ui-text-warm">group</b>
                   </p>
                 </div>
               </div>
-              <p className="pl-7">Copyright ©{new Date().getFullYear()}</p>
-              <div className="sm:hidden">
-                <p className="mb-2 mt-2 px-7 text-sm ">
+              <p className="ui-pl-7">Copyright ©{new Date().getFullYear()}</p>
+              <div className="sm:ui-hidden">
+                <p className="ui-mb-2 ui-mt-2 ui-px-7 ui-text-sm ui-">
                   SilverBack HQ - Station Mews, Lindsay Grove, Dublin 9, D09
                   CC92, Ireland <br />
                   <a href="tel:+353 1 441 0102">+353 1 441 0102</a> |{" "}
                   <a href="mailto:work@silverback.ie">work@silverback.ie</a>
                 </p>
-                <div className="mb-10 flex gap-3 px-7">
+                <div className="ui-mb-10 ui-flex ui-gap-3 ui-px-7">
                   <a
                     href="https://www.facebook.com/SilverBackStaffing"
                     rel="noopener noreferrer"
@@ -145,35 +145,45 @@ export function Footer(): JSX.Element {
               </div>
             </div>
             <div>
-              <div className="grid gap-1 p-0 max-sm:px-10 sm:grid-cols-3 sm:gap-0  sm:p-10">
-                <a className="max-sm:h-12" href="/">
-                  <b className="text-lg transition-opacity hover:opacity-60">
+              <div className="ui-grid ui-gap-1 ui-p-0 ui-max-sm:px-10 sm:ui-grid-cols-3 sm:ui-gap-0 sm:ui-p-10">
+                <a className="ui-max-sm:h-12" href="/">
+                  <b className="ui-text-lg ui-transition-opacity hover:ui-opacity-60">
                     Home
                   </b>
                 </a>
-                <a className="max-sm:h-12" href="/connect">
-                  <b className="text-lg transition-opacity hover:opacity-60">
+                <a className="ui-max-sm:h-12" href="/connect">
+                  <b className="ui-text-lg ui-transition-opacity hover:ui-opacity-60">
                     Contact
                   </b>
                 </a>
-                <a className="max-sm:h-12" href="/privacy-policy">
-                  <b className="text-lg transition-opacity hover:opacity-60 ">
+                <a className="ui-max-sm:h-12" href="/privacy-policy">
+                  <b className="ui-text-lg ui-transition-opacity hover:ui-opacity-60">
                     Privacy Policy
                   </b>
                 </a>
-                <div className="hidden opacity-0 sm:block">@dontfred</div>
-                <div className="hidden opacity-0 sm:block">@dontfred</div>
-                <div className="hidden opacity-0 sm:block">@dontfred</div>
-                <b className="hidden text-lg text-warm sm:block">About</b>
-                <b className="hidden text-lg text-warm sm:block">Job board</b>
-                <b className="hidden text-lg text-warm sm:block">
+                <div className="ui-hidden ui-opacity-0 sm:ui-block">
+                  @dontfred
+                </div>
+                <div className="ui-hidden ui-opacity-0 sm:ui-block">
+                  @dontfred
+                </div>
+                <div className="ui-hidden ui-opacity-0 sm:ui-block">
+                  @dontfred
+                </div>
+                <b className="ui-hidden ui-text-lg ui-text-warm sm:ui-block">
+                  About
+                </b>
+                <b className="ui-hidden ui-text-lg ui-text-warm sm:ui-block">
+                  Job board
+                </b>
+                <b className="ui-hidden ui-text-lg ui-text-warm sm:ui-block">
                   Industry insights
                 </b>
                 <a
                   aria-label="Go to here to learn more about our story"
                   href="/our-story"
                 >
-                  <b className="hidden transition-opacity hover:opacity-60 sm:block ">
+                  <b className="ui-hidden ui-transition-opacity hover:ui-opacity-60 sm:ui-block ui-">
                     Our Story
                   </b>
                 </a>
@@ -181,7 +191,7 @@ export function Footer(): JSX.Element {
                   aria-label="Go to see all available blue collar jobs"
                   href="/jobboard?category=blue-collar"
                 >
-                  <b className="hidden transition-opacity hover:opacity-60 sm:block ">
+                  <b className="ui-hidden ui-transition-opacity hover:ui-opacity-60 sm:ui-block">
                     Blue Collar
                   </b>
                 </a>
@@ -189,7 +199,7 @@ export function Footer(): JSX.Element {
                   aria-label="Go to here to learn more about company news. A Blog series"
                   href="/industry-insights?category=company-news"
                 >
-                  <b className="hidden transition-opacity hover:opacity-60 sm:block ">
+                  <b className="ui-hidden ui-transition-opacity hover:ui-opacity-60 sm:ui-block">
                     Company news
                   </b>
                 </a>
@@ -198,7 +208,7 @@ export function Footer(): JSX.Element {
                   aria-label="Go to here to learn more about the methods we use"
                   href="/methods"
                 >
-                  <b className="hidden transition-opacity hover:opacity-60 sm:block ">
+                  <b className="ui-hidden ui-transition-opacity hover:ui-opacity-60 sm:ui-block">
                     Methods
                   </b>
                 </a>
@@ -206,7 +216,7 @@ export function Footer(): JSX.Element {
                   aria-label="Go to see all available white collar jobs"
                   href="/jobboard?category=white-collar"
                 >
-                  <b className="hidden transition-opacity hover:opacity-60 sm:block ">
+                  <b className="ui-hidden ui-transition-opacity hover:ui-opacity-60 sm:ui-block">
                     White Collar
                   </b>
                 </a>
@@ -214,7 +224,7 @@ export function Footer(): JSX.Element {
                   aria-label="Go to here to learn more about better work. A Blog series"
                   href="/industry-insights?category=better-work"
                 >
-                  <b className="hidden transition-opacity hover:opacity-60 sm:block ">
+                  <b className="ui-hidden ui-transition-opacity hover:ui-opacity-60 sm:ui-block">
                     Better work
                   </b>
                 </a>
@@ -222,12 +232,12 @@ export function Footer(): JSX.Element {
                   aria-label="Go to here to learn more about our partnerships"
                   href="/partnerships"
                 >
-                  <b className="hidden transition-opacity hover:opacity-60 sm:block ">
+                  <b className="ui-hidden ui-transition-opacity hover:ui-opacity-60 sm:ui-block">
                     Partnerships
                   </b>
                 </a>
                 <a aria-label="Go to see all available jobs." href="/jobboard">
-                  <b className="hidden transition-opacity hover:opacity-60 sm:block ">
+                  <b className="ui-hidden ui-transition-opacity hover:ui-opacity-60 sm:ui-block">
                     All
                   </b>
                 </a>
@@ -235,7 +245,7 @@ export function Footer(): JSX.Element {
                   aria-label="Go to here to learn more around industry. A Blog series"
                   href="/industry-insights/?category=around-industry"
                 >
-                  <b className="hidden transition-opacity hover:opacity-60 sm:block ">
+                  <b className="ui-hidden ui-transition-opacity hover:ui-opacity-60 sm:ui-block">
                     Around Industry
                   </b>
                 </a>

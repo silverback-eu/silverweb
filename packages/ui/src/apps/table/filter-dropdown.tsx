@@ -17,7 +17,7 @@ import {
   PopoverTrigger,
   Separator,
 } from "../../shared";
-import { cn } from "../../lib/utils";
+import { uicn } from "../../lib";
 
 interface FilterDropdownProps<TData, TValue> {
   column?: Column<TData, TValue>;
@@ -58,22 +58,22 @@ export function FilterDropdown<TData, TValue>({
   return (
     <Popover>
       <PopoverTrigger asChild>
-        <Button className="h-8 border-dashed" size="sm" variant="outline">
-          <PlusCircle className="mr-2 h-4 w-4" />
+        <Button className="ui-h-8 ui-border-dashed" size="sm" variant="outline">
+          <PlusCircle className="ui-mr-2 ui-h-4 ui-w-4" />
           {title}
           {selectedValues.size > 0 && (
             <Fragment>
-              <Separator className="mx-2 h-4" orientation="vertical" />
+              <Separator className="ui-mx-2 ui-h-4" orientation="vertical" />
               <Badge
-                className="rounded-sm px-1 font-normal lg:hidden"
+                className="ui-rounded-sm ui-px-1 ui-font-normal lg:ui-hidden"
                 variant="secondary"
               >
                 {selectedValues.size}
               </Badge>
-              <div className="hidden space-x-1 lg:flex">
+              <div className="ui-hidden ui-space-x-1 lg:ui-flex">
                 {selectedValues.size > 2 ? (
                   <Badge
-                    className="rounded-sm px-1 font-normal"
+                    className="ui-rounded-sm ui-px-1 ui-font-normal"
                     variant="secondary"
                   >
                     {selectedValues.size} selected
@@ -83,7 +83,7 @@ export function FilterDropdown<TData, TValue>({
                     .filter((option) => selectedValues.has(option.value))
                     .map((option) => (
                       <Badge
-                        className="rounded-sm px-1 font-normal"
+                        className="ui-rounded-sm ui-px-1 ui-font-normal"
                         key={option.value}
                         variant="secondary"
                       >
@@ -96,7 +96,7 @@ export function FilterDropdown<TData, TValue>({
           )}
         </Button>
       </PopoverTrigger>
-      <PopoverContent align="start" className="w-[200px] p-0">
+      <PopoverContent align="start" className="ui-w-[200px] ui-p-0">
         <Command>
           <CommandInput
             placeholder={`${title || searchPlaceholder || "Search"}...`}
@@ -123,31 +123,31 @@ export function FilterDropdown<TData, TValue>({
                     }}
                   >
                     <div
-                      className={cn(
-                        "mr-2 flex h-4 w-4 items-center justify-center rounded-sm border border-primary",
+                      className={uicn(
+                        "ui-mr-2 ui-flex ui-h-4 ui-w-4 ui-items-center ui-justify-center ui-rounded-sm ui-border ui-border-primary",
                         isSelected
-                          ? "bg-primary text-primary-foreground"
-                          : "opacity-50 [&_svg]:invisible",
+                          ? "ui-bg-primary ui-text-primary-foreground"
+                          : "ui-opacity-50 [&_svg]:ui-invisible",
                       )}
                     >
-                      <Check className={cn("h-4 w-4")} />
+                      <Check className="ui-h-4 ui-w-4" />
                     </div>
                     {typeof option.icon === "string" ? (
-                      <div className="pr-0.5">{option.icon}</div>
+                      <div className="ui-pr-0.5">{option.icon}</div>
                     ) : (
                       option.icon && (
-                        <option.icon className="mr-2 h-4 w-4 text-muted-foreground" />
+                        <option.icon className="ui-mr-2 ui-h-4 ui-w-4 ui-text-muted-foreground" />
                       )
                     )}
                     <span>{option.label}</span>
                     {facets?.get(option.label) ? (
-                      <span className="ml-auto flex h-4 w-4 items-center justify-center text-xs font-bold">
+                      <span className="ui-ml-auto ui-flex ui-h-4 ui-w-4 ui-items-center ui-justify-center ui-text-xs ui-font-bold">
                         {facets.get(option.label)}
                       </span>
                     ) : (
                       Object.entries(nestedCounts).length > 0 &&
                       nestedCounts[option.label] && (
-                        <span className="ml-auto flex h-4 w-4 items-center justify-center text-xs font-bold">
+                        <span className="ui-ml-auto ui-flex ui-h-4 ui-w-4 ui-items-center ui-justify-center ui-text-xs ui-font-bold">
                           {nestedCounts[option.label]}
                         </span>
                       )
@@ -161,7 +161,7 @@ export function FilterDropdown<TData, TValue>({
                 <CommandSeparator />
                 <CommandGroup>
                   <CommandItem
-                    className="justify-center text-center"
+                    className="ui-justify-center ui-text-center"
                     onSelect={() => column?.setFilterValue(undefined)}
                   >
                     Clear filters

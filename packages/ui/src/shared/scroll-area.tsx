@@ -7,7 +7,7 @@ import {
 } from "@radix-ui/react-scroll-area";
 import type { ComponentPropsWithoutRef, ElementRef } from "react";
 import { forwardRef } from "react";
-import { cn } from "../lib/utils";
+import { uicn } from "../lib";
 
 type ScrollbarProps = {
   className?: string;
@@ -19,19 +19,19 @@ const ScrollBar = forwardRef<
   ScrollbarProps
 >(({ className, orientation = "vertical", ...props }, ref) => (
   <ScrollAreaScrollbar
-    className={cn(
-      "flex touch-none select-none transition-colors",
+    className={uicn(
+      "ui-flex ui-touch-none ui-select-none ui-transition-colors",
       orientation === "vertical" &&
-        "h-full w-2.5 border-l border-l-transparent p-[1px]",
+        "ui-h-full ui-border-l ui-border-l-transparent ui-p-[1px] ui-w-2.5",
       orientation === "horizontal" &&
-        "h-2.5 border-t border-t-transparent p-[1px]",
+        "ui-h-2.5 ui-border-t ui-border-t-transparent ui-p-[1px]",
       className,
     )}
     orientation={orientation}
     ref={ref}
     {...props}
   >
-    <ScrollAreaThumb className="relative flex-1 rounded-full bg-border" />
+    <ScrollAreaThumb className="ui-relative ui-flex-1 ui-rounded-full ui-bg-border" />
   </ScrollAreaScrollbar>
 ));
 ScrollBar.displayName = ScrollAreaScrollbar.displayName;
@@ -43,11 +43,11 @@ type ScrollAreaProps = {
 const ScrollArea = forwardRef<ElementRef<typeof Root>, ScrollAreaProps>(
   ({ className, children, ...props }, ref) => (
     <Root
-      className={cn("relative overflow-hidden", className)}
+      className={uicn("ui-elative ui-overflow-hidden", className)}
       ref={ref}
       {...props}
     >
-      <Viewport className="h-full w-full rounded-[inherit]">
+      <Viewport className="ui-h-full ui-w-full ui-rounded-[inherit]">
         {children}
       </Viewport>
       <ScrollBar />

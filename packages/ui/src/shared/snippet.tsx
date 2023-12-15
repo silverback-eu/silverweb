@@ -4,12 +4,12 @@ import { useState, type ReactNode } from "react";
 export function Snippet({ children }: { children: ReactNode }): JSX.Element {
   const [isCopied, setIsCopied] = useState(false);
   return (
-    <div className="w-fit rounded-md border border-stone-500 border-opacity-50 px-3 py-1 ">
+    <div className="ui-w-fit ui-rounded-md ui-border ui-border-stone-500 ui-border-opacity-50 ui-px-3 ui-py-1">
       <pre>
-        <code className="flex items-center font-mono tracking-tight">
+        <code className="ui-flex ui-items-center ui-font-mono ui-tracking-tight">
           $ {children}{" "}
           <button
-            className="transition-opacity duration-200"
+            className="ui-transition-opacity ui-duration-200"
             onClick={(ev) => {
               ev.preventDefault();
               const style = ev.currentTarget.style;
@@ -34,13 +34,13 @@ export function Snippet({ children }: { children: ReactNode }): JSX.Element {
             type="button"
           >
             <Copy
-              className="p-1 transition-opacity duration-1000"
+              className="ui-p-1 ui-transition-opacity ui-duration-1000"
               style={{
                 display: isCopied ? "none" : "block",
               }}
             />
             <Check
-              className="p-1 transition-opacity duration-1000"
+              className="ui-p-1 ui-transition-opacity ui-duration-1000"
               style={{
                 display: !isCopied ? "none" : "block",
               }}

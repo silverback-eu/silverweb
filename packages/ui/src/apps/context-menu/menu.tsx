@@ -57,7 +57,7 @@ function DisplayItems(item: ContextMenuItemType, idx: number): JSX.Element {
     return (
       <ContextMenuSub key={idx}>
         <ContextMenuSubTrigger>{item.label}</ContextMenuSubTrigger>
-        <ContextMenuSubContent className="w-48">
+        <ContextMenuSubContent className="ui-w-48">
           {item.items.map(DisplayItems)}
         </ContextMenuSubContent>
       </ContextMenuSub>
@@ -99,11 +99,11 @@ export function ContextMenu({
   const [cmdKey, setCmdKey] = useState<ReactNode>("⌘");
   useEffect(() => {
     if (!window.navigator.userAgent.includes("Mac")) {
-      setCmdKey(<span className="pr-1 tracking-tighter">CTRL</span>);
+      setCmdKey(<span className="ui-pr-1 ui-tracking-tighter">CTRL</span>);
     }
   }, []);
   return (
-    <ContextMenuContent className="min-w-[200px] max-w-[300px]">
+    <ContextMenuContent className="ui-min-w-[200px] ui-max-w-[300px]">
       <ContextMenuItem
         onSelect={() => {
           history.back();
@@ -135,7 +135,7 @@ export function ContextMenu({
           window.open(`https://www.google.com/search?q=${selected}`);
         }}
       >
-        <p className="max-w-[274px] truncate">
+        <p className="ui-max-w-[274px] ui-truncate">
           Search Google for &quot;{selected ? selected : "..."}&quot;
         </p>
       </ContextMenuItem>

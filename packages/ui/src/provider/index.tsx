@@ -60,7 +60,7 @@ export function Provider({ children }: { children: ReactNode }): JSX.Element {
       >
         <TooltipProvider>
           <Toaster />
-          <div className="h-screen">{children}</div>
+          <div className="ui-h-screen">{children}</div>
         </TooltipProvider>
       </ContextProvider>
     </ThemeProvider>

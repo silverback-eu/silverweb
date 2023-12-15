@@ -16,7 +16,7 @@ import {
   SheetContent,
   SheetTrigger,
 } from "../shared";
-import { cn } from "../lib/utils";
+import { uicn } from "../lib";
 import { BurgerMenuIcon } from "./burger-menu-icon";
 
 const pages: (
@@ -216,15 +216,15 @@ const ListItem = forwardRef<ElementRef<"a">, ListItemProps>(
   ({ className, title, children, ...props }, ref) => (
     <li>
       <NavigationMenuLink
-        className={cn(
-          "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+        className={uicn(
+          "ui-block ui-select-none ui-space-y-1 ui-rounded-md ui-p-3 ui-leading-none ui-no-underline ui-outline-none ui-transition-colors hover:ui-bg-accent hover:ui-text-accent-foreground focus:ui-bg-accent focus:ui-text-accent-foreground",
           className,
         )}
         ref={ref}
         {...props}
       >
-        <div className="text-sm font-medium leading-none">{title}</div>
-        <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+        <div className="ui-text-sm ui-font-medium ui-leading-none">{title}</div>
+        <p className="ui-line-clamp-2 ui-text-sm ui-leading-snug ui-text-muted-foreground">
           {children}
         </p>
       </NavigationMenuLink>
@@ -251,14 +251,10 @@ export function Navbar({
   }, []);
 
   return (
-    <header className={cn("relative z-50 h-[53px]")}>
-      <div
-        className={cn(
-          "fixed right-0 w-screen bg-black bg-opacity-80 from-background via-background to-[rgba(0,0,0,0.6)] backdrop-blur-[5px] backdrop-saturate-150",
-        )}
-      >
-        <div className="mx-auto flex max-w-[1400px] content-center justify-between px-3 py-2">
-          <NavigationMenu className="md:hidden">
+    <header className="ui-relative ui-z-50 ui-h-[53px]">
+      <div className="ui-fixed ui-left-0 ui-w-screen ui-bg-black ui-bg-opacity-80 ui-from-background ui-via-background ui-to-[rgba(0,0,0,0.6)] ui-backdrop-blur-[5px] ui-backdrop-saturate-150">
+        <div className="ui-mx-auto ui-flex ui-max-w-[1400px] ui-content-center ui-justify-between ui-px-3 ui-py-2">
+          <NavigationMenu className="md:ui-hidden">
             <NavigationMenuList>
               <NavigationMenuItem>
                 <Sheet onOpenChange={setOpenSideMenu} open={openSideMenu}>
@@ -270,26 +266,26 @@ export function Navbar({
                   </SheetTrigger>
                   <SheetContent>
                     <a href="/">
-                      <div className="flex content-center">
-                        <div className="flex select-none flex-wrap content-center">
+                      <div className="ui-flex ui-content-center">
+                        <div className="ui-flex ui-select-none ui-flex-wrap ui-content-center">
                           <Logo wh={22} />
                         </div>
-                        <div className="flex -translate-y-[2.5%]">
-                          <div className="grid select-none content-center text-lg font-bold tracking-[-0.02em]">
+                        <div className="ui-flex -ui-translate-y-[2.5%]">
+                          <div className="ui-grid ui-select-none ui-content-center ui-text-lg ui-font-bold ui-tracking-[-0.02em]">
                             SilverBack
                           </div>
-                          <div className="translate-y-[1px] select-none content-center pl-0.5 text-[1.1em] font-medium tracking-[-0.03em] text-warm">
+                          <div className="ui-translate-y-[1px] ui-select-none ui-content-center ui-pl-0.5 ui-text-[1.1em] ui-font-medium ui-tracking-[-0.03em] ui-text-warm">
                             group
                           </div>
                         </div>
                       </div>
                     </a>
-                    <Separator className="mt-4 opacity-0" />
-                    <ScrollArea className="grid h-[calc(100vh-100px)] gap-1">
+                    <Separator className="ui-mt-4 ui-opacity-0" />
+                    <ScrollArea className="ui-grid ui-h-[calc(100vh-100px)] ui-gap-1">
                       {pages.map((page, idx) => (
                         <div key={page.title}>
                           {page.heading ? (
-                            <b className="font-bold">
+                            <b className="ui-font-bold">
                               {page.href ? (
                                 <a href={page.href}>{page.title}</a>
                               ) : (
@@ -297,17 +293,20 @@ export function Navbar({
                               )}
                             </b>
                           ) : (
-                            <a className="opacity-70" href={page.href || "#"}>
+                            <a
+                              className="ui-opacity-70"
+                              href={page.href || "#"}
+                            >
                               {page.title}
                             </a>
                           )}
                           {pages[idx + 1] && pages[idx + 1].heading ? (
-                            <Separator className="my-2" />
+                            <Separator className="ui-my-2" />
                           ) : null}
                         </div>
                       ))}
-                      <div className="h-12" />
-                      <div className="h-12" />
+                      <div className="ui-h-12" />
+                      <div className="ui-h-12" />
                     </ScrollArea>
                   </SheetContent>
                 </Sheet>
@@ -316,16 +315,19 @@ export function Navbar({
           </NavigationMenu>
           <NavigationMenu>
             <NavigationMenuList>
-              <NavigationMenuItem className={cn("grid grid-flow-col gap-1")}>
-                <a className="mx-3 grid grid-flow-col gap-1" href="/">
-                  <div className="hidden translate-y-[0.5px] select-none flex-wrap content-center sm:flex">
+              <NavigationMenuItem className="ui-grid ui-grid-flow-col ui-gap-1">
+                <a
+                  className="ui-mx-3 ui-grid ui-grid-flow-col ui-gap-1"
+                  href="/"
+                >
+                  <div className="ui-hidden ui-translate-y-[0.5px] ui-select-none ui-flex-wrap ui-content-center sm:ui-flex">
                     <Logo wh={22} />
                   </div>
-                  <div className="flex translate-x-5 sm:translate-x-0">
-                    <div className="grid select-none content-center text-lg font-bold tracking-[-0.03em]">
+                  <div className="ui-flex ui-translate-x-5 sm:ui-translate-x-0">
+                    <div className="ui-grid ui-select-none ui-content-center ui-text-lg ui-font-bold ui-tracking-[-0.03em]">
                       SilverBack
                     </div>
-                    <div className="hidden translate-y-[0px] select-none content-center pl-0.5 text-[1.1em] font-medium tracking-[-0.08em] text-warm sm:grid">
+                    <div className="ui-hidden ui-translate-y-[0px] ui-select-none ui-content-center ui-pl-0.5 ui-text-[1.1em] ui-font-medium ui-tracking-[-0.08em] ui-text-warm sm:ui-grid">
                       group
                     </div>
                   </div>
@@ -335,51 +337,51 @@ export function Navbar({
           </NavigationMenu>
           <NavigationMenu>
             <NavigationMenuList>
-              <NavigationMenuItem className="hidden md:block">
+              <NavigationMenuItem className="ui-hidden md:ui-block">
                 <NavigationMenuLink
                   className={navigationMenuTriggerStyle()}
                   href="/"
                 >
                   <div
-                    className={cn(
+                    className={uicn(
                       "",
                       pathname === "/" &&
-                        "font-bold drop-shadow-[0_1px_4px_rgba(255,255,255,0.4)]",
+                        "ui-font-bold ui-drop-shadow-[0_1px_4px_rgba(255,255,255,0.4)]",
                     )}
                   >
                     Home
                   </div>
                 </NavigationMenuLink>
               </NavigationMenuItem>
-              <NavigationMenuItem className="hidden md:block">
+              <NavigationMenuItem className="ui-hidden md:ui-block">
                 <NavigationMenuTrigger>
                   <div
-                    className={cn(
+                    className={uicn(
                       "",
                       (pathname === "/our-story" ||
                         pathname === "/methods" ||
                         pathname === "/partnerships") &&
-                        "font-bold drop-shadow-[0_1px_4px_rgba(255,255,255,0.4)]",
+                        "ui-font-bold ui-drop-shadow-[0_1px_4px_rgba(255,255,255,0.4)]",
                     )}
                   >
                     About
                   </div>
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-                    <li className="row-span-3">
+                  <ul className="ui-grid ui-gap-3 ui-p-6 md:ui-w-[400px] lg:ui-w-[500px] lg:ui-grid-cols-[.75fr_1fr]">
+                    <li className="ui-row-span-3">
                       <NavigationMenuLink asChild>
                         <a
-                          className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
+                          className="ui-flex ui-h-full ui-w-full ui-select-none ui-flex-col ui-justify-end ui-rounded-md ui-bg-gradient-to-b ui-from-muted/50 ui-to-muted ui-p-6 ui-no-underline ui-outline-none focus:ui-shadow-md"
                           href="/"
                         >
-                          <div className="-translate-x-3 translate-y-3">
+                          <div className="-ui-translate-x-3 ui-translate-y-3">
                             <Logo wh={60} />
                           </div>
                           <div className="mb-2 mt-4 select-none text-lg font-bold tracking-[-0.03em]">
                             SilverBack
                           </div>
-                          <p className="select-none text-sm leading-tight text-muted-foreground">
+                          <p className="ui-select-none ui-text-sm ui-leading-tight ui-text-muted-foreground">
                             Powering mission-critical construction throughout
                             Europe.
                           </p>
@@ -402,20 +404,20 @@ export function Navbar({
                   </ul>
                 </NavigationMenuContent>
               </NavigationMenuItem>
-              <NavigationMenuItem className="hidden md:block">
+              <NavigationMenuItem className="ui-hidden md:ui-block">
                 <NavigationMenuTrigger>
                   <div
-                    className={cn(
+                    className={uicn(
                       "",
                       pathname === "/jobboard" &&
-                        "font-bold drop-shadow-[0_1px_4px_rgba(255,255,255,0.4)]",
+                        "ui-font-bold ui-drop-shadow-[0_1px_4px_rgba(255,255,255,0.4)]",
                     )}
                   >
                     Job board
                   </div>
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                  <ul className="ui-grid ui-w-[400px] ui-gap-3 ui-p-4 md:ui-w-[500px] md:ui-grid-cols-2 lg:ui-w-[600px]">
                     {jobs.map((job) => (
                       <ListItem
                         href={job.href}
@@ -428,32 +430,32 @@ export function Navbar({
                   </ul>
                 </NavigationMenuContent>
               </NavigationMenuItem>
-              <NavigationMenuItem className="hidden md:block">
+              <NavigationMenuItem className="ui-hidden md:ui-block">
                 <NavigationMenuLink
                   className={navigationMenuTriggerStyle()}
                   href="/connect"
                 >
                   <div
-                    className={cn(
+                    className={uicn(
                       "",
                       pathname === "/connect" &&
-                        "font-bold drop-shadow-[0_1px_4px_rgba(255,255,255,0.4)]",
+                        "ui-font-bold ui-drop-shadow-[0_1px_4px_rgba(255,255,255,0.4)]",
                     )}
                   >
                     Connect
                   </div>
                 </NavigationMenuLink>
               </NavigationMenuItem>
-              <NavigationMenuItem className="hidden md:block">
+              <NavigationMenuItem className="ui-hidden md:ui-block">
                 <NavigationMenuLink
                   className={navigationMenuTriggerStyle()}
                   href="/industry-insights"
                 >
                   <div
-                    className={cn(
+                    className={uicn(
                       "",
                       pathname === "/industry-insights" &&
-                        "font-bold drop-shadow-[0_1px_4px_rgba(255,255,255,0.4)]",
+                        "ui-font-bold ui-drop-shadow-[0_1px_4px_rgba(255,255,255,0.4)]",
                     )}
                   >
                     Industry insights

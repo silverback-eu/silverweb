@@ -11,14 +11,14 @@ const BurgerMenuIconPrimitive = forwardRef(
   ) => (
     <div>
       <div>
-        <div className="relative h-8 w-8 overflow-hidden">
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 scale-[0.25]">
+        <div className="ui-relative ui-h-8 ui-w-8 ui-overflow-hidden">
+          <div className="ui-absolute ui-left-1/2 ui-top-1/2 -ui-translate-x-1/2 -ui-translate-y-1/2 ui-scale-[0.25]">
             <label
-              className="flex w-[70px] cursor-pointer flex-col [&_span]:my-[7px] [&_span]:h-[7px] [&_span]:rounded-[10px] [&_span]:bg-current [&_span]:transition-[0.4s_cubic-bezier(0.68,-0.6,0.32,1.6)]"
+              className="ui-flex ui-w-[70px] ui-cursor-pointer ui-flex-col [&_span]:ui-my-[7px] [&_span]:ui-h-[7px] [&_span]:ui-rounded-[10px] [&_span]:ui-bg-current [&_span]:ui-transition-[0.4s_cubic-bezier(0.68,-0.6,0.32,1.6)]"
               htmlFor="check"
             >
               <input
-                className="hidden [&:checked_~_span:nth-of-type(1)]:origin-bottom [&:checked_~_span:nth-of-type(1)]:[transform:rotatez(45deg)_translate(8px,0px)] [&:checked_~_span:nth-of-type(2)]:origin-top [&:checked_~_span:nth-of-type(2)]:[transform:rotatez(-45deg)] [&:checked_~_span:nth-of-type(3)]:w-1/2  [&:checked_~_span:nth-of-type(3)]:origin-bottom [&:checked_~_span:nth-of-type(3)]:[transform:translate(30px,-11px)_rotatez(45deg)]"
+                className="ui-hidden [&:checked_~_span:nth-of-type(1)]:ui-origin-bottom [&:checked_~_span:nth-of-type(1)]:ui-[transform:rotatez(45deg)_translate(8px,0px)] [&:checked_~_span:nth-of-type(2)]:ui-origin-top [&:checked_~_span:nth-of-type(2)]:ui-[transform:rotatez(-45deg)] [&:checked_~_span:nth-of-type(3)]:ui-w-1/2 [&:checked_~_span:nth-of-type(3)]:ui-origin-bottom [&:checked_~_span:nth-of-type(3)]:ui-[transform:translate(30px,-11px)_rotatez(45deg)]"
                 id="check"
                 ref={ref as unknown as LegacyRef<HTMLInputElement>}
                 type="checkbox"
@@ -30,9 +30,9 @@ const BurgerMenuIconPrimitive = forwardRef(
                     : onOpenChange?.(false)
                 }
               />
-              <span className="select-none [&:nth-of-type(1)]:w-1/2 [&:nth-of-type(2)]:w-full [&:nth-of-type(3)]:w-3/4" />
-              <span className="select-none [&:nth-of-type(1)]:w-1/2 [&:nth-of-type(2)]:w-full [&:nth-of-type(3)]:w-3/4" />
-              <span className="select-none [&:nth-of-type(1)]:w-1/2 [&:nth-of-type(2)]:w-full [&:nth-of-type(3)]:w-3/4" />
+              <span className="ui-select-none [&:nth-of-type(1)]:ui-w-1/2 [&:nth-of-type(2)]:ui-w-full [&:nth-of-type(3)]:ui-w-3/4" />
+              <span className="ui-select-none [&:nth-of-type(1)]:ui-w-1/2 [&:nth-of-type(2)]:ui-w-full [&:nth-of-type(3)]:ui-w-3/4" />
+              <span className="ui-select-none [&:nth-of-type(1)]:ui-w-1/2 [&:nth-of-type(2)]:ui-w-full [&:nth-of-type(3)]:ui-w-3/4" />
             </label>
           </div>
         </div>
