@@ -1,4 +1,4 @@
-import { Logo } from "@silverweb/ui/shared";
+import { Logo } from "@silverweb/ui";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof Logo> = {

@@ -1,4 +1,4 @@
-import { DisplayCard, LoadingCard } from "@silverweb/ui/shared";
+import { DisplayCard } from "@silverweb/ui";
 import type { Meta, StoryObj } from "@storybook/react";
 import { HardHat } from "lucide-react";
 
@@ -37,5 +37,7 @@ export const Styled: Story = {
 };
 
 export const Loading: Story = {
-  render: () => <LoadingCard />,
+  args: {
+    loading: true,
+  },
 };

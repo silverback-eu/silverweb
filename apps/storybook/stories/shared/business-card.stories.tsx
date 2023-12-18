@@ -1,4 +1,4 @@
-import { BusinessCard, LoadingCard } from "@silverweb/ui/shared";
+import { BusinessCard } from "@silverweb/ui";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof BusinessCard> = {
@@ -43,5 +43,7 @@ export const Normal: Story = {
 };
 
 export const Loading: Story = {
-  render: () => <LoadingCard />,
+  args: {
+    loading: true,
+  },
 };

@@ -1,0 +1,9 @@
+{
+  "name": "@silverweb/tsconfig",
+  "version": "0.0.0",
+  "private": true,
+  "license": "AGPL",
+  "publishConfig": {
+    "access": "public"
+  }
+}

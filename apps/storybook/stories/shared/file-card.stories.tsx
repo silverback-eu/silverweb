@@ -1,4 +1,4 @@
-import { FileCard, LoadingCard } from "@silverweb/ui/shared";
+import { FileCard } from "@silverweb/ui";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof FileCard> = {
@@ -25,11 +25,13 @@ export const Normal: Story = {
       name: "test.txt",
       size: "1000kb",
       type: "text/plain",
-      uri: "",
+      url: "",
     },
   },
 };
 
 export const Loading: Story = {
-  render: () => <LoadingCard />,
+  args: {
+    loading: true,
+  },
 };

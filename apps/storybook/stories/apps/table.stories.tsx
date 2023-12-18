@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import type { ColumnDef } from "@silverweb/ui/apps";
-import { DataTable, CustomTable as SCustomTable } from "@silverweb/ui/apps";
+import type { ColumnDef } from "@silverweb/ui";
+import { DataTable, CustomTable as SCustomTable } from "@silverweb/ui";
 
 const meta: Meta<typeof DataTable> = {
   title: "Apps/ Table",
@@ -26,7 +26,7 @@ const columnsDemo: ColumnDef<DemoTableItem>[] = [
   {
     accessorKey: "id",
     cell: ({ row }) => (
-      <div className="text-sm font-bold opacity-70 line-clamp-1">
+      <div className="line-clamp-1 text-sm font-bold opacity-70">
         {row.getValue("id")}
       </div>
     ),
@@ -34,7 +34,7 @@ const columnsDemo: ColumnDef<DemoTableItem>[] = [
   {
     accessorKey: "name",
     cell: ({ row }) => (
-      <div className="text-sm font-bold mt-3 line-clamp-1">
+      <div className="mt-3 line-clamp-1 text-sm font-bold">
         {row.getValue("name")}
       </div>
     ),
@@ -48,7 +48,7 @@ const columnsDemo: ColumnDef<DemoTableItem>[] = [
   {
     accessorKey: "description",
     cell: ({ row }) => (
-      <div className="text-sm text-muted-foreground line-clamp-3">
+      <div className="line-clamp-3 text-sm text-muted-foreground">
         {row.getValue("description")}
       </div>
     ),
@@ -56,7 +56,7 @@ const columnsDemo: ColumnDef<DemoTableItem>[] = [
   {
     accessorKey: "date",
     cell: ({ row }) => (
-      <div className="text-sm text-muted-foreground line-clamp-3">
+      <div className="line-clamp-3 text-sm text-muted-foreground">
         {row.getValue("date")}
       </div>
     ),
@@ -447,7 +447,7 @@ export const CustomTable: CStory = {
     TableHeader: <div />,
     TableContainer: <div />,
     TableItem: (
-      <div className="rounded-xl border bg-card text-card-foreground shadow p-3 m-2" />
+      <div className="m-2 rounded-xl border bg-card p-3 text-card-foreground shadow" />
     ),
     TableNoResult: <div>No Result</div>,
     columns: columnsDemo as ColumnDef<unknown>[],

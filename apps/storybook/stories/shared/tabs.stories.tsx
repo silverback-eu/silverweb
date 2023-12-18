@@ -5,7 +5,7 @@ import {
   TabsContent,
   TabsList,
   TabsTrigger,
-} from "@silverweb/ui/shared";
+} from "@silverweb/ui";
 import { Fragment, useState } from "react";
 
 const meta: Meta<typeof Tabs> = {

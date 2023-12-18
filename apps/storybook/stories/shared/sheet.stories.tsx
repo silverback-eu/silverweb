@@ -8,7 +8,7 @@ import {
   SheetTitle,
   SheetTrigger,
   Sheet,
-} from "@silverweb/ui/shared";
+} from "@silverweb/ui";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof Sheet> = {
@@ -35,7 +35,7 @@ export const Normal: Story = {
             account and remove your data from our servers.
           </SheetDescription>
         </SheetHeader>
-        <SheetFooter className="flex gap-2 mt-2">
+        <SheetFooter className="mt-2 flex gap-2">
           <SheetClose>Cancel</SheetClose>
           <Button variant="destructive">Delete</Button>
         </SheetFooter>

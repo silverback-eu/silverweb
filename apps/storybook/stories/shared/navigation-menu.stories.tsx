@@ -1,5 +1,5 @@
-import { cn } from "@silverweb/ui/lib/utils";
 import {
+  cn,
   NavigationMenu,
   NavigationMenuContent,
   NavigationMenuItem,
@@ -7,7 +7,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from "@silverweb/ui/shared";
+} from "@silverweb/ui";
 import type { Meta, StoryObj } from "@storybook/react";
 import type { ComponentPropsWithoutRef, ElementRef } from "react";
 import { forwardRef } from "react";
@@ -32,7 +32,7 @@ export const Normal: Story = {
               <div
                 className={cn(
                   "",
-                  "font-bold drop-shadow-[0_1px_4px_rgba(255,255,255,0.4)]"
+                  "font-bold drop-shadow-[0_1px_4px_rgba(255,255,255,0.4)]",
                 )}
               >
                 Home
@@ -53,10 +53,10 @@ export const Normal: Story = {
                     href="/"
                   >
                     <div className="-translate-x-3 translate-y-3" />
-                    <div className="mb-2 mt-4 text-lg font-bold tracking-[-0.03em] select-none">
+                    <div className="mb-2 mt-4 select-none text-lg font-bold tracking-[-0.03em]">
                       SilverBack
                     </div>
-                    <p className="text-sm leading-tight text-muted-foreground select-none">
+                    <p className="select-none text-sm leading-tight text-muted-foreground">
                       Powering mission-critical construction throughout Europe.
                     </p>
                   </a>
@@ -112,7 +112,7 @@ const ListItem = forwardRef<ElementRef<"a">, ComponentPropsWithoutRef<"a">>(
           <a
             className={cn(
               "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-              className
+              className,
             )}
             ref={ref}
             {...props}
@@ -125,6 +125,6 @@ const ListItem = forwardRef<ElementRef<"a">, ComponentPropsWithoutRef<"a">>(
         </NavigationMenuLink>
       </li>
     );
-  }
+  },
 );
 ListItem.displayName = "ListItem";

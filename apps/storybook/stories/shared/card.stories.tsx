@@ -6,9 +6,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-  Label,
-} from "@silverweb/ui/shared";
-import { ComboBox, TextInput } from "@silverweb/ui/sw-inputs/default";
+} from "@silverweb/ui";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof Card> = {
@@ -29,25 +27,10 @@ export const Normal: Story = {
         <CardDescription>Card Description</CardDescription>
       </CardHeader>
       <CardContent>
-        <form>
-          <div className="grid w-full items-center gap-4">
-            <div className="flex flex-col space-y-1.5">
-              <Label htmlFor="DemoText">Demo Text</Label>
-              <TextInput id="DemoText" placeholder="Text for demo" />
-            </div>
-            <div className="flex flex-col space-y-1.5">
-              <Label htmlFor="DemoSelect">Demo Select</Label>
-              <ComboBox
-                id="DemoSelect"
-                items={[
-                  { label: "Demo 1.", value: "demo1" },
-                  { label: "Demo 2.", value: "demo2" },
-                  { label: "Demo 3.", value: "demo3" },
-                ]}
-              />
-            </div>
-          </div>
-        </form>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum suscipit
+        voluptate sapiente consequuntur aliquam maiores exercitationem, error
+        corporis doloribus magnam omnis placeat vero officiis ratione, odit
+        maxime cumque. Repudiandae, nam.
       </CardContent>
       <CardFooter className="flex justify-between">
         <Button variant="outline">Cancel</Button>

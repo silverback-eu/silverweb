@@ -1,4 +1,4 @@
-import { AppIcon } from "@silverweb/ui/silverweb";
+import { AppIcon } from "@silverweb/ui";
 import type { Meta, StoryObj } from "@storybook/react";
 import { BringToFront } from "lucide-react";
 

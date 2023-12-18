@@ -1,7 +1,5 @@
-// tailwind config is required for editor support
-
 import type { Config } from "tailwindcss";
-import sharedConfig from "twconfig/tailwind.config";
+import sharedConfig from "@silverweb/tailwind-config/tailwind.config";
 
 const config: Pick<Config, "presets"> = {
   presets: [sharedConfig],

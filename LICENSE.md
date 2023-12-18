@@ -1,6 +1,6 @@
 The GNU AFFERO GENERAL PUBLIC LICENSE License (AGPL)
 
-Copyright (c) 2023 SilverBack Staffing Ltd, affiliates and Frederik W. Grimm
+Copyright (c) 2023 SilverBack Staffing Ltd, Grimm Integrations and Frederik W. Grimm
 
                     GNU AFFERO GENERAL PUBLIC LICENSE
                        Version 3, 19 November 2007

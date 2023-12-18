@@ -1,4 +1,4 @@
-import { User } from "@silverweb/ui/shared";
+import { User } from "@silverweb/ui";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof User> = {
