@@ -43,16 +43,6 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { Button, VanillaPhoneInput } from "@silverweb/ui";
-import assemblin from "../../../public/brands/ASSEMBLIN.png";
-import bravida from "../../../public/brands/Bravida.png";
-import hmv from "../../../public/brands/H&MV.png";
-import joneseng from "../../../public/brands/Jones Eng.png";
-import northvolt from "../../../public/brands/Northvolt.png";
-import suir from "../../../public/brands/SUIR.png";
-import datacentre_1 from "../../../public/projects/datacentre-1.jpg";
-import lillestrom_1_min from "../../../public/projects/lillestrom-1-min.jpg";
-import northvolt_ett_1 from "../../../public/projects/northvolt-ett-1.jpg";
-import avtel from "../../../public/brands/AVTEL.png";
 import {
   ContactForm,
   FeaturesCard,
@@ -64,6 +54,16 @@ import {
   Typewriter,
   WorkFlowCard,
 } from "./components";
+import avtel from "@/public/brands/AVTEL.png";
+import assemblin from "@/public/brands/ASSEMBLIN.png";
+import bravida from "@/public/brands/Bravida.png";
+import hmv from "@/public/brands/H&MV.png";
+import joneseng from "@/public/brands/Jones Eng.png";
+import northvolt from "@/public/brands/Northvolt.png";
+import suir from "@/public/brands/SUIR.png";
+import datacentre_1 from "@/public/projects/datacentre-1.jpg";
+import lillestrom_1_min from "@/public/projects/lillestrom-1-min.jpg";
+import northvolt_ett_1 from "@/public/projects/northvolt-ett-1.jpg";
 
 export default function Landing(): JSX.Element {
   return (
@@ -173,7 +173,7 @@ export default function Landing(): JSX.Element {
                 <div className="mt-1 hidden text-sm tracking-tight text-muted-foreground sm:block">
                   <p>
                     Making the future easy, green and productive.
-                    <span className="inline-flex h-auto items-center justify-center rounded-md p-0 text-sm font-medium text-muted-foreground underline-offset-4 transition-colors hover:underline focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50">
+                    <span className="inline-flex h-auto items-center justify-center rounded-md p-0 pl-0.5 text-sm font-medium text-muted-foreground underline-offset-4 transition-colors hover:underline focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50">
                       Connect
                     </span>
                   </p>

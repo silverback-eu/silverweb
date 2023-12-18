@@ -2,8 +2,7 @@ import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
 
-// eslint-disable-next-line @typescript-eslint/explicit-function-return-type -- next api requires async
-export async function GET(request: Request) {
+export async function GET(request: Request): Promise<ImageResponse> {
   const { searchParams } = new URL(request.url);
   const fontData = await fetch(
     new URL(
