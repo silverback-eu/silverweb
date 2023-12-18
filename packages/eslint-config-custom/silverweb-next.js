@@ -45,7 +45,10 @@ module.exports = {
     "no-console": ["error", { allow: ["warn", "error"] }],
     "no-console": ["error", { allow: ["warn", "error"] }],
     "react/jsx-pascal-case": ["error", { allowNamespace: true }],
-    "import/no-unresolved": ["error", { ignore: ["\\.jpg$", "\\.png$"] }],
+    "import/no-unresolved": [
+      "error",
+      { ignore: ["\\.jpg$", "\\.png$", "contentlayer/generated"] },
+    ],
     "@typescript-eslint/no-unnecessary-type-assertion": "off",
     camelcase: "off",
   },

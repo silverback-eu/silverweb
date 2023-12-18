@@ -114,7 +114,9 @@ export default function IndustryInsights({
       <Separator />
       <div className="h-5" />
       <article>
-        <MarkdownWrapper code={ii_post.body.code} />
+        <MarkdownWrapper
+          code={(ii_post.body as { raw: string; code: string }).code}
+        />
       </article>
     </div>
   );

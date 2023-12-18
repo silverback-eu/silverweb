@@ -74,7 +74,10 @@ export default makeSource({
         },
       ],
       [
-        rehypePrettyCode,
+        rehypePrettyCode as (
+          options?: Options | undefined,
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any -- Type mismatch
+        ) => any,
         {
           theme: "github-dark",
           onVisitLine(node) {
