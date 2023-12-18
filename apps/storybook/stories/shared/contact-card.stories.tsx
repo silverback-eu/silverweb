@@ -1,4 +1,4 @@
-import { ContactCard, LoadingCard } from "@silverweb/ui/shared";
+import { ContactCard } from "@silverweb/ui";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof ContactCard> = {
@@ -38,5 +38,7 @@ export const Normal: Story = {
 };
 
 export const Loading: Story = {
-  render: () => <LoadingCard />,
+  args: {
+    loading: true,
+  },
 };

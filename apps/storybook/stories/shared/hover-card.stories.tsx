@@ -6,7 +6,7 @@ import {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
-} from "@silverweb/ui/shared";
+} from "@silverweb/ui";
 import type { Meta, StoryObj } from "@storybook/react";
 import { CalendarDays } from "lucide-react";
 

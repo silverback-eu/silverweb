@@ -1,4 +1,4 @@
-import { Skeleton } from "@silverweb/ui/shared";
+import { Skeleton } from "@silverweb/ui";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof Skeleton> = {

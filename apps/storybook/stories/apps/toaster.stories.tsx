@@ -1,5 +1,4 @@
-import { Toaster, toast } from "@silverweb/ui/apps";
-import { Button } from "@silverweb/ui/shared";
+import { Toaster, toast, Button } from "@silverweb/ui";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof Toaster> = {

@@ -1,4 +1,4 @@
-import { ScrollArea, ScrollBar } from "@silverweb/ui/shared";
+import { ScrollArea, ScrollBar } from "@silverweb/ui";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof ScrollArea> = {

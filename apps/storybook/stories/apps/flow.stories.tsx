@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Flow, FlowProvider, useFlow } from "@silverweb/ui/apps";
+import { Flow, FlowProvider, useFlow, Button } from "@silverweb/ui";
 import { HardHat } from "lucide-react";
-import { Button } from "@silverweb/ui/shared";
 
 const meta: Meta<typeof Flow> = {
   title: "Apps/ Flow",
@@ -283,7 +282,7 @@ function FlowWithProviderAndHook(prop: Story["args"]): JSX.Element {
               height: 112,
               width: 300,
             },
-            { duration: 800, padding: 0.8 }
+            { duration: 800, padding: 0.8 },
           );
         }}
       >

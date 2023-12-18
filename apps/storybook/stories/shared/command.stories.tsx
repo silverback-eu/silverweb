@@ -8,7 +8,7 @@ import {
   CommandList,
   CommandSeparator,
   CommandShortcut,
-} from "@silverweb/ui/shared";
+} from "@silverweb/ui";
 import type { Meta, StoryObj } from "@storybook/react";
 import {
   Calculator,

@@ -1,27 +1,24 @@
 {
-  "name": "@silverweb/mono",
+  "private": true,
   "license": "AGPL",
+  "scripts": {
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "lint": "turbo lint",
+    "clean": "turbo run clean && rm -rf node_modules && rm -rf .turbo && rm -rf bun.lockb && bun install",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+  },
   "devDependencies": {
-    "@turbo/gen": "^1.10.16",
     "eslint": "^8.48.0",
     "prettier": "^3.0.3",
-    "tsconfig": "*",
+    "prettier-plugin-tailwindcss": "^0.5.3",
+    "@silverweb/tsconfig": "*",
     "turbo": "latest"
   },
-  "packageManager": "bun@1.0.3",
-  "private": true,
-  "scripts": {
-    "build": "turbo run build",
-    "dev": "dotenv -e .env.development -- turbo run dev",
-    "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "clean": "turbo run clean && rm -rf node_modules && rm -rf .turbo && rm -rf bun.lockb && bun install"
-  },
+  "packageManager": "bun@1.0.18",
   "workspaces": [
     "apps/*",
+    "packages/config/*",
     "packages/*"
-  ],
-  "dependencies": {
-    "dotenv-cli": "^7.3.0"
-  }
+  ]
 }

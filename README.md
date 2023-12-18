@@ -41,6 +41,6 @@ For support, email fgrimm@silverback.ie.
 
 ## 🔐 AGPL
 
-Copyright ([©](https://www.ipoi.gov.ie/en/types-of-ip/copyright1/understanding-copyright/the-copyright-notice-and-symbol-%C2%A9/)) 2023 - present Frederik W. Grimm for SilverBack Staffing Ltd.
+Copyright ([©](https://www.ipoi.gov.ie/en/types-of-ip/copyright1/understanding-copyright/the-copyright-notice-and-symbol-%C2%A9/)) 2023 - present Grimm Integrations for SilverBack Staffing Ltd.
 
 This source code is licensed under the AGPL license found in the LICENSE file in the root directory of this source tree.

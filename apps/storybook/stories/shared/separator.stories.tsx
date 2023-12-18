@@ -1,4 +1,4 @@
-import { Card, Separator } from "@silverweb/ui/shared";
+import { Card, Separator } from "@silverweb/ui";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof Separator> = {
@@ -13,7 +13,7 @@ type Story = StoryObj<typeof Separator>;
 
 export const Normal: Story = {
   render: () => (
-    <Card className="p-4 w-96 grid gap-4">
+    <Card className="grid w-96 gap-4 p-4">
       Text Eins <Separator /> Text Zwei
     </Card>
   ),
@@ -21,7 +21,7 @@ export const Normal: Story = {
 
 export const Vertical: Story = {
   render: () => (
-    <Card className="p-4 w-96 flex gap-4">
+    <Card className="flex w-96 gap-4 p-4">
       Text Eins{" "}
       <Separator
         orientation="vertical"

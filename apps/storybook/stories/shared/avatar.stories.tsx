@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Avatar, AvatarFallback, AvatarImage } from "@silverweb/ui/shared";
+import { Avatar, AvatarFallback, AvatarImage } from "@silverweb/ui";
 
 const meta: Meta<typeof Avatar> = {
   title: "Shared/ Avatar",

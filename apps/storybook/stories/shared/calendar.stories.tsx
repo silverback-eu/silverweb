@@ -1,5 +1,5 @@
-import type { DateRange } from "@silverweb/ui/shared";
-import { Calendar } from "@silverweb/ui/shared";
+import type { DateRange } from "@silverweb/ui";
+import { Calendar } from "@silverweb/ui";
 import type { Meta, StoryObj } from "@storybook/react";
 import { useState } from "react";
 

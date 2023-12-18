@@ -1,5 +1,4 @@
-import { Button } from "@silverweb/ui/shared";
-import { BurgerMenuIcon } from "@silverweb/ui/silverback";
+import { Button, BurgerMenuIcon } from "@silverweb/ui";
 import type { Meta, StoryObj } from "@storybook/react";
 import { Fragment, useState } from "react";
 

@@ -12,7 +12,7 @@ import {
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
-} from "@silverweb/ui/shared";
+} from "@silverweb/ui";
 import type { Meta, StoryObj } from "@storybook/react";
 import {
   Cloud,

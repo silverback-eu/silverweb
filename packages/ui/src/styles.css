@@ -1,0 +1,160 @@
+/* Tailwind */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Shadcn/ui */
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 20 14.3% 4.1%;
+    --card: 0 0% 100%;
+    --card-foreground: 20 14.3% 4.1%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 14.3% 4.1%;
+    --primary: 24 9.8% 10%;
+    --primary-foreground: 60 9.1% 97.8%;
+    --secondary: 60 4.8% 95.9%;
+    --secondary-foreground: 24 9.8% 10%;
+    --muted: 60 4.8% 95.9%;
+    --muted-foreground: 25 5.3% 44.7%;
+    --accent: 60 4.8% 95.9%;
+    --accent-foreground: 24 9.8% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 60 9.1% 97.8%;
+    --border: 20 5.9% 90%;
+    --input: 20 5.9% 90%;
+    --ring: 20 14.3% 4.1%;
+    --radius: 0.5rem;
+    --graphik-webfont: "Graphik sans-serif";
+    --primary-grey: 27, 5%, 65%, 1;
+  }
+
+  .dark {
+    --background: 20 14.3% 4.1%;
+    --foreground: 60 9.1% 97.8%;
+    --card: 20 14.3% 4.1%;
+    --card-foreground: 60 9.1% 97.8%;
+    --popover: 20 14.3% 4.1%;
+    --popover-foreground: 60 9.1% 97.8%;
+    --primary: 60 9.1% 97.8%;
+    --primary-foreground: 24 9.8% 10%;
+    --secondary: 12 6.5% 15.1%;
+    --secondary-foreground: 60 9.1% 97.8%;
+    --muted: 12 6.5% 15.1%;
+    --muted-foreground: 24 5.4% 63.9%;
+    --accent: 12 6.5% 15.1%;
+    --accent-foreground: 60 9.1% 97.8%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 60 9.1% 97.8%;
+    --border: 12 6.5% 15.1%;
+    --input: 12 6.5% 15.1%;
+    --ring: 24 5.7% 82.9%;
+    --primary-grey: 27, 5%, 65%, 1;
+  }
+
+  .light {
+    --background: 0 0% 100%;
+    --foreground: 20 14.3% 4.1%;
+    --card: 0 0% 100%;
+    --card-foreground: 20 14.3% 4.1%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 14.3% 4.1%;
+    --primary: 24 9.8% 10%;
+    --primary-foreground: 60 9.1% 97.8%;
+    --secondary: 60 4.8% 95.9%;
+    --secondary-foreground: 24 9.8% 10%;
+    --muted: 60 4.8% 95.9%;
+    --muted-foreground: 25 5.3% 44.7%;
+    --accent: 60 4.8% 95.9%;
+    --accent-foreground: 24 9.8% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 60 9.1% 97.8%;
+    --border: 20 5.9% 90%;
+    --input: 20 5.9% 90%;
+    --ring: 20 14.3% 4.1%;
+    --radius: 0.5rem;
+    --graphik-webfont: "Graphik sans-serif";
+    --primary-grey: 27, 5%, 65%, 1;
+  }
+}
+
+@layer base {
+  * {
+    @apply ui-border-border;
+  }
+  body {
+    @apply ui-bg-background ui-text-foreground;
+  }
+}
+
+/* Toaster */
+
+[data-sonner-toast] [data-title] {
+  font-weight: 600 !important;
+  font-size: 0.875rem !important;
+  line-height: 1.25rem !important;
+}
+[data-sonner-toast] [data-description] {
+  font-size: 0.875rem !important;
+  line-height: 1.25rem !important;
+  opacity: 0.9;
+}
+[data-sonner-toast] [data-content] {
+  gap: 0.25rem;
+  display: grid;
+}
+[data-sonner-toast] [data-button] {
+  font-weight: 500 !important;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid hsl(var(--border));
+  border-radius: calc(0.5rem - 2px);
+  background-color: transparent;
+  height: 2rem;
+  color: inherit;
+}
+[data-sonner-toast] button[aria-label="Close toast"] {
+  right: 0.75rem !important;
+  left: auto !important;
+  transform: translate(35%, 25%) !important;
+  background-color: transparent !important;
+  border: none;
+  color: hsl(var(--card-foreground));
+}
+[data-sonner-toast] button[aria-label="Close toast"] > svg {
+  transition: opacity 0.2s ease-in-out;
+  opacity: 0.5;
+  stroke-width: 2;
+  height: 15px;
+  width: 15px;
+}
+[data-sonner-toast] button[aria-label="Close toast"] > svg:hover {
+  opacity: 1;
+}
+[data-sonner-toast] [data-button]:hover {
+  background-color: hsl(var(--secondary));
+}
+li[data-type="error"] {
+  color: rgb(239 68 68) !important;
+}
+li[data-type="success"] {
+  color: rgb(34 197 94) !important;
+}
+li[data-type="warning"] {
+  color: rgb(234 179 8) !important;
+}
+li[data-type="loading"] {
+  opacity: 0.5 !important;
+}
+li[data-type="loading"] > [data-button] {
+  user-select: none;
+  pointer-events: none;
+}

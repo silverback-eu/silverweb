@@ -1,6 +1,5 @@
 {
-  "extends": "tsconfig/sw-ui.json",
-  "include": ["."],
-  "compilerOptions": {},
+  "extends": "@silverweb/tsconfig/react.json",
+  "include": [".", "../../apps/web/app/(content)"],
   "exclude": ["dist", "build", "node_modules"]
 }

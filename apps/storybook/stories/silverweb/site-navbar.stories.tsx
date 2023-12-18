@@ -1,4 +1,4 @@
-import { SiteNavbar } from "@silverweb/ui/silverweb";
+import { SiteNavbar, LoadingSiteNavbar } from "@silverweb/ui";
 import type { Meta, StoryObj } from "@storybook/react";
 import { BringToFront, Tags } from "lucide-react";
 
@@ -28,4 +28,11 @@ export const Normal: Story = {
     ],
     openApp: 1,
   },
+};
+
+export const Loading: Story = {
+  args: {
+    openApp: 1,
+  },
+  render: (props) => <LoadingSiteNavbar {...props} />,
 };
