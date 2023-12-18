@@ -26,9 +26,9 @@
     "eslint-config-custom": "*",
     "postcss": "^8.4.20",
     "react": "^18.2.0",
-    "tailwind-config": "*",
+    "@silverweb/tailwind-config": "*",
     "tailwindcss": "^3.2.4",
-    "tsconfig": "*",
+    "@silverweb/tsconfig": "*",
     "tsup": "^7.2.0",
     "typescript": "^5.2.2"
   },

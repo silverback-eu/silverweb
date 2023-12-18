@@ -1,5 +1,5 @@
 {
-  "extends": "tsconfig/silverweb-next.json",
+  "extends": "@silverweb/tsconfig/next.json",
   "compilerOptions": {
     "baseUrl": "./",
     "plugins": [{ "name": "next" }],

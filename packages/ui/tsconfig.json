@@ -1,5 +1,5 @@
 {
-  "extends": "tsconfig/silverweb-react.json",
+  "extends": "@silverweb/tsconfig/react.json",
   "include": [".", "../../apps/web/app/(content)"],
   "exclude": ["dist", "build", "node_modules"]
 }

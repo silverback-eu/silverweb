@@ -40,10 +40,10 @@
     "eslint-plugin-storybook": "^0.6.15",
     "postcss": "^8.4.31",
     "storybook": "^7.6.1",
-    "tailwind-config": "*",
+    "@silverweb/tailwind-config": "*",
     "tailwindcss": "^3.3.5",
     "tailwindcss-animate": "^1.0.7",
-    "tsconfig": "*",
+    "@silverweb/tsconfig": "*",
     "typescript": "^5.2.2",
     "vite": "^5.0.0"
   }

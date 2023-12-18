@@ -12,12 +12,13 @@
     "eslint": "^8.48.0",
     "prettier": "^3.0.3",
     "prettier-plugin-tailwindcss": "^0.5.3",
-    "tsconfig": "*",
+    "@silverweb/tsconfig": "*",
     "turbo": "latest"
   },
   "packageManager": "bun@1.0.18",
   "workspaces": [
     "apps/*",
+    "packages/config/*",
     "packages/*"
   ]
 }
