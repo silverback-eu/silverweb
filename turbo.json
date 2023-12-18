@@ -1,0 +1,23 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "pipeline": {
+    "build": {
+      "dotEnv": [".env.local", ".env", ".env.production.local"],
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**", ".next/**", "!.next/cache/**"]
+    },
+    "lint": {
+      "dependsOn": ["^build"]
+    },
+    "check-types": {},
+    "dev": {
+      "dotEnv": [".env.local", ".env", ".env.development.local"],
+      "env": ["NEXT_PUBLIC_*", "NODE_ENV", "STORYBOOK_*", "REACT_APP_*"],
+      "cache": false,
+      "persistent": true
+    },
+    "clean": {
+      "cache": false
+    }
+  }
+}
