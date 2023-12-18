@@ -35,7 +35,6 @@ async function addDirectivesToChunkFiles(distPath = DIST_PATH): Promise<void> {
       }
     }
   } catch (err) {
-    // eslint-disable-next-line no-console -- We need to log the error
     console.error("Error:", err);
   }
 }

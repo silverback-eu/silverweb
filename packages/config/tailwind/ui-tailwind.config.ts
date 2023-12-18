@@ -75,7 +75,7 @@ const config: Config = {
       },
     },
   },
-    prefix: "ui-",
+  prefix: "ui-",
   plugins: [require("tailwindcss-animate")],
 };
 
