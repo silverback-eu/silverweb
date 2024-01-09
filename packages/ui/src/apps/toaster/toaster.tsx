@@ -7,7 +7,7 @@ export function Toaster(props: ToasterProps): JSX.Element {
     <PToaster
       className="toaster group"
       closeButton
-      duration={500000}
+      duration={5000}
       loadingIcon={
         <Loader2 className="ui-mr-2 ui-h-5 ui-w-5 ui-animate-spin " />
       }
@@ -19,10 +19,8 @@ export function Toaster(props: ToasterProps): JSX.Element {
             "ui-w-full ui-graphik ui-rounded-xl ui-border ui-bg-card ui-text-card-foreground ui-shadow ui-flex ui-p-3 ui-gap-1 [&>div[data-icon]]:ui-w-[20px] [&>div[data-icon]]:ui-h-[20px] [&>div>.loader]:!ui-p-0 [&>div>.loader]:!ui-border-none [&[data-type='loading']>*]:ui-opacity-50 data-[type='loading']:ui-select-none data-[type='loading']:ui-pointer-events-none",
           description: "!ui-text-sm ui-opacity-90",
           title: "!ui-text-sm ui-font-bold",
-          actionButton:
-            "group-[.toast]:ui-bg-primary group-[.toast]:ui-text-primary-foreground",
-          cancelButton:
-            "ui-right-[0.75rem] ui-left-[0.75rem] ui-translate-y-[25%] ui-translate-x-[35%] ui-bg-transparent",
+          actionButton: "!ui-bg-primary !ui-text-primary-foreground ui-mt-auto",
+          cancelButton: "!ui-bg-muted !ui-text-muted-foreground ui-mt-auto",
           error: "ui-text-red-500",
           info: "ui-text-blue-500",
           success: "ui-text-green-500",

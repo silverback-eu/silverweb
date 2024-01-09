@@ -7,7 +7,11 @@ const meta: Meta<typeof Toaster> = {
   component: Toaster,
   decorators: [
     (Story) => (
-      <div>
+      <div
+        style={{
+          height: "600px",
+        }}
+      >
         <Story />
         <Toaster />
       </div>
@@ -135,3 +139,29 @@ function PPromiseToast(): JSX.Element {
     </Button>
   );
 }
+
+export const ActionsToast: Story = {
+  render: () => (
+    <Button
+      onClick={() => {
+        toast("This is the Toast", {
+          description: "This is a description of the toast",
+          cancel: {
+            label: "Cancel",
+            onClick: () => {
+              toast("Cancel clicked");
+            },
+          },
+          action: {
+            label: "Undo",
+            onClick: () => {
+              toast("Undo clicked");
+            },
+          },
+        });
+      }}
+    >
+      Push Toaster
+    </Button>
+  ),
+};
