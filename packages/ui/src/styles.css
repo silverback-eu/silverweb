@@ -90,18 +90,8 @@
   }
 }
 
-/* Toaster */
+/* Toaster
 
-[data-sonner-toast] [data-title] {
-  font-weight: 600 !important;
-  font-size: 0.875rem !important;
-  line-height: 1.25rem !important;
-}
-[data-sonner-toast] [data-description] {
-  font-size: 0.875rem !important;
-  line-height: 1.25rem !important;
-  opacity: 0.9;
-}
 [data-sonner-toast] [data-content] {
   gap: 0.25rem;
   display: grid;
@@ -121,27 +111,6 @@
   height: 2rem;
   color: inherit;
 }
-[data-sonner-toast] button[aria-label="Close toast"] {
-  right: 0.75rem !important;
-  left: auto !important;
-  transform: translate(35%, 25%) !important;
-  background-color: transparent !important;
-  border: none;
-  color: hsl(var(--card-foreground));
-}
-[data-sonner-toast] button[aria-label="Close toast"] > svg {
-  transition: opacity 0.2s ease-in-out;
-  opacity: 0.5;
-  stroke-width: 2;
-  height: 15px;
-  width: 15px;
-}
-[data-sonner-toast] button[aria-label="Close toast"] > svg:hover {
-  opacity: 1;
-}
-[data-sonner-toast] [data-button]:hover {
-  background-color: hsl(var(--secondary));
-}
 li[data-type="error"] {
   color: rgb(239 68 68) !important;
 }
@@ -157,4 +126,4 @@ li[data-type="loading"] {
 li[data-type="loading"] > [data-button] {
   user-select: none;
   pointer-events: none;
-}
+} */
