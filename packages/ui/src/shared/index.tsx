@@ -65,6 +65,18 @@ export {
 } from "./dialog";
 export { DisplayCard } from "./display-card";
 export {
+  Drawer,
+  DrawerHeader,
+  DrawerFooter,
+  DrawerTitle,
+  DrawerDescription,
+  DrawerClose,
+  DrawerContent,
+  DrawerOverlay,
+  DrawerPortal,
+  DrawerTrigger,
+} from "./drawer";
+export {
   DropdownMenu,
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
