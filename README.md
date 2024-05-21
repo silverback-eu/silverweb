@@ -1,3 +1,7 @@
+# SilverWeb is not open-source anymore
+
+
+
 ![SilverWeb by SilverBack](./.README/SilverWebBanner.svg)
 
 # SilverWeb
